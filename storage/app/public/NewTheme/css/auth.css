@@ -92,7 +92,6 @@ h5,h4{
 .form-contant-right{
 	background: var(--secondary-1);
 	border-radius: 0px 3px 3px 0px;
-	border-bottom: 1px solid #4D4D4D;
 	padding: 45px 55px;
 }
 .form-contant-right h3{
@@ -262,8 +261,11 @@ loading
     border-color: #494949;
     background: #494949;
 }
-.select2-container--default .select2-selection--single .select2-selection__rendered{
+.gateway-card .select2-container--default .select2-selection--single .select2-selection__rendered{
 	line-height: 42px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+	line-height: 34px;
 	color: #B3ADAD;
 }
 .select2-container--default .select2-selection--single .select2-selection__arrow{

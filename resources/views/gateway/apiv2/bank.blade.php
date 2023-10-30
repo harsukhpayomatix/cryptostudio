@@ -23,7 +23,6 @@
         .card {
             background: var(--secondary-1);
             border-radius: 0px 0px 3px 3px;
-            border-bottom: 1px solid #4D4D4D;
         }
 
         .btn-danger {
@@ -55,18 +54,6 @@
 </head>
 
 <body>
-    <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
     <div id="loading">
         <p class="mt-1">{{ __('messages.loading') }}...</p>
     </div>
