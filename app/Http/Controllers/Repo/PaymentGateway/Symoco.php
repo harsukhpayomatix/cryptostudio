@@ -61,7 +61,7 @@ class Symoco extends Controller
         $input['converted_amount'] = number_format((float) $input['converted_amount'], 2, '.', '');
         $payload = [
             "orderId" => $input['session_id'],
-            "description" => "Finvert IO transaction",
+            "description" => "CryptoStudio IO transaction",
             "autoConfirm" => false,
             "options" => [
                 ""

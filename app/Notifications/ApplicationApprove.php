@@ -49,7 +49,7 @@ class ApplicationApprove extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('Your Finvert Account Pre-Approval')
+            ->subject('Your CryptoStudio Account Pre-Approval')
             ->markdown('emails.notifications.application_approve', ['user' => $this->user, 'url' => url(self::url)]);
     }
 

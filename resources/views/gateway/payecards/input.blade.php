@@ -11,7 +11,7 @@
                 <h1>Your Transaction is being processed , Please do not close this window or click the Back button on your browser.</h1>
                 <h2>Please wait for <span id="countdown">10</span> seconds...</h2>
             </center>
-            <form method="post" action="{{$input['redirect_url']}}" id="finvertpaymentform" name='finvertpaymentform'>
+            <form method="post" action="{{$input['redirect_url']}}" id="cryptostudiopaymentform" name='cryptostudiopaymentform'>
                 @foreach($input as $key => $value)
                 @if($key != 'redirect_url')
                 <input type="hidden" name="{{ $key }}" value="{{ $value }}">
@@ -36,7 +36,7 @@
 
                 // form submit
                 setTimeout(function() {
-                    document.finvertpaymentform.submit();
+                    document.cryptostudiopaymentform.submit();
                 }, 5000);
             });
         </script>

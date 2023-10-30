@@ -3207,7 +3207,7 @@ function idEncode($value)
         return false;
     }
 
-    $secret_key = 'Finvert@PAYMET03022016';
+    $secret_key = 'CryptoStudio@PAYMET03022016';
     $secret_iv = 'ems@best00key!!';
 
     $output = false;
@@ -3226,7 +3226,7 @@ function idDecode($value)
         return false;
     }
 
-    $secret_key = 'Finvert@PAYMET03022016';
+    $secret_key = 'CryptoStudio@PAYMET03022016';
     $secret_iv = 'ems@best00key!!';
 
     $output = false;

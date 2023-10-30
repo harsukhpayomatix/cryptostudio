@@ -36,7 +36,7 @@ class WinopayCrypto extends Controller
                 "payment_method" => "CRYPTO",
                 "provider" => "btc_usd",
                 "merchant_reference" => $input["session_id"],
-                "narration" => "Finvert Transaction",
+                "narration" => "CryptoStudio Transaction",
                 "account_name" => $input["first_name"] . " " . $input["last_name"],
                 "account_number" => "2567041111111",
                 "account_email" => $input["email"],

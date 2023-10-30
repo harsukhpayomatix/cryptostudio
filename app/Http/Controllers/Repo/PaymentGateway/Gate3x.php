@@ -24,7 +24,7 @@ class Gate3x extends Controller
         $payload = [
             "amount" => $input["converted_amount"],
             "currency" => $input["converted_currency"],
-            "description" => "Finvert transaction for " . $input["order_id"],
+            "description" => "CryptoStudio transaction for " . $input["order_id"],
             "invoiceId" => $input["session_id"],
             "accountId" => $input["email"],
             "ip" => $input["ip_address"],

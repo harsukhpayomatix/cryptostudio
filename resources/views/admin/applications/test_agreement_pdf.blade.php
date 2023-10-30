@@ -87,7 +87,7 @@
                 entities for the services provided.</p>
             <p>This Agreement (this "Agreement") is made effective as of
                 _____________________________,{{ now()->year }} (the
-                "Effectivity Date") by Finvert IO's LLC trading as with office address at suit 1,a.l.evelyn ltd
+                "Effectivity Date") by CryptoStudio trading as with office address at suit 1,a.l.evelyn ltd
                 building, Charlestown, Nevis with the registration number L21813</p>
             <p>..........................................................................................................
                 with office address at
@@ -922,7 +922,7 @@
                 <br /> <br />
             </div>
             <p>With the implementation of Visa Claims Resolution and other antifraud and chargeback measures,
-                Finvert expects that
+                CryptoStudio expects that
                 merchants should have a lower overall number of incidents. So, effective March 11, 2020, Visa's
                 fraud and chargeback
                 standards are as below. In Visa terms, non-compliant activity triggers a Non­ Compliance Assessment,
@@ -1098,7 +1098,7 @@
 
             <div style="width: 100%;">
                 <div style="width: 50%; float: left;">
-                    <h3>FINVERT IO'S LLC</h3>
+                    <h3>CryptoStudio</h3>
                 </div>
                 <div style="width: 50%; float: left; text-align: right;">
                     <p>_____________________________________(Company)</p>

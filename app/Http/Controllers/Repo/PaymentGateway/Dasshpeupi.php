@@ -54,7 +54,7 @@ class Dasshpeupi extends Controller
             'ORDER_ID' => $input['session_id'],
             'PAYMENT_TYPE' => 'UP',
             'PAY_ID' => $check_assign_mid->pay_id,
-            'PRODUCT_DESC' => 'Finvert sale ' . $input['first_name'] . ' ' . $input['last_name'],
+            'PRODUCT_DESC' => 'CryptoStudio sale ' . $input['first_name'] . ' ' . $input['last_name'],
             'RETURN_URL' => route('dasshpeupi.return', $input['session_id']),
             'TXNTYPE' => 'SALE',
             'UPI' => $input['upi'],
@@ -102,7 +102,7 @@ class Dasshpeupi extends Controller
     public function generateHash($input, $check_assign_mid)
     {
         // :Todo Have to add MOP Type
-        $hashStr = "AMOUNT=" . $input['converted_amount'] * 100 . "~CURRENCY_CODE=356~CUST_EMAIL=" . $input["email"] . "~CUST_NAME=" . $input["first_name"] . " " . $input["last_name"] . "~CUST_PHONE=" . $input["phone_no"] . "~MOP_TYPE=UP~ORDER_ID=" . $input["session_id"] . "~PAYMENT_TYPE=UP~PAY_ID=" . $check_assign_mid->pay_id . "~PRODUCT_DESC=" . "Finvert sale " . $input["first_name"] . " " . $input["last_name"] . "~RETURN_URL=" . route("dasshpeupi.return", $input["session_id"]) . "~TXNTYPE=SALE~UPI=" . $input['upi'];
+        $hashStr = "AMOUNT=" . $input['converted_amount'] * 100 . "~CURRENCY_CODE=356~CUST_EMAIL=" . $input["email"] . "~CUST_NAME=" . $input["first_name"] . " " . $input["last_name"] . "~CUST_PHONE=" . $input["phone_no"] . "~MOP_TYPE=UP~ORDER_ID=" . $input["session_id"] . "~PAYMENT_TYPE=UP~PAY_ID=" . $check_assign_mid->pay_id . "~PRODUCT_DESC=" . "CryptoStudio sale " . $input["first_name"] . " " . $input["last_name"] . "~RETURN_URL=" . route("dasshpeupi.return", $input["session_id"]) . "~TXNTYPE=SALE~UPI=" . $input['upi'];
 
         $addedSecretKey = $hashStr . $check_assign_mid->secret_key;
 

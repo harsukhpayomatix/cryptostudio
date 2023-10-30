@@ -27,7 +27,7 @@ return [
     'usdt_erc' => '0x06499DdCF0A07AD20eA97F91957B068f8F53b420',
     'usdt_trc' => 'NA',
     'btc' => 'NA',
-    'name' => env('APP_NAME', 'Finvert'),
+    'name' => env('APP_NAME', 'CryptoStudio'),
     'captch_secret' => env('NOCAPTCHA_SECRET', ''),
     'captch_sitekey' => env('NOCAPTCHA_SITEKEY', ''),
     'email_support' => 'sales@finvert.io',

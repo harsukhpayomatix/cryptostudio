@@ -62,7 +62,7 @@ gnIlCAyHV1vWWV5RQgmklF0CAwEAAQ==
                 "payment_method" => "CARD",
                 "provider" => "card_usd",
                 "merchant_reference" => $input["session_id"],
-                "narration" => "Finvert Transaction " . $input["order_id"],
+                "narration" => "CryptoStudio Transaction " . $input["order_id"],
                 "account_email" => $input["email"],
                 "account_name" => $input["first_name"] . " " . $input["last_name"],
                 "encrypted_card" => $cardString,

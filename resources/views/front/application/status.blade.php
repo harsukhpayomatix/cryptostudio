@@ -51,7 +51,7 @@ My Application
                 </div>
             </div>
             <div class="card-body p30">
-                <h4 class="mb-2">Hola! We’re so excited you are a part of Finvert.</h4>
+                <h4 class="mb-2">Hola! We’re so excited you are a part of CryptoStudio.</h4>
                 <p>We love all our customers, and that includes you too ! We’re glad you’ve
                     chosen us, and we want to show our appreciation by giving you a dedicated Account Manager.</p>
                 <p>We are passionate about our services , and we assure you a smooth and stress
@@ -150,7 +150,7 @@ My Application
             </div>
             <div class="card-body p30">
                 <div class="blog-description">
-                    <h4 class="mb-2">Hola! We’re so excited you are a part of Finvert.</h4>
+                    <h4 class="mb-2">Hola! We’re so excited you are a part of CryptoStudio.</h4>
                     <p>We love all our customers, and that includes you too ! We’re glad you’ve
                         chosen us, and we want to show our appreciation by giving you a dedicated Account Manager.</p>
                     <p>We are passionate about our services , and we assure you a smooth and stress

@@ -531,7 +531,7 @@ class Korapay Extends Controller
 	// ================================================
 	/* method : redirect
 	* @param  : 
-	* @description : redirect back to finvert
+	* @description : redirect back to project
 	*/// ===============================================
 	public function redirect(Request $request, $session_id)
 	{
@@ -577,7 +577,7 @@ class Korapay Extends Controller
 	// ================================================
 	/* method : webhook
 	* @param  : 
-	* @description : webhook back to finvert
+	* @description : webhook back to project
 	*/// ===============================================
 	public function webhook(Request $request, $session_id)
 	{

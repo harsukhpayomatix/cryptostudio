@@ -37,7 +37,6 @@ class AgreementSentMailRP extends Mailable
                     'url' => $this->details['url']
                 ]
             );
-        // $path = storage_path('app/public/rpAgreement/Finvert_Referral_Agreement.pdf');
         if(!empty($this->details['file'])){
             $data = $data->attach(asset($this->details['file']),['as'=>'RP_Agreement.pdf']);
         }

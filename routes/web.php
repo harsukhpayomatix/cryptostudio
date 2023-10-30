@@ -73,20 +73,20 @@ Route::get('user-activate/{id}', 'ApplyNowController@verifyUserEmail')->name('us
 Route::get('user/confirm-mail-active', 'ApplyNowController@confirmMailActive')->name('user/confirm-mail-active');
 Route::get('user-email-activate', 'ApplyNowController@verifyUserChangeEmail')->name('user-email-activate');
 
-Route::get('finvert-otp', 'Auth\LoginController@otpform')->name('finvert-otp');
+Route::get('cryptostudio-otp', 'Auth\LoginController@otpform')->name('cryptostudio-otp');
 Route::get('resend-otp', 'Auth\LoginController@resendotp')->name('resend-otp');
-Route::post('finvert-otp-store', 'Auth\LoginController@checkotp')->name('finvert-otp-store');
-Route::post('finvert-mobile-no-store', 'Auth\LoginController@addMobileNo')->name('finvert-mobile-no-store');
+Route::post('cryptostudio-otp-store', 'Auth\LoginController@checkotp')->name('cryptostudio-otp-store');
+Route::post('cryptostudio-mobile-no-store', 'Auth\LoginController@addMobileNo')->name('cryptostudio-mobile-no-store');
 
 /*********************User Register Module End *************************************/
 
 /*********************Admin Routes Module End *************************************/
 Route::get('admin/login', 'Auth\AdminAuthController@getLogin')->name('admin/login');
 Route::post('admin/login', 'Auth\AdminAuthController@postLogin')->name('admin/login');
-Route::get('admin/finvert-otp', 'Auth\AdminAuthController@otpform')->name('admin.finvert-otp');
+Route::get('admin/cryptostudio-otp', 'Auth\AdminAuthController@otpform')->name('admin.cryptostudio-otp');
 Route::get('admin/resend-otp', 'Auth\AdminAuthController@resendotp')->name('admin.resend-otp');
-Route::post('admin/finvert-otp-store', 'Auth\AdminAuthController@checkotp')->name('admin.finvert-otp-store');
-Route::post('admin/finvert-mobile-no-store', 'Auth\AdminAuthController@addMobileNo')->name('admin.finvert-mobile-no-store');
+Route::post('admin/cryptostudio-otp-store', 'Auth\AdminAuthController@checkotp')->name('admin.cryptostudio-otp-store');
+Route::post('admin/cryptostudio-mobile-no-store', 'Auth\AdminAuthController@addMobileNo')->name('admin.cryptostudio-mobile-no-store');
 Route::get('admin/logout', 'Auth\AdminAuthController@logout')->name('admin/logout');
 
 Route::get('admin/password/reset', 'Auth\AdminAuthController@adminForgetPassword')->name('admin-password-reset');
@@ -116,9 +116,9 @@ Route::get('bank/register', 'Auth\BankUserAuthController@register')->name('bank.
 Route::post('bank/store', 'Auth\BankUserAuthController@store')->name('bank.store');
 Route::get('bank-activate/{id}', 'Auth\BankUserAuthController@verifyUserEmail')->name('bank-activate');
 
-Route::get('bank/finvert-otp', 'Auth\BankUserAuthController@otpform')->name('bank.finvert-otp');
+Route::get('bank/cryptostudio-otp', 'Auth\BankUserAuthController@otpform')->name('bank.cryptostudio-otp');
 Route::get('bank/resend-otp', 'Auth\BankUserAuthController@resendotp')->name('bank.resend-otp');
-Route::post('bank/finvert-otp-store', 'Auth\BankUserAuthController@checkotp')->name('bank.finvert-otp-store');
+Route::post('bank/cryptostudio-otp-store', 'Auth\BankUserAuthController@checkotp')->name('bank.cryptostudio-otp-store');
 
 Route::get('bank/password/reset', 'Auth\BankUserAuthController@agentForgetPassword')->name('bank-password-reset');
 Route::post('bank/password/email', 'Auth\BankUserAuthController@bankForgetEmail')->name('bank-password-email');
@@ -141,9 +141,9 @@ Route::post('rp/password/email', 'Auth\AgentUserAuthController@agentForgetEmail'
 Route::get('rp/password/reset/{id}', 'Auth\AgentUserAuthController@agentForgetPasswordForm')->name('rp-password-reset-form');
 Route::post('rp/password/resetForm', 'Auth\AgentUserAuthController@agentForgetPasswordFormPost')->name('rp-password-resetForm');
 
-Route::get('rp/finvert-otp', 'Auth\AgentUserAuthController@otpform')->name('rp.finvert-otp');
+Route::get('rp/cryptostudio-otp', 'Auth\AgentUserAuthController@otpform')->name('rp.cryptostudio-otp');
 Route::get('rp/resend-otp', 'Auth\AgentUserAuthController@resendotp')->name('rp.resend-otp');
-Route::post('rp/finvert-otp-store', 'Auth\AgentUserAuthController@checkotp')->name('rp.finvert-otp-store');
+Route::post('rp/cryptostudio-otp-store', 'Auth\AgentUserAuthController@checkotp')->name('rp.cryptostudio-otp-store');
 
 /*
 |--------------------------------------------------------------------------
@@ -159,9 +159,9 @@ Route::post('wl/rp/password/email', 'Auth\WLAgentUserAuthController@agentForgetE
 Route::get('wl/rp/password/reset/{id}', 'Auth\WLAgentUserAuthController@agentForgetPasswordForm')->name('wl-rp-password-reset-form');
 Route::post('wl/rp/password/resetForm', 'Auth\WLAgentUserAuthController@agentForgetPasswordFormPost')->name('wl-rp-password-resetForm');
 
-Route::get('wl/rp/finvert-otp', 'Auth\WLAgentUserAuthController@otpform')->name('wl.rp.finvert-otp');
+Route::get('wl/rp/cryptostudio-otp', 'Auth\WLAgentUserAuthController@otpform')->name('wl.rp.cryptostudio-otp');
 Route::get('wl/rp/resend-otp', 'Auth\WLAgentUserAuthController@resendotp')->name('wl.rp.resend-otp');
-Route::post('wl/rp/finvert-otp-store', 'Auth\WLAgentUserAuthController@checkotp')->name('wl.rp.finvert-otp-store');
+Route::post('wl/rp/cryptostudio-otp-store', 'Auth\WLAgentUserAuthController@checkotp')->name('wl.rp.cryptostudio-otp-store');
 
 
 Route::get('/transaction-documents-upload', 'TransactionDocumentsUploadController@transactionDocumentsUpload')->name('transaction-documents-upload');

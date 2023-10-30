@@ -19,7 +19,7 @@ class AttitudePay extends Controller
 
     const BASE_URL = 'https://gate.altitudepay.io/payment/api/v2/sale/group/';
     const STATUS_URL = 'https://gate.altitudepay.io/payment/api/v2/status/group/';
-    const LOGIN = 'finvert_alt';
+    const LOGIN = 'cryptostudio_alt';
     public function __construct()
     {
         $this->transaction = new Transaction;

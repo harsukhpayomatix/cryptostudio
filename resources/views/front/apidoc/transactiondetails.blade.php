@@ -221,7 +221,7 @@
             "currency": "USD"
         },
         "client": {
-            "first_name": "Finvert",
+            "first_name": "CryptoStudio",
             "last_name": "Test",
             "email": "test@gmail.com",
             "phone_no": "887123456",

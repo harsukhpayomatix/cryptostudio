@@ -143,11 +143,7 @@ class LoginController extends Controller
                         return redirect()->back();
                     }
                 }
-
-                // if($userData->otp != '' || $userData->otp != NULL) {
-                //     return redirect()->route('finvert-otp');
-                // }
-
+                
                 $response = $this->sendOtpSMS($userData);
 
                 if ($response == true) {
@@ -155,7 +151,7 @@ class LoginController extends Controller
                     \Session::put('password', $request->input('password'));
                     \Session::forget('error');
                     Session::put('success', "Thank you for requesting a One-Time Password (OTP) to access your account. Please be patient as the OTP may take a few minutes to  arrive in your inbox. If you don't see it in your main inbox, kindly check your spam or junk folder as well.");
-                    return redirect()->route('finvert-otp');
+                    return redirect()->route('cryptostudio-otp');
                 } else {
                     Session::put('error', 'Something went wrong. problem in OTP generation.');
                     return view('auth.login');
@@ -207,17 +203,17 @@ class LoginController extends Controller
                 \Session::put('error', 'Mail not sent, Please contact ' . config("app.name") . ' for support.');
                 return redirect()->back();
             }
-            return redirect()->route('finvert-otp');
+            return redirect()->route('cryptostudio-otp');
         }
 
         $response = $this->sendOtpSMS($user);
 
         if ($response == true) {
             \Session::put('success', 'OTP has been resent on your registered email id.');
-            return redirect()->route('finvert-otp');
+            return redirect()->route('cryptostudio-otp');
         } else {
             \Session::put('error', 'OTP send fail, Please try again.');
-            return redirect()->route('finvert-otp');
+            return redirect()->route('cryptostudio-otp');
         }
     }
 

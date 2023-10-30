@@ -38,7 +38,7 @@ class CrossSignedAgreementSentMailRP extends Mailable
                 ]
             );
         if(!empty($this->details['file'])){
-            $data = $data->attach(asset($this->details['file']),['as'=>'Cross_Signed_Agreement_Finvert.pdf']);
+            $data = $data->attach(asset($this->details['file']),['as'=>'Cross_Signed_Agreement_CryptoStudio.pdf']);
         };
         return $data;
     }

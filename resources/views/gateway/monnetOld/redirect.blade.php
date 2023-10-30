@@ -11,7 +11,7 @@
     <body>
         <div class="container">
             <h1>Please fill the form and submit to complete the transaction</h1>
-            <form method="post" action="{{ route('Monnet.transactionResponse', $session_id) }}" id="finvertpaymentform" name='finvertpaymentform'>
+            <form method="post" action="{{ route('Monnet.transactionResponse', $session_id) }}" id="cryptostudiopaymentform" name='cryptostudiopaymentform'>
                 @csrf
                 <div class="form-group row">
                     <fieldset>

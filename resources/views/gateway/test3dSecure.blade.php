@@ -54,7 +54,7 @@
             <div class="col-md-8 col-md-offset-2 text-center text-white">
                 <img src="{{ storage_asset('ThemeCryptoStudio/images/finvert.png') }}" class="mb-2" />
 
-                <h3 class="mt-4 mb-1">Welcome to Finvert Simulator API</h3>
+                <h3 class="mt-4 mb-1">Welcome to CryptoStudio Simulator API</h3>
                 <p>Select the response which you want to receive.</p>
             </div>
             <div class="col-md-4 col-md-offset-4 text-center page-background">

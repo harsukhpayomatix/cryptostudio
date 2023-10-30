@@ -639,7 +639,7 @@
                         @csrf
                         <div class="form-group">
                             <select class="form-control" name="flagged_by">
-                                <option value="finvert" class="finvertOpt">Suspicious By FINVERT</option>
+                                <option value="cryptostudio" class="cryptostudioOpt">Suspicious By CryptoStudio</option>
                                 <option value="bank" class="bankOpt">Suspicious By Bank</option>
                             </select>
                             <span class="help-block text-danger">

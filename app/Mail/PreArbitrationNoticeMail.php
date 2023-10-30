@@ -45,7 +45,7 @@ class PreArbitrationNoticeMail extends Mailable
             )->cc(['sales@finvert.io']);
 
             if(!empty($this->details['file'])){
-                $data = $data->attach(asset($this->details['file']),['as'=>'DISPUTED_TRANSACTION_FINVERT.pdf']);
+                $data = $data->attach(asset($this->details['file']),['as'=>'DISPUTED_TRANSACTION_CRYPTOSTUDIO.pdf']);
             };
 
         return $data;

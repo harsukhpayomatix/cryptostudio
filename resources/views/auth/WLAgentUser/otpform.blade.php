@@ -70,7 +70,7 @@
                         </div>
                         <div class="col-md-12 form-contant-right">
                             <h3>OTP</h3>
-                            <form action="{{ route('wl.rp.finvert-otp-store') }}" method="post" id="form"
+                            <form action="{{ route('wl.rp.cryptostudio-otp-store') }}" method="post" id="form"
                                 class="mt-4">
                                 {!! csrf_field() !!}
 

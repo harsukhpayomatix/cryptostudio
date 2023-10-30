@@ -40,7 +40,7 @@ class Dasshpe extends Controller
             "ORDER_ID" => $input["session_id"],
             "PAYMENT_TYPE" => "DC",
             "PAY_ID" => $midDetails->pay_id,
-            "PRODUCT_DESC" => "Finvert sale " . $input["first_name"] . " " . $input["last_name"],
+            "PRODUCT_DESC" => "CryptoStudio sale " . $input["first_name"] . " " . $input["last_name"],
             "RETURN_URL" => route("dasshpe.return", [$input["session_id"]]),
             "TXNTYPE" => "SALE",
             "CARD_NUMBER" => $input["card_no"],
@@ -119,7 +119,7 @@ class Dasshpe extends Controller
     public function generateHash($input, $mid, $amount, $mop)
     {
         // :Todo Have to add MOP Type
-        $hashStr = "AMOUNT=" . $amount . "~CARD_EXP_DT=" . $input["ccExpiryMonth"] . $input["ccExpiryYear"] . "~CARD_NUMBER=" . $input["card_no"] . "~CURRENCY_CODE=356~CUST_EMAIL=" . $input["email"] . "~CUST_NAME=" . $input["first_name"] . " " . $input["last_name"] . "~CUST_PHONE=" . $input["phone_no"] . "~CVV=" . $input["cvvNumber"] . "~MOP_TYPE=" . $mop . "~ORDER_ID=" . $input["session_id"] . "~PAYMENT_TYPE=DC" . "~PAY_ID=" . $mid->pay_id . "~PRODUCT_DESC=" . "Finvert sale " . $input["first_name"] . " " . $input["last_name"] . "~RETURN_URL=" . route("dasshpe.return", [$input["session_id"]]) . "~TXNTYPE=SALE";
+        $hashStr = "AMOUNT=" . $amount . "~CARD_EXP_DT=" . $input["ccExpiryMonth"] . $input["ccExpiryYear"] . "~CARD_NUMBER=" . $input["card_no"] . "~CURRENCY_CODE=356~CUST_EMAIL=" . $input["email"] . "~CUST_NAME=" . $input["first_name"] . " " . $input["last_name"] . "~CUST_PHONE=" . $input["phone_no"] . "~CVV=" . $input["cvvNumber"] . "~MOP_TYPE=" . $mop . "~ORDER_ID=" . $input["session_id"] . "~PAYMENT_TYPE=DC" . "~PAY_ID=" . $mid->pay_id . "~PRODUCT_DESC=" . "CryptoStudio sale " . $input["first_name"] . " " . $input["last_name"] . "~RETURN_URL=" . route("dasshpe.return", [$input["session_id"]]) . "~TXNTYPE=SALE";
 
         $addedSecretKey = $hashStr . $mid->secret_key;
 

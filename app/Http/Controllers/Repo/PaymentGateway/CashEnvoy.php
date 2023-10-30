@@ -27,7 +27,7 @@ class CashEnvoy extends Controller
             "ce_amount" => $input["converted_amount"],
             "ce_transref" => $input["session_id"],
             "ce_customerid" => $input["email"],
-            "ce_memo" => "Finvert transaction",
+            "ce_memo" => "CryptoStudio transaction",
             "ce_signature" => $signature,
             "ce_window" => "self",
             "ce_notifyurl" => route('cashenvoy.return', [$input["session_id"]]),

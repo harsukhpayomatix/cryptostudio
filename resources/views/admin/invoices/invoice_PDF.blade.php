@@ -220,7 +220,7 @@
                     <img src="https://portal.finvert.io/storage/ThemeCryptoStudio/images/finvert_logo.png">
                 </div>
                 <div class="title">
-                    <h1>Finvert</h1>
+                    <h1>CryptoStudio</h1>
                     <br><span>{{ date('F d, Y') }}</span>
                 </div>
                 <div style="clear: both;"></div>

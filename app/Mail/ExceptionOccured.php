@@ -37,7 +37,7 @@ class ExceptionOccured extends Mailable
             $role_name = 'Guest';
         }
 
-        $subject = env('ERROR_MAIL_SUBJECT') ?? 'Finvert Error By';
+        $subject = env('ERROR_MAIL_SUBJECT') ?? 'CryptoStudio Error By';
 
         $this->subject = $subject.' '.$role_name;
         $this->content = $content;

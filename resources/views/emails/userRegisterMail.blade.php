@@ -6,5 +6,5 @@
 <a href="{{ route('user-activate',$token) }}" class="custom-btn">Verify your email</a>
 
 <p>Please contact our customer support team if you require assistance during the verification process.</p>
-<p>Thank you for choosing Finvert. We look forward to serving you.</p>
+<p>Thank you for choosing CryptoStudio. We look forward to serving you.</p>
 @endcomponent

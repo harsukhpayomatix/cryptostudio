@@ -29,7 +29,7 @@ class TestController extends Controller
     function requestAuthToken() {
         $url = "https://secure.transactworld.com/transactionServices/REST/v1/authToken";
         $data = "authentication.partnerId=4" .
-        "&merchant.username=Finvert, option, facility)" .
+        "&merchant.username=CryptoStudio, option, facility)" .
         "&authentication.sKey=gdLgy6ymBV3pIOh1RBAv2HWrV82iaJyy";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -268,44 +268,7 @@ class TestController extends Controller
           $result = curl_exec($ch);
           echo $result;
           exit();
-        // $curl = curl_init();
-
-        // curl_setopt_array($curl, array(
-        //   CURLOPT_URL => "https://api.nowpayments.io/v1/invoice",
-        //   CURLOPT_RETURNTRANSFER => true,
-        //   CURLOPT_ENCODING => "",
-        //   CURLOPT_MAXREDIRS => 10,
-        //   CURLOPT_TIMEOUT => 30,
-        //   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        //   CURLOPT_CUSTOMREQUEST => "POST",
-        //   CURLOPT_POSTFIELDS => "price_amount=1000&price_currency=USD&order_id=RGDBP-21314&order_description=Apple%20Macbook%20Pro%202019%20x%201&ipn_callback_url=https%3A%2F%2FFinvert.money%2F&success_url=https%3A%2F%2FFinvert.money%2F&cancel_url=https%3A%2F%2FFinvert.money%2F",
-        //   CURLOPT_HTTPHEADER => array(
-        //     "cache-control: no-cache",
-        //     "content-type: application/x-www-form-urlencoded",
-        //     "postman-token: 962a004d-587b-536d-4c7e-0e5471c9bada",
-        //     "x-api-key: PN6QNBH-QAE40NE-PH0SHBW-KV3GXP1"
-        //   ),
-        // ));
-
-        // $response = curl_exec($curl);
-        // $err = curl_error($curl);
-
-        // curl_close($curl);
-
-
-        // echo "<pre>";print_r($response);exit();
-
-
-
-
-
-
-
-
-
-
-
-
+          
         $request_url = "https://api.nowpayments.io/v1/invoice";
         $request_data = [
                 "price_amount"=>"1000",
@@ -363,7 +326,7 @@ class TestController extends Controller
                         $payout_report = AutoReports::where('user_id', $userId)->orderBy("id", "DESC")->first();
                         $data['user_id'] = $user->id;
                         $data['date'] = date('Y-m-d', time());
-                        $data['processor_name'] = 'Finvert';
+                        $data['processor_name'] = 'CryptoStudio';
                         $data['company_name'] = $user->application->business_name;
                         $data['address'] = '';
                         $data['phone_no'] = $user->application->phone_no;

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Please do not refresh this page...</title>
         <style type="text/css">
-            #finvertpaymentform{
+            #cryptostudiopaymentform{
                 display: none;
             }
         </style>
@@ -17,7 +17,7 @@
                 <h2>Please wait for <span id="countdown">5</span> seconds...</h2>
             </center>
             <!-- https://www.onlinenaira.com/process.htm -->
-            <form action="https://www.onlinenaira.com/process.htm" method="POST" onsubmit = 'document.getElementById("disableBTN").disabled=true; document.getElementById("disableBTN")' id="finvertpaymentform" name='finvertpaymentform'>
+            <form action="https://www.onlinenaira.com/process.htm" method="POST" onsubmit = 'document.getElementById("disableBTN").disabled=true; document.getElementById("disableBTN")' id="cryptostudiopaymentform" name='cryptostudiopaymentform'>
                 {{-- @csrf --}}
                 <input type="hidden" name=member value="{{$check_assign_mid->member}}">
                 <input type="hidden" name=action value="payment">
@@ -70,7 +70,7 @@
 
                 // form submit
                 setTimeout(function() {
-                    document.finvertpaymentform.submit();
+                    document.cryptostudiopaymentform.submit();
                 }, 5000);
             });
         </script>

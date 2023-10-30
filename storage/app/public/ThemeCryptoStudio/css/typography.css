@@ -211,7 +211,6 @@ th {}
 loading
 ------------------------------------------------*/
 #loading {
-  /* background: #262626 url(../images/finvert.png) no-repeat scroll center center; */
   height: 100%;
   width: 100%;
   position: fixed;

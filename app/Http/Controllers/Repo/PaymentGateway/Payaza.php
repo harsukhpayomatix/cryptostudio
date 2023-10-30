@@ -38,7 +38,7 @@ class Payaza extends Controller
                 "amount" => $input["converted_amount"],
                 "transaction_reference" => $input["session_id"],
                 "currency" => $input["converted_currency"],
-                "description" => "A Finvert Transaction " . $input["order_id"],
+                "description" => "A CryptoStudio Transaction " . $input["order_id"],
                 "card" => [
                     "expiryMonth" => $input["ccExpiryMonth"],
                     "expiryYear" => $expiryYear[1],

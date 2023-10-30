@@ -10,7 +10,7 @@
 			<center>
 		        <h1>Please do not refresh this page...</h1>
 		    </center>
-			<form action="{{ route('transactionRepo.gatewaySubmit', $session_id) }}" method="post" name="finvertpaymentform" id="finvertpaymentform">
+			<form action="{{ route('transactionRepo.gatewaySubmit', $session_id) }}" method="post" name="cryptostudiopaymentform" id="cryptostudiopaymentform">
 				@csrf
 				<input type="hidden" name="payment_gateway_id" value="{{ $payment_gateway_id }}" />
 			</form>
@@ -18,7 +18,7 @@
 		<script type="text/javascript" src="{{ storage_asset('ThemeCryptoStudio/js/jquery-latest.min.js') }}"></script>
 	    <script type="text/javascript">
 	        $(document).ready(function () {
-	            document.finvertpaymentform.submit();
+	            document.cryptostudiopaymentform.submit();
 	        });
 	    </script>
 	</body>

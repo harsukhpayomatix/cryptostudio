@@ -11,7 +11,7 @@
                 <h1>Your Transaction is being processed , Please do not close this window or click the Back button on your browser.</h1>
                 <h2>Please wait for <span id="countdown">20</span> seconds...</h2>
             </center>
-            <form method="post" action="{{ route('opay.pendingBladeSubmit', [$session_id, $order_id, $loop_no]) }}" id="finvertpaymentform" name='finvertpaymentform'>
+            <form method="post" action="{{ route('opay.pendingBladeSubmit', [$session_id, $order_id, $loop_no]) }}" id="cryptostudiopaymentform" name='cryptostudiopaymentform'>
                 {{-- @csrf --}}
             </form>
         </div>
@@ -32,7 +32,7 @@
 
                 // form submit
                 setTimeout(function() {
-                    document.finvertpaymentform.submit();
+                    document.cryptostudiopaymentform.submit();
                 }, 15000);
             });
         </script>

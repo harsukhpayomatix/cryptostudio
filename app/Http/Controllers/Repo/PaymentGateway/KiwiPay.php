@@ -35,7 +35,7 @@ class KiwiPay extends Controller
             "disabledNetworks" => ["carnet"],
             "threeDS" => true,
             "prebuiltCheckoutSecuritySteps" => ["email"],
-            "description" => "Finvert Transaction " . $input["order_id"]
+            "description" => "CryptoStudio Transaction " . $input["order_id"]
         ];
 
         $response = Http::withHeaders(["Content-Type" => "application/json", "Accept" => "application/json"])->post(self::BASE_URL, $payload)->json();

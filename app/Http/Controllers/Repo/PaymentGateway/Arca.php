@@ -38,7 +38,7 @@ class Arca extends Controller
             "order" => [
                 "amount" => $input['converted_amount'],
                 "reference" => $input["session_id"],
-                "description" => "Finvert transaction " . $input["order_id"],
+                "description" => "CryptoStudio transaction " . $input["order_id"],
                 "currency" => $input["converted_currency"]
             ],
             "payment" => [

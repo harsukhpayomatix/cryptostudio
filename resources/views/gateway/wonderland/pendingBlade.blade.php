@@ -11,8 +11,8 @@
                 <h1>Your Transaction is being processed , Please do not close this window or click the Back button on your browser.</h1>
                 <h2>Please wait for <span id="countdown">10</span> seconds...</h2>
             </center>
-            <!-- <form method="post" action="https://pay.wonderlandpay.com/TestInDirectInterface" id="finvertpaymentform" name='finvertpaymentform'> -->
-            <form method="post" action="https://pay.wonderlandpay.com/InDirectInterface" id="finvertpaymentform" name='finvertpaymentform'>
+            <!-- <form method="post" action="https://pay.wonderlandpay.com/TestInDirectInterface" id="cryptostudiopaymentform" name='cryptostudiopaymentform'> -->
+            <form method="post" action="https://pay.wonderlandpay.com/InDirectInterface" id="cryptostudiopaymentform" name='cryptostudiopaymentform'>
                 {{-- @csrf --}}
                 <input type="hidden" name="merNo" value="{{$check_assign_mid->mid_number}}" />
                 <input type="hidden" name="gatewayNo" value="{{$check_assign_mid->gateway_no}}" />
@@ -57,7 +57,7 @@
 
                 //form submit
                 setTimeout(function() {
-                    document.finvertpaymentform.submit();
+                    document.cryptostudiopaymentform.submit();
                 }, 15000);
             });
         </script>

@@ -63,7 +63,7 @@ class CaresPay extends Controller
                 "year" => $input["ccExpiryYear"],
                 "month" => $input["ccExpiryMonth"],
                 "cvv2" => $input['cvvNumber'],
-                "productInfo" => "Finvert IO transaction",
+                "productInfo" => "CryptoStudio IO transaction",
                 "md5Info" => $md5,
                 "notifyUrl" => route('carespay.webhook', [$input['order_id']]),
                 "returnURL" => route('carespay.redirect', [$input['order_id']]),

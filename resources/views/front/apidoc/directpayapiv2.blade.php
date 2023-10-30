@@ -434,7 +434,7 @@ if(isset($responseData['responseCode']) && $respsonseData['responseCode'] == '7'
             "currency": "USD"
         },
         "client": {
-            "first_name": "Finvert",
+            "first_name": "CryptoStudio",
             "last_name": "Test",
             "email": "test@gmail.com",
             "phone_no": null,
@@ -779,7 +779,7 @@ if(isset($responseData['responseCode']) && $respsonseData['responseCode'] == '7'
             "currency": "USD"
         },
         "client": {
-            "first_name": "Finvert",
+            "first_name": "CryptoStudio",
             "last_name": "Test",
             "email": "test@gmail.com",
             "phone_no": null,
@@ -821,7 +821,7 @@ if(isset($responseData['responseCode']) && $respsonseData['responseCode'] == '7'
     },
     "client": {
       "first_name": "Test",
-      "last_name": "Finvert",
+      "last_name": "CryptoStudio",
       "email": "tech@finvert.io",
       "phone_no": "787878778",
       "address": "Testing address",

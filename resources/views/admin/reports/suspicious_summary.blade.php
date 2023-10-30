@@ -175,8 +175,8 @@
                 @endif
 
                 @if (auth()->guard('admin')->user()->can(['make-auto-suspicious']))
-                    <a href="{{ route('auto-suspicious.startFlag', ['flagged_by' => 'finvert']) }}"
-                        class=" btn me-2 btn-danger btn-sm start-flag-mark"> Suspicious By finvert </a>
+                    <a href="{{ route('auto-suspicious.startFlag', ['flagged_by' => 'cryptostudio']) }}"
+                        class=" btn me-2 btn-danger btn-sm start-flag-mark"> Suspicious By CryptoStudio </a>
                     <a href="{{ route('auto-suspicious.startFlag', ['flagged_by' => 'bank']) }}"
                         class=" btn btn-danger btn-sm start-flag-mark"> Suspicious By Bank </a>
                 @endif
