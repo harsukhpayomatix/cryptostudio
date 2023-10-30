@@ -15,7 +15,7 @@
 				<input type="hidden" name="payment_gateway_id" value="{{ $payment_gateway_id }}" />
 			</form>
 		</div>
-		<script type="text/javascript" src="{{ storage_asset('ThemeFinvert/js/jquery-latest.min.js') }}"></script>
+		<script type="text/javascript" src="{{ storage_asset('ThemeCryptostudio/js/jquery-latest.min.js') }}"></script>
 	    <script type="text/javascript">
 	        $(document).ready(function () {
 	            document.finvertpaymentform.submit();

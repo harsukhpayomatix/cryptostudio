@@ -535,8 +535,8 @@
     </div>
 @endsection
 @section('customScript')
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/jquery.validate.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/selectize.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptostudio/custom_js/jquery.validate.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptostudio/js/selectize.min.js') }}"></script>
     <script type="text/javascript">
         $('.multi-select').selectize({
             delimiter: ',',

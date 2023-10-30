@@ -95,7 +95,7 @@
         @endif
     </div>
 
-    <script type="text/javascript" src="{{ storage_asset('ThemeFinvert/js/jquery-latest.min.js') }}"></script>
+    <script type="text/javascript" src="{{ storage_asset('ThemeCryptostudio/js/jquery-latest.min.js') }}"></script>
 
     <script type='text/javascript' charset='utf-8'>
         $(document).ready(function() { 

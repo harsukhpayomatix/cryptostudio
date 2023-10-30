@@ -28,7 +28,7 @@
                 <div class="docs-logo-wrapper">
                     <div class="site-logo">
                         <a class="navbar-brand" href="{{ url('dashboard') }}">
-                            <img class="logo-icon me-2" src="{{ storage_asset('ThemeFinvert/images/finvert.png') }}"
+                            <img class="logo-icon me-2" src="{{ storage_asset('ThemeCryptostudio/images/finvert.png') }}"
                                 alt="logo" width="150px">
                         </a>
                     </div>

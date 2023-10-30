@@ -58,5 +58,5 @@ Settings
 </div>
 @endsection
 @section('script')
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/front/profile.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptostudio/custom_js/front/profile.js') }}"></script>
 @endsection

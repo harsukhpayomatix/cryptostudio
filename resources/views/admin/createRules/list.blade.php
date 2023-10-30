@@ -5,7 +5,7 @@
 
 @section('customeStyle')
     <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ storage_asset('ThemeFinvert/custom_css/sweetalert2.min.css') }}" />
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptostudio/custom_css/sweetalert2.min.css') }}" />
     <style type="text/css">
         .dataTables_wrapper .dataTables_length,
         .dataTables_wrapper .dataTables_filter,
@@ -155,7 +155,7 @@
 @section('customScript')
     <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/sweetalert2.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptostudio/custom_js/sweetalert2.min.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $('#assignMIDModal .select2').select2({

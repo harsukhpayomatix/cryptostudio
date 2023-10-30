@@ -272,7 +272,7 @@
     </div>
 @endsection
 @section('customScript')
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/common.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptostudio/custom_js/common.js') }}"></script>
     <script type="text/javascript">
         $('body').on('click', '.start-flag-mark', function(event) {
             var myids = $('#getIdValue').val();

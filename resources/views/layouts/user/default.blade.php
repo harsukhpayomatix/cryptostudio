@@ -138,8 +138,8 @@
         });
     </script>
 
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/custom.js') }}"></script>
-    <?php /* <script src="{{ storage_asset('ThemeFinvert/js/moment.min.js') }}"></script>*/ ?>
+    <script src="{{ storage_asset('ThemeCryptostudio/custom_js/custom.js') }}"></script>
+    <?php /* <script src="{{ storage_asset('ThemeCryptostudio/js/moment.min.js') }}"></script>*/ ?>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
     <script>
         window.hostname = '{{ env('LARAVEL_ECHO_HOST') }}';

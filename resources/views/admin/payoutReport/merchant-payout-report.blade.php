@@ -191,7 +191,7 @@
     </div>
 @endsection
 @section('customScript')
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/common.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptostudio/custom_js/common.js') }}"></script>
     <script>
         $(document).on("change", "#user_id", function() {
             var user_id = $("#user_id").find(":selected").val();

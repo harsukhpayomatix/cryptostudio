@@ -301,6 +301,6 @@
 @endsection
 
 @section('customScript')
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/front/transactions.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/common.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptostudio/custom_js/front/transactions.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptostudio/custom_js/common.js') }}"></script>
 @endsection

@@ -74,7 +74,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="../assets/global/plugins/ie8.fix.min.js"></script> 
 <![endif]-->
     <!-- BEGIN CORE PLUGINS -->
-    <script src="{!! asset('ThemeFinvert/js/jquery-latest.min.js') !!}" type="text/javascript"></script>
+    <script src="{!! asset('ThemeCryptostudio/js/jquery-latest.min.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('adminTheme/plugins/bootstrap/js/bootstrap.min.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('adminTheme/plugins/js.cookie.min.js') !!}" type="text/javascript"></script>
     <script src="{!! asset('adminTheme/plugins/jquery-slimscroll/jquery.slimscroll.min.js') !!}" type="text/javascript">

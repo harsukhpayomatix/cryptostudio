@@ -9,7 +9,7 @@
 @endsection
 
 @section('customeStyle')
-    <link href="{{ storage_asset('ThemeFinvert/css/selectize.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ storage_asset('ThemeCryptostudio/css/selectize.css') }}" rel="stylesheet" type="text/css" />
     <style type="text/css">
         .selectize-control.multi .selectize-input>div {
             cursor: pointer;

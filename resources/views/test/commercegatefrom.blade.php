@@ -124,7 +124,7 @@
      </div><!--wrapper-->
 
   <!-- Bootstrap core JavaScript-->
-  <script type="text/javascript" src="{{ storage_asset('ThemeFinvert/js/jquery-latest.min.js') }}"></script>
+  <script type="text/javascript" src="{{ storage_asset('ThemeCryptostudio/js/jquery-latest.min.js') }}"></script>
   <script src="{{ storage_asset('newTheme/assets/js/popper.min.js') }}"></script>
   <script src="{{ storage_asset('newTheme/assets/js/bootstrap.min.js') }}"></script>
 </body>

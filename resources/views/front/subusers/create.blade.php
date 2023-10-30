@@ -601,5 +601,5 @@ Create
 @endsection
 
 @section('customScript')
-<script src="{{ storage_asset('ThemeFinvert/custom_js/front/subuser.js') }}"></script>
+<script src="{{ storage_asset('ThemeCryptostudio/custom_js/front/subuser.js') }}"></script>
 @endsection

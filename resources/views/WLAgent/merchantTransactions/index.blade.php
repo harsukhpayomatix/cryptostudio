@@ -273,7 +273,7 @@
     </div>
 @endsection
 @section('customScript')
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/common.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptostudio/custom_js/common.js') }}"></script>
     <script type="text/javascript">
         $('body').on('click', '.refundTransaction', function() {
             var id = $(this).data('id');

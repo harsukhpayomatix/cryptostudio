@@ -9,7 +9,7 @@ My Application Create
 @endsection
 
 @section('customeStyle')
-<link href="{{ storage_asset('ThemeFinvert/css/selectize.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ storage_asset('ThemeCryptostudio/css/selectize.css') }}" rel="stylesheet" type="text/css" />
 <style type="text/css">
     .selectize-input,
     .selectize-control.single .selectize-input.input-active {
@@ -418,8 +418,8 @@ My Application Create
 @endsection
 
 @section('customScript')
-<script src="{{ storage_asset('ThemeFinvert/custom_js/jquery.validate.min.js') }}"></script>
-<script src="{{ storage_asset('ThemeFinvert/js/selectize.min.js') }}"></script>
+<script src="{{ storage_asset('ThemeCryptostudio/custom_js/jquery.validate.min.js') }}"></script>
+<script src="{{ storage_asset('ThemeCryptostudio/js/selectize.min.js') }}"></script>
 <script type="text/javascript">
     $('.multi-select').selectize({
         delimiter: ',',

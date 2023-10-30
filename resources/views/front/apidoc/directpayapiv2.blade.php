@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
     <title>{{ config('app.name') }} | Hosted API v2 Document</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ storage_asset('ThemeFinvert/images/favicon.png') }}">
-    <link rel="shortcut icon" href="{{ storage_asset('ThemeFinvert/images/favicon.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ storage_asset('ThemeCryptostudio/images/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ storage_asset('ThemeCryptostudio/images/favicon.png') }}" />
 
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
@@ -42,7 +42,7 @@
                 <div class="docs-logo-wrapper">
                     <div class="site-logo">
                         <a class="navbar-brand" href="{{ url('dashboard') }}">
-                            <img class="logo-icon me-2" src="{{ storage_asset('ThemeFinvert/images/finvert.png') }}"
+                            <img class="logo-icon me-2" src="{{ storage_asset('ThemeCryptostudio/images/finvert.png') }}"
                                 alt="logo" width="150px">
                         </a>
                     </div>
@@ -470,7 +470,7 @@ if(isset($responseData['responseCode']) && $respsonseData['responseCode'] == '7'
                             </header>
 
                             <div class="image-popup">
-                                <img src="{{ storage_asset('ThemeFinvert/images/documentation/test-select-payment-method.png') }}"
+                                <img src="{{ storage_asset('ThemeCryptostudio/images/documentation/test-select-payment-method.png') }}"
                                     alt="" class="img-fluid img-thumbnail no-gutters document-image"
                                     style="cursor: pointer;">
                             </div>
@@ -484,21 +484,21 @@ if(isset($responseData['responseCode']) && $respsonseData['responseCode'] == '7'
 
                             <p class="mt-3"><strong>Pay With Card</strong></p>
                             <div class="image-popup">
-                                <img src="{{ storage_asset('ThemeFinvert/images/documentation/Pay_with_card.png') }}"
+                                <img src="{{ storage_asset('ThemeCryptostudio/images/documentation/Pay_with_card.png') }}"
                                     alt="" class="img-fluid img-thumbnail no-gutters document-image"
                                     style="cursor: pointer;">
                             </div>
 
                             <p class="mt-3"><strong>Pay With Bank</strong></p>
                             <div class="image-popup">
-                                <img src="{{ storage_asset('ThemeFinvert/images/documentation/Pay_with_bank.png') }}"
+                                <img src="{{ storage_asset('ThemeCryptostudio/images/documentation/Pay_with_bank.png') }}"
                                     alt="" class="img-fluid img-thumbnail no-gutters document-image"
                                     style="cursor: pointer;">
                             </div>
 
                             <p class="mt-3"><strong>Pay With Crypto Wallet</strong></p>
                             <div class="image-popup">
-                                <img src="{{ storage_asset('ThemeFinvert/images/documentation/Pay_with_crypto.png') }}"
+                                <img src="{{ storage_asset('ThemeCryptostudio/images/documentation/Pay_with_crypto.png') }}"
                                     alt="" class="img-fluid img-thumbnail no-gutters document-image"
                                     style="cursor: pointer;">
                             </div>
@@ -507,7 +507,7 @@ if(isset($responseData['responseCode']) && $respsonseData['responseCode'] == '7'
                                 selecting
                                 any of above method.</p>
                             <div class="image-popup">
-                                <img src="{{ storage_asset('ThemeFinvert/images/documentation/Payment_cancel.png') }}"
+                                <img src="{{ storage_asset('ThemeCryptostudio/images/documentation/Payment_cancel.png') }}"
                                     alt="" class="img-fluid img-thumbnail no-gutters document-image"
                                     style="cursor: pointer;">
                             </div>

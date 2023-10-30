@@ -15,7 +15,7 @@ Summary Report
             <div class="card-header">
                 <h3 class="mt-2 mb-0">Reports</h3>
                 <div class="profile-photo">
-                    <img src="{{ storage_asset('ThemeFinvert/images/Logo.png') }}" width="150" class="img-fluid"
+                    <img src="{{ storage_asset('ThemeCryptostudio/images/Logo.png') }}" width="150" class="img-fluid"
                         alt="">
                 </div>
             </div>

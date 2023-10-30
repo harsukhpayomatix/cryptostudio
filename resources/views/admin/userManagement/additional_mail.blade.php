@@ -10,7 +10,7 @@
 @endsection
 
 @section('customeStyle')
-    <link href="{{ storage_asset('ThemeFinvert/css/selectize.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ storage_asset('ThemeCryptostudio/css/selectize.css') }}" rel="stylesheet" type="text/css" />
 @endsection
 
 @section('content')
@@ -180,7 +180,7 @@
 @endsection
 
 @section('customScript')
-    <script src="{{ storage_asset('ThemeFinvert/js/selectize.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptostudio/js/selectize.min.js') }}"></script>
     <script type="text/javascript">
         $('#input-tags').selectize({
             delimiter: ',',

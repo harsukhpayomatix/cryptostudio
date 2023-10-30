@@ -541,8 +541,8 @@
     </div>
 @endsection
 @section('customScript')
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/admin/transactions.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/common.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptostudio/custom_js/admin/transactions.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptostudio/custom_js/common.js') }}"></script>
     <script type="text/javascript">
         $("#resetForm").click(function() {
             $('#search-form').find("input[type=text], input[type=email], input[type=number], select").val("");

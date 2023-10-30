@@ -437,7 +437,7 @@ $settingsPermission = 1;
 @endsection
 
 @section('customScript')
-<script src="{{ storage_asset('ThemeFinvert/js/apexcharts.js') }}"></script>
+<script src="{{ storage_asset('ThemeCryptostudio/js/apexcharts.js') }}"></script>
 
 <script src="{{ storage_asset('theme/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

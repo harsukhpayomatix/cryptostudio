@@ -11,7 +11,7 @@
             background-color: #FFF;
             text-align: justify;
             font-family: system-ui, system-ui, sans-serif;
-            /* background-image: url('https://portal.finvert.io/storage/ThemeFinvert/images/rp_agreement2.png'); */
+            /* background-image: url('https://portal.finvert.io/storage/ThemeCryptostudio/images/rp_agreement2.png'); */
             background-size: 100% 100%;
         }
 
@@ -38,7 +38,7 @@
 
 <body>
     <main>
-        <img src="{{ storage_asset('ThemeFinvert/images/rp_agreement.png') }}" style="width: 100%; height: 1067px;" />
+        <img src="{{ storage_asset('ThemeCryptostudio/images/rp_agreement.png') }}" style="width: 100%; height: 1067px;" />
 
         <div style="page-break-before:always">&nbsp;</div>
         <div class="content">
@@ -270,7 +270,7 @@
                 </div>
                 <div style="width: 50%; float: left; text-align: right;">
                     <h3>Finvert Consulting Services APS</h3>
-                    <img src="https://portal.finvert.io/storage/ThemeFinvert/images/Signature.png"
+                    <img src="https://portal.finvert.io/storage/ThemeCryptostudio/images/Signature.png"
                         style="width: 150px;" />
                 </div>
                 <div style="clear: both;"></div>

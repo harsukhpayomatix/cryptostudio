@@ -25,7 +25,7 @@
       </div><!-- container -->
     </div><!-- content -->
 
-    <script src="{{ storage_asset('ThemeFinvert/js/jquery-latest.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptostudio/js/jquery-latest.min.js') }}"></script>
     <script src="{{ storage_asset('newTheme/assets/lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ storage_asset('newTheme/assets/lib/feather-icons/feather.min.js') }}"></script>
     <script src="{{ storage_asset('newTheme/assets/lib/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>

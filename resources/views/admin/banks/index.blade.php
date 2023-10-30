@@ -8,7 +8,7 @@
 @endsection
 
 @section('customeStyle')
-    <link rel="stylesheet" href="{{ storage_asset('ThemeFinvert/custom_css/sweetalert2.min.css') }}">
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptostudio/custom_css/sweetalert2.min.css') }}">
 @endsection
 
 @section('content')
@@ -324,8 +324,8 @@
             $(".select2").val('first').trigger('change.select2');
         });
     </script>
-    {{-- <script src="{{ storage_asset('ThemeFinvert/custom_js/sweetalert2.min.js') }}"></script>
-<script src="{{ storage_asset('ThemeFinvert/custom_js/sweetalert2.min.js') }}"></script> --}}
+    {{-- <script src="{{ storage_asset('ThemeCryptostudio/custom_js/sweetalert2.min.js') }}"></script>
+<script src="{{ storage_asset('ThemeCryptostudio/custom_js/sweetalert2.min.js') }}"></script> --}}
     <script src="{{ storage_asset('newIpay/assets/custom_js/common.js') }}"></script>
     <script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
     <script type="text/javascript">

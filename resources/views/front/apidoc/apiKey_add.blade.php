@@ -119,5 +119,5 @@
 @endsection
 
 @section('customScript')
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/front/apidoc.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptostudio/custom_js/front/apidoc.js') }}"></script>
 @endsection

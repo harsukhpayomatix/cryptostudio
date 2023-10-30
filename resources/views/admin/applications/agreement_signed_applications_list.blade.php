@@ -501,8 +501,8 @@
             $(".select2").val('first').trigger('change.select2');
         });
     </script>
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/admin/applications.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/common.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptostudio/custom_js/admin/applications.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptostudio/custom_js/common.js') }}"></script>
 
     <script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
     <script type="text/javascript">

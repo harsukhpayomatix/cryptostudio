@@ -69,7 +69,7 @@
                 <div class="col-md-9 col-xl-9 col-xxl-9">
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <img src="{{ storage_asset('ThemeFinvert/images/login/finvert.png') }}" alt=""
+                            <img src="{{ storage_asset('ThemeCryptostudio/images/login/finvert.png') }}" alt=""
                                 width="250px">
                             <h4 class="text-primary mt-2 mb-1">{{ __('messages.headingTest') }}</h4>
                             <div class="d-flex justify-content-center">
