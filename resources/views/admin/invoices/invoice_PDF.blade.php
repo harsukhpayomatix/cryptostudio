@@ -217,7 +217,7 @@
         <header class="clearfix">
             <div class="header1">
                 <div id="logo">
-                    <img src="https://portal.finvert.io/storage/ThemeCryptoStudio/images/finvert_logo.png">
+                    <img src="https://portal.finvert.io/storage/ThemeCryptoStudio/images/logo.png">
                 </div>
                 <div class="title">
                     <h1>CryptoStudio</h1>

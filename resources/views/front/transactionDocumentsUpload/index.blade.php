@@ -57,7 +57,7 @@
                 <div class="col-md-8">
                     <div class="text-center mb-3">
                         <a href="{{ route('login') }}">
-                            <img src="{{ storage_asset('ThemeCryptoStudio/images/finvert.png') }}" alt="" width="300px">
+                            <img src="{{ storage_asset('ThemeCryptoStudio/images/logo.png') }}" alt="" width="300px">
                         </a>
                     </div>
                     <div class="authincation-content">

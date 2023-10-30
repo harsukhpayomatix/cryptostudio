@@ -58,7 +58,7 @@
                 <div class="col-md-4 col-xl-4 col-xxl-4">
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <img src="{{ storage_asset('ThemeCryptoStudio/images/login/finvert.png') }}" alt="" width="250px">
+                            <img src="{{ storage_asset('ThemeCryptoStudio/images/login/logo.png') }}" alt="" width="250px">
                         </div>
                     </div>
                     <div class="row">

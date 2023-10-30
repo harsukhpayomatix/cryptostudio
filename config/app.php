@@ -32,9 +32,9 @@ return [
     'captch_sitekey' => env('NOCAPTCHA_SITEKEY', ''),
     'email_support' => 'sales@finvert.io',
     'number_support' => '+44 800 832 1733',
-    'logo_url' => 'https://portal.finvert.io/storage/ThemeCryptoStudio/images/finvert_logo.png',
-    'logo_url2' => 'http://portal.finvert.io/storage/ThemeCryptoStudio/images/FinvertV1.png',
-    'mail_logo_url' => 'https://portal.finvert.io/storage/NewTheme/images/finvert.png',
+    'logo_url' => 'https://portal.finvert.io/storage/ThemeCryptoStudio/images/logo.png',
+    'logo_url2' => 'http://portal.finvert.io/storage/ThemeCryptoStudio/images/logo.png',
+    'mail_logo_url' => 'https://portal.finvert.io/storage/NewTheme/images/logo.png',
     "languages" => ["en", "sp", "fr"],
     /*
     |--------------------------------------------------------------------------

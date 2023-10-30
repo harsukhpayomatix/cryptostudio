@@ -24,7 +24,7 @@
                         </div>
                         <div class="col-sm-8 col-xs-8">
                             <div class="media mr-2 media-info">
-                                <img src="{{ storage_asset('NewTheme/images/favicon1.png') }}" width="45px">
+                                <img src="{{ storage_asset('NewTheme/images/logo_sm.png') }}" width="45px">
                             </div>
                             <div class="desc">
                                 <small class="">Date :
@@ -73,7 +73,7 @@
             <div class="row mb-3">
                 <div class="col-md-8">
                     <div class="media mr-2 media-info">
-                        <img src="{{ storage_asset('NewTheme/images/favicon1.png') }}" width="45px">
+                        <img src="{{ storage_asset('NewTheme/images/logo_sm.png') }}" width="45px">
                     </div>
                     <div class="desc">
                         <small class="">Date : {{ convertDateToLocal($reply->created_at, 'd-m-Y') }}</small>

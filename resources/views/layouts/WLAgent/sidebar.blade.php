@@ -4,8 +4,8 @@
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item me-auto">
                 <a class="navbar-brand" href="#">
-                    <img src="{{ storage_asset('NewTheme/images/favicon1.png') }}" class="logo-sm">
-                    <img src="{{ storage_asset('NewTheme/images/finvert.png') }}" class="logo-big">
+                    <img src="{{ storage_asset('NewTheme/images/logo_sm.png') }}" class="logo-sm">
+                    <img src="{{ storage_asset('NewTheme/images/logo.png') }}" class="logo-big">
                 </a>
             </li>
             <li class="nav-item nav-toggle mr-10">

@@ -127,9 +127,9 @@
         <div class="iq-sidebar-logo">
             <div class="top-logo">
                 <a href="{{ route('rp.dashboard') }}" class="logo">
-                    <img src="{{ storage_asset('ThemeCryptoStudio/images/finvert.png') }}" class="img-fluid"
+                    <img src="{{ storage_asset('ThemeCryptoStudio/images/logo.png') }}" class="img-fluid"
                         alt="">
-                    <span><img src="{{ storage_asset('ThemeCryptoStudio/images/finvert.png') }}" class="img-fluid"
+                    <span><img src="{{ storage_asset('ThemeCryptoStudio/images/logo.png') }}" class="img-fluid"
                             alt=""></span>
                 </a>
             </div>
