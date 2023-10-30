@@ -425,7 +425,7 @@ if(isset($responseData['responseCode']) && $respsonseData['responseCode'] == '7'
                         <pre><code class="language-json">{
     "responseCode": "7",
     "responseMessage": "Please redirect to 3dsUrl.",
-    "3dsUrl": "https://portal.finvert.io/api/v2/test-checkout/ODRCT981687163034UWNHU11",
+    "3dsUrl": "https://dashboard.crypto-studio.co/api/v2/test-checkout/ODRCT981687163034UWNHU11",
     "data": {
         "transaction": {
             "order_id": "ODRCT981687163034UWNHU1",
@@ -770,7 +770,7 @@ if(isset($responseData['responseCode']) && $respsonseData['responseCode'] == '7'
                         <pre><code class="language-json">{
     "responseCode": "7",
     "responseMessage": "Please redirect to 3dsUrl.",
-    "3dsUrl": "https://portal.finvert.io/api/v2/test-checkout/ODRCT981687163034UWNHUB",
+    "3dsUrl": "https://dashboard.crypto-studio.co/api/v2/test-checkout/ODRCT981687163034UWNHUB",
     "data": {
         "transaction": {
             "order_id": "ODRCT981687163034UWNH1",
@@ -822,7 +822,7 @@ if(isset($responseData['responseCode']) && $respsonseData['responseCode'] == '7'
     "client": {
       "first_name": "Test",
       "last_name": "CryptoStudio",
-      "email": "tech@finvert.io",
+      "email": "tech@cryptostudio.co",
       "phone_no": "787878778",
       "address": "Testing address",
       "zip": "676776",

@@ -45,8 +45,8 @@ class Everpay extends Controller
 					'amount' => $input['converted_amount'],
 					'service' => 'payment_card_usd_hpp',
 					// 'test_mode' => true, // set this true for test transaction
-					'return_url' => 'https://portal.finvert.io/everpay/return/'.$input['session_id'],
-					'callback_url' => 'https://portal.finvert.io/everpay/callback/'.$input['session_id'],
+					'return_url' => 'https://dashboard.crypto-studio.co/everpay/return/'.$input['session_id'],
+					'callback_url' => 'https://dashboard.crypto-studio.co/everpay/callback/'.$input['session_id'],
 					"gateway_options" => array(
 						"cardgate" => array(
 							"tokenize" =>  true

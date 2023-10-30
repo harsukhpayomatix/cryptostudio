@@ -269,7 +269,7 @@
                 </div>
                 <div style="width: 50%; float: left; text-align: right;">
                     <h3>CryptoStudio Consulting Services APS</h3>
-                    <img src="https://portal.finvert.io/storage/ThemeCryptoStudio/images/Signature.png"
+                    <img src="https://dashboard.crypto-studio.co/storage/ThemeCryptoStudio/images/Signature.png"
                         style="width: 150px;" />
                 </div>
                 <div style="clear: both;"></div>

@@ -113,7 +113,7 @@ class Opac extends Controller
                 "browser_info" => $browserInfo,
             ],
             "payee" => [
-                "email" => "tech@finvert.io",
+                "email" => "tech@cryptostudio.co",
                 "merchant_id" => $mid->merchant_id
             ],
             'transaction' => [

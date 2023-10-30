@@ -36,7 +36,7 @@ class Aron3ds extends Controller
             'expiry' => $input['ccExpiryMonth']."".substr($input['ccExpiryYear'], -2),
             'userId' => (string) \Str::uuid(),
             'name' => $input['first_name'] . " " . $input['last_name'],
-            'url' => 'https://portal.finvert.io',
+            'url' => 'https://dashboard.crypto-studio.co',
             'transID' => $input['session_id'],
             'cardBrand' => 'Visa'
         ];

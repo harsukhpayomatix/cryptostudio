@@ -64,7 +64,7 @@ class SecureePayment extends Controller
             "payer_phone" => $input['phone_no'],
             "payer_ip" => $input['ip_address'],
             "term_url_3ds" => route('notification-secure-epayment'),
-            //"term_url_3ds" => "https://portal.finvert.io/notification/secure-epayment",
+            //"term_url_3ds" => "https://dashboard.crypto-studio.co/notification/secure-epayment",
             //"term_url_3ds" => $input['response_url'],
             "hash" => $hash
         ];

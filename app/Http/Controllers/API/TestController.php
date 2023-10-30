@@ -275,9 +275,9 @@ class TestController extends Controller
                 "price_currency"=>"USD",
                 "order_id"=>"RGDBP-21314",
                 "order_description"=>"Apple Macbook Pro 2019 x 1",
-                "ipn_callback_url"=>"https://portal.finvert.io/",
-                "success_url"=>"https://portal.finvert.io/",
-                "cancel_url"=>"https://portal.finvert.io/"
+                "ipn_callback_url"=>"https://dashboard.crypto-studio.co/",
+                "success_url"=>"https://dashboard.crypto-studio.co/",
+                "cancel_url"=>"https://dashboard.crypto-studio.co/"
             ];
         $request_headers = ["x-api-key: PN6QNBH-QAE40NE-PH0SHBW-KV3GXP1"];
         

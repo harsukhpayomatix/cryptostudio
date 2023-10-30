@@ -516,7 +516,7 @@ if(isset($responseData['status']) && $respsonseData['status'] == '3d_redirect') 
     "client": {
       "first_name": "Test",
       "last_name": "CryptoStudio",
-      "email": "tech@finvert.io",
+      "email": "tech@cryptostudio.co",
       "phone_no": "787878778",
       "address": "Testing address",
       "zip": "676776",

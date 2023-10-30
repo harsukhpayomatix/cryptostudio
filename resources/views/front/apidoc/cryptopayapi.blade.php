@@ -331,8 +331,8 @@
     },
     "client": {
       "first_name": "Test",
-      "last_name": "Finvert",
-      "email": "tech@finvert.io",
+      "last_name": "CryptoStudio",
+      "email": "tech@cryptostudio.co",
       "phone_no": "8676767676",
       "address": "Testing address",
       "zip": "676776",

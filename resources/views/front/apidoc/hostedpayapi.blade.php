@@ -425,7 +425,7 @@ cvvNumber : 123</code></pre>
     "client": {
       "first_name": "Test",
       "last_name": "CryptoStudio",
-      "email": "tech@finvert.io",
+      "email": "tech@cryptostudio.co",
       "phone_no": "8676767676",
       "address": "Testing address",
       "zip": "676776",

@@ -30,11 +30,11 @@ return [
     'name' => env('APP_NAME', 'CryptoStudio'),
     'captch_secret' => env('NOCAPTCHA_SECRET', ''),
     'captch_sitekey' => env('NOCAPTCHA_SITEKEY', ''),
-    'email_support' => 'sales@finvert.io',
+    'email_support' => 'sales@crypto-studio.co',
     'number_support' => '+44 800 832 1733',
-    'logo_url' => 'https://portal.finvert.io/storage/ThemeCryptoStudio/images/logo.png',
-    'logo_url2' => 'http://portal.finvert.io/storage/ThemeCryptoStudio/images/logo.png',
-    'mail_logo_url' => 'https://portal.finvert.io/storage/NewTheme/images/logo.png',
+    'logo_url' => 'https://dashboard.crypto-studio.co/storage/ThemeCryptoStudio/images/logo.png',
+    'logo_url2' => 'http://dashboard.crypto-studio.co/storage/ThemeCryptoStudio/images/logo.png',
+    'mail_logo_url' => 'https://dashboard.crypto-studio.co/storage/NewTheme/images/logo.png',
     "languages" => ["en", "sp", "fr"],
     /*
     |--------------------------------------------------------------------------
