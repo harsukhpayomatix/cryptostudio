@@ -10,8 +10,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ storage_asset('theme/images/favicon.png') }}">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="{{ storage_asset('ThemeFinvert/css/typography.css') }}">
-    <link href="{{ storage_asset('ThemeFinvert/css/custom.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/css/typography.css') }}">
+    <link href="{{ storage_asset('ThemeCryptoStudio/css/custom.css') }}" rel="stylesheet">
     <style type="text/css" media="screen">
         .form-group label {
             color: #000;
@@ -52,7 +52,7 @@
     <div class="container" style="padding-top: 10rem;">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center text-white">
-                <img src="{{ storage_asset('ThemeFinvert/images/finvert.png') }}" class="mb-2" />
+                <img src="{{ storage_asset('ThemeCryptoStudio/images/finvert.png') }}" class="mb-2" />
 
                 <h3 class="mt-4 mb-1">Welcome to Finvert Simulator API</h3>
                 <p>Select the response which you want to receive.</p>

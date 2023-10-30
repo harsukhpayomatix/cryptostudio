@@ -174,7 +174,7 @@
 @endsection
 
 @section('customScript')
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/front/iframe.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/front/iframe.js') }}"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {

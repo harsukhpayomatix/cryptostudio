@@ -61,7 +61,7 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>    
     <script src="{{ storage_asset('NewTheme/vendors/js/forms/select/select2.full.min.js') }}"></script>
     <script src="{{ storage_asset('NewTheme/js/form-select2.js') }}"></script>    
-    <?php /*<script src="{{ storage_asset('ThemeFinvert/js/moment.min.js') }}"></script> */ ?>
+    <?php /*<script src="{{ storage_asset('ThemeCryptoStudio/js/moment.min.js') }}"></script> */ ?>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
@@ -177,7 +177,7 @@
             setInterval(update, 1000);
         });
     </script>
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/custom.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/custom.js') }}"></script>
     @include('layouts.bank.alert')
     @include('layouts.bank.deleteModal')
     @yield('customScript')

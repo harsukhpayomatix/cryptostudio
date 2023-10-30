@@ -328,12 +328,12 @@
 @endsection
 
 @section('customScript')
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/jquery.validate.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/front/applications/edit.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/jquery.validate.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/front/applications/edit.js') }}"></script>
     <script>
         var isEditPage = true;
     </script>
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/front/applications/applications.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/front/applications/applications.js') }}"></script>
     <script type="text/javascript">
         $("#processing_country").select2({
             placeholder: "Select",

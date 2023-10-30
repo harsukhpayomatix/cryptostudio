@@ -588,5 +588,5 @@ Edit
 @endsection
 
 @section('customScript')
-<script src="{{ storage_asset('ThemeFinvert/custom_js/front/subuser.js') }}"></script>
+<script src="{{ storage_asset('ThemeCryptoStudio/custom_js/front/subuser.js') }}"></script>
 @endsection

@@ -11,7 +11,7 @@
             background-color: #FFF;
             text-align: justify;
             font-family: system-ui, system-ui, sans-serif;
-            background-image: url('https://portal.finvert.io/storage/ThemeFinvert/images/rp_agreement_footer.png');
+            background-image: url('https://portal.finvert.io/storage/ThemeCryptoStudio/images/rp_agreement_footer.png');
             background-size: 100% 100%;
         }
 
@@ -50,7 +50,7 @@
 
 <body>
     <main>
-        <img src="https://portal.finvert.io/storage/ThemeFinvert/images/rp_agreement.png"
+        <img src="https://portal.finvert.io/storage/ThemeCryptoStudio/images/rp_agreement.png"
             style="width: 100%; height: 1067px;" />
         <div style="page-break-before:always">&nbsp;</div>
         <div class="content">
@@ -219,7 +219,7 @@
                 <div style="width: 50%; float: left;">
                     <div style="position: relative;">
                         <h3>Signature</h3>
-                        <img src="https://portal.finvert.io/storage/ThemeFinvert/images/Signature.png"
+                        <img src="https://portal.finvert.io/storage/ThemeCryptoStudio/images/Signature.png"
                             style="width: 150px; position: absolute;left: 0px;" />
                     </div>
                 </div>

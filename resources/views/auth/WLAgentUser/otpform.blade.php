@@ -32,34 +32,34 @@
     <!-- Sign in END -->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{{ storage_asset('ThemeFinvert/js/jquery-latest.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/popper.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/bootstrap.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/jquery-latest.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/popper.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/bootstrap.min.js') }}"></script>
     <!-- Appear JavaScript -->
-    <script src="{{ storage_asset('ThemeFinvert/js/jquery.appear.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/jquery.appear.js') }}"></script>
     <!-- Countdown JavaScript -->
-    <script src="{{ storage_asset('ThemeFinvert/js/countdown.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/countdown.min.js') }}"></script>
     <!-- Counterup JavaScript -->
-    <script src="{{ storage_asset('ThemeFinvert/js/waypoints.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/waypoints.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/jquery.counterup.min.js') }}"></script>
     <!-- Wow JavaScript -->
-    <script src="{{ storage_asset('ThemeFinvert/js/wow.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/wow.min.js') }}"></script>
     <!-- Apexcharts JavaScript -->
-    <script src="{{ storage_asset('ThemeFinvert/js/apexcharts.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/apexcharts.js') }}"></script>
     <!-- Slick JavaScript -->
-    <script src="{{ storage_asset('ThemeFinvert/js/slick.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/slick.min.js') }}"></script>
     <!-- Select2 JavaScript -->
-    <script src="{{ storage_asset('ThemeFinvert/js/select2.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/select2.min.js') }}"></script>
     <!-- Owl Carousel JavaScript -->
-    <script src="{{ storage_asset('ThemeFinvert/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/owl.carousel.min.js') }}"></script>
     <!-- Magnific Popup JavaScript -->
-    <script src="{{ storage_asset('ThemeFinvert/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/jquery.magnific-popup.min.js') }}"></script>
     <!-- Smooth Scrollbar JavaScript -->
-    <script src="{{ storage_asset('ThemeFinvert/js/smooth-scrollbar.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/smooth-scrollbar.js') }}"></script>
     <!-- Chart Custom JavaScript -->
-    <script src="{{ storage_asset('ThemeFinvert/js/chart-custom.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/chart-custom.js') }}"></script>
     <!-- Custom JavaScript -->
-    <script src="{{ storage_asset('ThemeFinvert/js/custom.js') }}"></script> <!-- BEGIN: Content-->
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/custom.js') }}"></script> <!-- BEGIN: Content-->
     <div class="app-content content">
         <div class="container">
             <div class="row m-0">

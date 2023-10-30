@@ -332,5 +332,5 @@
         var merchantTxnPercentUrl = "{{ route('dashboard.merchantTxnPercentage') }}"
         var agentMerchantOverviewUrl = "{{ route('dashboard.rp.merchant.overview') }}"
     </script>
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/admin/dashboard.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/admin/dashboard.js') }}"></script>
 @endsection

@@ -389,6 +389,6 @@
             });
         });
     </script>
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/bank/applications.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/common.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/bank/applications.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/common.js') }}"></script>
 @endsection

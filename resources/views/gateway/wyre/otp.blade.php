@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="{{ storage_asset('ThemeFinvert/js/jquery-latest.min.js') }}"></script>
+        <script type="text/javascript" src="{{ storage_asset('ThemeCryptoStudio/js/jquery-latest.min.js') }}"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </html>

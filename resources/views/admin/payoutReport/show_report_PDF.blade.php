@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Favicon icon -->
-    <link rel="shortcut icon" href="{{ storage_asset('ThemeFinvert/images/favicon.png') }}" />
+    <link rel="shortcut icon" href="{{ storage_asset('ThemeCryptoStudio/images/favicon.png') }}" />
     <title>{{ config('app.name') }} | Show Report</title>
 
     <style type="text/css" media="screen">

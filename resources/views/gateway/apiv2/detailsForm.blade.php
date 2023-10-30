@@ -166,9 +166,9 @@
                              data-missing="Card number field is required">
                          @if (isset($input['card_type']) && !empty($input['card_type']))
                              <img
-                                 src="{{ storage_asset('ThemeFinvert/images/card/' . $input['card_type'] . '.png') }}">
+                                 src="{{ storage_asset('ThemeCryptoStudio/images/card/' . $input['card_type'] . '.png') }}">
                          @else
-                             <img src="{{ storage_asset('ThemeFinvert/images/card/1.png') }}">
+                             <img src="{{ storage_asset('ThemeCryptoStudio/images/card/1.png') }}">
                          @endif
                      </div>
                      <strong class="text-danger log"></strong>

@@ -127,9 +127,9 @@
         <div class="iq-sidebar-logo">
             <div class="top-logo">
                 <a href="{{ route('rp.dashboard') }}" class="logo">
-                    <img src="{{ storage_asset('ThemeFinvert/images/finvert.png') }}" class="img-fluid"
+                    <img src="{{ storage_asset('ThemeCryptoStudio/images/finvert.png') }}" class="img-fluid"
                         alt="">
-                    <span><img src="{{ storage_asset('ThemeFinvert/images/finvert.png') }}" class="img-fluid"
+                    <span><img src="{{ storage_asset('ThemeCryptoStudio/images/finvert.png') }}" class="img-fluid"
                             alt=""></span>
                 </a>
             </div>
@@ -194,7 +194,7 @@
                                                 <div class="media align-items-center">
                                                     <div class="">
                                                         <img class="avatar-40 rounded"
-                                                            src="{{ storage_asset('ThemeFinvert/images/user/01.jpg') }}"
+                                                            src="{{ storage_asset('ThemeCryptoStudio/images/user/01.jpg') }}"
                                                             alt="">
                                                     </div>
                                                     <div class="media-body ml-3">
@@ -226,7 +226,7 @@
             <ul class="navbar-list">
                 <li>
                     <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
-                        <img src="{{ storage_asset('ThemeFinvert/images/user/1.jpg') }}"
+                        <img src="{{ storage_asset('ThemeCryptoStudio/images/user/1.jpg') }}"
                             class="img-fluid rounded mr-3" alt="user">
                         <div class="caption">
                             <h6 class="mb-0 line-height">{{ ucwords(Auth::guard('agentUser')->user()->name) }}</h6>

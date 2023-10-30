@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{ config('app.name') }} | {{ __('messages.transactionSccess') }}</title>
-    <link rel="shortcut icon" href="{{ storage_asset('ThemeFinvert/images/favicon.png') }}" />
-    <link rel="stylesheet" href="{{ storage_asset('ThemeFinvert/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ storage_asset('ThemeFinvert/css/typography.css') }}">
-    <link rel="stylesheet" href="{{ storage_asset('ThemeFinvert/css/style.css') }}">
-    <link rel="stylesheet" href="{{ storage_asset('ThemeFinvert/css/responsive.css') }}">
-    <link href="{{ storage_asset('ThemeFinvert/css/custom.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ storage_asset('ThemeCryptoStudio/images/favicon.png') }}" />
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/css/typography.css') }}">
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/css/style.css') }}">
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/css/responsive.css') }}">
+    <link href="{{ storage_asset('ThemeCryptoStudio/css/custom.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -42,23 +42,23 @@
             </div>
         </div>
     </div>
-    <script src="{{ storage_asset('ThemeFinvert/js/jquery-latest.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/popper.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/bootstrap.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/jquery.appear.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/countdown.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/waypoints.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/jquery.counterup.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/wow.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/apexcharts.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/slick.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/select2.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/smooth-scrollbar.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/lottie.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/chart-custom.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/js/custom.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/jquery-latest.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/popper.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/bootstrap.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/jquery.appear.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/countdown.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/waypoints.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/jquery.counterup.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/wow.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/apexcharts.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/slick.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/select2.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/smooth-scrollbar.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/lottie.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/chart-custom.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/custom.js') }}"></script>
 </body>
 
 </html>

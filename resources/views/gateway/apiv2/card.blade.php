@@ -111,35 +111,35 @@
                                 <div class="cardSelect">
                                     <label>
                                         <input type="radio" name="cardType" value="2" checked>
-                                        <img src="{{ storage_asset('ThemeFinvert/images/card/2.png') }}">
+                                        <img src="{{ storage_asset('ThemeCryptoStudio/images/card/2.png') }}">
                                     </label>
                                 </div>
 
                                 <div class="cardSelect">
                                     <label>
                                         <input type="radio" name="cardType" value="3">
-                                        <img src="{{ storage_asset('ThemeFinvert/images/card/3.png') }}">
+                                        <img src="{{ storage_asset('ThemeCryptoStudio/images/card/3.png') }}">
                                     </label>
                                 </div>
 
                                 <div class="cardSelect">
                                     <label>
                                         <input type="radio" name="cardType" value="1">
-                                        <img src="{{ storage_asset('ThemeFinvert/images/card/1.png') }}">
+                                        <img src="{{ storage_asset('ThemeCryptoStudio/images/card/1.png') }}">
                                     </label>
                                 </div>
 
                                 <div class="cardSelect">
                                     <label>
                                         <input type="radio" name="cardType" value="4">
-                                        <img src="{{ storage_asset('ThemeFinvert/images/card/4.png') }}">
+                                        <img src="{{ storage_asset('ThemeCryptoStudio/images/card/4.png') }}">
                                     </label>
                                 </div>
 
                                 <div class="cardSelect">
                                     <label>
                                         <input type="radio" name="cardType" value="5">
-                                        <img src="{{ storage_asset('ThemeFinvert/images/card/5.png') }}">
+                                        <img src="{{ storage_asset('ThemeCryptoStudio/images/card/5.png') }}">
                                     </label>
                                 </div>
                             </div>

@@ -1603,12 +1603,12 @@
 @endsection
 
 @section('customScript')
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/jquery.validate.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/jquery.validate.min.js') }}"></script>
     <script>
         var isEditPage = false;
     </script>
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/front/applications/applications.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/front/applications/start.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/front/applications/applications.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/front/applications/start.js') }}"></script>
     <script>
         // document.getElementById('submitbutton').onclick = function() {
         //     var form = document.getElementById('application-form');

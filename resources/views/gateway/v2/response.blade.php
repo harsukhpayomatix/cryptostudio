@@ -423,7 +423,7 @@
     <div class="container" style="margin-top: 10em;">
         {{-- <div class="row mb-5">
       <div class="col-sm-12 col-md-12 col-lg-12 text-center mb-5">
-        <img src="{{ storage_asset('ThemeFinvert/images/login/finvert.png') }}" alt="" width="300px">
+        <img src="{{ storage_asset('ThemeCryptoStudio/images/login/finvert.png') }}" alt="" width="300px">
       </div>
     </div> --}}
         @if (isset($response['responseCode']) && $response['responseCode'] == '0')

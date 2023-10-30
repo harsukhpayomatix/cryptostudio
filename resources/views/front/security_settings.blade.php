@@ -83,7 +83,7 @@ Settings
 </div>
 @endsection
 @section('customScript')
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/front/profile.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/front/profile.js') }}"></script>
     <script type="text/javascript">
         // alert('ada');
         $('body').on('change','#is_otp',function () {

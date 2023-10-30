@@ -46,7 +46,7 @@
             box-shadow: rgb(0 0 0 / 70%) 10px 10px 15px -5px, rgb(0 0 0 / 60%) 5px 5px 5px -10px;
         }
     </style>
-    <link rel="stylesheet" href="{{ storage_asset('ThemeFinvert/custom_css/sweetalert2.min.css') }}">
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/custom_css/sweetalert2.min.css') }}">
 @endsection
 @section('content')
     <div id="lodder">
@@ -1157,8 +1157,8 @@
 
 @endsection
 @section('customScript')
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/sweetalert2.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/admin/applications.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/sweetalert2.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/admin/applications.js') }}"></script>
 
     <script type="text/javascript">
         $(document).ready(function() {

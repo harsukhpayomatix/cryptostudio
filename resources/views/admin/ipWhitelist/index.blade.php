@@ -7,7 +7,7 @@
     <a href="{{ route('admin.dashboard') }}">Dashboard</a> / IP Whitelist
 @endsection
 @section('customeStyle')
-    <link rel="stylesheet" href="{{ storage_asset('ThemeFinvert/custom_css/sweetalert2.min.css') }}">
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/custom_css/sweetalert2.min.css') }}">
 @endsection
 
 @section('content')
@@ -222,7 +222,7 @@
 @endsection
 @section('customScript')
     <script src="{{ storage_asset('newIpay/assets/custom_js/common.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/sweetalert2.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/sweetalert2.min.js') }}"></script>
 
     <script>
         $(document).ready(function() {

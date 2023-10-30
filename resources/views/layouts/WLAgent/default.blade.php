@@ -81,7 +81,7 @@
     <!-- Flatpicker Js -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <!-- <script src="{{ storage_asset('newIpay/assets/custom_js/custom.js') }}"></script> -->
-    <?php /* <script src="{{ storage_asset('ThemeFinvert/js/moment.min.js') }}"></script> */ ?>
+    <?php /* <script src="{{ storage_asset('ThemeCryptoStudio/js/moment.min.js') }}"></script> */ ?>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
 
 

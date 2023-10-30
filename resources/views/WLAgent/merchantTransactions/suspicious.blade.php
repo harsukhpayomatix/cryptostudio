@@ -203,5 +203,5 @@
     </div>
 @endsection
 @section('customScript')
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/common.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/common.js') }}"></script>
 @endsection

@@ -385,7 +385,7 @@
 
     <!-- JavaScript
 ============================ -->
-    <script src="{{ storage_asset('ThemeFinvert/js/jquery-latest.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/jquery-latest.min.js') }}"></script>
     <script src="{{ storage_asset('theme/API-assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ storage_asset('theme/API-assets/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
     <script src="{{ storage_asset('theme/API-assets/js/theme.js') }}"></script>

@@ -370,7 +370,7 @@
         </div>
         <br>
 
-        <script type="text/javascript" src="{{ storage_asset('ThemeFinvert/js/jquery-latest.min.js') }}"></script>
+        <script type="text/javascript" src="{{ storage_asset('ThemeCryptoStudio/js/jquery-latest.min.js') }}"></script>
         <script src="{{ storage_asset('newTheme/assets/lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ storage_asset('newTheme/assets/lib/feather-icons/feather.min.js') }}"></script>
         <script src="{{ storage_asset('newTheme/assets/lib/perfect-scrollbar/perfect-scrollbar.min.js') }}"></script>

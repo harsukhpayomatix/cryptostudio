@@ -8,7 +8,7 @@
 @endsection
 
 @section('customeStyle')
-    <link href="{{ storage_asset('ThemeFinvert/css/selectize.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ storage_asset('ThemeCryptoStudio/css/selectize.css') }}" rel="stylesheet" type="text/css" />
     <style type="text/css">
         .selectize-control.multi .selectize-input>div {
             cursor: pointer;
@@ -253,8 +253,8 @@
     @include('partials.transactions.show-modal')
 @endsection
 @section('customScript')
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/admin/transactions.js') }}"></script>
-    <script src="{{ storage_asset('ThemeFinvert/custom_js/common.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/admin/transactions.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/common.js') }}"></script>
     <script>
         $("#resetForm").click(function() {
             $('#search-form').find("input[type=text], input[type=number], select").val("");

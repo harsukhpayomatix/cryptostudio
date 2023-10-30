@@ -56,7 +56,7 @@
         	@endforeach
         </form>
     </div>
-    <script type="text/javascript" src="{{ storage_asset('ThemeFinvert/js/jquery-latest.min.js') }}"></script>
+    <script type="text/javascript" src="{{ storage_asset('ThemeCryptoStudio/js/jquery-latest.min.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             document.paymentForm.submit();

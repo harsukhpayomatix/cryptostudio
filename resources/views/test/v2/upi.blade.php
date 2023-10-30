@@ -12,8 +12,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" href="{{ storage_asset('/theme/vendor/select2/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ storage_asset('ThemeFinvert/css/typography.css') }}">
-    <link href="{{ storage_asset('ThemeFinvert/css/custom.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/css/typography.css') }}">
+    <link href="{{ storage_asset('ThemeCryptoStudio/css/custom.css') }}" rel="stylesheet">
     <style type="text/css">
         .grecaptcha-badge {
             z-index: 1000;

@@ -9,25 +9,25 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ storage_asset('theme/images/favicon.png') }}">
 
-    <link rel="stylesheet" href="{{ storage_asset('ThemeFinvert/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
         integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Typography CSS -->
-    <link rel="stylesheet" href="{{ storage_asset('ThemeFinvert/css/typography.css') }}">
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/css/typography.css') }}">
     <!-- Style CSS -->
-    <link rel="stylesheet" href="{{ storage_asset('ThemeFinvert/css/style.css') }}">
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/css/style.css') }}">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{{ storage_asset('ThemeFinvert/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/css/responsive.css') }}">
 
-    <link rel="stylesheet" href="{{ storage_asset('ThemeFinvert/css/flatpickr.min.css') }}">
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/css/flatpickr.min.css') }}">
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css"
         integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link href="{{ storage_asset('ThemeFinvert/css/custom.css') }}" rel="stylesheet">
+    <link href="{{ storage_asset('ThemeCryptoStudio/css/custom.css') }}" rel="stylesheet">
 
     <style type="text/css">
         .grecaptcha-badge {
@@ -57,7 +57,7 @@
                 <div class="col-md-8">
                     <div class="text-center mb-3">
                         <a href="{{ route('login') }}">
-                            <img src="{{ storage_asset('ThemeFinvert/images/finvert.png') }}" alt="" width="300px">
+                            <img src="{{ storage_asset('ThemeCryptoStudio/images/finvert.png') }}" alt="" width="300px">
                         </a>
                     </div>
                     <div class="authincation-content">
@@ -158,7 +158,7 @@
     <script src="{{ storage_asset('theme/js/custom.min.js') }}"></script>
     <script src="{{ storage_asset('theme/js/deznav-init.js') }}"></script>
 
-    <script src="{{ storage_asset('ThemeFinvert/js/jquery-latest.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/jquery-latest.min.js') }}"></script>
     <script src="{{ storage_asset('newIpay/assets/custom_js/front/transactionDocumentsUpload.js') }}"></script>
 </body>
 

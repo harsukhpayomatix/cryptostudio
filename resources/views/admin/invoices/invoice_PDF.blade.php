@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ storage_asset('ThemeFinvert/images/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ storage_asset('ThemeCryptoStudio/images/favicon.png') }}">
     <title>{{ config('app.name') }} | Show Report</title>
 
     <style type="text/css" media="screen">
@@ -217,7 +217,7 @@
         <header class="clearfix">
             <div class="header1">
                 <div id="logo">
-                    <img src="https://portal.finvert.io/storage/ThemeFinvert/images/finvert_logo.png">
+                    <img src="https://portal.finvert.io/storage/ThemeCryptoStudio/images/finvert_logo.png">
                 </div>
                 <div class="title">
                     <h1>Finvert</h1>

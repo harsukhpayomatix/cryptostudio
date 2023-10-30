@@ -115,7 +115,7 @@
                 <div class="col-md-6 col-xl-6 col-xxl-6">
                     <div class="row">
                         <div class="col-md-12 text-center mb-3">
-                            <img src="{{ storage_asset('ThemeFinvert/images/login/finvert.png') }}" alt=""
+                            <img src="{{ storage_asset('ThemeCryptoStudio/images/login/finvert.png') }}" alt=""
                                 width="250px">
                         </div>
                     </div>

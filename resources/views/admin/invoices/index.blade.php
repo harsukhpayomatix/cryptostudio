@@ -9,7 +9,7 @@
 @endsection
 
 @section('customeStyle')
-    <link rel="stylesheet" href="{{ storage_asset('ThemeFinvert/custom_css/sweetalert2.min.css') }}">
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/custom_css/sweetalert2.min.css') }}">
 @endsection
 
 @section('content')

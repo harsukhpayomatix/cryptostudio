@@ -10,7 +10,7 @@
 @endsection
 
 @section('customeStyle')
-    <link href="{{ storage_asset('ThemeFinvert/css/selectize.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ storage_asset('ThemeCryptoStudio/css/selectize.css') }}" rel="stylesheet" type="text/css" />
     <style>
         .card__shadow {
             -webkit-box-shadow: 10px 6px 18px -3px rgba(0, 0, 0, 0.77);
@@ -215,7 +215,7 @@
 @endsection
 
 @section('customScript')
-    <script src="{{ storage_asset('ThemeFinvert/js/selectize.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/js/selectize.min.js') }}"></script>
     <script type="text/javascript">
         $('#input-tags').selectize({
             delimiter: ',',
