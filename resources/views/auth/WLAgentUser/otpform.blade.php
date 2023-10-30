@@ -21,18 +21,6 @@
 </head>
 
 <body>
-    <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
     <!-- loader Start -->
     <div id="loading">
         <p class="mt-1">Loading...</p>
@@ -75,20 +63,12 @@
     <div class="app-content content">
         <div class="container">
             <div class="row m-0">
-                <div class="col-md-8 col-xl-8 col-xxl-6 offset-md-2 offset-xl-2 offset-xxl-3 content-body">
+                <div class="col-md-4 col-xl-4 col-xxl-4 offset-md-4 offset-xl-4 offset-xxl-4 content-body">
                     <div class="row content-box-form">
-                        <div class="col-md-4 content-box-left">
-                            <img src="{{ storage_asset('NewTheme/images/finvert.png') }}" class="auth-logo">
-                            <h3>Beyond Card Payment</h3>
-                            <p>Changing the way you receive and pay.</p>
-
-                            <div class="row">
-                                <div class="col-md-12 text-center mt-1">
-                                    <img src="{{ storage_asset('NewTheme/images/auth-img.svg') }}" width="150px">
-                                </div>
-                            </div>
+                        <div class="col-md-12 text-center mb-2">
+                            <img src="{{ storage_asset('NewTheme/images/finvert.png') }}" width="160px">
                         </div>
-                        <div class="col-md-8 form-contant-right">
+                        <div class="col-md-12 form-contant-right">
                             <h3>OTP</h3>
                             <form action="{{ route('wl.rp.finvert-otp-store') }}" method="post" id="form"
                                 class="mt-4">
