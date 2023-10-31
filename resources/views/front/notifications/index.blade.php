@@ -8,20 +8,6 @@ All Notifications
 <a href="{{ route('dashboardPage') }}">Dashboard</a> / All Notifications
 @endsection
 
-@section('customeStyle')
-<style type="text/css">
-    .table-striped > tbody > tr:nth-of-type(odd){
-        --bs-table-accent-bg: #1D1D1D !important;
-    }
-    .table-striped > tbody > tr:nth-of-type(even){
-        --bs-table-accent-bg: var(--secondary-2) !important;
-    }
-    td{
-        padding: 15px 20px !important;
-    }
-</style>
-@endsection
-
 @section('content')
 <div class="row">
     <div class="col-xl-12 col-xxl-12 col-lg-12">
@@ -31,7 +17,7 @@ All Notifications
                     <h4 class="card-title">All Notifications</h4>
                 </div>
             </div>
-            <div class="card-body p-0">
+            <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-borderless table-striped">
                         @foreach($notifications as $notification)

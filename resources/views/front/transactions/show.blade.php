@@ -37,7 +37,7 @@
         #card-front,
         #card-back {
             position: absolute;
-            background: linear-gradient(to right, rgb(244, 67, 54), rgb(173 79 70)) !important;
+            background: linear-gradient(to right, rgb(78, 115, 142), rgb(173 79 70)) !important;
             width: 360px;
             height: 250px;
             border-radius: 6px;

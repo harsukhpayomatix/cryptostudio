@@ -10,10 +10,8 @@
 
 @section('customeStyle')
     <style>
-        .dark-layout .select2-container .select2-selection,
-        .dark-layout .select2-container .select2-selection__placeholder {
-            min-width: 200px !important;
-            max-width: 300px !important;
+        .dark-layout .select2-container .select2-selection__rendered{
+            color: #4F738E !important;
         }
     </style>
 @endsection
@@ -22,11 +20,11 @@
     <div class="row">
         <div class="col-lg-8">
             @if (auth()->guard('admin')->user()->can(['overview-transaction-statistics']))
-                <div class="row card-header-custom">
-                    <div class="col-lg-6">
-                        <h4>Merchant Transactions Breakdown</h4>
+                <div class="row">
+                    <div class="col-lg-9">
+                        <h4 class="mt-1">Merchant Transactions Breakdown</h4>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-3">
                         <select class="form-control select2 merchantSelectBox">
                             <option value="">-- Select Merchant --</option>
                             @foreach ($companyList as $company)
@@ -35,15 +33,17 @@
                         </select>
                     </div>
                 </div>
-                <div id="merchantTxnPercentages">
+                <div id="merchantTxnPercentages" class="mt-2">
                     @include('partials.adminDashboard.dashboardTxnPercentages', [$transaction])
                 </div>
             @endif
 
             @if (auth()->guard('admin')->user()->can(['overview-view']))
-                <div class="card">
-                    <div class="card-header form-dark">
-                        <h4>Merchant's Status Overview</h4>
+                <div class="row">
+                    <div class="col-lg-9">
+                        <h4 class="mt-1">Merchant's Status Overview</h4>
+                    </div>
+                    <div class="col-lg-3">
                         <select class="form-control select2 agentSelectBox">
                             <option value="">-- Select Agent --</option>
                             @foreach ($agents as $agent)
@@ -51,14 +51,11 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="card-body">
-                        <div id="agentMerchantsOverview">
-                            @include('partials.adminDashboard.dashboardMerchantStatusOverview', [
-                                $merchants,
-                            ])
-                        </div>
-
-                    </div>
+                </div>
+                <div id="agentMerchantsOverview" class="mt-2 mb-1">
+                    @include('partials.adminDashboard.dashboardMerchantStatusOverview', [
+                        $merchants,
+                    ])
                 </div>
             @endif
 
@@ -66,7 +63,7 @@
                 <div class="row" id="dashboardTransactionSummary">
                     <div class="col-md-12 transaction-summary-tbl">
                         <div class="card">
-                            <div class="card-body bg-secondary p-0">
+                            <div class="card-body p-0">
                                 <div class="row">
                                     <div class="col-md-12" style="padding: 30px 30px 30px 45px;">
                                         <div class="header-title">

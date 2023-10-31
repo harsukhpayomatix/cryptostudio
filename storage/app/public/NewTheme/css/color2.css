@@ -1,6 +1,6 @@
 :root {  
   --primary-1: #4F738E;  
-  --primary-2: #F44336;  
+  --primary-2: #FFF7AD;  
   --primary-3: #3D3D3D;  
   --primary-4: #D9D9D9;  
     
@@ -13,6 +13,8 @@
   --white: #FFFFFF;  
   --red: #FF3C14;  
 
+  --dark-1: #F5F6FA;
+  
   --primary-text: #4E738E;    
   --success: #4A6B2F;  
   --warning: #9C7942;  
@@ -52,7 +54,7 @@
   color: var(--primary-text) !important;
 }
 .text-primary-2{
-  color: var(--primary-2) !important;
+  color: #FFA9F9 !important;
 }
 
 .text-light-gray{

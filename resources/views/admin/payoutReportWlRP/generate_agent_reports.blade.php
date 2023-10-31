@@ -78,13 +78,13 @@
                                 <form method="POST" action="{{ route('rp.generated.report.excel') }}">
                                     @csrf
                                     <button type="submit" class="btn btn-primary btn-sm"><i
-                                            class="fa fa-download me-2"></i> Download
+                                            class="fa fa-download"></i> Download
                                         all reports in Excel</button>
                                 </form>
                                 <a href="javascript:;"
                                     data-link="{{ route('rp.generated.report.excel', request()->all()) }}"
                                     data-filename="RP_Report_Excel_" class="btn btn-primary btn-sm" id="ExcelLink"><i
-                                        class="fa fa-download me-2"></i> Download
+                                        class="fa fa-download"></i> Download
                                     Excel </a>
                             @endif
                             @if (auth()->guard('admin')->user()->can(['delete-generated-referral-partner-reports']))

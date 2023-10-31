@@ -51,7 +51,7 @@
                         @if ($count_notifications > 0)
                             @foreach ($notifications as $notification)
                                 <a class="d-flex"
-                                    href="{{ route('merchant-read-notifications', [$notification->id]) }}">
+                                    href="{{ route('rp-read-notifications', [$notification->id]) }}">
                                     <div class="list-item d-flex align-items-start">
                                         <div class="me-1">
                                             <div class="avatar bg-light-danger">

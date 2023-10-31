@@ -81,7 +81,7 @@ Route::group(['middleware' => 'notification_read_agent'], function () {
 	Route::post('get/transaction-overview', 'Agent\AgentUserBaseController@getTransactionOverview')->name('agent.transaction.overview');
 
 	Route::get('notifications', 'Agent\NotificationController@notifications')->name('notifications');
-	Route::get('read-notifications/{id}', 'Agent\NotificationController@readNotifications')->name('read-notifications');
+	Route::get('read-notifications/{id}', 'Agent\NotificationController@readNotifications')->name('rp-read-notifications');
 
 	Route::resource('sub-rp', 'Agent\SubRpController');
 });

@@ -1,6 +1,6 @@
 <div class="col-md-12 transaction-summary-tbl">
     <div class="card">
-        <div class="card-body bg-secondary p-0">
+        <div class="card-body p-0">
             <div class="row">
                 <div class="col-md-9" style="padding: 30px 30px 30px 45px;">
                     <div class="header-title">
@@ -225,7 +225,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3 bg-secondary-2">
+                <div class="col-md-3">
                     <div class="row">
                         <div class="col-md-12 mt-2 mb-2">
                             <a href="{{ route('transaction-summary-report') }}" class="btn btn-primary btn-sm">View

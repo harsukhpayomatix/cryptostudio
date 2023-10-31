@@ -26,7 +26,7 @@
     <link id="theme-style" rel="stylesheet" href="{{ storage_asset('NewTheme/API-Doc/css/custom.css') }}">
     <style type="text/css">
         body {
-            background: #262626;
+            background: #F5F6FA;
         }
     </style>
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('theme/API-assets/css/stylesheet.css') }}" />

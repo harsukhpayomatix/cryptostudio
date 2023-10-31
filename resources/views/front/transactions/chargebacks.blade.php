@@ -191,7 +191,7 @@
                                         <tr id="tr_{{ $transaction->id }}">
 
                                             <td>
-                                                <a href="javascript:;" class="text-danger showTransaction"
+                                                <a href="javascript:;" class="text-primary showTransaction"
                                                     data-link="{{ route('merchant-transactions-details') }}"
                                                     data-bs-target="#transactionShowModal" data-bs-toggle="modal"
                                                     data-id="{{ $transaction->id }}">

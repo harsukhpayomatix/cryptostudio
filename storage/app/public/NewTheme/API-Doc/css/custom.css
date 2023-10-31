@@ -1,27 +1,27 @@
 body {
-    color: #7d7d7d;
-    background-color: #262626;
+    color: #4F738E;
+    background-color: #F5F6FA;
 }
 .docs-sidebar,
 .header {
-    background: #202020;
+    background: #FFFFFF;
 }
 
 .theme-bg-dark {
-    background: #1b1919;
+    background: #4F738E;
 }
 
 .docs-overview .card {
-    background: #201e1e;
-    border-color: #1b1919;
+    background: #FFFFFF;
+    border-color: #4F738E;
 }
 .btn-primary:hover,
 .btn-primary {
-    background: #1b1919;
-    color: #7d7d7d !important;
+    background: #4F738E;
+    color: #FFFFFF !important;
 }
 .footer a {
-    color: #f44336 !important;
+    color: #FFA9F9 !important;
 }
 
 h1,
@@ -36,28 +36,33 @@ h5,
 .h5,
 h6,
 .h6 {
-    color: #b3adad;
+    color: #4F738E;
 }
 
 .theme-icon-holder {
-    background: #1b1919;
-    color: #f44336;
+    background: #4F738E;
+    color: #FFFFFF;
+}
+.card:hover .card-text,
+.card:hover .card-title-text{
+    color: #FFFFFF;
 }
 .card:hover .theme-icon-holder {
-    background: #202020 !important;
+    background: #F5F6FA !important;
+    color: #4F738E;
 }
 .card:hover {
-    background: #1b1919 !important;
+    background: #4F738E !important;
 }
 
 .page-content {
     min-height: calc(100vh - 305px);
 }
 .docs-nav .nav-link.active .theme-icon-holder {
-    background: #f44336;
+    background: #4F738E;
 }
 .docs-nav .nav-link.active {
-    color: #f44336;
+    color: #4F738E;
 }
 
 .docs-article strong,
@@ -69,7 +74,7 @@ h6,
 .docs-article h6,
 .docs-article .h6,
 .docs-article .section-heading {
-    color: #b3adad;
+    color: #5a5a5a;
 }
 
 table {
@@ -81,19 +86,19 @@ table {
     border-bottom: 1px solid #1b1919;
 }
 .docs-nav .nav-link {
-    color: #b3adad;
+    color: #5a5a5a;
 }
 .docs-nav .nav-link:before {
     background: #262626;
 }
 
 .badge-primary {
-    background: #b3adad;
-    color: #262626 !important;
+    background: #5a5a5a;
+    color: #FFFFFF !important;
 }
 
 .text-danger-custom {
-    color: #f44336 !important;
+    color: #FFA9F9 !important;
 }
 
 .postmanBtn {
@@ -108,4 +113,12 @@ table {
 
 .hljs {
     background: #454545 !important;
+}
+
+.docs-content{
+    padding-bottom: 0px;
+}
+code{
+    background: #4F738E;
+    color: #FFFFFF;
 }

@@ -12,15 +12,15 @@ Show
 @section('content')
 <div class="row">
     <div class="col-xl-12 col-xxl-12 col-lg-12">
-        <div class="iq-card border-card">
-            <div class="iq-card-header bg-info d-flex justify-content-between">
-                <div class="iq-header-title">
+        <div class="card border-card">
+            <div class="card-header d-flex justify-content-between">
+                <div class="header-title">
                     <h4 class="card-title">Show Notifications</h4>
                 </div>
                 <a href="{{ route('merchant-notifications') }}" class="btn btn-primary btn-sm" title="Back"> <i
                         class="fa fa-arrow-left"></i> </a>
             </div>
-            <div class="iq-card-body">
+            <div class="card-body">
                 <div class="row">
                     <div class="col-md-9">
                         <h5 class="text-info">Title : {{ $notifications->title }}</h5>

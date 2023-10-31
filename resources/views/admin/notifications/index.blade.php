@@ -7,22 +7,6 @@
     <a href="{{ route('admin.dashboard') }}">Dashboard</a> / Admin Notifications
 @endsection
 
-@section('customeStyle')
-    <style type="text/css">
-        .table-striped>tbody>tr:nth-of-type(odd) {
-            --bs-table-accent-bg: #1D1D1D !important;
-        }
-
-        .table-striped>tbody>tr:nth-of-type(even) {
-            --bs-table-accent-bg: var(--secondary-2) !important;
-        }
-
-        td {
-            padding: 15px 20px !important;
-        }
-    </style>
-@endsection
-
 @section('content')
     <div class="row">
         <div class="col-sm-12">
@@ -33,7 +17,7 @@
                     </div>
                     <a href="{{ route('admin.dashboard') }}" class="btn btn-primary btn-sm"> Back</a>
                 </div>
-                <div class="card-body p-0 p-0">
+                <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-borderless table-striped">
                             @foreach ($notifications as $notification)

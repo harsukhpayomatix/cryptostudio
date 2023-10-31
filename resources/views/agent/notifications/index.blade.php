@@ -10,30 +10,30 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12 col-xl-12">
-            <div class="iq-card">
-                <div class="iq-card-header d-flex justify-content-between">
-                    <div class="iq-header-title">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="header-title">
                         <h4 class="card-title">All Notifications</h4>
                     </div>
                     <a href="{{ route('rp.dashboard') }}" class="btn btn-primary btn-sm"><i class="fa fa-arrow-left"></i>
                     </a>
                 </div>
                 <div class="card-body">
-                    <ul class="iq-timeline">
+                    <ul class="timeline">
                         @foreach ($notifications as $notification)
                             <li>
                                 <div class="timeline-dots"></div>
-                                <h6 class="float-left mb-1">{{ $notification->title }}</h6>
+                                <h6 class="float-left">{{ $notification->title }}</h6>
                                 <small
-                                    class="float-right mt-1">{{ convertDateToLocal($notification->created_at, 'd-m-Y / H:i:s') }}</small>
+                                    class="float-right">{{ convertDateToLocal($notification->created_at, 'd-m-Y / H:i:s') }}</small>
                                 <div class="d-inline-block w-100">
-                                    <p>{{ Str::limit($notification->body, 120) }}</p>
+                                    <p class="mb-1 float-left">{{ Str::limit($notification->body, 120) }}</p>
 
                                     <a href="{{ url($notification->url) }}?for=read" target="_blank"
-                                        class="btn btn-primary btn-sm rounded-pill">Go to
+                                        class="btn btn-primary btn-sm rounded-pill float-right">Go to
                                         Link</a>
                                     <a href="{{ route('read-admin-notifications', $notification->id) }}"
-                                        class="btn btn-warning rounded-pill btn-sm">Show</a>
+                                        class="btn btn-warning rounded-pill btn-sm float-right">Show</a>
                                 </div>
                             </li>
                         @endforeach

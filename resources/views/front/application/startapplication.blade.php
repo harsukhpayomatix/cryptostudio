@@ -25,9 +25,9 @@
             color: #b7aeaf !important;
         }
 
-        .select2-results__option {
+        /*.select2-results__option {
             background-color: #2B2B2B !important;
-        }
+        }*/
 
         small {
             color: #b7aeaf !important;
@@ -1587,9 +1587,9 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12 mt-2 text-right">
-                                    <button name="action" type="submit" id="submitbutton" class="btn btn-danger"
+                                    <button name="action" type="submit" id="submitbutton" class="btn btn-primary"
                                         value="saveDraft">Save Draft</button>
-                                    <button name="action" type="submit" id="submit_button" class="btn btn-danger"
+                                    <button name="action" type="submit" id="submit_button" class="btn btn-primary"
                                         value="save">Submit</button>
                                     <a href="" class="btn btn-danger">Cancel</a>
                                 </div>

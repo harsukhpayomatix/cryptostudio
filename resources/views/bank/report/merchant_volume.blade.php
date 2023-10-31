@@ -106,7 +106,7 @@
     <div class="row mt-2">
         <div class="col-md-12 transaction-summary-tbl">
             <div class="card">
-                <div class="card-body bg-secondary p-0">
+                <div class="card-body p-0">
                     <div class="row">
                         <div class="col-md-9" style="padding: 30px 30px 30px 45px;">
                             <div class="header-title" style="overflow: hidden;">
@@ -344,7 +344,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 bg-secondary-2">
+                        <div class="col-md-3">
                             <ul class="nav nav-tabs mt-2" role="tablist">
                                 <li class="nav-item">
                                     <a class="nav-link active" href="#SUCCESSFUL" data-bs-toggle="tab">
