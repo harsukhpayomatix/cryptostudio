@@ -62,7 +62,7 @@
         <table style="width: 100%; padding: 0px 60px 60px 60px; color: #B3ADAD; text-align: center;">
             <tr>
                 <td style="width: 100%;">
-                    In case of any query, reach out to us : &nbsp; Email: <a href="#" style="color: #B3ADAD;">{{ config('app.email_support') }}</a> &nbsp; Contact No.: {{ config('app.number_support') }}
+                    In case of any query, reach out to us : &nbsp; Email: <a href="#" style="color: #B3ADAD;">{{ config('app.email_support') }}</a>
                     </p>
                 </td>
             </tr>

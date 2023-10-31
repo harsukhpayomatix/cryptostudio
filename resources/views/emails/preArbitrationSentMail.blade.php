@@ -141,8 +141,6 @@
                     <h3 style="margin: 0px;">In case of any query, reach out to us:-</h3>
                     <p style="margin-bottom: 0px;">
                         E-Mail: {{ config('app.email_support') }}
-                        <br>
-                        Contact No.: {{ config('app.number_support') }}
                     </p>
                 </td>
             </tr>

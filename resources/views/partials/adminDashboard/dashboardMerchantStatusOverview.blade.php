@@ -23,7 +23,7 @@
                </div>
                <h2>{{ $merchants->totalMerchant }}</h2>
                <p class="mb-1" style="color: #82CD47;">Total Merchant</p>
-               <p class="total">Total Count : <span style="color: #B3ADAD;">
+               <p class="total">Total Count : <span style="color: #4e738e;">
                        {{ $merchants->totalMerchant }}</span></p>
            </div>
        </div>
@@ -45,7 +45,7 @@
                </div>
                <h2>{{ $merchants->liveMerchant }}</h2>
                <p class="mb-1" style="color: #5F9DF7;">Live Merchant</p>
-               <p class="total">Total Percentage : <span style="color: #B3ADAD;"> {{ $liveMerchantP }}
+               <p class="total">Total Percentage : <span style="color: #4e738e;"> {{ $liveMerchantP }}
                        %</span></p>
            </div>
        </div>
@@ -67,7 +67,7 @@
                </div>
                <h2>{{ $merchants->notLiveMerchant }}</h2>
                <p class="mb-1" style="color: #C47AFF;">Pending for Live Merchant</p>
-               <p class="total">Total Percentage : <span style="color: #B3ADAD;">
+               <p class="total">Total Percentage : <span style="color: #4e738e;">
                        {{ $notLiveMerchantP }}
                        %</span></p>
            </div>

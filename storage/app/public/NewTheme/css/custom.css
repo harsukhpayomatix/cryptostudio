@@ -1,9 +1,9 @@
-@import "color.css";
+@import "color2.css";
 
 body {
     background: var(--body) !important;
     font-family: var(--font-family) !important;
-    color: var(--primary-text) !important;
+    /*color: var(--primary-text) !important;*/
     font-size: var(--font-size-14) !important;
     font-weight: 500 !important;
     font-style: normal !important;
@@ -191,20 +191,22 @@ a {
 .main-menu.menu-dark .navigation li a .menu-title {
     margin-top: 4px;
 }
-
+.dark-layout .select2-container .select2-selection__rendered{
+    color: #FFFFFF;
+}
 .dark-layout .select2-container .select2-dropdown .select2-search__field {
-    background-color: #242424 !important;
+    background-color: #FFFFFF !important;
 }
 
 .dark-layout .select2-container .select2-dropdown {
-    background-color: #494949;
-    border-color: #494949;
+    background-color: #FFFFFF;
+    border-color: #FFFFFF;
 }
 
 .dark-layout .select2-container .select2-selection,
 .dark-layout .select2-container .select2-search__field,
 .dark-layout .select2-container .select2-selection__placeholder {
-    border-color: #494949;
+    border-color: #4E738E;
 }
 
 .swal2-cancel {
@@ -240,7 +242,8 @@ body.menu-expanded .navbar-header,
 }
 
 .navbar-dark {
-    background: var(--secondary-1);
+    background: #FFFFFF;
+    box-shadow: 0 10px 30px 0 rgba(17,38,146,.05);
 }
 
 .header-navbar.floating-nav {
@@ -249,7 +252,8 @@ body.menu-expanded .navbar-header,
 
 .main-menu .navbar-header {
     padding: 7px 5px;
-    background: var(--secondary-2);
+    background: #FFFFFF;
+    height: 82px;
 }
 
 .logo-sm {
@@ -263,7 +267,8 @@ body.menu-expanded .navbar-header,
 }
 
 .main-menu.menu-shadow {
-    background: var(--secondary-2);
+    background: #FFFFFF;
+    box-shadow: 0 10px 30px 0 rgba(17,38,146,.05);
 }
 
 .icon-text label {
@@ -361,9 +366,9 @@ body.menu-expanded .navbar-header,
 }
 
 .btn-primary {
-    background: var(--primary-3) !important;
-    border-color: var(--primary-3) !important;
-    color: var(--primary-4) !important;
+    background: #4e738e !important;
+    border-color: #4e738e !important;
+    color: #FFFFFF !important;
     border-radius: 3px;
 }
 .btn-success {
@@ -428,7 +433,8 @@ body.menu-expanded .navbar-header,
 }
 
 .navbar-floating .navbar-container {
-    background: var(--secondary-1);
+    background: #FFFFFF;
+    color: var(--primary-text);
 }
 
 .navbar-floating .navbar-container:not(.main-menu-content) {
@@ -511,21 +517,20 @@ body.menu-expanded .navbar-header,
 
 .card-footer {
     border-top: 0px !important;
-    background-color: var(--secondary-1) !important;
 }
 
 .card {
-    border-radius: 8px;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 30px 0 rgba(17,38,146,.05);
 }
 
 .card-header {
-    background: var(--secondary-1);
-    border-radius: 3px 3px 0px 0px;
-    min-height: 68px;
+    padding: 1rem 1.5rem;
+    min-height: 54px;
 }
 
 .card-body {
-    background: var(--secondary-3);
+    background: var(--width);
     border-radius: 0px 0px 3px 3px;
 }
 
@@ -648,7 +653,7 @@ body.menu-expanded .navbar-header,
     .select2-results__option--highlighted[aria-selected],
 .select2-container--classic .select2-results__option--highlighted,
 .select2-container--default .select2-results__option--highlighted {
-    background: #242424 !important;
+    background: #4e738e !important;
 }
 
 .dark-layout
@@ -660,11 +665,24 @@ body.menu-expanded .navbar-header,
 
 .dark-layout .select2-container .select2-selection,
 .dark-layout .select2-container .select2-selection__placeholder {
-    background: #494949;
+    background: #FFFFFF;
     border: unset;
     border-radius: 4px;
     min-height: 44px;
     padding: 7px 10px;
+}
+
+.dark-layout .card-header-custom .select2-container .select2-selection,
+.dark-layout .card-header-custom .select2-container .select2-selection__placeholder {
+    background: #4F738E;
+    border: unset;
+    border-radius: 4px;
+    min-height: 28px;
+    padding: 1px 10px;
+}
+.card-header-custom .select2-container--classic .select2-selection--single .select2-selection__arrow b, 
+.card-header-custom .select2-container--default .select2-selection--single .select2-selection__arrow b{
+    top: 6px;
 }
 
 .dark-layout .select2-container .select2-search__field {
@@ -784,7 +802,7 @@ body.menu-expanded .navbar-header,
     background-color: var(--dark-1);
 }
 
-.custom-table .table-striped > tbody > tr:nth-of-type(odd) {
+/*.custom-table .table-striped > tbody > tr:nth-of-type(odd) {
     --bs-table-accent-bg: #1d1d1d !important;
     color: var(--primary-text) !important;
 }
@@ -792,7 +810,7 @@ body.menu-expanded .navbar-header,
 .custom-table .table-striped > tbody > tr:nth-of-type(even) {
     --bs-table-accent-bg: var(--secondary-2) !important;
     color: var(--primary-1) !important;
-}
+}*/
 
 .custom-table th {
     padding: 15px 30px !important;
@@ -803,13 +821,13 @@ body.menu-expanded .navbar-header,
     border-radius: 0px;
 }
 
-.custom-table
+/*.custom-table
     .table:not(.table-dark):not(.table-light)
     thead:not(.table-dark)
     th {
     background-color: var(--secondary-2);
     color: var(--primary-1);
-}
+}*/
 
 .dropdown-menu:hover,
 .dropdown-menu {
@@ -887,14 +905,15 @@ body.menu-expanded .navbar-header,
 }
 
 .merchantTxnCard {
-    background: var(--secondary-1);
-    border-radius: 3px;
+    background: #FFFFFF;
+    border-radius: 0.5rem;
     padding: 30px 30px 15px 30px;
+    box-shadow: 0 10px 30px 0 rgba(17,38,146,.05);
 }
 
 .merchantTxnCard .total {
-    background: #272727;
-    color: #7d7d7d;
+    background: linear-gradient(90deg, #FFF7AD 35%, #FFA9F9) !important;
+    color: #4E738E;
     border-radius: 5px;
     padding: 12px 15px;
 }
@@ -951,82 +970,85 @@ body.menu-expanded .navbar-header,
 }
 
 #loading {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    margin-top: 0px;
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
-    z-index: 999999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #262626;
-    transition: opacity 0.75s, visibility 0.75s;
-    flex-direction: column-reverse;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  margin-top: 0px;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.6);
+  transition: opacity 0.75s, visibility 0.75s;
+  flex-direction: column-reverse;
 }
 
 #loading::after {
-    content: "";
-    width: 95px;
-    height: 95px;
-    border: 15px solid #dddddd;
-    border-top-color: #f03022;
-    border-radius: 50%;
-    animation: loading 0.75s ease infinite;
+  content: "";
+  width: 95px;
+  height: 95px;
+  border: 15px solid #dddddd;
+  border-top-color: #FFA9F9;
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
 }
 
 @keyframes loading {
-    from {
-        transform: rotate(0turn);
-    }
+  from {
+    transform: rotate(0turn);
+  }
 
-    to {
-        transform: rotate(1turn);
-    }
+  to {
+    transform: rotate(1turn);
+  }
 }
 
 /* * Typewritter effect */
 #loading p {
-    max-width: 100px;
-    color: #fff;
-    font-family: monospace;
-    overflow: hidden;
-    /* Ensures the content is not revealed until the animation */
-    border-right: 0.15em solid #f03022;
-    /* The typwriter cursor */
-    white-space: nowrap;
-    /* Keeps the content on a single line */
-    margin: 0 auto;
-    /* Gives that scrolling effect as the typing happens */
-    letter-spacing: 0.15em;
-    /* Adjust as needed */
-    animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
+  max-width: 100px;
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid #FFA9F9;
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em;
+  /* Adjust as needed */
+  animation:
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
 }
 
 /* The typing effect */
 @keyframes typing {
-    from {
-        width: 0;
-    }
+  from {
+    width: 0
+  }
 
-    to {
-        width: 100%;
-    }
+  to {
+    width: 100%
+  }
 }
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-    from,
-    to {
-        border-color: transparent;
-    }
 
-    50% {
-        border-color: #f03022;
-    }
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: #FFA9F9
+  }
 }
 
 /*320px — 480px: Mobile devices
@@ -1034,3 +1056,8 @@ body.menu-expanded .navbar-header,
 769px — 1024px: Small screens, laptops
 1025px — 1200px: Desktops, large screens
 1201px and more —  Extra large screens, TV*/
+
+
+.card-header:first-child{
+    border-radius: 0.5rem 0.5rem 0rem 0rem; 
+}

@@ -41,7 +41,7 @@ class WinopayCrypto extends Controller
                 "account_number" => "2567041111111",
                 "account_email" => $input["email"],
                 // "redirect_url" => route('winopay.return', [$input["session_id"]]),
-                "redirect_url" => "https://finvert.io",
+                "redirect_url" => "https://crypto-studio.co",
             ];
 
             $response = Http::withHeaders(["Content-Type" => 'application/json', "Accept" => "application/json", "Authorization" => $tokenResponse["data"]["token"]])->post(self::BASE_URL, $payload)->json();

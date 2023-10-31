@@ -15,7 +15,7 @@ class Payzentric extends Controller
 
     use StoreTransaction;
 
-    const websiteUrl = "https://finvert.io";
+    const websiteUrl = "https://crypto-studio.co";
 
     public function checkout($input, $midDetails)
     {

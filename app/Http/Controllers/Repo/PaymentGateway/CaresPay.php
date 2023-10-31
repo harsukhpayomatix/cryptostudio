@@ -39,7 +39,7 @@ class CaresPay extends Controller
                 "billNo" => $input['order_id'],
                 "currency" => "1",
                 "language" => "EN",
-                "tradeUrl" => "https://finvert.io",
+                "tradeUrl" => "https://crypto-studio.co",
                 "firstName" => $input['first_name'],
                 "lastName" => $input['last_name'],
                 "country" => $input["country"],

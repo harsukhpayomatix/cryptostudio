@@ -26,7 +26,7 @@
                 <div class="col-md-4 col-xl-4 col-xxl-4 offset-md-4 offset-xl-4 offset-xxl-4 content-body">
                     <div class="row content-box-form">
                         <div class="col-md-12 text-center mb-2">
-                            <img src="{{ storage_asset('NewTheme/images/logo.png') }}" width="160px">
+                            <img src="{{ storage_asset('NewTheme/images/logo.png') }}" width="260px">
                         </div>
                         <div class="col-md-12 form-contant-right">
                             <h3>Sign In</h3>

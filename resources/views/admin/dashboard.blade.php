@@ -12,7 +12,7 @@
     <style>
         .dark-layout .select2-container .select2-selection,
         .dark-layout .select2-container .select2-selection__placeholder {
-            min-width: 250px !important;
+            min-width: 200px !important;
             max-width: 300px !important;
         }
     </style>
@@ -22,9 +22,11 @@
     <div class="row">
         <div class="col-lg-8">
             @if (auth()->guard('admin')->user()->can(['overview-transaction-statistics']))
-                <div class="card">
-                    <div class="card-header form-dark">
+                <div class="row card-header-custom">
+                    <div class="col-lg-6">
                         <h4>Merchant Transactions Breakdown</h4>
+                    </div>
+                    <div class="col-lg-6">
                         <select class="form-control select2 merchantSelectBox">
                             <option value="">-- Select Merchant --</option>
                             @foreach ($companyList as $company)
@@ -32,11 +34,9 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="card-body">
-                        <div id="merchantTxnPercentages">
-                            @include('partials.adminDashboard.dashboardTxnPercentages', [$transaction])
-                        </div>
-                    </div>
+                </div>
+                <div id="merchantTxnPercentages">
+                    @include('partials.adminDashboard.dashboardTxnPercentages', [$transaction])
                 </div>
             @endif
 
