@@ -377,7 +377,7 @@ body.menu-expanded .navbar-header,
 .btn-success {
     background: var(--success) !important;
     border-color: var(--success) !important;
-    color: var(--primary-4) !important;
+    color: var(--white) !important;
     border-radius: 0.25rem;
 }
 
@@ -1076,4 +1076,8 @@ kbd {
 
 .card-header .form-dark .form-control-sm{
     padding: 4px 8px;
+}
+
+.main-menu.menu-dark .navigation > li > ul li.has-sub > a{
+    margin: 0px 10px;
 }
