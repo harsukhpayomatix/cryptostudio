@@ -90,7 +90,6 @@
                 <article class="docs-article" id="APIRequestIn">
                     <section class="docs-section" id="APIRequest">
                         <header class="docs-header">
-                            @include('front.apidoc.postmanButton')
 
                             <h1 class="docs-heading">Get Transaction Details API</h1>
                             <p class="lead">To Confirm If Your Transaction Was Success Or Declined, You Can Call

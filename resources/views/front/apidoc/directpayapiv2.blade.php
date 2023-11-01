@@ -114,7 +114,6 @@
             <div class="container">
                 <article class="docs-article" id="APIRequestIn1">
                     <header class="docs-header">
-                        @include('front.apidoc.postmanButton')
 
                         <h1 class="docs-heading">Hosted Payment API V2</h1>
                         <h4>Prerequisite</h4>

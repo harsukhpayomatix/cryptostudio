@@ -90,7 +90,6 @@
             <div class="container">
                 <article class="docs-article" id="APIRequestIn">
                     <header class="docs-header">
-                        @include('front.apidoc.postmanButton')
                         <h1 class="docs-heading">Direct API Documentation</h1>
                         <h4>How to integrate Direct (Server to Server) API</h4>
                         <section class="docs-intro">
