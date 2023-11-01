@@ -2,7 +2,7 @@
     @if (auth()->guard('admin')->user()->can(['update-all-transaction']))
         @if (@isset($tab) == 'all' && $data->status == '1')
             <div class="col-md-12">
-                <div class="row" style="background-color: #262626; padding: 15px 0px;">
+                <div class="row" style="background-color: #f6f6f9; padding: 15px 0px;">
                     @if (auth()->guard('admin'))
                         @if (isset($data->refund) && $data->refund == '1' && $data->refund_remove == '0' && $data->chargebacks == '0')
                             <div class="col-md-2">

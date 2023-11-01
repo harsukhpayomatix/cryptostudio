@@ -21,18 +21,18 @@
         }
 
         .dataTables_wrapper .dataTables_processing {
-            background: #4e738e !important
+            background: var(--main-primary) !important
         }
 
         .dataTables_wrapper .dataTables_paginate .paginate_button.current,
         .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-            background: #4e738e !important;
+            background: var(--main-primary) !important;
             color: #FFFFFF !important;
-            border-color: #4e738e !important;
+            border-color: var(--main-primary) !important;
         }
 
         .dataTables_wrapper .dataTables_paginate .paginate_button {
-            border-color: #4e738e !important;
+            border-color: var(--main-primary) !important;
         }
 
         div.dataTables_wrapper div.dataTables_filter label, div.dataTables_wrapper div.dataTables_length label{

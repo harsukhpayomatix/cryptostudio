@@ -58,7 +58,7 @@
                                         </div>
                                         <div class="col-md-12 mt-1">
                                             <a href="{{ $redirect_url }}"
-                                                class="btn btn-danger w-100">{{ __('messages.returnMerchantSite') }}</a>
+                                                class="btn btn-primary w-100">{{ __('messages.returnMerchantSite') }}</a>
                                         </div>
                                     </div>
                                 </div>

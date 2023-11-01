@@ -1,5 +1,7 @@
 :root {  
-  --primary-1: #4F738E;  
+  --main-primary: #4F738E;
+
+  --primary-1: var(--main-primary);  
   --primary-2: #F44336;  
   --primary-3: #3D3D3D;  
   --primary-4: #D9D9D9;  
@@ -13,7 +15,7 @@
   --white: #FFFFFF;  
   --red: #FF3C14;  
 
-  --primary-text: #4F738E;    
+  --primary-text: var(--main-primary);    
   --success: #4A6B2F;  
   --warning: #9C7942;  
 

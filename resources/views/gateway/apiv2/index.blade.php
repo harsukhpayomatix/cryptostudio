@@ -42,7 +42,7 @@
         }
 
         .langDropdown li:hover {
-            background-color: #4e738e !important;
+            background-color: var(--main-primary) !important;
 
         }
 
@@ -86,7 +86,7 @@
                                         <div class="row mt-2">
                                             <div class="col-md-12">
                                                 <a href="{{ route('api.v2.card', $transaction_session->order_id) }}"
-                                                    class="btn btn-danger w-100">{{ __('messages.payNow') }}</a>
+                                                    class="btn btn-primary w-100">{{ __('messages.payNow') }}</a>
                                             </div>
                                         </div>
                                     </div>
@@ -111,7 +111,7 @@
                                         <div class="row mt-2">
                                             <div class="col-md-12">
                                                 <a href="{{ route('api.v2.bank', $transaction_session->order_id) }}"
-                                                    class="btn btn-danger w-100">{{ __('messages.payNow') }}</a>
+                                                    class="btn btn-primary w-100">{{ __('messages.payNow') }}</a>
                                             </div>
                                         </div>
                                     </div>
@@ -136,7 +136,7 @@
                                         <div class="row mt-2">
                                             <div class="col-md-12">
                                                 <a href="{{ route('api.v2.crypto', $transaction_session->order_id) }}"
-                                                    class="btn btn-danger w-100">{{ __('messages.payNow') }}</a>
+                                                    class="btn btn-primary w-100">{{ __('messages.payNow') }}</a>
                                             </div>
                                         </div>
                                     </div>
@@ -166,7 +166,7 @@
                                         <div class="row mt-2">
                                             <div class="col-md-12">
                                                 <a href="{{ route('api.v2.upi', $transaction_session->order_id) }}"
-                                                    class="btn btn-danger w-100">{{ __('messages.payNow') }}</a>
+                                                    class="btn btn-primary w-100">{{ __('messages.payNow') }}</a>
                                             </div>
                                         </div>
                                     </div>

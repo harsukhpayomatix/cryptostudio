@@ -19,7 +19,7 @@
      }
 
      .select2-container--default .select2-results__option--highlighted[aria-selected] {
-         background-color: #4F738E !important;
+         background-color: var(--main-primary) !important;
      }
  </style>
 

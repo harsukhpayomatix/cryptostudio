@@ -1,64 +1,94 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html class="loading dark-layout" lang="en" data-textdirection="ltr">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
     <title>{{ config('app.name') }} | {{ __('messages.transactionSccess') }}</title>
-    <link rel="shortcut icon" href="{{ storage_asset('ThemeCryptoStudio/images/favicon.png') }}" />
-    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/css/typography.css') }}">
-    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/css/style.css') }}">
-    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/css/responsive.css') }}">
-    <link href="{{ storage_asset('ThemeCryptoStudio/css/custom.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ storage_asset('NewTheme/images/favicon.png') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- BEGIN: Theme CSS-->
+    <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/bootstrap-extended.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/auth.css') }}">
+
+    <style type="text/css">
+        .card {
+            border-radius: 0.5rem;
+        }
+
+        .btn-danger {
+            background: var(--primary-2) !important;
+            border-color: var(--primary-2) !important;
+            color: var(--primary-4) !important;
+            border-radius: 3px;
+        }
+
+        .btn-primary {
+            background: var(--primary-1) !important;
+            border-color: var(--primary-1) !important;
+            color: var(--white) !important;
+            border-radius: 3px;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="mt-5 iq-maintenance">
-        <div class="container-fluid p-0">
-            <div class="row no-gutters">
-                <div class="col-sm-12 text-center">
-                    <div class="iq-maintenance">
-                        <img src="{{ storage_asset('theme/images/Logo.png') }}" alt="" width="300px">
-                        <h3 class="mt-4 mb-1">{{ __('messages.headingTest') }}</h3>
+    <div id="loading">
+        <p class="mt-1">{{ __('messages.loading') }}...</p>
+    </div>
+    <div class="app-content content">
+        <div class="container">
+            <div class="row content-body">
+                <div class="col-md-4 col-xl-4 col-xxl-4">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <img src="{{ storage_asset('ThemeCryptoStudio/images/login/logo.png') }}" alt=""
+                                width="250px">
+
+                            <h4 class="text-primary mt-2 mb-1">{{ __('messages.headingTest') }}</h4>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="container mt-3">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="card iq-mb-3">
-                        <div class="card-body">
-                            <div class="m-3">
-                                <h4 class="card-title text-center">{{ __('messages.transactionSccess') }}</h4>
-                                <p class="card-text text-center text-success">{{ $input['reason'] }}</p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card mt-2">
+                                <div class="card-body gateway-card">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <h3 class="text-primary">{{ __('messages.transactionSccess') }}</h3>
+                                            <p class="mb-0">{{ $input['reason'] }}</p>
+                                        </div>
+                                        <div class="col-md-12 mt-1">
+                                            <a href="{{ $redirect_url }}"
+                                                class="btn btn-primary w-100">{{ __('messages.returnMerchantSite') }}</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <a href="{{ $redirect_url }}"
-                                class="m-1 btn btn-success btn-block">{{ __('messages.returnMerchantSite') }}</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="{{ storage_asset('ThemeCryptoStudio/js/jquery-latest.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeCryptoStudio/js/popper.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeCryptoStudio/js/bootstrap.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeCryptoStudio/js/jquery.appear.js') }}"></script>
-    <script src="{{ storage_asset('ThemeCryptoStudio/js/countdown.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeCryptoStudio/js/waypoints.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeCryptoStudio/js/jquery.counterup.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeCryptoStudio/js/wow.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeCryptoStudio/js/apexcharts.js') }}"></script>
-    <script src="{{ storage_asset('ThemeCryptoStudio/js/slick.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeCryptoStudio/js/select2.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeCryptoStudio/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeCryptoStudio/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ storage_asset('ThemeCryptoStudio/js/smooth-scrollbar.js') }}"></script>
-    <script src="{{ storage_asset('ThemeCryptoStudio/js/lottie.js') }}"></script>
-    <script src="{{ storage_asset('ThemeCryptoStudio/js/chart-custom.js') }}"></script>
-    <script src="{{ storage_asset('ThemeCryptoStudio/js/custom.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+
+    <script>
+        jQuery(document).ready(function() {
+            jQuery("#load").fadeOut();
+            jQuery("#loading").delay().fadeOut("");
+        });
+    </script>
 </body>
 
 </html>

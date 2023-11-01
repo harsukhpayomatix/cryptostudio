@@ -16,20 +16,21 @@
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/auth.css') }}">
 
     <style type="text/css">
-        .card{
-            background: var(--secondary-1);
-            border-radius: 0px 0px 3px 3px;
+        .card {
+            border-radius: 0.5rem;
         }
+
         .btn-danger {
             background: var(--primary-2) !important;
             border-color: var(--primary-2) !important;
             color: var(--primary-4) !important;
             border-radius: 3px;
         }
+
         .btn-primary {
-            background: var(--primary-3) !important;
-            border-color: var(--primary-3) !important;
-            color: var(--primary-4) !important;
+            background: var(--primary-1) !important;
+            border-color: var(--primary-1) !important;
+            color: var(--white) !important;
             border-radius: 3px;
         }
     </style>
@@ -69,7 +70,7 @@
                                                     <option value="Failed 3D Authentication">Failed 3D Authentication</option>
                                                 </select>
                                                 <br />
-                                                <button class="btn w-100 btn-danger">Continue</button>
+                                                <button class="btn w-100 btn-primary">Continue</button>
                                             </form>
                                         </div>
                                     </div>

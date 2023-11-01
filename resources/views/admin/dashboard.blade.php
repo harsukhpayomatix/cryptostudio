@@ -11,7 +11,10 @@
 @section('customeStyle')
     <style>
         .dark-layout .select2-container .select2-selection__rendered{
-            color: #4F738E !important;
+            color: var(--main-primary) !important;
+        }
+        .dark-layout .select2-container .select2-selection{
+            border-color: #F5F6FA !important;
         }
     </style>
 @endsection

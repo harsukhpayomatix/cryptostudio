@@ -56,7 +56,7 @@
         }
 
         .langDropdown li:hover {
-            background-color: #4e738e !important;
+            background-color: var(--main-primary) !important;
 
         }
 

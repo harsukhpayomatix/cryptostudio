@@ -459,7 +459,7 @@ if(isset($responseData['responseCode']) && $respsonseData['responseCode'] == '7'
 8.) "7" :"Redirected" => It means redirect user to 3ds link to complete the transaction.
 </code> </pre>
                         </section>
-                        <section class="docs-section" id="APIRedirection2">
+                        <section class="docs-section" id="APIRedirection2" style="border-bottom: unset;">
                             <header class="docs-header">
                                 <h4>Redirection</h4>
                                 <section class="docs-intro">

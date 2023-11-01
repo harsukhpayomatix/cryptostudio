@@ -1,5 +1,8 @@
+:root {  
+  --main-primary: #4F738E;
+}
 body {
-    color: #4F738E;
+    color: var(--main-primary);
     background-color: #F5F6FA;
 }
 .docs-sidebar,
@@ -8,16 +11,16 @@ body {
 }
 
 .theme-bg-dark {
-    background: #4F738E;
+    background: var(--main-primary);
 }
 
 .docs-overview .card {
     background: #FFFFFF;
-    border-color: #4F738E;
+    border-color: var(--main-primary);
 }
 .btn-primary:hover,
 .btn-primary {
-    background: #4F738E;
+    background: var(--main-primary);
     color: #FFFFFF !important;
 }
 .footer a {
@@ -36,11 +39,11 @@ h5,
 .h5,
 h6,
 .h6 {
-    color: #4F738E;
+    color: var(--main-primary);
 }
 
 .theme-icon-holder {
-    background: #4F738E;
+    background: var(--main-primary);
     color: #FFFFFF;
 }
 .card:hover .card-text,
@@ -49,20 +52,20 @@ h6,
 }
 .card:hover .theme-icon-holder {
     background: #F5F6FA !important;
-    color: #4F738E;
+    color: var(--main-primary);
 }
 .card:hover {
-    background: #4F738E !important;
+    background: var(--main-primary) !important;
 }
 
 .page-content {
     min-height: calc(100vh - 305px);
 }
 .docs-nav .nav-link.active .theme-icon-holder {
-    background: #4F738E;
+    background: var(--main-primary);
 }
 .docs-nav .nav-link.active {
-    color: #4F738E;
+    color: var(--main-primary);
 }
 
 .docs-article strong,
@@ -119,6 +122,6 @@ table {
     padding-bottom: 0px;
 }
 code{
-    background: #4F738E;
+    background: var(--main-primary);
     color: #FFFFFF;
 }

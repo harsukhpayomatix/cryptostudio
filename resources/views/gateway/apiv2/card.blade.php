@@ -58,7 +58,7 @@
         }
 
         [type=radio]+img {
-            border: 2px solid #4F738E;
+            border: 2px solid var(--main-primary);
             cursor: pointer;
             width: 80px;
             border-radius: 3px;
@@ -68,7 +68,7 @@
         }
 
         [type=radio]:checked+img {
-            border: 2px solid #4F738E;
+            border: 2px solid var(--main-primary);
             box-shadow: 0px 0px 5px 0px #FFF;
             -webkit-filter: grayscale(0);
             filter: none;
