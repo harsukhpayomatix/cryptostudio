@@ -94,7 +94,7 @@ class TicketReplyController extends Controller
             $department = Ticket::where('id',$input['ticket_id'])->pluck('department')->first();
 
             try {
-                Mail::to('sales@finvert.io')->send(new TicketReplyByUser($ticket,$user));
+                Mail::to('sales@crypto-studio.co')->send(new TicketReplyByUser($ticket,$user));
             } catch (\Exception $e) {
 
             }

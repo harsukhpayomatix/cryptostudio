@@ -20,8 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/auth.css') }}">
     <style type="text/css">
         .card {
-            background: var(--secondary-1);
-            border-radius: 0px 0px 3px 3px;
+            border-radius: 0.5rem;
         }
 
         .btn-danger {
@@ -32,9 +31,9 @@
         }
 
         .btn-primary {
-            background: var(--primary-3) !important;
-            border-color: var(--primary-3) !important;
-            color: var(--primary-4) !important;
+            background: var(--primary-1) !important;
+            border-color: var(--primary-1) !important;
+            color: var(--white) !important;
             border-radius: 3px;
         }
     </style>
@@ -70,11 +69,11 @@
                                                         <div class="row">
                                                             <div class="col-md-6">
                                                                 <button type="button" id="submit-button"
-                                                                    class="btn black-btn w-100 btn-danger">{{ __('messages.payNow') }}</button>
+                                                                    class="btn black-btn w-100 btn-primary">{{ __('messages.payNow') }}</button>
                                                             </div>
                                                             <div class="col-md-6">
                                                                 <button type="button" id="cancel-button"
-                                                                    class="btn cancel-btn w-100 btn-primary">{{ __('messages.cancel') }}</button>
+                                                                    class="btn cancel-btn w-100 btn-danger">{{ __('messages.cancel') }}</button>
                                                             </div>
                                                         </div>
                                                     </div>

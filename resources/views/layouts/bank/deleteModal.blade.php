@@ -13,7 +13,7 @@
                     <h5>Are you sure you want to delete this record?</h5>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-dark btn-sm waves-effect remove-data-from-delete-form"
+                    <button type="button" class="btn btn-primary btn-sm waves-effect remove-data-from-delete-form"
                         data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-sm btn-danger waves-effect waves-light">Delete</button>
                 </div>

@@ -20,29 +20,29 @@
         }
 
         .dataTables_wrapper .dataTables_processing {
-            background: #34383e !important
+            background: #4e738e !important
         }
 
         .dataTables_wrapper .dataTables_paginate .paginate_button.current,
         .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-            background: #34383e !important;
+            background: #4e738e !important;
             color: #FFFFFF !important;
-            border-color: #34383e !important;
+            border-color: #4e738e !important;
         }
 
         .dataTables_wrapper .dataTables_paginate .paginate_button {
-            border-color: #34383e !important;
+            border-color: #4e738e !important;
         }
 
-        div.dataTables_wrapper div.dataTables_filter label,
-        div.dataTables_wrapper div.dataTables_length label {
+        div.dataTables_wrapper div.dataTables_filter label, div.dataTables_wrapper div.dataTables_length label{
             margin-top: 0px !important;
         }
-
-        .dataTables_wrapper .dataTables_length select,
-        .dataTables_wrapper .dataTables_filter input {
+        .dataTables_wrapper .dataTables_length select{
             border: 1px solid #494949;
-            background: #494949;
+            float: left;
+        }
+        .dataTables_wrapper .dataTables_filter input{
+            border: 1px solid #494949;
         }
     </style>
 @endsection

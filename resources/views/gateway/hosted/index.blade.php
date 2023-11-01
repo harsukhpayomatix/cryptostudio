@@ -24,8 +24,7 @@
 
     <style type="text/css">
         .card {
-            background: var(--secondary-1);
-            border-radius: 0px 0px 3px 3px;
+            border-radius: 0.5rem;
         }
 
         .btn-danger {
@@ -36,9 +35,9 @@
         }
 
         .btn-primary {
-            background: var(--primary-3) !important;
-            border-color: var(--primary-3) !important;
-            color: var(--primary-4) !important;
+            background: var(--primary-1) !important;
+            border-color: var(--primary-1) !important;
+            color: var(--white) !important;
             border-radius: 3px;
         }
 
@@ -61,7 +60,7 @@
         }
 
         [type=radio]+img {
-            border: 3px solid #1B1919;
+            border: 2px solid #4F738E;
             cursor: pointer;
             width: 80px;
             border-radius: 3px;
@@ -71,7 +70,7 @@
         }
 
         [type=radio]:checked+img {
-            border: 3px solid #1B1919;
+            border: 2px solid #4F738E;
             box-shadow: 0px 0px 5px 0px #FFF;
             -webkit-filter: grayscale(0);
             filter: none;

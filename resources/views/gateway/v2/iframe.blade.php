@@ -34,8 +34,7 @@
         }
 
         .card {
-            background: var(--secondary-1);
-            border-radius: 0px 0px 3px 3px;
+            border-radius: 0.5rem;
         }
 
         .btn-danger {
@@ -46,18 +45,18 @@
         }
 
         .btn-primary {
-            background: var(--primary-3) !important;
-            border-color: var(--primary-3) !important;
-            color: var(--primary-4) !important;
+            background: var(--primary-1) !important;
+            border-color: var(--primary-1) !important;
+            color: var(--white) !important;
             border-radius: 3px;
         }
 
         .langDropdown {
-            background: #1B1919 !important;
+            background: #ffffff !important;
         }
 
         .langDropdown li:hover {
-            background-color: var(--primary-2) !important;
+            background-color: #4e738e !important;
 
         }
 
@@ -225,7 +224,7 @@
 
                                             <div class="col-md-12 mt-1">
                                                 <button type="submit"
-                                                    class="btn btn-danger w-100">{{ __('messages.payNow') }}</button>
+                                                    class="btn btn-primary w-100">{{ __('messages.payNow') }}</button>
                                             </div>
                                         </div>
                                     </form>

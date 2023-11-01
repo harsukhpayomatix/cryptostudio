@@ -13,7 +13,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger light remove-data-from-delete-form" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-info">Delete</button>
+                <button type="submit" class="btn btn-primary">Delete</button>
             </div>
             </div>
         </div>

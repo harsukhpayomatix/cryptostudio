@@ -13,7 +13,7 @@
                     Are you sure you want to delete this record?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-info  remove-data-from-delete-form"
+                    <button type="button" class="btn btn-primary  remove-data-from-delete-form"
                         data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </div>
@@ -45,7 +45,7 @@
                     Are you sure you want to restore this record?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-info  remove-data-from-restore-form"
+                    <button type="button" class="btn btn-primary  remove-data-from-restore-form"
                         data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-danger">Restore</button>
                 </div>

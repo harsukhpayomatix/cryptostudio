@@ -460,7 +460,7 @@
                                                             </a>
                                                         @endif
                                                         @if (auth()->guard('admin')->user()->can(['delete-application']))
-                                                            <a class="dropdown-item delete_modal text-white"
+                                                            <a class="dropdown-item delete_modal"
                                                                 data-url="{{ \URL::route('admin.applications.delete', $value->id) }}"
                                                                 data-id="{{ $value->id }}"><i
                                                                     class="fa fa-trash text-danger me-2"></i>
@@ -468,7 +468,7 @@
                                                         @endif
 
                                                         @if (auth()->guard('admin')->user()->can(['send-to-bank-application']) && $value->status != '12')
-                                                            <a class="dropdown-item assign-bank text-white"
+                                                            <a class="dropdown-item assign-bank"
                                                                 data-bs-target="#assignBankModal" data-bs-toggle="modal"
                                                                 data-id="{{ $value->id }}" title="Send To Bank"
                                                                 style="cursor: pointer;">
