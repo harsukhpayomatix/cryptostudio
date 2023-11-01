@@ -2,9 +2,7 @@
 
 <head>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
     <style>
         .custom-btn {
@@ -15,7 +13,7 @@
             color: #B3ADAD;
             font-weight: bold;
             border: 3px solid #34383e;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Ubuntu', sans-serif;
             box-sizing: border-box;
             text-decoration: none;
         }
@@ -34,7 +32,7 @@
 </head>
 
 <body
-    style="height: 100%; background-color: #202020;font-family: 'Poppins', sans-serif;width: 100%;margin: auto; border-radius: 15px;">
+    style="height: 100%; background-color: #202020;font-family: 'Ubuntu', sans-serif;width: 100%;margin: auto; border-radius: 15px;">
     <main>
         <table style="padding: 30px 60px 0px 60px; width: 100%; margin-bottom: 30px;">
             <tr>

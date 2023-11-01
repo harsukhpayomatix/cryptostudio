@@ -1293,7 +1293,7 @@ div#lottie-fullscreen svg path {
   font-size: 28px;
   line-height: 45px;
   color: #ffffff;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   flex: 1;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
@@ -2911,7 +2911,7 @@ FAQ
 
 .iq-accordion.career-style .iq-accordion-block .accordion-title span {
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   display: table-cell;
   color: #212529;
 }
@@ -3850,7 +3850,7 @@ Calender
   -webkit-border-radius: 20px;
   text-decoration: none;
   border: 1px solid #f2edff;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .stepwizard-row .wizard-step i {

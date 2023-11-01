@@ -7,7 +7,7 @@
                         <table border="0" cellpadding="0" cellspacing="0" role="presentation">
                             <tr>
                                 <td>
-                                    <a href="{{ $url }}" class="" target="_blank" style="font-family: 'Poppins', sans-serif;
+                                    <a href="{{ $url }}" class="" target="_blank" style="font-family: 'Ubuntu', sans-serif;
                                         box-sizing: border-box;
                                         text-decoration: none;
                                         background-color: #202020;

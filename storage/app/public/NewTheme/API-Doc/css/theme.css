@@ -10528,7 +10528,7 @@ fieldset:disabled .btn {
  * Twitter: @3rdwave_themes
 */
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Ubuntu", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #5d6778;
@@ -10546,7 +10546,7 @@ h5,
 .h5,
 h6,
 .h6 {
-    font-family: "Poppins", sans-serif;
+    font-family: "Ubuntu", sans-serif;
     color: #252930;
     font-weight: 600;
 }

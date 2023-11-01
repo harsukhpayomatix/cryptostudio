@@ -1073,3 +1073,7 @@ kbd {
 .table:not(.table-dark):not(.table-light) tfoot:not(.table-dark) th{
     background-color: #F5F6FA;
 }
+
+.card-header .form-dark .form-control-sm{
+    padding: 4px 8px;
+}
