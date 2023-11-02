@@ -15,6 +15,7 @@ use App\Mail\TicketReplyByUser;
 use App\Notifications\TicketComment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+
 class TicketReplyController extends Controller
 {
     public function __construct()
@@ -27,25 +28,6 @@ class TicketReplyController extends Controller
 
         view()->share('moduleTitleP',$this->moduleTitleP);
         view()->share('moduleTitleS',$this->moduleTitleS);
-    }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
     }
 
     /**
@@ -94,7 +76,7 @@ class TicketReplyController extends Controller
             $department = Ticket::where('id',$input['ticket_id'])->pluck('department')->first();
 
             try {
-                Mail::to('sales@crypto-studio.co')->send(new TicketReplyByUser($ticket,$user));
+                Mail::to('tech@cryptostudio.co')->send(new TicketReplyByUser($ticket,$user));
             } catch (\Exception $e) {
 
             }
@@ -126,51 +108,6 @@ class TicketReplyController extends Controller
         notificationMsg('success','Replied successfully.');
         addToLog('Ticket Replied successfully.', $input, 'general');
         return redirect()->route('ticket.show',$input['ticket_id']);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
     }
 
     // ================================================

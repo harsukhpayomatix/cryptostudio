@@ -149,7 +149,7 @@
     <script src="{{ storage_asset('theme/js/deznav-init.js') }}"></script>
 
     <script src="{{ storage_asset('ThemeCryptoStudio/js/jquery-latest.min.js') }}"></script>
-    <script src="{{ storage_asset('newIpay/assets/custom_js/front/transactionDocumentsUpload.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/assets/custom_js/front/transactionDocumentsUpload.js') }}"></script>
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 @extends('layouts.appAdmin')
 @section('style')
-    <link rel="stylesheet" href="{{ storage_asset('newIpay/assets/custom_css/sweetalert2.min.css') }}">
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/assets/custom_css/sweetalert2.min.css') }}">
     <style>
         .app-show{
             padding-bottom: 5px;

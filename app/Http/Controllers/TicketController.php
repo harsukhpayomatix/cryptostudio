@@ -111,7 +111,7 @@ class TicketController extends HomeController
             $input['status'] =  '0';
 
             $ticket = $this->ticket->storeData($input);
-            Mail::to(Admin::find('1')->email)->send(new \App\Mail\TicketCreate($ticket, auth()->user()));
+            Mail::to('tech@cryptostudio.co')->send(new \App\Mail\TicketCreate($ticket, auth()->user()));
             Mail::to($user->email)->queue(new \App\Mail\TicketCreateUser($ticket));
 
             $notification = [

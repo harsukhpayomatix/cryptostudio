@@ -9,7 +9,7 @@
 @endsection
 
 @section('customeStyle')
-    <link rel="stylesheet" href="{{ storage_asset('newIpay/assets/custom_css/sweetalert2.min.css') }}">
+    <link rel="stylesheet" href="{{ storage_asset('ThemeCryptoStudio/assets/custom_css/sweetalert2.min.css') }}">
 @endsection
 
 @section('content')
@@ -211,8 +211,8 @@
 @endsection
 
 @section('customScript')
-    <script src="{{ storage_asset('newIpay/assets/custom_js/sweetalert2.min.js') }}"></script>
-    <script src="{{ storage_asset('newIpay/assets/custom_js/common.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/assets/custom_js/sweetalert2.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/assets/custom_js/common.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $('body').on('click', '.declined', function() {

@@ -326,7 +326,7 @@
     </script>
     {{-- <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/sweetalert2.min.js') }}"></script>
 <script src="{{ storage_asset('ThemeCryptoStudio/custom_js/sweetalert2.min.js') }}"></script> --}}
-    <script src="{{ storage_asset('newIpay/assets/custom_js/common.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/assets/custom_js/common.js') }}"></script>
     <script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
     <script type="text/javascript">
         $("#resetForm").click(function() {

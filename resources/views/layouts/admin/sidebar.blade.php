@@ -3,7 +3,7 @@
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item me-auto">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{{ route('dashboard') }}">
                     <img src="{{ storage_asset('NewTheme/images/logo_sm.png') }}" class="logo-sm">
                     <img src="{{ storage_asset('NewTheme/images/logo.png') }}" class="logo-big">
                 </a>

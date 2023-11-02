@@ -54,7 +54,6 @@ class TicketController extends Controller
             $noList = 10;
         }
 
-        // dd($input);
         $tickets = $this->ticket->getAdminTickets($input, $noList);
 
         $businessNames = Application::orderBy('id', 'desc')
@@ -63,8 +62,6 @@ class TicketController extends Controller
                 $query->where('is_whitelable', '0')->where('is_white_label', '0');
             })
             ->get();
-
-        // dd($tickets->first()->user->application);
 
         return view($this->moduleTitleP . '.index', compact('tickets', 'businessNames'));
     }

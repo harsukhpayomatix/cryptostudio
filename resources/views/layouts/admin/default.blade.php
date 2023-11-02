@@ -64,11 +64,11 @@
         }
 
         #searchModal .modal-body::-webkit-scrollbar-track {
-            background: #494949;
+            background: #F4F5F9;
         }
 
         #searchModal .modal-body::-webkit-scrollbar-thumb {
-            background: #F44336;
+            background: #4F738E;
         }
     </style>
 </head>

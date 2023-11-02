@@ -543,8 +543,8 @@
 @endsection
 
 @section('customScript')
-    <script src="{{ storage_asset('newIpay/assets/custom_js/admin/applications.js') }}"></script>
-    <script src="{{ storage_asset('newIpay/assets/custom_js/common.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/assets/custom_js/admin/applications.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/assets/custom_js/common.js') }}"></script>
     <script src="{{ storage_asset('newTheme/assets/lib/ckeditor4/ckeditor.js') }}"></script>
     <script type="text/javascript">
         $("#resetForm").click(function() {
