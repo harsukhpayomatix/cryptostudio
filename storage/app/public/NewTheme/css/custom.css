@@ -902,6 +902,7 @@ body.menu-expanded .navbar-header,
     padding: 12px 15px;
     margin: 0px;
     width: 100%;
+    border-radius: 0px 0px 0.5rem 0.5rem;
 }
 
 .datepicker {

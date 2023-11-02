@@ -10,70 +10,69 @@
 @endsection
 @section('content')
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="row">
-                <div class="col-md-4 mb-2">
-                    <div class="merchantTxnCard">
-                        <h2>{{ round($transaction->successfullP, 2) }} %</h2>
-                        <p class="mb-1" style="color: #82CD47;">Successful</p>
+                <div class="col-md-2">
+                    <div class="merchantTxnCard text-white" style="background-color: #82CD47;">
+                        <h2 class="text-white">{{ round($transaction->successfullP, 2) }} %</h2>
+                        <p class="mb-1">Successful</p>
                         <p class="total">Total Count : <span style="color: var(--main-primary);"> {{ $transaction->successfullC }}</span>
                         </p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 mb-2">
-                    <div class="merchantTxnCard">
-                        <h2>{{ round($transaction->declinedP, 2) }} %</h2>
-                        <p class="mb-1" style="color: #5F9DF7;">Declined</p>
+                <div class="col-md-2">
+                    <div class="merchantTxnCard text-white" style="background-color: #FF5858;">
+                        <h2 class="text-white">{{ round($transaction->declinedP, 2) }} %</h2>
+                        <p class="mb-1">Declined</p>
                         <p class="total">Total Count : <span style="color: var(--main-primary);"> {{ $transaction->declinedC }}</span>
                         </p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-2">
-                    <div class="merchantTxnCard">
-                        <h2>{{ round($transaction->chargebackP, 2) }} %</h2>
-                        <p class="mb-1" style="color: #C47AFF;">Chargeback</p>
+                <div class="col-md-2">
+                    <div class="merchantTxnCard text-white" style="background-color: #4F738E;">
+                        <h2 class="text-white">{{ round($transaction->chargebackP, 2) }} %</h2>
+                        <p class="mb-1">Chargeback</p>
                         <p class="total">Total Count : <span style="color: var(--main-primary);">
                                 {{ $transaction->chargebackC }}</span></p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-2">
-                    <div class="merchantTxnCard">
-                        <h2>{{ round($transaction->suspiciousP, 2) }} %</h2>
-                        <p class="mb-1" style="color: #C47AFF;">Marked</p>
-                        <p class="total">Total Count : <span style="color: var(--main-primary);">
-                                {{ $transaction->suspiciousC }}</span></p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-2">
-                    <div class="merchantTxnCard">
-                        <h2>{{ round($transaction->refundP, 2) }} %</h2>
-                        <p class="mb-1" style="color: #FF5858;">Refund</p>
+                <div class="col-md-2">
+                    <div class="merchantTxnCard text-white" style="background-color: #b16ee7;">
+                        <h2 class="text-white">{{ round($transaction->refundP, 2) }} %</h2>
+                        <p class="mb-1">Refund</p>
                         <p class="total">Total Count : <span style="color: var(--main-primary);"> {{ $transaction->refundC }}</span>
                         </p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="merchantTxnCard text-white" style="background-color: #4F738E;">
+                        <h2 class="text-white">{{ round($transaction->suspiciousP, 2) }} %</h2>
+                        <p class="mb-1">Marked</p>
+                        <p class="total">Total Count : <span style="color: var(--main-primary);">
+                                {{ $transaction->suspiciousC }}</span></p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-12">
             <div class="row">
                 @if (Auth::guard('agentUser')->user()->main_agent_id == 0)
                     @if (auth()->guard('agentUser')->user()->referral_code != null ||
                             auth()->guard('agentUser')->user()->referral_code != '')
-                        <div class="col-xl-12 col-lg-12">
-                            <div class=" merchantTxnCard">
+                        <div class="col-xl-12 col-lg-12 mt-2">
+                            <div class="merchantTxnCard">
                                 <div class="rounded">
-                                    <div class="row">
-                                        <div class="col-md-12 text-center mt-3">
+                                    <div class="row m-0">
+                                        <div class="col-md-5 text-left mb-1">
                                             <h4>Your Referral Link</h4>
                                             <p class="mb-1">Your personal referral link for merchant registration</p>
-
-                                            <span class="badge badge-primary px-3 py-1" id="link"
-                                                data-link="{{ config('app.url') }}/register?RP={{ auth()->guard('agentUser')->user()->referral_code }}">{{ config('app.url') }}/register?RP={{ auth()->guard('agentUser')->user()->referral_code }}</span>
                                         </div>
-                                        <div class="col-md-12 mt-2 mb-2 text-center">
-                                            <span class="btn btn-danger btn-sm" id="Copy"
+                                        <div class="col-md-7 text-left mb-1">
+                                            <span class="badge badge-dark px-3 py-1" id="link"
+                                                data-link="{{ config('app.url') }}/register?RP={{ auth()->guard('agentUser')->user()->referral_code }}">{{ config('app.url') }}/register?RP={{ auth()->guard('agentUser')->user()->referral_code }}</span>
+                                            <span class="btn btn-primary rounded" id="Copy"
                                                 style="cursor: pointer;">Copy</span>
                                         </div>
                                     </div>
@@ -87,7 +86,7 @@
     </div>
 
     <div class="row">
-        <div class="col-xl-12 col-lg-12" id="latest_merchants">
+        <div class="col-xl-12 col-lg-12 mt-2" id="latest_merchants">
             <div class="card">
                 <div class="card-header">
 
