@@ -321,7 +321,7 @@
                                                     </div>
                                                 </td>
                                                 <td class="text-center">
-                                                    <div class="custom-control custom-checkbox form-check mr-0">
+                                                    <div class="custom-control custom-checkbox form-check mr-0 pull-left">
                                                         <input type="checkbox" name=""
                                                             id="showClientSide_{{ $value->id }}"
                                                             class="form-check-input showClientSide"
