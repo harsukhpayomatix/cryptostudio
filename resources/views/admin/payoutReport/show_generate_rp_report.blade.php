@@ -26,20 +26,20 @@
             position: relative;
             width: 100%;
             margin: 0 auto;
-            background: #202020;
+            background: #F5F6FA;
             font-size: 14px;
             font-family: Arial;
-            color: #B3ADAD;
+            color: #4F738E;
         }
 
         main {
             width: 21cm;
-            background: #3D3D3D;
+            background: #FFFFFF;
             margin: 30px auto;
             padding: 30px 0px !important;
             position: relative;
             border-radius: 5px;
-            color: #B3ADAD;
+            color: #4F738E;
 
         }
 
@@ -55,11 +55,11 @@
         .title {
             padding-top: 10px;
             float: right;
-            color: #B3ADAD;
+            color: #4F738E;
         }
 
         .title h1 {
-            color: #B3ADAD;
+            color: #4F738E;
             margin: 0px;
         }
 
@@ -200,7 +200,7 @@
                     <thead>
                         <tr>
                             <td colspan="2"
-                                style="font-weight: bold; background-color: #1B1919; color: #B3ADAD; padding: 10px 15px;">
+                                style="font-weight: bold; background-color: #4F738E; color: #FFFFFF; padding: 10px 15px;">
                                 Currency : {{ $value->currency }} for
                                 {{ $value->card_type == 'Other' ? 'Visa' : $value->card_type }}
                             </td>
@@ -230,7 +230,7 @@
 
         <table class="table">
             <tbody>
-                <tr style="font-weight: bold; background-color: #F44336; color: #fff; padding: 10px 15px;">
+                <tr style="font-weight: bold; background-color: #4F738E; color: #fff; padding: 10px 15px;">
                     <td colspan="2"><strong>Total Commission in USD</strong></td>
                     <td class="right" style="font-weight: 900;">{{ $totalCommissionInUsd }} USD</td>
                 </tr>
