@@ -32,8 +32,6 @@ return [
     'captch_sitekey' => env('NOCAPTCHA_SITEKEY', ''),
     'email_support' => 'sales@crypto-studio.co',
     'logo_url' => 'https://dashboard.crypto-studio.co/storage/ThemeCryptoStudio/images/logo.png',
-    'logo_url2' => 'http://dashboard.crypto-studio.co/storage/ThemeCryptoStudio/images/logo.png',
-    'mail_logo_url' => 'https://dashboard.crypto-studio.co/storage/NewTheme/images/logo.png',
     "languages" => ["en", "sp", "fr"],
     /*
     |--------------------------------------------------------------------------

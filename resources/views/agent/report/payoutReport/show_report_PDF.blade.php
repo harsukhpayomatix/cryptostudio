@@ -205,7 +205,7 @@
     <header class="clearfix">
       <div class="header1">
         <div id="logo">
-          <img src="{{ config('app.logo_url2') }}">
+          <img src="{{ config('app.logo_url') }}">
         </div>
         <div class="title">
           <h1>{{ $data->processor_name }}</h1>

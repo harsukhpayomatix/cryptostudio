@@ -37,7 +37,7 @@
         <table style="padding: 30px 60px 0px 60px; width: 100%; margin-bottom: 30px;">
             <tr>
                 <td>
-                    <img src="{{ config('app.mail_logo_url') }}" style="margin-bottom: 30px;  width: 250px;">
+                    <img src="{{ config('app.logo_url') }}" style="margin-bottom: 30px;  width: 250px;">
                 </td>
             </tr>
 
