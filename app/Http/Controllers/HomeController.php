@@ -131,27 +131,8 @@ class HomeController extends Controller
             ->where('t.transaction_date', '>=', $start_date)
             ->where('t.transaction_date', '<=', $end_date)
             ->first();
-
-        $transactionsLine = DB::table("transactions as t")->select([
-            DB::raw('DATE_FORMAT(DATE(transaction_date), "%d-%b") AS date'),
-            DB::raw("sum(if(t.status = '1', 1, 0)) as successTransactions"),
-            DB::raw("sum(if(t.status = '0', 1, 0)) as declinedTransactions"),
-        ])
-            ->where('t.transaction_date', '>=', $start_date)
-            ->where('t.transaction_date', '<=', $end_date)
-            ->where('t.user_id', $user_id)
-            ->whereNotIn('t.payment_gateway_id', $payment_gateway_id)
-            ->where('t.deleted_at', NULL)
-            ->groupBy('date')
-            ->orderBy('date', 'asc')
-            ->get()
-            ->toArray();
-
-        $date = \Carbon\Carbon::today()->subDays(6)->format("Y-m-d");
-        $inputs['user_id'] = $user_id;
-        $inputs['for'] = 'Weekly';
-        $TransactionSummary = $this->Transaction->getTransactionSummaryRP($inputs, 1);
-        return view('home', compact('transaction', 'transactionWeek', 'transactionsLine', 'TransactionSummary'));
+            
+        return view('home', compact('transaction', 'transactionWeek',));
     }
 
     public function getTransactionBreakUp(Request $request)

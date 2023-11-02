@@ -6,7 +6,7 @@
    @endif
 
    <div class="row">
-       <div class="col-lg-4 mb-2">
+       <div class="col-lg-12 mb-2">
            <div class="merchantTxnCard">
                <h2>{{ $merchants->totalMerchant }}</h2>
                <p class="mb-1" style="color: #82CD47;">Total Merchant</p>
@@ -14,7 +14,7 @@
                        {{ $merchants->totalMerchant }}</span></p>
            </div>
        </div>
-       <div class="col-lg-4 mb-2">
+       <div class="col-lg-12 mb-2">
            <div class="merchantTxnCard">
                <h2>{{ $merchants->liveMerchant }}</h2>
                <p class="mb-1" style="color: #5F9DF7;">Live Merchant</p>
@@ -22,7 +22,7 @@
                        %</span></p>
            </div>
        </div>
-       <div class="col-lg-4 mb-2">
+       <div class="col-lg-12 mb-2">
            <div class="merchantTxnCard">
                <h2>{{ $merchants->notLiveMerchant }}</h2>
                <p class="mb-1" style="color: #C47AFF;">Pending for Live Merchant</p>
