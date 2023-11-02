@@ -16,6 +16,9 @@
     <!-- BEGIN: Theme CSS-->
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/bootstrap-extended.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/select2.min.css') }}">
+
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/auth.css') }}">
 
     <style type="text/css">
@@ -70,6 +73,15 @@
             box-shadow: 0px 0px 5px 0px #FFF;
             -webkit-filter: grayscale(0);
             filter: none;
+        }
+        .gateway-card .select2-container--default .select2-selection--single .select2-selection__rendered{
+            line-height: 30px;
+        }
+        .select2-container--default .select2-selection--single{
+            border: 1px solid var(--main-primary) !important;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow{
+            height: 42px !important;
         }
     </style>
 </head>
@@ -155,6 +167,8 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
     <script src="{{ storage_asset('NewTheme/js/jquery.validity.js') }}"></script>
     <script src="{{ storage_asset('NewTheme/js/creditly.js') }}"></script>
+
+    <script src="{{ storage_asset('NewTheme/vendors/js/forms/select/select2.full.min.js') }}"></script>
     <script>
         jQuery(document).ready(function() {
             jQuery("#load").fadeOut();
