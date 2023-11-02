@@ -84,7 +84,7 @@
     @if (auth()->guard('admin')->user()->can(['form-generate-payout-reports']))
         <div class="row">
             <div class="col-xl-12 col-xxl-12">
-                <div class="card  mt-1">
+                <div class="card mt-1">
                     <div class="card-header">
 
                         <h4 class="card-title">Generate Report</h4>
@@ -119,7 +119,7 @@
                         <form action="{{ route('payout-report-store-new') }}" method="post" id="search-form"
                             class="form-dark">@csrf
                             <div class="row">
-                                <div class="col-xl-3 col-sm-3 col-12 col-md-6 mt-3">
+                                <div class="col-xl-3 col-sm-3 col-12 col-md-6">
                                     <label for="business_name">Select Company Name <span class="text-danger">*</span>
                                     </label>
                                     <select name="user_id[]" id="business_name" data-size="7" data-live-search="true"
@@ -137,7 +137,7 @@
                                         </span>
                                     @endif
                                 </div>
-                                <div class="col-xl-3 col-sm-3 col-12 col-md-6 mt-3">
+                                <div class="col-xl-3 col-sm-3 col-12 col-md-6">
                                     <label for="end_date">End Date <span class="text-danger">*</span></label>
                                     <div class="date-input">
                                         <input type="text" id="end_date" class="form-control"
@@ -151,7 +151,7 @@
                                         </span>
                                     @endif
                                 </div>
-                                <div class="col-xl-3 col-sm-3 col-12 col-md-6 mt-3">
+                                <div class="col-xl-3 col-sm-3 col-12 col-md-6">
                                     <div class="form-group">
                                         <label>Show Client Side</label>
                                         <div class="form-check">
