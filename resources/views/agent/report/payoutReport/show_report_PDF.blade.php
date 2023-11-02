@@ -10,193 +10,200 @@
 
   <style type="text/css" media="screen">
     .clearfix:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
+            content: "";
+            display: table;
+            clear: both;
+        }
 
-    @page {
-      margin: 0px;
-    }
+        @page {
+            margin: 0px;
+        }
 
-    body {
-      margin: 0px;
-    }
+        body {
+            margin: 0px;
+        }
 
-    a {
-      color: #5D6975;
-      text-decoration: underline;
-    }
+        a {
+            color: #B3ADAD;
+            text-decoration: underline;
+        }
 
-    body {
-      position: relative;
-      width: 100%;
-      margin: 0 auto;
-      background: #34383E;
-      font-size: 14px;
-      font-family: Arial;
-    }
+        body {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            background: #F5F6FA;
+            font-size: 14px;
+            font-family: Arial;
+            color: #B3ADAD;
+        }
 
-    main {
-      width: 21cm;
-      background: #FFD956;
-      margin: 30px auto;
-      padding: 30px 0px !important;
-      position: relative;
-      border-radius: 25px;
-      box-shadow: rgb(0 0 0 / 70%) 10px 10px 15px -5px, rgb(0 0 0 / 60%) 5px 5px 5px -10px;
-    }
+        main {
+            width: 21cm;
+            background: #FFFFFF;
+            margin: 30px auto;
+            padding: 30px 0px !important;
+            position: relative;
+            border-radius: 5px;
+            color: #4F738E;
+            box-shadow: 0 10px 30px 0 rgba(17,38,146,.05);
+        }
 
-    #logo {
-      margin-bottom: 0px;
-      float: left;
-    }
+        #logo {
+            margin-bottom: 0px;
+            float: left;
+        }
 
-    #logo img {
-      width: 200px;
-    }
+        #logo img {
+            width: 200px;
+        }
 
-    .title {
-      color: #34383e;
-      float: right;
-    }
+        .title {
+            color: #4F738E;
+            float: right;
+        }
 
-    .title h1 {
-      margin: 25px 0px 0px 0px;
-    }
+        .title h1 {
+            margin: 25px 0px 0px 0px;
+        }
 
-    #from {
-      float: left;
-      width: 33.33%;
-      font-size: 14px;
-      color: #000;
-    }
+        #from {
+            float: left;
+            width: 33.33%;
+            font-size: 14px;
+            color: #B3ADAD;
+        }
 
-    #project {
-      float: left;
-      width: 50%;
-      font-size: 14px;
-      color: #FFD956;
-    }
+        #project {
+            float: left;
+            width: 50%;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
 
-    #project span {
-      color: #000;
-      text-align: right;
-      width: 52px;
-      margin-right: 10px;
-      display: inline-block;
-      font-size: 0.8em;
-    }
+        #project span {
+            color: #B3ADAD;
+            text-align: right;
+            width: 52px;
+            margin-right: 10px;
+            display: inline-block;
+            font-size: 0.8em;
+        }
 
-    #company {
-      float: left;
-      text-align: left;
-      text-align: left;
-      width: 50%;
-      font-size: 14px;
-      color: #FFD956;
-    }
+        #company {
+            float: left;
+            text-align: left;
+            text-align: left;
+            width: 50%;
+            font-size: 14px;
+            color: #FFFFFF;
+        }
 
-    .header1 {
-      padding: 0px 30px;
-      margin-bottom: 15px;
-    }
+        .header1 {
+            padding: 0px 30px;
+            margin-bottom: 15px;
+        }
 
-    .header2 {
-      background-color: #34383e;
-      padding: 15px 30px;
-    }
+        .header2 {
+            /* background: linear-gradient(to right, rgb(244, 67, 54), rgb(173 79 70)) !important; */
+            background: #4F738E !important;
+            padding: 15px 30px;
+            color: #B3ADAD;
+        }
 
-    #project div,
-    #company div {
-      margin-bottom: 5px;
-      white-space: nowrap;
-    }
+        #project div,
+        #company div {
+            margin-bottom: 5px;
+            white-space: nowrap;
+        }
 
-    .body-table {
-      /*margin: 0px 30px 30px 30px;*/
-    }
+        .body-table {
+            /*margin: 0px 30px 30px 30px;*/
+        }
 
-    .table {
-      width: 100%;
-      border-collapse: collapse;
-      border-spacing: 0;
-      margin-top: 15px;
-    }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-top: 15px;
+        }
 
-    .table th,
-    .table td {
-      text-align: left;
-    }
+        .table th,
+        .table td {
+            text-align: left;
+        }
 
-    .table th {
-      padding: 10px 20px;
-      color: #FFF;
-      white-space: nowrap;
-      font-weight: 900;
-      background-color: #34383e;
-    }
+        .table th {
+            padding: 10px 20px;
+            color: #FFFFFF;
+            white-space: nowrap;
+            font-weight: 900;
+            background: #4F738E !important;
+        }
 
-    .table .service,
-    .table .desc {
-      text-align: left;
-    }
+        .table .service,
+        .table .desc {
+            text-align: left;
+        }
 
-    .table td {
-      padding: 5px 20px;
-    }
+        .table td {
+            padding: 5px 20px;
+        }
 
-    .table td.service,
-    .table td.desc {
-      vertical-align: top;
-    }
+        .table td.service,
+        .table td.desc {
+            vertical-align: top;
+        }
 
-    .table td.unit,
-    .table td.qty,
-    .table td.total {
-      font-size: 1.2em;
-    }
+        .table td.unit,
+        .table td.qty,
+        .table td.total {
+            font-size: 1.2em;
+        }
 
-    .table td.grand {
-      border-top: 1px solid #5D6975;
-      ;
-    }
+        .table td.grand {
+            border-top: 1px solid #5D6975;
+            ;
+        }
 
-    #notices .notice {
-      color: #5D6975;
-      font-size: 1.2em;
-    }
+        #notices .notice {
+            color: #5D6975;
+            font-size: 1.2em;
+        }
 
-    footer {
-      color: #5D6975;
-      width: 100%;
-      bottom: 0;
-      text-align: center;
-    }
+        footer {
+            color: #4F738E;
+            width: 100%;
+            bottom: 0;
+            text-align: center;
+        }
 
-    .center {
-      text-align: center;
-    }
+        .center {
+            text-align: center;
+        }
 
-    .right {
-      text-align: right;
-    }
+        .right {
+            text-align: right;
+        }
 
-    .bluebg td {
-      background: #DCF4FA !important;
-    }
+        .bluebg td {
+            background: #4F738E !important;
+            color: #B3ADAD;
+        }
 
-    .greenbg td {
-      background: #f9e8af !important;
-    }
+        .greenbg td {
+            background: #4F738E !important;
+            color: #FFFFFF;
+        }
 
-    .redbg td {
-      background: #FFF3F7 !important;
-    }
+        .redbg td {
+            background: #4F738E !important;
+            color: #B3ADAD;
+        }
 
-    .clear-header {
-      clear: both;
-    }
+        .clear-header {
+            clear: both;
+        }
   </style>
 </head>
 
@@ -240,7 +247,7 @@
         <thead>
           <tr>
             <td
-              style="font-weight: bold; background-color: #34383E; color: #fff; padding: 10px 15px;box-shadow: rgb(0 0 0 / 70%) 10px 10px 15px -5px, rgb(0 0 0 / 60%) 5px 5px 5px -10px;">
+              style="font-weight: bold; background-color: #4F738E; color: #fff; padding: 10px 15px;box-shadow: rgb(0 0 0 / 70%) 10px 10px 15px -5px, rgb(0 0 0 / 60%) 5px 5px 5px -10px;">
               Currency : {{ $value->currency }} for {{($value->card_type == "Other")?'Visa': $value->card_type}}
             </td>
           </tr>

@@ -236,13 +236,6 @@
                 </tr>
             </tbody>
         </table>
-        <!-- <div id="notices">
-      <p style="text-align: center;color: #F94687;">*Your payment will be processed in next 48 hours and will reflect in
-        your account within 4-5 business days.</p>
-    </div>
-    <footer>
-      Invoice was created on a computer and is valid without the signature and seal.
-    </footer> -->
     </main>
 </body>
 
