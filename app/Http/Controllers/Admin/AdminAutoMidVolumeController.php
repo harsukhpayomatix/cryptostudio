@@ -30,8 +30,7 @@ class AdminAutoMidVolumeController extends AdminController
             ->where('t.status', '1')
             ->get();
 
-        Mail::to('dean.page@bitmatix.io')->cc(['ruchi@payomatix.com', 'anurag@payomatix.com', 'jatin.patel@pay.agency', 'harsukh.makwana@payomatix.com', 'tushar.vashishth@pay.agency'])->send(new AutoMidVolumeMail($transactions, $date));
-        // Mail::to('tushar.vashishth@pay.agency')->send(new AutoMidVolumeMail($transactions, $date));
+        Mail::to('dean.page@bitmatix.io')->cc(['ruchi@payomatix.com', 'anurag@payomatix.com', 'harsukh.makwana@payomatix.com'])->send(new AutoMidVolumeMail($transactions, $date));
 
         return response()->json(["status" => 200, "msg" => "Email sent successfully!"]);
     }

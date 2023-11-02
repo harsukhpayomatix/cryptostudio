@@ -265,7 +265,7 @@ class Warning extends Model
             		'url' => '#',
             	];
 
-            	Mail::to('jiteshmeniya99@gmail.com')->send(new SendDynamicMail($mail_array));
+            	Mail::to('harshad.pathak@payomatix.com')->send(new SendDynamicMail($mail_array));
 
             	Warning::insert($warnings);
             }
