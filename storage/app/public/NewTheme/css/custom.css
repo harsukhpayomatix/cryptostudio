@@ -1082,3 +1082,7 @@ kbd {
 .main-menu.menu-dark .navigation > li > ul li.has-sub > a{
     margin: 0px 10px;
 }
+
+.header-navbar .avatar{
+    background-color: #4F738E;
+}

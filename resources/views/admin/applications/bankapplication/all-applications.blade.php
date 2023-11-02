@@ -238,16 +238,12 @@
                                                     <div class="dropdown-menu dropdown-menu-end">
                                                         @if (auth()->guard('admin')->user()->can(['view-bank-application']))
                                                             <a href="{{ route('application-bank.detail', $value->id) }}"
-                                                                class="dropdown-item"><i
-                                                                    class="fa fa-eye text-secondary me-2"></i>
-                                                                Show
+                                                                class="dropdown-item">Show
                                                             </a>
                                                         @endif
                                                         @if (auth()->guard('admin')->user()->can(['update-bank-application']))
                                                             <a href="{{ route('application-bank.edit', $value->id) }}"
-                                                                class="dropdown-item"><i
-                                                                    class="fa fa-edit text-success me-2"></i>
-                                                                Edit
+                                                                class="dropdown-item">Edit
                                                             </a>
                                                         @endif
                                                     </div>

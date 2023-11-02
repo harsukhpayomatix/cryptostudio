@@ -236,39 +236,27 @@
                                                     </button>
                                                     <ul class="dropdown-menu dropdown-menu-end">
                                                         @if (auth()->guard('admin')->user()->can(['update-agent']))
-                                                            <a href="{!! URL::route('agents.edit', $value->id) !!}" class="dropdown-item"><i
-                                                                    class="fa fa-edit text-primary me-2"></i>
-                                                                Edit</a>
+                                                            <a href="{!! URL::route('agents.edit', $value->id) !!}" class="dropdown-item">Edit</a>
                                                         @endif
                                                         @if (auth()->guard('admin')->user()->can(['delete-agent']))
                                                             <a href="javascript:void(0)"
                                                                 class="dropdown-item delete_modal"
                                                                 data-url="{!! URL::route('agents.destroy', $value->id) !!}"
-                                                                data-id="{{ $value->id }}"><i
-                                                                    class="fa fa-trash text-danger me-2"></i>
-                                                                Delete</a>
+                                                                data-id="{{ $value->id }}">Delete</a>
                                                         @endif
                                                         @if (auth()->guard('admin')->user()->can(['can-delegate-access-agent']))
                                                             <a href="{{ URL::to('/') }}/agentLogin?email={{ encrypt($value->email) }}"
-                                                                target="_blank" class="dropdown-item"><i
-                                                                    class="fa fa-sign-in text-secondary me-2"></i>
-                                                                Login</a>
+                                                                target="_blank" class="dropdown-item">Login</a>
                                                         @endif
                                                         @if (auth()->guard('admin')->user()->can(['agent-bank-detail-view']))
                                                             <a href="{{ route('admin.agent.bankDetails', $value->id) }}"
-                                                                class="dropdown-item"><i
-                                                                    class="fa fa-bank text-success me-2"></i>
-                                                                Bank Details</a>
+                                                                class="dropdown-item">Bank Details</a>
                                                         @endif
                                                         @if (auth()->guard('admin')->user()->can(['update-agent']))
                                                             @if ($value->is_active == 0)
-                                                                <a href="{!! URL::route('agent-status', [$value->id, 'status' => 1]) !!}" class="dropdown-item"><i
-                                                                        class="fa fa-check text-success me-2"></i>
-                                                                    Active</a>
+                                                                <a href="{!! URL::route('agent-status', [$value->id, 'status' => 1]) !!}" class="dropdown-item">Active</a>
                                                             @else
-                                                                <a href="{!! URL::route('agent-status', [$value->id, 'status' => 0]) !!}" class="dropdown-item"><i
-                                                                        class="fa fa-times text-warning me-2"></i>
-                                                                    Inactive</a>
+                                                                <a href="{!! URL::route('agent-status', [$value->id, 'status' => 0]) !!}" class="dropdown-item">Inactive</a>
                                                             @endif
                                                         @endif
                                                     </ul>

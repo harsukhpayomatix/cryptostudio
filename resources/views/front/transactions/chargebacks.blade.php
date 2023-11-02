@@ -252,15 +252,13 @@
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-end">
                                                         <a href="{{ route('transaction.show', ['id' => $transaction->id]) }}"
-                                                            class="dropdown-item"><i
-                                                                class="fa fa-eye text-primary mr-2"></i>
+                                                            class="dropdown-item">
                                                             Show</a>
                                                         <a href="javascript:;"
                                                             class="chargebacks-show-documents dropdown-item"
                                                             data-bs-target="#transactionShowModal" data-bs-toggle="modal"
                                                             data-id="{{ $transaction->id }}"
-                                                            data-link="{{ route('chargebacks-showdocument') }}"><i
-                                                                class="fa fa-upload text-primary mr-2"></i> Show Documents
+                                                            data-link="{{ route('chargebacks-showdocument') }}">Show Documents
                                                         </a>
 
                                                     </div>

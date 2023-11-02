@@ -81,11 +81,9 @@
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-right">
                                                         <a href="{{ route('payout_report.show', $value->id) }}"
-                                                            target="_blank" class="dropdown-item"><i
-                                                                class="fa fa-eye text-primary mr-2"></i>Show</a>
+                                                            target="_blank" class="dropdown-item">Show</a>
                                                         <a href="{{ route('payout_report.pdf', $value->id) }}"
-                                                            class="dropdown-item"><i
-                                                                class="fa fa-file-pdf-o text-warning mr-2"></i>Pdf</a>
+                                                            class="dropdown-item">PDF</a>
                                                     </div>
                                                 </div>
                                             </td>

@@ -353,46 +353,34 @@
                                                     <div class="dropdown-menu dropdown-menu-end">
                                                         @if (auth()->guard('admin')->user()->can(['pdf-download-application']))
                                                             <a href="{{ \URL::route('application-pdf', $value->id) }}"
-                                                                class="dropdown-item"><i
-                                                                    class="fa fa-download text-primary me-2"></i>
-                                                                PDF Download
+                                                                class="dropdown-item">PDF Download
                                                             </a>
                                                         @endif
                                                         @if (auth()->guard('admin')->user()->can(['doc-download-application']))
                                                             <a href="{{ \URL::route('application-docs', $value->id) }}"
-                                                                class="dropdown-item"><i
-                                                                    class="fa fa-download text-info me-2"></i>
-                                                                Document Download
+                                                                class="dropdown-item">Document Download
                                                             </a>
                                                         @endif
                                                         @if (auth()->guard('admin')->user()->can(['view-application']))
                                                             <a href="{{ route('application.view') }}/{{ $value->id }}"
-                                                                class="dropdown-item"><i
-                                                                    class="fa fa-eye text-secondary me-2"></i>
-                                                                Show
+                                                                class="dropdown-item">Show
                                                             </a>
                                                         @endif
                                                         @if (auth()->guard('admin')->user()->can(['update-application']))
                                                             <a href="{{ route('application.edit') }}/{{ $value->id }}"
-                                                                class="dropdown-item"><i
-                                                                    class="fa fa-edit text-success me-2"></i>
-                                                                Edit
+                                                                class="dropdown-item">Edit
                                                             </a>
                                                         @endif
                                                         @if (auth()->guard('admin')->user()->can(['delete-application']))
                                                             <a class="dropdown-item delete_modal"
                                                                 data-url="{{ \URL::route('admin.applications.delete', $value->id) }}"
-                                                                data-id="{{ $value->id }}"><i
-                                                                    class="fa fa-trash text-danger me-2"></i>
-                                                                Delete</a>
+                                                                data-id="{{ $value->id }}">Delete</a>
                                                         @endif
                                                         @if (auth()->guard('admin')->user()->can(['send-to-bank-application']))
                                                             <a class="dropdown-item assign-bank"
                                                                 data-bs-target="#assignBankModal" data-bs-toggle="modal"
                                                                 data-id="{{ $value->id }}" title="Send To Bank"
-                                                                style="cursor: pointer;">
-                                                                <i class="fa fa-bank text-success mr-1"
-                                                                    style="font-size: 12px;"></i> Send To Bank
+                                                                style="cursor: pointer;">Send To Bank
                                                             </a>
                                                         @endif
                                                     </div>

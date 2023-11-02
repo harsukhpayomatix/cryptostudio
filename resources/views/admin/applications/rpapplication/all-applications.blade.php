@@ -363,16 +363,12 @@
                                                     <div class="dropdown-menu dropdown-menu-end">
                                                         @if (auth()->guard('admin')->user()->can(['view-rp-application']))
                                                             <a href="{{ route('application-rp.detail', $value->id) }}"
-                                                                class="dropdown-item"><i
-                                                                    class="fa fa-eye text-secondary me-2"></i>
-                                                                Show
+                                                                class="dropdown-item">Show
                                                             </a>
                                                         @endif
                                                         @if (auth()->guard('admin')->user()->can(['update-rp-application']))
                                                             <a href="{{ route('application-rp.edit', $value->id) }}"
-                                                                class="dropdown-item"><i
-                                                                    class="fa fa-edit text-success me-2"></i>
-                                                                Edit
+                                                                class="dropdown-item">Edit
                                                             </a>
                                                         @endif
                                                     </div>

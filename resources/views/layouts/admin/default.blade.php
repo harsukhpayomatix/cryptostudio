@@ -47,7 +47,7 @@
         }
 
         .main-menu.menu-dark .navigation>li>ul li:not(.has-sub) {
-            margin: 0px 15px 0px 5px;
+            margin: 0px 10px 0px 5px;
         }
 
         .main-menu.menu-dark .navigation>li ul li ul a {

@@ -268,9 +268,7 @@
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-end">
                                                         <a href="{{ route('transaction.show', ['id' => $transaction->id]) }}"
-                                                            class="dropdown-item"><i
-                                                                class="fa fa-eye text-primary mr-2"></i>
-                                                            Show</a>
+                                                            class="dropdown-item">Show</a>
                                                     </div>
                                                 </div>
                                             </td>

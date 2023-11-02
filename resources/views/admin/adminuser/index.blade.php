@@ -166,21 +166,14 @@
                                                         </button>
                                                         <div class="dropdown-menu dropdown-menu-end">
                                                             @if ($value->is_active == 0)
-                                                                <a href="{!! URL::route('admin-status', [$value->id, 'status' => 1]) !!}" class="dropdown-item"><i
-                                                                        class="fa fa-check text-success me-2"></i>
-                                                                    Active</a>
+                                                                <a href="{!! URL::route('admin-status', [$value->id, 'status' => 1]) !!}" class="dropdown-item">Active</a>
                                                             @else
-                                                                <a href="{!! URL::route('admin-status', [$value->id, 'status' => 0]) !!}" class="dropdown-item"><i
-                                                                        class="fa fa-times text-danger me-2"></i>
-                                                                    Inactive</a>
+                                                                <a href="{!! URL::route('admin-status', [$value->id, 'status' => 0]) !!}" class="dropdown-item">Inactive</a>
                                                             @endif
-                                                            <a href="{!! URL::route('admin-user.edit', $value->id) !!}" class="dropdown-item"><i
-                                                                    class="fa fa-edit text-primary me-2"></i>
-                                                                Edit</a>
+                                                            <a href="{!! URL::route('admin-user.edit', $value->id) !!}" class="dropdown-item">Edit</a>
 
                                                             <a href="{{ route('admin-user-password-expired', $value->id) }}"
-                                                                title="Password Expire" class="dropdown-item">
-                                                                <i class="fa fa-ban text-danger me-2"></i> Expire
+                                                                title="Password Expire" class="dropdown-item">Expire
                                                                 Pasword
                                                             </a>
 
