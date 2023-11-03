@@ -1,11 +1,11 @@
 @extends('layouts.user.default')
 
 @section('title')
-    Transaction Volume Report
+    Transaction Summary
 @endsection
 
 @section('breadcrumbTitle')
-    Transaction Volume Report
+    Transaction Summary
 @endsection
 
 @section('customeStyle')

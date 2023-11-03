@@ -1,11 +1,11 @@
 @extends('layouts.user.default')
 
 @section('title')
-My Application
+Profile Details
 @endsection
 
 @section('breadcrumbTitle')
-<a href="{{ route('dashboardPage') }}">Dashboard</a> / My Application
+<a href="{{ route('dashboardPage') }}">Dashboard</a> / Profile Details
 @endsection
 
 @section('customeStyle')
@@ -244,7 +244,7 @@ My Application
         <div class="card height-auto">
             <div class="card-header d-flex justify-content-between">
                 <div class="header-title">
-                    <h4 class="card-title">My Application</h4>
+                    <h4 class="card-title">Profile Details</h4>
                 </div>
             </div>
             <div class="card-body p-0">
@@ -255,7 +255,7 @@ My Application
         <div class="card height-auto">
             <div class="card-header d-flex justify-content-between">
                 <div class="header-title">
-                    <h4 class="card-title">My Documents</h4>
+                    <h4 class="card-title">Profile Documents</h4>
                 </div>
             </div>
             <div class="card-body p-0">

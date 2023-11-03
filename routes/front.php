@@ -25,10 +25,6 @@ Route::group(['middleware' => 'notification_read_user'], function () {
         Route::get('payout_report/{id}', 'PayoutScheduleController@show')->name('payout_report.show');
         /************************Merchant Payout Route End ***************************************/
 
-        /************************Merchant Risk and compliance***************************************/
-        Route::get('risk-compliance-report', 'ReportController@riskComplianceReport')->name('risk-compliance-report');
-        /************************Merchant Risk and compliance***************************************/
-
         /******************************** MID Details Start **********************************************/
         Route::get('mid-rate', 'MIDDetailsController@index')->name('mid-rate');
         Route::post('mid-rate-agree', 'MIDDetailsController@midRateAgree')->name('mid-rate-agree');

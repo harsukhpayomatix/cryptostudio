@@ -1,33 +1,8 @@
 <!-- BEGIN: Main Menu-->
-<div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
-    <div class="navbar-header">
-        <ul class="nav navbar-nav flex-row">
-            <li class="nav-item me-auto">
-                <a class="navbar-brand" href="#">
-                    <img src="{{ storage_asset('NewTheme/images/logo_sm.png') }}" class="logo-sm">
-                    <img src="{{ storage_asset('NewTheme/images/logo.png') }}" class="logo-big">
-                </a>
-            </li>
-            <li class="nav-item nav-toggle mr-10">
-                <a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse">
-                    <svg width="16" height="5" viewBox="0 0 16 5" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M4 2.84354C4 3.94811 3.10457 4.84354 2 4.84354C0.895431 4.84354 0 3.94811 0 2.84354C0 1.73897 0.895431 0.843536 2 0.843536C3.10457 0.843536 4 1.73897 4 2.84354Z"
-                            fill="#7D7D7D" />
-                        <path
-                            d="M10 2.84354C10 3.94811 9.10457 4.84354 8 4.84354C6.89543 4.84354 6 3.94811 6 2.84354C6 1.73897 6.89543 0.843536 8 0.843536C9.10457 0.843536 10 1.73897 10 2.84354Z"
-                            fill="#7D7D7D" />
-                        <path
-                            d="M14 4.84354C15.1046 4.84354 16 3.94811 16 2.84354C16 1.73897 15.1046 0.843536 14 0.843536C12.8954 0.843536 12 1.73897 12 2.84354C12 3.94811 12.8954 4.84354 14 4.84354Z"
-                            fill="#7D7D7D" />
-                    </svg>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="main-menu-content">
-        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+<div class="horizontal-menu-wrapper">
+<div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper" data-menu-type="floating-nav">
+    <div class="navbar-container main-menu-content" data-menu="menu-container">
+        <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
 
             @if (\Auth::user()->is_white_label == '0')
                 @if (!empty(Auth::user()->application))
@@ -37,16 +12,13 @@
                             Auth::user()->application->status == 10 ||
                             Auth::user()->application->status == 11)
                         <li class="{{ $pageActive == 'dashboard' ? 'active' : '' }} nav-item">
-                            <a class="d-flex align-items-center" href="{{ route('dashboardPage') }}">
+                            <a class="nav-link dropdown-item d-flex align-items-center" href="{{ route('dashboardPage') }}">
                                 <div class="svg-icon">
-                                    <svg width="20" height="20" viewBox="0 0 17 17" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M9.47615 0.539567C9.08563 0.149042 8.45246 0.149042 8.06194 0.539567L1.06194 7.53957C0.671412 7.93009 0.671412 8.56326 1.06194 8.95378C1.45246 9.34431 2.08563 9.34431 2.47615 8.95378L2.76904 8.66089V15.2467C2.76904 15.799 3.21676 16.2467 3.76904 16.2467H5.76904C6.32133 16.2467 6.76904 15.799 6.76904 15.2467V13.2467C6.76904 12.6944 7.21676 12.2467 7.76904 12.2467H9.76904C10.3213 12.2467 10.769 12.6944 10.769 13.2467V15.2467C10.769 15.799 11.2168 16.2467 11.769 16.2467H13.769C14.3213 16.2467 14.769 15.799 14.769 15.2467V8.66089L15.0619 8.95378C15.4525 9.34431 16.0856 9.34431 16.4761 8.95378C16.8667 8.56326 16.8667 7.93009 16.4761 7.53957L9.47615 0.539567Z"
-                                            class="hover-ch" />
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z" class="hover-ch"/>
                                     </svg>
                                 </div>
-                                <span class="menu-title text-truncate" data-i18n="Overview">Overview</span>
+                                <span class="menu-title text-truncate" data-i18n="Home">Home</span>
                             </a>
                         </li>
                     @endif
@@ -54,19 +26,16 @@
             @endif
 
             <li
-                class="nav-item has-sub {{ $pageActive == 'my-application' || $pageActive == 'user-bank-details' || $pageActive == 'security-settings' ? 'sidebar-group-active open' : '' }}">
-                <a href="#" class="d-flex align-items-center">
+                class="dropdown nav-item {{ $pageActive == 'my-application' || $pageActive == 'user-bank-details' || $pageActive == 'security-settings' ? 'sidebar-group-active open' : '' }}" data-menu="dropdown">
+                <a href="#" class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" data-bs-toggle="dropdown">
                     <div class="svg-icon">
-                        <svg width="20" height="17" viewBox="0 0 20 17" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M19.6579 4.55245V7.88578C17.0188 8.85823 13.7415 9.41378 10.2135 9.41378C6.68549 9.41378 3.40815 8.85823 0.769043 7.88578V4.55245C0.769043 3.9409 1.26949 3.44134 1.88015 3.44134H6.46326V2.60756C6.46326 1.32934 7.51927 0.246674 8.82415 0.246674H11.6019C12.9077 0.246674 13.9628 1.33023 13.9628 2.60756V3.44134H18.5459C19.1575 3.44134 19.6579 3.94178 19.6579 4.55245ZM7.8526 2.60756V3.44134H12.5753V2.60756C12.5753 2.07956 12.1308 1.63512 11.6028 1.63512H8.82504C8.29704 1.63512 7.8526 2.07956 7.8526 2.60756ZM8.82504 7.69112V8.24667C8.82504 8.41378 8.93615 8.5249 9.10327 8.5249H11.3255C11.4926 8.5249 11.6037 8.41378 11.6037 8.24667V7.69112C11.6037 7.52401 11.4926 7.4129 11.3255 7.4129H9.10327C8.93615 7.4129 8.82504 7.52401 8.82504 7.69112ZM0.769043 15.1356V9.07956C3.43571 9.99601 6.68549 10.524 10.2135 10.524C13.7415 10.524 16.9913 9.99601 19.6579 9.07956V15.1356C19.6579 15.7471 19.1575 16.2467 18.5468 16.2467H1.88015C1.2686 16.2467 0.769043 15.7462 0.769043 15.1356ZM11.6028 12.2742V11.7187C11.6028 11.5516 11.4917 11.4405 11.3246 11.4405H9.10238C8.93527 11.4405 8.82415 11.5516 8.82415 11.7187V12.2742C8.82415 12.4413 8.93527 12.5525 9.10238 12.5525H11.3246C11.4917 12.5525 11.6028 12.4413 11.6028 12.2742Z"
-                                class="hover-ch" />
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.3333 13.2032C9.66325 13.2032 4.33325 14.5332 4.33325 17.2032V19.2032H20.3333V17.2032C20.3333 14.5332 15.0033 13.2032 12.3333 13.2032ZM12.3333 11.2032C13.3941 11.2032 14.4115 10.7818 15.1617 10.0317C15.9118 9.28153 16.3333 8.26411 16.3333 7.20325C16.3333 6.14238 15.9118 5.12497 15.1617 4.37482C14.4115 3.62467 13.3941 3.20325 12.3333 3.20325C11.2724 3.20325 10.255 3.62467 9.50482 4.37482C8.75468 5.12497 8.33325 6.14238 8.33325 7.20325C8.33325 8.26411 8.75468 9.28153 9.50482 10.0317C10.255 10.7818 11.2724 11.2032 12.3333 11.2032Z" class="hover-ch"/>
                         </svg>
                     </div>
-                    <span class="menu-title text-truncate" data-i18n="Business">Business</span>
+                    <span class="menu-title text-truncate" data-i18n="Profile">Profile</span>
                 </a>
-                <ul class="menu-content">
+                <ul class="dropdown-menu" data-bs-popper="none">
                     @if (Auth()->user()->main_user_id != '0')
                         @if (Auth()->user()->is_whitelable != '1')
                             @if (Auth()->user()->application_show == '1')
@@ -77,14 +46,8 @@
                                 }
                                 ?>
                                 <li class="{{ $pageActive == 'my-application' ? 'active' : '' }}">
-                                    <a class="d-flex align-items-center" href="{!! route('my-application') !!}">
-                                        <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                                fill="#B3ADAD" />
-                                        </svg>
-                                        <span class="menu-item text-truncate" data-i18n="Application">Application</span>
+                                    <a class="dropdown-item dropdown-item d-flex align-items-center" href="{!! route('my-application') !!}">
+                                        <span class="menu-item text-truncate" data-i18n="Profile Details">Profile Details</span>
                                     </a>
                                 </li>
                             @endif
@@ -98,63 +61,28 @@
                             }
                             ?>
                             <li class="{{ $pageActive == 'my-application' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! route('my-application') !!}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
-                                    <span class="menu-item text-truncate" data-i18n="Application">Application</span>
+                                <a class="dropdown-item dropdown-item d-flex align-items-center" href="{!! route('my-application') !!}">
+                                    <span class="menu-item text-truncate" data-i18n="Profile Details">Profile Details</span>
                                 </a>
                             </li>
                         @endif
                     @endif
 
-                    <li class="{{ $pageActive == 'security-settings' ? 'active' : '' }}">
-                        <a class="d-flex align-items-center" href="{!! url('security-settings') !!}">
-                            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                    fill="#B3ADAD" />
-                            </svg>
-                            <span class="menu-item text-truncate" data-i18n="Security">Security</span>
-                        </a>
-                    </li>
                     @if (Auth()->user()->main_user_id == '0')
                         <li class="{{ $pageActive == 'user-bank-details' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{!! route('user.bank.details') !!}">
-                                <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                        fill="#B3ADAD" />
-                                </svg>
+                            <a class="dropdown-item dropdown-item d-flex align-items-center" href="{!! route('user.bank.details') !!}">
                                 <span class="menu-item text-truncate" data-i18n="Bank Details">Bank Details</span>
                             </a>
                         </li>
                         <li class="{{ $pageActive == 'user-rates-fee' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{!! route('user.rates.fee') !!}">
-                                <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                        fill="#B3ADAD" />
-                                </svg>
-                                <span class="menu-item text-truncate" data-i18n="Bank Details">Rates & Fee</span>
+                            <a class="dropdown-item dropdown-item d-flex align-items-center" href="{!! route('user.rates.fee') !!}">
+                                <span class="menu-item text-truncate" data-i18n="Rates & Fee Details">Rates & Fee Details</span>
                             </a>
                         </li>
                     @else
                         @if (Auth()->user()->settings == '1')
                             <li class="{{ $pageActive == 'user-bank-details' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! route('user.bank.details') !!}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
+                                <a class="dropdown-item dropdown-item d-flex align-items-center" href="{!! route('user.bank.details') !!}">
                                     <span class="menu-item text-truncate" data-i18n="Bank Details">Bank Details</span>
                                 </a>
                             </li>
@@ -170,7 +98,7 @@
                         Auth::user()->application->status == 10 ||
                         Auth::user()->application->status == 11)
                     <li
-                        class="nav-item has-sub {{ $pageActive == 'transactions' ||
+                        class="dropdown nav-item {{ $pageActive == 'transactions' ||
                         $pageActive == 'chargebacks' ||
                         $pageActive == 'refunds' ||
                         $pageActive == 'suspicious' ||
@@ -178,83 +106,44 @@
                         $pageActive == 'test-transactions'
                             ? 'sidebar-group-active open'
                             : '' }}">
-                        <a class="d-flex align-items-center" href="#">
+                        <a class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" href="#" data-bs-toggle="dropdown">
                             <div class="svg-icon">
-                                <svg width="20" height="24" viewBox="0 0 20 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M16.6202 3.18634L14.7628 1.32891L15.8878 0.203888L19.6658 3.98185L15.8878 7.75982L14.7628 6.63479L16.6202 4.77737H6.71202C5.10106 4.77737 3.79513 6.0833 3.79513 7.69425V9.30041H2.2041V7.69425C2.2041 5.2046 4.22236 3.18634 6.71202 3.18634H16.6202ZM13.858 18.5178C15.469 18.5178 16.7749 17.2119 16.7749 15.6009V13.9948H18.366V15.6009C18.366 18.0906 16.3477 20.1088 13.858 20.1088H3.94986L5.80728 21.9662L4.68225 23.0913L0.904297 19.3133L4.68226 15.5353L5.80729 16.6604L3.94986 18.5178H13.858ZM7.75 7.75C6.5163 7.75 5.625 8.82012 5.625 10V14C5.625 15.1799 6.5163 16.25 7.75 16.25H13.25C14.4837 16.25 15.375 15.1799 15.375 14V10C15.375 8.82012 14.4837 7.75 13.25 7.75H7.75ZM7.125 14V11.75H13.875V14C13.875 14.477 13.5351 14.75 13.25 14.75H7.75C7.46492 14.75 7.125 14.477 7.125 14ZM7.125 10.25H13.875V10C13.875 9.52302 13.5351 9.25 13.25 9.25H7.75C7.46492 9.25 7.125 9.52302 7.125 10V10.25ZM8.20833 12.75C7.79412 12.75 7.45833 13.0858 7.45833 13.5C7.45833 13.9142 7.79412 14.25 8.20833 14.25H8.66667C9.08088 14.25 9.41667 13.9142 9.41667 13.5C9.41667 13.0858 9.08088 12.75 8.66667 12.75H8.20833ZM10.5 12.75C10.0858 12.75 9.75 13.0858 9.75 13.5C9.75 13.9142 10.0858 14.25 10.5 14.25H10.9583C11.3725 14.25 11.7083 13.9142 11.7083 13.5C11.7083 13.0858 11.3725 12.75 10.9583 12.75H10.5Z"
-                                        class="hover-ch" />
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.2666 11V8.6H5.46655V5.4H14.2666V3L19.8666 7L14.2666 11ZM5.46655 17L11.0666 21V18.6H19.8666V15.4H11.0666V13L5.46655 17Z" class="hover-ch"/>
                                 </svg>
                             </div>
                             <span class="menu-title text-truncate" data-i18n="Transactions">Transactions</span>
                         </a>
-                        <ul class="menu-content">
+                        <ul class="dropdown-menu" data-bs-popper="none">
                             <li class="{{ $pageActive == 'transactions' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('transactions') !!}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
+                                <a class="dropdown-item d-flex align-items-center" href="{!! url('transactions') !!}">
                                     <span class="menu-title text-truncate" data-i18n="All Transactions">All
                                         Transactions</span>
                                 </a>
                             </li>
                             <li class="{{ $pageActive == 'chargebacks' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('chargebacks') !!}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
+                                <a class="dropdown-item d-flex align-items-center" href="{!! url('chargebacks') !!}">
                                     <span class="menu-title text-truncate" data-i18n="Chargebacks">Chargebacks</span>
                                 </a>
                             </li>
                             <li class="{{ $pageActive == 'refunds' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('refunds') !!}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
+                                <a class="dropdown-item d-flex align-items-center" href="{!! url('refunds') !!}">
                                     <span class="menu-title text-truncate" data-i18n="Refunds">Refunds</span>
                                 </a>
                             </li>
                             <li class="{{ $pageActive == 'suspicious' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{{ route('suspicious') }}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
+                                <a class="dropdown-item d-flex align-items-center" href="{{ route('suspicious') }}">
                                     <span class="menu-title text-truncate" data-i18n="Marked Transactions">Marked
                                         Transactions</span>
                                 </a>
                             </li>
                             <li class="{{ $pageActive == 'retrieval' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('retrieval') !!}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
+                                <a class="dropdown-item d-flex align-items-center" href="{!! url('retrieval') !!}">
                                     <span class="menu-title text-truncate" data-i18n="Retrievals">Retrievals</span>
                                 </a>
                             </li>
                             <li class="{{ $pageActive == 'test-transactions' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('test-transactions') !!}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
+                                <a class="dropdown-item d-flex align-items-center" href="{!! url('test-transactions') !!}">
                                     <span class="menu-title text-truncate" data-i18n="Test Transactions">Test
                                         Transactions</span>
                                 </a>
@@ -263,57 +152,29 @@
                     </li>
 
                     <li
-                        class="nav-item has-sub {{ $pageActive == 'payout-report' ||
+                        class="dropdown nav-item {{ $pageActive == 'payout-report' ||
                         $pageActive == 'transaction-volume' ||
                         $pageActive == 'risk-compliance-report' ||
                         $pageActive == 'payout-schedule'
                             ? 'sidebar-group-active open'
                             : '' }}">
-                        <a class="d-flex align-items-center" href="#">
+                        <a class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" href="#" data-bs-toggle="dropdown">
                             <div class="svg-icon">
-                                <svg width="20" height="21" viewBox="0 0 17 21" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M5.76904 10.2467H11.769M5.76904 14.2467H11.769M13.769 19.2467H3.76904C2.66447 19.2467 1.76904 18.3512 1.76904 17.2467V3.24667C1.76904 2.1421 2.66447 1.24667 3.76904 1.24667H9.35483C9.62005 1.24667 9.8744 1.35203 10.0619 1.53957L15.4762 6.95378C15.6637 7.14132 15.769 7.39567 15.769 7.66089V17.2467C15.769 18.3512 14.8736 19.2467 13.769 19.2467Z"
-                                        stroke="#B3ADAD" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="hover-ch-s" />
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.9998 9H18.4998L12.9998 3.5V9ZM5.99976 2H13.9998L19.9998 8V20C19.9998 20.5304 19.789 21.0391 19.414 21.4142C19.0389 21.7893 18.5302 22 17.9998 22H5.99976C4.88976 22 3.99976 21.1 3.99976 20V4C3.99976 2.89 4.88976 2 5.99976 2ZM6.99976 20H8.99976V14H6.99976V20ZM10.9998 20H12.9998V12H10.9998V20ZM14.9998 20H16.9998V16H14.9998V20Z" class="hover-ch"/>
                                 </svg>
                             </div>
                             <span class="menu-title text-truncate" data-i18n="Reports">Reports</span>
                         </a>
-                        <ul class="menu-content">
+                        <ul class="dropdown-menu" data-bs-popper="none">
                             <li class="{{ $pageActive == 'transaction-volume' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{{ route('transaction-volume') }}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
-                                    <span class="menu-title text-truncate" data-i18n="Summary">Summary</span>
+                                <a class="dropdown-item d-flex align-items-center" href="{{ route('transaction-volume') }}">
+                                    <span class="menu-title text-truncate" data-i18n="Transaction Summary">Transaction Summary</span>
                                 </a>
                             </li>
                             <li class="{{ $pageActive == 'payout-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{{ route('payout-report') }}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
+                                <a class="dropdown-item d-flex align-items-center" href="{{ route('payout-report') }}">
                                     <span class="menu-title text-truncate" data-i18n="Settlement">Settlement</span>
-                                </a>
-                            </li>
-                            <li class="{{ $pageActive == 'risk-compliance-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{{ route('risk-compliance-report') }}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
-                                    <span class="menu-title text-truncate"
-                                        data-i18n="Risk/Compliance">Risk/Compliance</span>
                                 </a>
                             </li>
                             @if (!empty(Auth::user()->application))
@@ -321,13 +182,7 @@
                                         Auth::user()->application->status == 5 ||
                                         Auth::user()->application->status == 6)
                                     <li class="{{ $pageActive == 'payout-schedule' ? 'active' : '' }}">
-                                        <a class="d-flex align-items-center" href="{!! url('payout-schedule') !!}">
-                                            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                                    fill="#B3ADAD" />
-                                            </svg>
+                                        <a class="dropdown-item d-flex align-items-center" href="{!! url('payout-schedule') !!}">
                                             <span class="menu-title text-truncate"
                                                 data-i18n="Settlement Schedule">Settlement Schedule</span>
                                         </a>
@@ -340,7 +195,7 @@
             @elseif(Auth()->user()->main_user_id != '0')
                 @if (Auth()->user()->transactions == '1')
                     <li
-                        class="nav-item has-sub {{ $pageActive == 'transactions' ||
+                        class="dropdown nav-item {{ $pageActive == 'transactions' ||
                         $pageActive == 'chargebacks' ||
                         $pageActive == 'refunds' ||
                         $pageActive == 'suspicious' ||
@@ -348,82 +203,43 @@
                         $pageActive == 'test-transactions'
                             ? 'sidebar-group-active open'
                             : '' }}">
-                        <a class="d-flex align-items-center" href="#">
+                        <a class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" href="#" data-bs-toggle="dropdown">
                             <div class="svg-icon">
-                                <svg width="20" height="24" viewBox="0 0 20 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M16.6202 3.18634L14.7628 1.32891L15.8878 0.203888L19.6658 3.98185L15.8878 7.75982L14.7628 6.63479L16.6202 4.77737H6.71202C5.10106 4.77737 3.79513 6.0833 3.79513 7.69425V9.30041H2.2041V7.69425C2.2041 5.2046 4.22236 3.18634 6.71202 3.18634H16.6202ZM13.858 18.5178C15.469 18.5178 16.7749 17.2119 16.7749 15.6009V13.9948H18.366V15.6009C18.366 18.0906 16.3477 20.1088 13.858 20.1088H3.94986L5.80728 21.9662L4.68225 23.0913L0.904297 19.3133L4.68226 15.5353L5.80729 16.6604L3.94986 18.5178H13.858ZM7.75 7.75C6.5163 7.75 5.625 8.82012 5.625 10V14C5.625 15.1799 6.5163 16.25 7.75 16.25H13.25C14.4837 16.25 15.375 15.1799 15.375 14V10C15.375 8.82012 14.4837 7.75 13.25 7.75H7.75ZM7.125 14V11.75H13.875V14C13.875 14.477 13.5351 14.75 13.25 14.75H7.75C7.46492 14.75 7.125 14.477 7.125 14ZM7.125 10.25H13.875V10C13.875 9.52302 13.5351 9.25 13.25 9.25H7.75C7.46492 9.25 7.125 9.52302 7.125 10V10.25ZM8.20833 12.75C7.79412 12.75 7.45833 13.0858 7.45833 13.5C7.45833 13.9142 7.79412 14.25 8.20833 14.25H8.66667C9.08088 14.25 9.41667 13.9142 9.41667 13.5C9.41667 13.0858 9.08088 12.75 8.66667 12.75H8.20833ZM10.5 12.75C10.0858 12.75 9.75 13.0858 9.75 13.5C9.75 13.9142 10.0858 14.25 10.5 14.25H10.9583C11.3725 14.25 11.7083 13.9142 11.7083 13.5C11.7083 13.0858 11.3725 12.75 10.9583 12.75H10.5Z"
-                                        class="hover-ch" />
+                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14.2666 11V8.6H5.46655V5.4H14.2666V3L19.8666 7L14.2666 11ZM5.46655 17L11.0666 21V18.6H19.8666V15.4H11.0666V13L5.46655 17Z" class="hover-ch"/>
                                 </svg>
                             </div>
                             <span class="menu-title text-truncate" data-i18n="Transaction">Transaction</span>
                         </a>
-                        <ul class="menu-content">
+                        <ul class="dropdown-menu" data-bs-popper="none">
                             <li class="{{ $pageActive == 'transactions' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('transactions') !!}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
+                                <a class="dropdown-item d-flex align-items-center" href="{!! url('transactions') !!}">
                                     <span class="menu-title text-truncate" data-i18n="All Transactions">All
                                         Transactions</span>
                                 </a>
                             </li>
                             <li class="{{ $pageActive == 'chargebacks' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('chargebacks') !!}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
+                                <a class="dropdown-item d-flex align-items-center" href="{!! url('chargebacks') !!}">
                                     <span class="menu-title text-truncate" data-i18n="Chargebacks">Chargebacks</span>
                                 </a>
                             </li>
                             <li class="{{ $pageActive == 'refunds' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('refunds') !!}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
+                                <a class="dropdown-item d-flex align-items-center" href="{!! url('refunds') !!}">
                                     <span class="menu-title text-truncate" data-i18n="Refunds">Refunds</span>
                                 </a>
                             </li>
                             <li class="{{ $pageActive == 'suspicious' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('suspicious') !!}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
+                                <a class="dropdown-item d-flex align-items-center" href="{!! url('suspicious') !!}">
                                     <span class="menu-title text-truncate" data-i18n="Flagged">Flagged</span>
                                 </a>
                             </li>
                             <li class="{{ $pageActive == 'retrieval' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('retrieval') !!}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
+                                <a class="dropdown-item d-flex align-items-center" href="{!! url('retrieval') !!}">
                                     <span class="menu-title text-truncate" data-i18n="Retrievals">Retrievals</span>
                                 </a>
                             </li>
                             <li class="{{ $pageActive == 'test-transactions' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('test-transactions') !!}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
+                                <a class="dropdown-item d-flex align-items-center" href="{!! url('test-transactions') !!}">
                                     <span class="menu-title text-truncate" data-i18n="Test Transactions">Test
                                         Transactions</span>
                                 </a>
@@ -434,53 +250,25 @@
 
                 @if (Auth()->user()->reports == '1')
                     <li
-                        class="nav-item has-sub {{ $pageActive == 'payout-schedule' || $pageActive == 'risk-compliance-report' || $pageActive == 'transaction-volume' ? 'sidebar-group-active open' : '' }}">
-                        <a class="d-flex align-items-center" href="#">
+                        class="dropdown nav-item {{ $pageActive == 'payout-schedule' || $pageActive == 'risk-compliance-report' || $pageActive == 'transaction-volume' ? 'sidebar-group-active open' : '' }}">
+                        <a class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" href="#" data-bs-toggle="dropdown">
                             <div class="svg-icon">
-                                <svg width="20" height="21" viewBox="0 0 17 21" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M5.76904 10.2467H11.769M5.76904 14.2467H11.769M13.769 19.2467H3.76904C2.66447 19.2467 1.76904 18.3512 1.76904 17.2467V3.24667C1.76904 2.1421 2.66447 1.24667 3.76904 1.24667H9.35483C9.62005 1.24667 9.8744 1.35203 10.0619 1.53957L15.4762 6.95378C15.6637 7.14132 15.769 7.39567 15.769 7.66089V17.2467C15.769 18.3512 14.8736 19.2467 13.769 19.2467Z"
-                                        stroke="#B3ADAD" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="hover-ch-s" />
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.9998 9H18.4998L12.9998 3.5V9ZM5.99976 2H13.9998L19.9998 8V20C19.9998 20.5304 19.789 21.0391 19.414 21.4142C19.0389 21.7893 18.5302 22 17.9998 22H5.99976C4.88976 22 3.99976 21.1 3.99976 20V4C3.99976 2.89 4.88976 2 5.99976 2ZM6.99976 20H8.99976V14H6.99976V20ZM10.9998 20H12.9998V12H10.9998V20ZM14.9998 20H16.9998V16H14.9998V20Z" class="hover-ch"/>
                                 </svg>
                             </div>
                             <span class="menu-title text-truncate" data-i18n="Reports">Reports</span>
                         </a>
-                        <ul class="menu-content">
+                        <ul class="dropdown-menu" data-bs-popper="none">
                             <li class="{{ $pageActive == 'transaction-volume' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{{ route('transaction-volume') }}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
-                                    <span class="menu-title text-truncate" data-i18n="Summary">Summary</span>
+                                <a class="dropdown-item d-flex align-items-center" href="{{ route('transaction-volume') }}">
+                                    <span class="menu-title text-truncate" data-i18n="Transaction Summary">Transaction Summary</span>
                                 </a>
                             </li>
                             <li class="{{ $pageActive == 'payout-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{{ route('payout-report') }}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
+                                <a class="dropdown-item d-flex align-items-center" href="{{ route('payout-report') }}">
                                     <span class="menu-title text-truncate" data-i18n="Payout Reports">Payout
                                         Reports</span>
-                                </a>
-                            </li>
-                            <li class="{{ $pageActive == 'risk-compliance-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{{ route('risk-compliance-report') }}">
-                                    <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                            fill="#B3ADAD" />
-                                    </svg>
-                                    <span class="menu-title text-truncate"
-                                        data-i18n="Risk/Compliance">Risk/Compliance</span>
                                 </a>
                             </li>
                             @if (!empty(Auth::user()->application))
@@ -488,13 +276,7 @@
                                         Auth::user()->application->status == 5 ||
                                         Auth::user()->application->status == 6)
                                     <li class="{{ $pageActive == 'payout-schedule' ? 'active' : '' }}">
-                                        <a class="d-flex align-items-center" href="{!! url('payout-schedule') !!}">
-                                            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                                    fill="#B3ADAD" />
-                                            </svg>
+                                        <a class="dropdown-item d-flex align-items-center" href="{!! url('payout-schedule') !!}">
                                             <span class="menu-title text-truncate"
                                                 data-i18n="Settlement Schedule">Settlement Schedule</span>
                                         </a>
@@ -508,8 +290,8 @@
 
             @if (\Auth::user()->is_white_label == '1')
                 <li
-                    class="nav-item has-sub {{ $pageActive == 'transactions' || $pageActive == 'test-transactions' ? 'sidebar-group-active open' : '' }}">
-                    <a class="d-flex align-items-center" href="#">
+                    class="dropdown nav-item {{ $pageActive == 'transactions' || $pageActive == 'test-transactions' ? 'sidebar-group-active open' : '' }}">
+                    <a class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" href="#" data-bs-toggle="dropdown">
                         <div class="svg-icon">
                             <svg width="20" height="24" viewBox="0 0 20 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -520,27 +302,15 @@
                         </div>
                         <span class="menu-title text-truncate" data-i18n="Transactions">Transactions</span>
                     </a>
-                    <ul class="menu-content">
+                    <ul class="dropdown-menu" data-bs-popper="none">
                         <li class="{{ $pageActive == 'transactions' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{!! url('transactions') !!}">
-                                <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                        fill="#B3ADAD" />
-                                </svg>
+                            <a class="dropdown-item d-flex align-items-center" href="{!! url('transactions') !!}">
                                 <span class="menu-title text-truncate" data-i18n="All Transactions">All
                                     Transactions</span>
                             </a>
                         </li>
                         <li class="{{ $pageActive == 'test-transactions' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{!! url('test-transactions') !!}">
-                                <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                        fill="#B3ADAD" />
-                                </svg>
+                            <a class="dropdown-item d-flex align-items-center" href="{!! url('test-transactions') !!}">
                                 <span class="menu-title text-truncate" data-i18n="Test Transactions">Test
                                     Transactions</span>
                             </a>
@@ -550,8 +320,8 @@
             @endif
 
             <li
-                class="nav-item has-sub {{ $pageActive == 'whitelist-ip' || $pageActive == 'iframe' || $pageActive == 'api-document' ? 'sidebar-group-active open' : '' }}">
-                <a class="d-flex align-items-center" href="#">
+                class="dropdown nav-item {{ $pageActive == 'whitelist-ip' || $pageActive == 'iframe' || $pageActive == 'api-document' ? 'sidebar-group-active open' : '' }}">
+                <a class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" href="#" data-bs-toggle="dropdown">
                     <div class="svg-icon">
                         <svg width="20" height="18" viewBox="0 0 17 17" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -562,65 +332,56 @@
                     </div>
                     <span class="menu-title text-truncate" data-i18n="Technical Settings">Technical Settings</span>
                 </a>
-                <ul class="menu-content">
+                <ul class="dropdown-menu" data-bs-popper="none">
                     <li class="{{ $pageActive == 'whitelist-ip' ? 'active' : '' }}">
-                        <a class="d-flex align-items-center" href="{!! url('whitelist-ip') !!}">
-                            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                    fill="#B3ADAD" />
-                            </svg>
-                            <span class="menu-title text-truncate" data-i18n="Whitelisting">Whitelisting</span>
+                        <a class="dropdown-item d-flex align-items-center" href="{!! url('whitelist-ip') !!}">
+                            <span class="menu-title text-truncate" data-i18n="IP Whitelist Request">IP Whitelist Request</span>
                         </a>
                     </li>
                     <li class="{{ $pageActive == 'iframe' ? 'active' : '' }}">
-                        <a class="d-flex align-items-center" href="{!! route('iframe') !!}">
-                            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                    fill="#B3ADAD" />
-                            </svg>
-                            <span class="menu-title text-truncate" data-i18n="Payment Link">Payment Link</span>
+                        <a class="dropdown-item d-flex align-items-center" href="{!! route('iframe') !!}">
+                            <span class="menu-title text-truncate" data-i18n="Generate Payment Link">Generate Payment Link</span>
                         </a>
                     </li>
                     <li class="{{ $pageActive == 'api-document' ? 'active' : '' }}">
-                        <a class="d-flex align-items-center" href="{{ route('api-document') }}">
-                            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                    fill="#B3ADAD" />
-                            </svg>
-                            <span class="menu-title text-truncate" data-i18n="API Document">API Document</span>
+                        <a class="dropdown-item d-flex align-items-center" href="{{ route('api-document') }}">
+                            <span class="menu-title text-truncate" data-i18n="API Documentation">API Documentation</span>
                         </a>
                     </li>
                 </ul>
             </li>
-            <li
-                class="nav-item has-sub {{ $pageActive == 'ticket' || $pageActive == 'faq' ? 'sidebar-group-active open' : '' }}">
-                <a class="d-flex align-items-center" href="#">
+
+            <li class="{{ $pageActive == 'security-settings' ? 'active' : '' }} nav-item">
+                <a class="nav-link dropdown-item d-flex align-items-center" href="{{ route('security-settings') }}">
                     <div class="svg-icon">
-                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M6.9967 7.24667C7.54582 6.08148 9.02747 5.24667 10.7691 5.24667C12.9782 5.24667 14.7691 6.58982 14.7691 8.24667C14.7691 9.64611 13.4915 10.8218 11.7633 11.1533C11.2209 11.2573 10.7691 11.6944 10.7691 12.2467M10.769 15.2467H10.779M19.769 10.2467C19.769 15.2172 15.7396 19.2467 10.769 19.2467C5.79848 19.2467 1.76904 15.2172 1.76904 10.2467C1.76904 5.27611 5.79848 1.24667 10.769 1.24667C15.7396 1.24667 19.769 5.27611 19.769 10.2467Z"
-                                stroke="#B3ADAD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="hover-ch-s" />
+                        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.6663 12H19.6663C19.1363 16.11 16.3863 19.78 12.6663 20.92V12H5.66626V6.3L12.6663 3.19V12ZM12.6663 1L3.66626 5V11C3.66626 16.55 7.50626 21.73 12.6663 23C17.8263 21.73 21.6663 16.55 21.6663 11V5L12.6663 1Z" class="hover-ch"/>
+                        </svg>
+                    </div>
+                    <span class="menu-title text-truncate" data-i18n="Security">Security</span>
+                </a>
+            </li>
+
+            <li
+                class="dropdown nav-item {{ $pageActive == 'ticket' || $pageActive == 'faq' ? 'sidebar-group-active open' : '' }}">
+                <a class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" href="#" data-bs-toggle="dropdown">
+                    <div class="svg-icon">
+                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_23_66)">
+                        <path d="M12.0698 2.46997C9.94809 2.46997 7.91326 3.31283 6.41297 4.81312C4.91268 6.31341 4.06982 8.34824 4.06982 10.47V12.37C3.76816 12.6328 3.52373 12.9549 3.35171 13.3161C3.17968 13.6774 3.08374 14.0701 3.06982 14.47C3.0926 15.0498 3.29001 15.6093 3.63619 16.075C3.98236 16.5407 4.46115 16.891 5.00982 17.08C6.30982 20.19 8.91982 22.47 12.0698 22.47H15.0698V20.47H12.0698C9.80982 20.47 7.75982 18.77 6.72982 16.08L6.51982 15.53L5.92982 15.47C5.68955 15.436 5.46982 15.3158 5.31159 15.1318C5.15336 14.9479 5.06744 14.7126 5.06982 14.47C5.07088 14.2955 5.11758 14.1243 5.2053 13.9734C5.29301 13.8225 5.41869 13.6972 5.56982 13.61L6.06982 13.32V11.47C6.06982 11.2048 6.17518 10.9504 6.36272 10.7629C6.55025 10.5753 6.80461 10.47 7.06982 10.47H17.0698C17.335 10.47 17.5894 10.5753 17.7769 10.7629C17.9645 10.9504 18.0698 11.2048 18.0698 11.47V16.47H13.9798C13.889 16.2154 13.7312 15.9901 13.5229 15.8178C13.3146 15.6456 13.0636 15.5328 12.7966 15.4915C12.5295 15.4501 12.2562 15.4817 12.0055 15.5828C11.7549 15.684 11.5363 15.851 11.3727 16.0662C11.2092 16.2814 11.1068 16.5367 11.0765 16.8053C11.0461 17.0739 11.0889 17.3456 11.2002 17.5919C11.3116 17.8382 11.4874 18.0498 11.7092 18.2043C11.9309 18.3589 12.1902 18.4507 12.4598 18.47H20.0698C20.6003 18.47 21.109 18.2593 21.484 17.8842C21.8591 17.5091 22.0698 17.0004 22.0698 16.47V14.47C22.0698 13.9395 21.8591 13.4308 21.484 13.0558C21.109 12.6807 20.6003 12.47 20.0698 12.47V10.47C20.0698 8.34824 19.227 6.31341 17.7267 4.81312C16.2264 3.31283 14.1916 2.46997 12.0698 2.46997Z" class="hover-ch"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_23_66">
+                        <rect width="24" height="24" fill="white" transform="translate(0.0698242 0.469971)"/>
+                        </clipPath>
+                        </defs>
                         </svg>
                     </div>
                     <span class="menu-title text-truncate" data-i18n="Support">Support</span>
                 </a>
-                <ul class="menu-content">
+                <ul class="dropdown-menu" data-bs-popper="none">
                     <li class="{{ $pageActive == 'ticket' ? 'active' : '' }}">
-                        <a class="d-flex align-items-center" href="{!! url('ticket') !!}">
-                            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                    fill="#B3ADAD" />
-                            </svg>
+                        <a class="dropdown-item d-flex align-items-center" href="{!! url('ticket') !!}">
                             <span class="menu-title text-truncate" data-i18n="Tickets">Tickets</span>
                         </a>
                     </li>
@@ -628,5 +389,6 @@
             </li>
         </ul>
     </div>
+</div>
 </div>
 <!-- END: Main Menu-->

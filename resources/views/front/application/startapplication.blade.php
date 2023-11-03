@@ -1,12 +1,12 @@
 @extends('layouts.user.default')
 
 @section('title')
-    My Application Create
+    Profile Details Add
 @endsection
 
 @section('breadcrumbTitle')
-    <a href="{{ route('dashboardPage') }}">Dashboard</a> / <a href="{{ route('my-application') }}">My Application</a> /
-    Create
+    <a href="{{ route('dashboardPage') }}">Dashboard</a> / <a href="{{ route('my-application') }}">Profile Details</a> /
+    Add
 @endsection
 
 @section('customeStyle')
@@ -42,7 +42,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="header-title">
-                        <h4 class="card-title">My Application</h4>
+                        <h4 class="card-title">Profile Details</h4>
                     </div>
                 </div>
                 <div class="card-body">
@@ -1331,7 +1331,7 @@
                                 </div>
 
                                 <div class="col-md-12 mb-2 mt-2">
-                                    <h5>My Documents <small>The document size should not exceed
+                                    <h5>Profile Documents <small>The document size should not exceed
                                             35MB</small> </h5>
                                 </div>
 

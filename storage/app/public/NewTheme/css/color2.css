@@ -11,7 +11,7 @@
   --secondary-3: #e2ecf3;    
   --yellow: #ffcc5c;
   
-  --body: #F5F6FA;  
+  --body: #f8f8f8;  
   --white: #FFFFFF;  
   --red: #FF3C14;  
 
@@ -31,6 +31,10 @@
   --font-size-13: 13px;  
   --font-size-14: 14px;  
   --font-size-16: 16px;  
+}
+
+.font-size-16{
+  font-size: var(--font-size-16);
 }
 
 .font-w-5{

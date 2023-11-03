@@ -1,11 +1,11 @@
 @extends('layouts.user.default')
 
 @section('title')
-My Application Edit
+Profile Details Edit
 @endsection
 
 @section('breadcrumbTitle')
-<a href="{{ route('dashboardPage') }}">Dashboard</a> / <a href="{{ route('my-application') }}">My Application</a> / Edit
+<a href="{{ route('dashboardPage') }}">Dashboard</a> / <a href="{{ route('my-application') }}">Profile Details</a> / Edit
 @endsection
 
 @section('customeStyle')
@@ -22,7 +22,7 @@ My Application Edit
         <div class="card border-card">
             <div class="card-header">
                 <div class="header-title">
-                    <h4 class="card-title">My Application Edit</h4>
+                    <h4 class="card-title">Profile Details Edit</h4>
                 </div>
             </div>
             <div class="card-body">

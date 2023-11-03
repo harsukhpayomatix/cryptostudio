@@ -1,16 +1,15 @@
 @extends('layouts.user.default')
 
 @section('title')
-Dashboard
+Home
 @endsection
 
 @section('breadcrumbTitle')
-Dashboard
+Home
 @endsection
 
 @section('customeStyle')
 <script src="https://cdn.lordicon.com/libs/frhvbuzj/lord-icon-2.0.2.js"></script>
-<link href="{{ storage_asset('/theme/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet">
 <style type="text/css">
     .dropdown.bootstrap-select.default-select {
         width: 130px !important;
@@ -105,9 +104,6 @@ $settingsPermission = 1;
 @endsection
 
 @section('customScript')
-<script src="{{ storage_asset('theme/vendor/bootstrap-select/dist/js/bootstrap-select.min.js') }}"></script>
-<script src="{{ storage_asset('theme/vendor/peity/jquery.peity.min.js') }}"></script>
-<script src="{{ storage_asset('theme/vendor/apexchart/apexchart.js') }}"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         setTimeout(function () {
