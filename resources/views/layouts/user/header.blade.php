@@ -17,7 +17,7 @@
         </div>
         <ul class="nav navbar-nav align-items-center ms-auto">
             <li class="nav-item dropdown dropdown-language">
-                <div style="width: 350px;">
+                <div style="width: 400px;">
                     <span>
                         <b>Last Login Time &nbsp; : &nbsp; </b>
                         <span id="datetime" class="clock">Loading...</span>
