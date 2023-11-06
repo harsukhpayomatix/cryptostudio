@@ -1,35 +1,10 @@
 <!-- BEGIN: Main Menu-->
-<div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
-    <div class="navbar-header">
-        <ul class="nav navbar-nav flex-row">
-            <li class="nav-item me-auto">
-                <a class="navbar-brand" href="{{ route('dashboard') }}">
-                    <img src="{{ storage_asset('NewTheme/images/logo_sm.png') }}" class="logo-sm">
-                    <img src="{{ storage_asset('NewTheme/images/logo.png') }}" class="logo-big">
-                </a>
-            </li>
-            <li class="nav-item nav-toggle mr-10">
-                <a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse">
-                    <svg width="16" height="5" viewBox="0 0 16 5" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M4 2.84354C4 3.94811 3.10457 4.84354 2 4.84354C0.895431 4.84354 0 3.94811 0 2.84354C0 1.73897 0.895431 0.843536 2 0.843536C3.10457 0.843536 4 1.73897 4 2.84354Z"
-                            fill="#7D7D7D" />
-                        <path
-                            d="M10 2.84354C10 3.94811 9.10457 4.84354 8 4.84354C6.89543 4.84354 6 3.94811 6 2.84354C6 1.73897 6.89543 0.843536 8 0.843536C9.10457 0.843536 10 1.73897 10 2.84354Z"
-                            fill="#7D7D7D" />
-                        <path
-                            d="M14 4.84354C15.1046 4.84354 16 3.94811 16 2.84354C16 1.73897 15.1046 0.843536 14 0.843536C12.8954 0.843536 12 1.73897 12 2.84354C12 3.94811 12.8954 4.84354 14 4.84354Z"
-                            fill="#7D7D7D" />
-                    </svg>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="main-menu-content">
-        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+<div class="horizontal-menu-wrapper">
+<div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper" data-menu-type="floating-nav">
+    <div class="navbar-container main-menu-content" data-menu="menu-container">
+        <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
             <li class="{{ $pageActive == 'dashboard' ? 'active' : '' }} nav-item">
-                <a href="{!! url('admin/dashboard') !!}" class="d-flex align-items-center">
+                <a href="{!! url('admin/dashboard') !!}" class="nav-link dropdown-item d-flex align-items-center">
                     <div class="svg-icon">
                         <svg width="20" height="20" viewBox="0 0 17 17" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -60,8 +35,8 @@
                     $pageActive == 'merchant-stores' ||
                     $pageActive == 'merchant-user-edit'
                         ? 'sidebar-group-active open'
-                        : '' }} nav-item has-sub">
-                    <a class="d-flex align-items-center" href="#">
+                        : '' }} dropdown nav-item" data-menu="dropdown">
+                    <a href="#" class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" data-bs-toggle="dropdown">
                         <div class="svg-icon">
                             <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -81,19 +56,17 @@
                         </div>
                         <span class="menu-title text-truncate" data-i18n="Users Management">Users Management</span>
                     </a>
-                    <ul class="menu-content">
+                    <ul class="dropdown-menu" data-bs-popper="none">
                         @if (auth()->guard('admin')->user()->can(['role-list']))
                             <li class="{{ $pageActive == 'roles' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{{ route('roles.index') }}">
-                                    <i class="fa fa-circle"></i>
+                                <a class="dropdown-item dropdown-item d-flex align-items-center" href="{{ route('roles.index') }}">
                                     <span class="menu-title text-truncate" data-i18n="Admin Roles">Admin Roles</span>
                                 </a>
                             </li>
                         @endif
                         @if (auth()->guard('admin')->user()->can(['users-admin-list']))
                             <li class="{{ $pageActive == 'admin-user' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('admin/admin-user') !!}">
-                                    <i class="fa fa-circle"></i>
+                                <a class="dropdown-item dropdown-item d-flex align-items-center" href="{!! url('admin/admin-user') !!}">
                                     <span class="menu-title text-truncate" data-i18n="Admin User List">Admin User
                                         List</span>
                                 </a>
@@ -101,8 +74,7 @@
                         @endif
                         @if (auth()->guard('admin')->user()->can(['users-bank-list']))
                             <li class="{{ $pageActive == 'banks' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('admin/banks') !!}">
-                                    <i class="fa fa-circle"></i>
+                                <a class="dropdown-item dropdown-item d-flex align-items-center" href="{!! url('admin/banks') !!}">
                                     <span class="menu-title text-truncate" data-i18n="Bank User List">Bank User
                                         List</span>
                                 </a>
@@ -110,8 +82,7 @@
                         @endif
                         @if (auth()->guard('admin')->user()->can(['users-agents-list']))
                             <li class="{{ $pageActive == 'agents' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('admin/agents') !!}">
-                                    <i class="fa fa-circle"></i>
+                                <a class="dropdown-item dropdown-item d-flex align-items-center" href="{!! url('admin/agents') !!}">
                                     <span class="menu-title text-truncate" data-i18n="Referral Partners List">Referral
                                         Partners List</span>
                                 </a>
@@ -119,8 +90,7 @@
                         @endif
                         @if (auth()->guard('admin')->user()->can(['view-wl-rp']))
                             <li class="{{ $pageActive == 'wl-agents' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('admin/wl-agents') !!}">
-                                    <i class="fa fa-circle"></i>
+                                <a class="dropdown-item dropdown-item d-flex align-items-center" href="{!! url('admin/wl-agents') !!}">
                                     <span class="menu-title text-truncate" data-i18n="White Label RP List">White Label
                                         RP List</span>
                                 </a>
@@ -128,8 +98,7 @@
                         @endif
                         @if (auth()->guard('admin')->user()->can(['view-merchant']))
                             <li class="{{ $pageActive == 'users-management' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('admin/users-management') !!}">
-                                    <i class="fa fa-circle"></i>
+                                <a class="dropdown-item dropdown-item d-flex align-items-center" href="{!! url('admin/users-management') !!}">
                                     <span class="menu-title text-truncate" data-i18n="Merchant List">Merchant
                                         List</span>
                                 </a>
@@ -137,16 +106,14 @@
                         @endif
                         {{-- @if (auth()->guard('admin')->user()->can(['view-merchant-stores']))
                     <li class="{{ $pageActive == 'merchant-stores' ? 'active' : ''  }}">
-                        <a class="d-flex align-items-center" href="{!! url('admin/merchant-stores') !!}">
-                            <i class="fa fa-circle"></i>
+                        <a class="dropdown-item dropdown-item d-flex align-items-center" href="{!! url('admin/merchant-stores') !!}">
                             <span class="menu-title text-truncate" data-i18n="Merchant Stores List">Merchant Stores List</span>
                         </a>
                     </li>
                     @endif --}}
                         @if (auth()->guard('admin')->user()->can(['wl-rp-merchant-list']))
                             <li class="{{ $pageActive == 'wl-agent-merchant' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! route('wl-agent-merchant-all') !!}">
-                                    <i class="fa fa-circle"></i>
+                                <a class="dropdown-item dropdown-item d-flex align-items-center" href="{!! route('wl-agent-merchant-all') !!}">
                                     <span class="menu-title text-truncate" data-i18n="Merchant List Of WL RP">Merchant
                                         List Of WL RP</span>
                                 </a>
@@ -166,8 +133,8 @@
                     $pageActive == 'create_rules' ||
                     $pageActive == 'merchant_rules'
                         ? 'sidebar-group-active open'
-                        : '' }} nav-item has-sub">
-                    <a class="d-flex align-items-center" href="#">
+                        : '' }} dropdown nav-item">
+                    <a class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" href="#" data-bs-toggle="dropdown">
                         <div class="svg-icon">
                             <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -196,11 +163,10 @@
                         </div>
                         <span class="menu-title text-truncate" data-i18n="MID">MID</span>
                     </a>
-                    <ul class="menu-content">
+                    <ul class="dropdown-menu" data-bs-popper="none">
                         @if (auth()->guard('admin')->user()->can(['list-gateway']))
                             <li class="{{ $pageActive == 'gateway' ? 'active' : '' }}"><a
-                                    class="d-flex align-items-center" href="{{ route('admin.gateway.index') }}">
-                                    <i class="fa fa-circle"></i>
+                                    class="dropdown-item d-flex align-items-center" href="{{ route('admin.gateway.index') }}">
                                     <span class="menu-title text-truncate" data-i18n="Gateway Management">Gateway
                                         Management</span>
                                 </a>
@@ -208,16 +174,14 @@
                         @endif
                         @if (auth()->guard('admin')->user()->can(['list-mid']))
                             <li class="{{ $pageActive == 'mid-feature-management' ? 'active' : '' }}"><a
-                                    class="d-flex align-items-center" href="{!! url('admin/mid-feature-management') !!}">
-                                    <i class="fa fa-circle"></i>
+                                    class="dropdown-item d-flex align-items-center" href="{!! url('admin/mid-feature-management') !!}">
                                     <span class="menu-title text-truncate" data-i18n="MIDs List">MIDs List</span>
                                 </a>
                             </li>
                         @endif
                         @if (auth()->guard('admin')->user()->can(['list-rule']))
                             <li class="{{ $pageActive == 'create_rules' ? 'active' : '' }}"><a
-                                    class="d-flex align-items-center" href="{{ route('admin.create_rules.index') }}">
-                                    <i class="fa fa-circle"></i>
+                                    class="dropdown-item d-flex align-items-center" href="{{ route('admin.create_rules.index') }}">
                                     <span class="menu-title text-truncate" data-i18n="Create Rules">Create
                                         Rules</span>
                                 </a>
@@ -225,9 +189,8 @@
                         @endif
                         @if (auth()->guard('admin')->user()->can(['merchant-rule-list']))
                             <li class="{{ $pageActive == 'merchant_rules' ? 'active' : '' }}"><a
-                                    class="d-flex align-items-center"
+                                    class="dropdown-item d-flex align-items-center"
                                     href="{{ route('admin.merchant_rules.index') }}">
-                                    <i class="fa fa-circle"></i>
                                     <span class="menu-title text-truncate" data-i18n="Merchant Rules">Merchant
                                         Rules</span>
                                 </a>
@@ -238,7 +201,7 @@
             @endif
 
             <li
-                class="nav-item has-sub {{ $pageActive1 == 'admin.applications.list' ||
+                class="dropdown nav-item {{ $pageActive1 == 'admin.applications.list' ||
                 $pageActive1 == 'admin.applications.is_completed' ||
                 $pageActive1 == 'admin.applications.is_approved' ||
                 $pageActive1 == 'admin.applications.is_rejected' ||
@@ -262,8 +225,8 @@
                 $pageActive1 == 'application-rp.detail' ||
                 $pageActive1 == 'application-rp.edit'
                     ? 'sidebar-group-active open'
-                    : '' }}">
-                <a class="d-flex align-items-center" href="#">
+                    : '' }} dropdown nav-item" data-menu="dropdown">
+                <a class="dropdown-toggle nav-link d-flex align-items-center" href="#" data-bs-toggle="dropdown">
                     <div class="svg-icon">
                         <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -275,84 +238,74 @@
                     </div>
                     <span class="menu-title text-truncate" data-i18n="Applications">Applications</span>
                 </a>
-                <ul class="menu-content">
+                <ul class="dropdown-menu" data-bs-popper="none">
                     @if (auth()->guard('admin')->user()->can(['list-application']))
-                        <li>
-                            <a class="d-flex align-items-center" href="#">
-                                <i class="fa fa-circle"></i>
+                        <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu">
+                            <a class="dropdown-item d-flex align-items-center dropdown-toggle" href="#" data-bs-toggle="dropdown">
                                 <span class="menu-title text-truncate" data-i18n="Merchant Application">Merchant
                                     Application</span>
                             </a>
-                            <ul class="menu-content">
+                            <ul class="dropdown-menu" data-bs-popper="none">
                                 <li class="{{ $pageActive1 == 'admin.applications.list' ? 'active' : '' }}">
-                                    <a class="d-flex align-items-center"
+                                    <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('admin.applications.list') }}">
-                                        <i class="fa fa-circle"></i>
                                         <span class="menu-title text-truncate" data-i18n="All Applications">All
                                             Applications</span>
                                     </a>
                                 </li>
                                 <li class="{{ $pageActive1 == 'admin.applications.is_completed' ? 'active' : '' }}">
-                                    <a class="d-flex align-items-center"
+                                    <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('admin.applications.is_completed') }}">
-                                        <i class="fa fa-circle"></i>
                                         <span class="menu-title text-truncate" data-i18n="In Progress">In
                                             Progress</span>
                                     </a>
                                 </li>
                                 <li class="{{ $pageActive1 == 'admin.applications.is_approved' ? 'active' : '' }}">
-                                    <a class="d-flex align-items-center"
+                                    <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('admin.applications.is_approved') }}">
-                                        <i class="fa fa-circle"></i>
                                         <span class="menu-title text-truncate" data-i18n="Pre Approval">Pre
                                             Approval</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a class="d-flex align-items-center" href="#">
-                                        <i class="fa fa-circle"></i>
+                                <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu">
+                                    <a class="dropdown-item d-flex align-items-center dropdown-toggle" href="#" data-bs-toggle="dropdown">
                                         <span class="menu-title text-truncate" data-i18n="Rate & Agreements">Rate &
                                             Agreements</span>
                                     </a>
-                                    <ul class="menu-content">
+                                    <ul class="dropdown-menu" data-bs-popper="none">
                                         <li>
-                                            <a class="d-flex align-items-center"
+                                            <a class="dropdown-item d-flex align-items-center"
                                                 href="{{ route('admin.applications.rate_accepted') }}">
-                                                <i class="fa fa-circle"></i>
                                                 <span class="menu-title text-truncate" data-i18n="Rate Accepted">Rate
                                                     Accepted</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="d-flex align-items-center"
+                                            <a class="dropdown-item d-flex align-items-center"
                                                 href="{{ route('admin.applications.rate_decline') }}">
-                                                <i class="fa fa-circle"></i>
                                                 <span class="menu-title text-truncate" data-i18n="Rate Decline">Rate
                                                     Decline</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="d-flex align-items-center"
+                                            <a class="dropdown-item d-flex align-items-center"
                                                 href="{{ route('admin.applications.agreement_send') }}">
-                                                <i class="fa fa-circle"></i>
                                                 <span class="menu-title text-truncate"
                                                     data-i18n="Application-Sent Agreements">Application-Sent
                                                     Agreements</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="d-flex align-items-center"
+                                            <a class="dropdown-item d-flex align-items-center"
                                                 href="{{ route('admin.applications.agreement_signed') }}">
-                                                <i class="fa fa-circle"></i>
                                                 <span class="menu-title text-truncate"
                                                     data-i18n="Application-Signed Agreements">Application-Signed
                                                     Agreements</span>
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="d-flex align-items-center"
+                                            <a class="dropdown-item d-flex align-items-center"
                                                 href="{{ route('admin.applications.agreement_received') }}">
-                                                <i class="fa fa-circle"></i>
                                                 <span class="menu-title text-truncate"
                                                     data-i18n="Application-Received Agreements">Application-Received
                                                     Agreements</span>
@@ -361,40 +314,35 @@
                                     </ul>
                                 </li>
                                 <li class="{{ $pageActive1 == 'admin.applications.is_rejected' ? 'active' : '' }}">
-                                    <a class="d-flex align-items-center"
+                                    <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('admin.applications.is_rejected') }}">
-                                        <i class="fa fa-circle"></i>
                                         <span class="menu-title text-truncate" data-i18n="Rejected">Rejected</span>
                                     </a>
                                 </li>
                                 <li class="{{ $pageActive1 == 'admin.applications.not_interested' ? 'active' : '' }}">
-                                    <a class="d-flex align-items-center"
+                                    <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('admin.applications.not_interested') }}">
-                                        <i class="fa fa-circle"></i>
                                         <span class="menu-title text-truncate" data-i18n="Not Interested">Not
                                             Interested</span>
                                     </a>
                                 </li>
                                 <li class="{{ $pageActive1 == 'admin.applications.is_terminated' ? 'active' : '' }}">
-                                    <a class="d-flex align-items-center"
+                                    <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('admin.applications.is_terminated') }}">
-                                        <i class="fa fa-circle"></i>
                                         <span class="menu-title text-truncate"
                                             data-i18n="Terminated">Terminated</span>
                                     </a>
                                 </li>
                                 <li class="{{ $pageActive1 == 'admin.applications.is_deleted' ? 'active' : '' }}">
-                                    <a class="d-flex align-items-center"
+                                    <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('admin.applications.is_deleted') }}">
-                                        <i class="fa fa-circle"></i>
                                         <span class="menu-title text-truncate" data-i18n="Deleted">Deleted</span>
                                     </a>
                                 </li>
 
                                 <li class="{{ $pageActive1 == 'admin.applications.sent_to_bank' ? 'active' : '' }}">
-                                    <a class="d-flex align-items-center"
+                                    <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('admin.applications.sent_to_bank') }}">
-                                        <i class="fa fa-circle"></i>
                                         <span class="menu-title text-truncate" data-i18n="Sent To Bank">Sent To
                                             Bank</span>
                                     </a>
@@ -403,39 +351,34 @@
                         </li>
                     @endif
                     @if (auth()->guard('admin')->user()->can(['view-bank-application']))
-                        <li>
-                            <a class="d-flex align-items-center" href="#">
-                                <i class="fa fa-circle"></i>
+                        <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu">
+                            <a class="dropdown-item d-flex align-items-center dropdown-toggle" href="#" data-bs-toggle="dropdown">
                                 <span class="menu-title text-truncate" data-i18n="Bank Application">Bank
                                     Application</span>
                             </a>
-                            <ul class="menu-content">
+                            <ul class="dropdown-menu" data-bs-popper="none">
                                 <li class="{{ $pageActive1 == 'application-bank.all' ? 'active' : '' }}">
-                                    <a class="d-flex align-items-center" href="{{ route('application-bank.all') }}">
-                                        <i class="fa fa-circle"></i>
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('application-bank.all') }}">
                                         <span class="menu-title text-truncate" data-i18n="All Applications">All
                                             Applications</span>
                                     </a>
                                 </li>
                                 <li class="{{ $pageActive1 == 'application-bank.pending' ? 'active' : '' }}">
-                                    <a class="d-flex align-items-center"
+                                    <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('application-bank.pending') }}">
-                                        <i class="fa fa-circle"></i>
                                         <span class="menu-title text-truncate" data-i18n="Pending">Pending</span>
                                     </a>
                                 </li>
                                 <li class="{{ $pageActive1 == 'application-bank.reassign' ? 'active' : '' }}">
-                                    <a class="d-flex align-items-center"
+                                    <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('application-bank.reassign') }}">
-                                        <i class="fa fa-circle"></i>
                                         <span class="menu-title text-truncate"
                                             data-i18n="ReAssigned">ReAssigned</span>
                                     </a>
                                 </li>
                                 <li class="{{ $pageActive1 == 'application-bank.approved' ? 'active' : '' }}">
-                                    <a class="d-flex align-items-center"
+                                    <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('application-bank.approved') }}">
-                                        <i class="fa fa-circle"></i>
                                         <span class="menu-title text-truncate" data-i18n="Approved">Approved</span>
                                     </a>
                                 </li>
@@ -443,39 +386,34 @@
                         </li>
                     @endif
                     @if (auth()->guard('admin')->user()->can(['view-rp-application']))
-                        <li>
-                            <a class="d-flex align-items-center" href="#">
-                                <i class="fa fa-circle"></i>
+                        <li class="dropdown dropdown-submenu" data-menu="dropdown-submenu">
+                            <a class="dropdown-item d-flex align-items-center dropdown-toggle" href="#" data-bs-toggle="dropdown">
                                 <span class="menu-title text-truncate" data-i18n="RP Application">RP
                                     Application</span>
                             </a>
-                            <ul class="menu-content">
+                            <ul class="dropdown-menu" data-bs-popper="none">
                                 <li class="{{ $pageActive1 == 'application-rp.all' ? 'active' : '' }}">
-                                    <a class="d-flex align-items-center" href="{{ route('application-rp.all') }}">
-                                        <i class="fa fa-circle"></i>
+                                    <a class="dropdown-item d-flex align-items-center" href="{{ route('application-rp.all') }}">
                                         <span class="menu-title text-truncate" data-i18n="All Applications">All
                                             Applications</span>
                                     </a>
                                 </li>
                                 <li class="{{ $pageActive1 == 'application-rp.pending' ? 'active' : '' }}">
-                                    <a class="d-flex align-items-center"
+                                    <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('application-rp.pending') }}">
-                                        <i class="fa fa-circle"></i>
                                         <span class="menu-title text-truncate" data-i18n="Pending">Pending</span>
                                     </a>
                                 </li>
                                 <li class="{{ $pageActive1 == 'application-rp.reassign' ? 'active' : '' }}">
-                                    <a class="d-flex align-items-center"
+                                    <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('application-rp.reassign') }}">
-                                        <i class="fa fa-circle"></i>
                                         <span class="menu-title text-truncate"
                                             data-i18n="ReAssigned">ReAssigned</span>
                                     </a>
                                 </li>
                                 <li class="{{ $pageActive1 == 'application-rp.approved' ? 'active' : '' }}">
-                                    <a class="d-flex align-items-center"
+                                    <a class="dropdown-item d-flex align-items-center"
                                         href="{{ route('application-rp.approved') }}">
-                                        <i class="fa fa-circle"></i>
                                         <span class="menu-title text-truncate" data-i18n="Approved">Approved</span>
                                     </a>
                                 </li>
@@ -487,7 +425,7 @@
 
             @if (auth()->guard('admin')->user()->can(['list-all-transaction']))
                 <li
-                    class="nav-item has-sub {{ $pageActive == 'transactions' ||
+                    class="dropdown nav-item {{ $pageActive == 'transactions' ||
                     $pageActive == 'crypto' ||
                     $pageActive == 'refund' ||
                     $pageActive == 'retrieval' ||
@@ -499,7 +437,7 @@
                     $pageActive == 'pre-arbitration'
                         ? 'sidebar-group-active open'
                         : '' }}">
-                    <a class="d-flex align-items-center" href="#">
+                    <a class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" href="#" data-bs-toggle="dropdown">
                         <div class="svg-icon">
                             <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -511,68 +449,58 @@
                         </div>
                         <span class="menu-title text-truncate" data-i18n="Transactions">Transactions</span>
                     </a>
-                    <ul class="menu-content">
+                    <ul class="dropdown-menu" data-bs-popper="none">
                         <li class="{{ $pageActive == 'transactions' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{!! url('admin/transactions') !!}">
-                                <i class="fa fa-circle"></i>
+                            <a class="dropdown-item d-flex align-items-center" href="{!! url('admin/transactions') !!}">
                                 <span class="menu-title text-truncate" data-i18n="All transactions">All
                                     transactions</span>
                             </a>
                         </li>
                         <li class="{{ $pageActive == 'crypto' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{!! url('admin/crypto') !!}">
-                                <i class="fa fa-circle"></i>
+                            <a class="dropdown-item d-flex align-items-center" href="{!! url('admin/crypto') !!}">
                                 <span class="menu-title text-truncate" data-i18n="Crypto transactions">Crypto
                                     transactions</span>
                             </a>
                         </li>
                         <li class="{{ $pageActive == 'refund' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{!! url('admin/refund') !!}">
-                                <i class="fa fa-circle"></i>
+                            <a class="dropdown-item d-flex align-items-center" href="{!! url('admin/refund') !!}">
                                 <span class="menu-title text-truncate" data-i18n="Refunds">Refunds</span>
                             </a>
                         </li>
                         <li class="{{ $pageActive == 'chargebacks' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{!! url('admin/chargebacks') !!}">
-                                <i class="fa fa-circle"></i>
+                            <a class="dropdown-item d-flex align-items-center" href="{!! url('admin/chargebacks') !!}">
                                 <span class="menu-title text-truncate" data-i18n="Chargebacks">Chargebacks</span>
                             </a>
                         </li>
                         <li class="{{ $pageActive == 'retrieval' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{!! url('admin/retrieval') !!}">
-                                <i class="fa fa-circle"></i>
+                            <a class="dropdown-item d-flex align-items-center" href="{!! url('admin/retrieval') !!}">
                                 <span class="menu-title text-truncate" data-i18n="Retrieval">Retrieval</span>
                             </a>
                         </li>
                         <li class="{{ $pageActive == 'suspicious' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{{ route('admin.suspicious') }}">
-                                <i class="fa fa-circle"></i>
+                            <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.suspicious') }}">
                                 <span class="menu-title text-truncate" data-i18n="Suspicious">Suspicious</span>
                             </a>
                         </li>
                         <li class="{{ $pageActive == 'declined-transactions' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{{ route('admin.declined.transactions') }}">
-                                <i class="fa fa-circle"></i>
+                            <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.declined.transactions') }}">
                                 <span class="menu-title text-truncate" data-i18n="Declined">Declined</span>
                             </a>
                         </li>
                         <li class="{{ $pageActive == 'test-transactions' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{!! url('admin/test-transactions') !!}">
-                                <i class="fa fa-circle"></i>
+                            <a class="dropdown-item d-flex align-items-center" href="{!! url('admin/test-transactions') !!}">
                                 <span class="menu-title text-truncate" data-i18n="Test transactions">Test
                                     transactions</span>
                             </a>
                         </li>
                         <li class="{{ $pageActive == 'merchant-remove-flagged' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{!! url('admin/merchant-remove-flagged') !!}">
-                                <i class="fa fa-circle"></i>
+                            <a class="dropdown-item d-flex align-items-center" href="{!! url('admin/merchant-remove-flagged') !!}">
                                 <span class="menu-title text-truncate"
                                     data-i18n="Removed Suspicious Transactions">Removed Suspicious Transactions</span>
                             </a>
                         </li>
                         <li class="{{ $pageActive == 'pre-arbitration' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{!! url('admin/pre-arbitration') !!}">
-                                <i class="fa fa-circle"></i>
+                            <a class="dropdown-item d-flex align-items-center" href="{!! url('admin/pre-arbitration') !!}">
                                 <span class="menu-title text-truncate" data-i18n="Pre Arbitration List">Pre
                                     Arbitration List</span>
                             </a>
@@ -589,7 +517,7 @@
                     auth()->guard('admin')->user()->can(['list-country-summary-report']) ||
                     auth()->guard('admin')->user()->can(['list-auto-suspicious-report']))
                 <li
-                    class="nav-item has-sub {{ $pageActive == 'transaction-summary-report' ||
+                    class="dropdown nav-item {{ $pageActive == 'transaction-summary-report' ||
                     $pageActive == 'merchant-transaction-report' ||
                     $pageActive == 'card-summary-report' ||
                     $pageActive == 'payment-status-summary-report' ||
@@ -599,7 +527,7 @@
                     $pageActive == 'merchant-reports'
                         ? 'sidebar-group-active open'
                         : '' }}">
-                    <a class="d-flex align-items-center" href="#">
+                    <a class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" href="#" data-bs-toggle="dropdown">
                         <div class="svg-icon">
                             <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -613,12 +541,11 @@
                         </div>
                         <span class="menu-title text-truncate" data-i18n="Reports">Reports</span>
                     </a>
-                    <ul class="menu-content">
+                    <ul class="dropdown-menu" data-bs-popper="none">
                         @if (auth()->guard('admin')->user()->can(['list-transaction-summary-report']))
                             <li class="{{ $pageActive == 'transaction-summary-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center"
+                                <a class="dropdown-item d-flex align-items-center"
                                     href="{{ route('transaction-summary-report') }}">
-                                    <i class="fa fa-circle"></i>
                                     <span class="menu-title text-truncate" data-i18n="Transaction summary">Transaction
                                         summary</span>
                                 </a>
@@ -626,9 +553,8 @@
                         @endif
                         @if (auth()->guard('admin')->user()->can(['list-merchant-transaction-report']))
                             <li class="{{ $pageActive == 'merchant-transaction-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center"
+                                <a class="dropdown-item d-flex align-items-center"
                                     href="{{ route('merchant-transaction-report') }}">
-                                    <i class="fa fa-circle"></i>
                                     <span class="menu-title text-truncate" data-i18n="Merchant Transaction">Merchant
                                         Transaction</span>
                                 </a>
@@ -636,8 +562,7 @@
                         @endif
                         @if (auth()->guard('admin')->user()->can(['list-transaction-summary-report']))
                             <li class="{{ $pageActive == 'card-summary-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('admin/card-summary-report') !!}">
-                                    <i class="fa fa-circle"></i>
+                                <a class="dropdown-item d-flex align-items-center" href="{!! url('admin/card-summary-report') !!}">
                                     <span class="menu-title text-truncate" data-i18n="Card type Summary">Card type
                                         Summary</span>
                                 </a>
@@ -645,8 +570,7 @@
                         @endif
                         @if (auth()->guard('admin')->user()->can(['list-payment-status-summary-report']))
                             <li class="{{ $pageActive == 'payment-status-summary-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('admin/payment-status-summary-report') !!}">
-                                    <i class="fa fa-circle"></i>
+                                <a class="dropdown-item d-flex align-items-center" href="{!! url('admin/payment-status-summary-report') !!}">
                                     <span class="menu-title text-truncate"
                                         data-i18n="Payment status Summary Report">Payment status Summary Report</span>
                                 </a>
@@ -654,8 +578,7 @@
                         @endif
                         @if (auth()->guard('admin')->user()->can(['list-mid-summary-report']))
                             <li class="{{ $pageActive == 'mid-summary-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! url('admin/mid-summary-report') !!}">
-                                    <i class="fa fa-circle"></i>
+                                <a class="dropdown-item d-flex align-items-center" href="{!! url('admin/mid-summary-report') !!}">
                                     <span class="menu-title text-truncate" data-i18n="MID type Summary Report">MID
                                         type Summary Report</span>
                                 </a>
@@ -663,8 +586,7 @@
                         @endif
                         @if (auth()->guard('admin')->user()->can(['list-country-summary-report']))
                             <li class="{{ $pageActive == 'summary-report-on-country' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{!! route('summary-report-on-country') !!}">
-                                    <i class="fa fa-circle"></i>
+                                <a class="dropdown-item d-flex align-items-center" href="{!! route('summary-report-on-country') !!}">
                                     <span class="menu-title text-truncate"
                                         data-i18n="Country wise Summary Report">Country wise Summary Report</span>
                                 </a>
@@ -672,8 +594,7 @@
                         @endif
                         @if (auth()->guard('admin')->user()->can(['list-auto-suspicious-report']))
                             <li class="{{ $pageActive == 'auto-suspicious-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{{ route('auto-suspicious-report') }}">
-                                    <i class="fa fa-circle"></i>
+                                <a class="dropdown-item d-flex align-items-center" href="{{ route('auto-suspicious-report') }}">
                                     <span class="menu-title text-truncate" data-i18n="Auto Suspicious System">Auto
                                         Suspicious System</span>
                                 </a>
@@ -690,7 +611,7 @@
                     auth()->guard('admin')->user()->can(['view-merchant-country-wise-report']) ||
                     auth()->guard('admin')->user()->can(['view-merchant-daily-report']))
                 <li
-                    class="nav-item has-sub {{ $pageActive == 'transactions-reason-report' ||
+                    class="dropdown nav-item {{ $pageActive == 'transactions-reason-report' ||
                     $pageActive == 'merchant-transactions-reason-report' ||
                     $pageActive == 'merchant-transactions-approval-report' ||
                     $pageActive == 'countrywise-transactions-report' ||
@@ -698,7 +619,7 @@
                     $pageActive == 'merchant-daily-transactions-report'
                         ? 'sidebar-group-active open'
                         : '' }}">
-                    <a class="d-flex align-items-center" href="#">
+                    <a class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" href="#" data-bs-toggle="dropdown">
                         <div class="svg-icon">
                             <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -710,12 +631,11 @@
                         </div>
                         <span class="menu-title text-truncate" data-i18n="Admin Reports">Admin Reports</span>
                     </a>
-                    <ul class="menu-content">
+                    <ul class="dropdown-menu" data-bs-popper="none">
                         @if (auth()->guard('admin')->user()->can(['aggregated-declined-transactions-reasons']))
                             <li class="{{ $pageActive == 'transactions-reason-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center"
+                                <a class="dropdown-item d-flex align-items-center"
                                     href="{{ route('transactions-reason-report') }}">
-                                    <i class="fa fa-circle"></i>
                                     <span class="menu-title text-truncate"
                                         data-i18n="Aggregated Declined Transactions Reasons">Aggregated Declined
                                         Transactions Reasons</span>
@@ -724,9 +644,8 @@
                         @endif
                         @if (auth()->guard('admin')->user()->can(['view-merchant-transaction-responses']))
                             <li class="{{ $pageActive == 'merchant-transactions-reason-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center"
+                                <a class="dropdown-item d-flex align-items-center"
                                     href="{{ route('merchant-transactions-reason-report') }}">
-                                    <i class="fa fa-circle"></i>
                                     <span class="menu-title text-truncate"
                                         data-i18n="Merchant Transaction Responses">Merchant Transaction
                                         Responses</span>
@@ -735,9 +654,8 @@
                         @endif
                         @if (auth()->guard('admin')->user()->can(['view-mid-approval-rate']))
                             <li class="{{ $pageActive == 'merchant-transactions-approval-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center"
+                                <a class="dropdown-item d-flex align-items-center"
                                     href="{{ route('merchant-transactions-approval-report') }}">
-                                    <i class="fa fa-circle"></i>
                                     <span class="menu-title text-truncate" data-i18n="MID Approval Rate">MID Approval
                                         Rate</span>
                                 </a>
@@ -745,9 +663,8 @@
                         @endif
                         @if (auth()->guard('admin')->user()->can(['view-mid-country-wise-report']))
                             <li class="{{ $pageActive == 'countrywise-transactions-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center"
+                                <a class="dropdown-item d-flex align-items-center"
                                     href="{{ route('countrywise-transactions-report') }}">
-                                    <i class="fa fa-circle"></i>
                                     <span class="menu-title text-truncate"
                                         data-i18n="MID Country-wise Transactions Report">MID Country-wise Transactions
                                         Report</span>
@@ -757,9 +674,8 @@
                         @if (auth()->guard('admin')->user()->can(['view-merchant-country-wise-report']))
                             <li
                                 class="{{ $pageActive == 'merchant-countrywise-transactions-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center"
+                                <a class="dropdown-item d-flex align-items-center"
                                     href="{{ route('merchant-countrywise-transactions-report') }}">
-                                    <i class="fa fa-circle"></i>
                                     <span class="menu-title text-truncate"
                                         data-i18n="Merchant Country-wise Transactions Report">Merchant Country-wise
                                         Transactions Report</span>
@@ -768,9 +684,8 @@
                         @endif
                         @if (auth()->guard('admin')->user()->can(['view-merchant-daily-report']))
                             <li class="{{ $pageActive == 'merchant-daily-transactions-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center"
+                                <a class="dropdown-item d-flex align-items-center"
                                     href="{{ route('merchant-daily-transactions-report') }}">
-                                    <i class="fa fa-circle"></i>
                                     <span class="menu-title text-truncate"
                                         data-i18n="Merchant Daily Transactions Report">Merchant Daily Transactions
                                         Report</span>
@@ -786,14 +701,14 @@
                     auth()->guard('admin')->user()->can(['list-generated-wl-rp-payout-reports']) ||
                     auth()->guard('admin')->user()->can(['list-rp-payout-reports']))
                 <li
-                    class="nav-item has-sub {{ $pageActive == 'generate-payout-report' ||
+                    class="dropdown nav-item {{ $pageActive == 'generate-payout-report' ||
                     $pageActive == 'generate-payout-report-rp' ||
                     $pageActive == 'generate-agent-report' ||
                     $pageActive == 'agent-report' ||
                     $pageActive == 'generate-payout-report-new'
                         ? 'sidebar-group-active open'
                         : '' }}">
-                    <a class="d-flex align-items-center" href="#">
+                    <a class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" href="#" data-bs-toggle="dropdown">
                         <div class="svg-icon">
                             <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -807,18 +722,16 @@
                         </div>
                         <span class="menu-title text-truncate" data-i18n="Payout">Payout</span>
                     </a>
-                    <ul class="menu-content">
+                    <ul class="dropdown-menu" data-bs-popper="none">
                         <li class="{{ $pageActive == 'generate-payout-report-new' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{{ route('generate-payout-report-new') }}">
-                                <i class="fa fa-circle"></i>
+                            <a class="dropdown-item d-flex align-items-center" href="{{ route('generate-payout-report-new') }}">
                                 <span class="menu-title text-truncate" data-i18n="Auto Generate Payout Report">Auto
                                     Generate Payout Report</span>
                             </a>
                         </li>
                         @if (auth()->guard('admin')->user()->can(['list-generated-payout-reports']))
                             <li class="{{ $pageActive == 'generate-payout-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{{ route('generate-payout-report') }}">
-                                    <i class="fa fa-circle"></i>
+                                <a class="dropdown-item d-flex align-items-center" href="{{ route('generate-payout-report') }}">
                                     <span class="menu-title text-truncate" data-i18n="Generate Payout Report">Generate
                                         Payout Report</span>
                                 </a>
@@ -826,9 +739,8 @@
                         @endif
                         {{-- @if (auth()->guard('admin')->user()->can(['list-generated-rp-payout-reports']))
                             <li class="{{ $pageActive == 'generate-payout-report-rp' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center"
+                                <a class="dropdown-item d-flex align-items-center"
                                     href="{{ route('generate-payout-report-rp') }}">
-                                    <i class="fa fa-circle"></i>
                                     <span class="menu-title text-truncate"
                                         data-i18n="Generate Payout Report for WL RP">Generate Payout Report for WL
                                         RP</span>
@@ -837,8 +749,7 @@
                         @endif --}}
                         @if (auth()->guard('admin')->user()->can(['list-generated-rp-payout-reports']))
                             <li class="{{ $pageActive == 'generate-agent-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{{ route('generate-agent-report') }}">
-                                    <i class="fa fa-circle"></i>
+                                <a class="dropdown-item d-flex align-items-center" href="{{ route('generate-agent-report') }}">
                                     <span class="menu-title text-truncate"
                                         data-i18n="Generate Referral Partner's Report">Generate Referral Partner's
                                         Report</span>
@@ -847,16 +758,14 @@
                         @endif
                         @if (auth()->guard('admin')->user()->can(['list-rp-payout-reports']))
                             <li class="{{ $pageActive == 'agent-report' ? 'active' : '' }}">
-                                <a class="d-flex align-items-center" href="{{ route('agent-report') }}">
-                                    <i class="fa fa-circle"></i>
+                                <a class="dropdown-item d-flex align-items-center" href="{{ route('agent-report') }}">
                                     <span class="menu-title text-truncate"
                                         data-i18n="Referral Partner's Report">Referral Partner's Report</span>
                                 </a>
                             </li>
                         @endif
                         <li class="{{ $pageActive == 'invoices' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{{ route('invoices.index') }}">
-                                <i class="fa fa-circle"></i>
+                            <a class="dropdown-item d-flex align-items-center" href="{{ route('invoices.index') }}">
                                 <span class="menu-title text-truncate" data-i18n="Invoices">Invoices</span>
                             </a>
                         </li>
@@ -865,7 +774,7 @@
             @endif
 
             <li
-                class="nav-item has-sub {{ $pageActive == 'agreement-upload' ||
+                class="dropdown nav-item {{ $pageActive == 'agreement-upload' ||
                 $pageActive == 'ticket' ||
                 $pageActive == 'technical' ||
                 $pageActive == 'ip-whitelist' ||
@@ -882,7 +791,7 @@
                 $pageActive == 'mass-mid'
                     ? 'sidebar-group-active open'
                     : '' }}">
-                <a class="d-flex align-items-center" href="#">
+                <a class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" href="#" data-bs-toggle="dropdown">
                     <div class="svg-icon">
                         <svg width="21" height="21" viewBox="0 0 21 21" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -893,7 +802,7 @@
                     </div>
                     <span class="menu-title text-truncate" data-i18n="Extra Tools">Extra Tools</span>
                 </a>
-                <ul class="menu-content">
+                <ul class="dropdown-menu" data-bs-popper="none">
                     <li
                         class="{{ $pageActive == 'technical' ||
                         $pageActive == 'ip-whitelist' ||
@@ -910,24 +819,21 @@
                         $pageActive == 'mass-mid'
                             ? 'active'
                             : '' }}">
-                        <a class="d-flex align-items-center" href="{{ route('admin.technical') }}">
-                            <i class="fa fa-circle"></i>
+                        <a class="dropdown-item d-flex align-items-center" href="{{ route('admin.technical') }}">
                             <span class="menu-title text-truncate" data-i18n="Technical & Additional">Technical &
                                 Additional</span>
                         </a>
                     </li>
                     @if (auth()->guard('admin')->user()->can(['list-ticket']))
                         <li class="{{ $pageActive == 'ticket' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{!! route('admin.ticket') !!}">
-                                <i class="fa fa-circle"></i>
+                            <a class="dropdown-item d-flex align-items-center" href="{!! route('admin.ticket') !!}">
                                 <span class="menu-title text-truncate" data-i18n="Tickets">Tickets</span>
                             </a>
                         </li>
                     @endif
                     @if (auth()->guard('admin')->user()->can(['view-agreement-upload']))
                         <li class="{{ $pageActive == 'agreement-upload' ? 'active' : '' }}">
-                            <a class="d-flex align-items-center" href="{!! route('agreement-upload') !!}">
-                                <i class="fa fa-circle"></i>
+                            <a class="dropdown-item d-flex align-items-center" href="{!! route('agreement-upload') !!}">
                                 <span class="menu-title text-truncate" data-i18n="Upload Agreement">Upload
                                     Agreement</span>
                             </a>
@@ -937,5 +843,6 @@
             </li>
         </ul>
     </div>
+</div>
 </div>
 <!-- END: Main Menu-->
