@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html class="loading dark-layout" lang="en" data-textdirection="ltr">
 
 <head>
     <!-- Required meta tags -->
@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/vendors.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/bootstrap-extended.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/vertical-menu.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/horizontal-menu.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/vendors/css/extensions/toastr.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/select2.min.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
@@ -39,8 +39,8 @@
 </head>
 
 <body
-    class="vertical-layout vertical-menu-modern navbar-floating footer-static menu-collapsed {{ Auth::guard('agentUserWL')->user()->theme == 0 ? 'dark-layout' : 'light-layout' }}"
-    data-open="click" data-menu="vertical-menu-modern" data-col="">
+    class="horizontal-layout horizontal-menu navbar-floating footer-static menu-expanded {{ Auth::guard('agentUserWL')->user()->theme == 0 ? 'dark-layout' : 'light-layout' }}"
+    data-open="hover" data-menu="horizontal-menu" data-col="">
     <div id="loading">
         <p>Loading..</p>
     </div>
