@@ -42,6 +42,7 @@ Route::group(['middleware' => ['adminauth', 'query_response_time']], function ()
         }
     });
 
+});
     // test mail
     Route::get('/sendtestmail', function (Request $request) {
         $toemail = $request->mail;
@@ -56,7 +57,6 @@ Route::group(['middleware' => ['adminauth', 'query_response_time']], function ()
         // }
         echo "Done";
     });
-});
 
 
 Route::get('/', function () {
