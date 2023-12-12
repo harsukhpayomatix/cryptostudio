@@ -1,36 +1,11 @@
 <!-- BEGIN: Main Menu-->
-<div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
-    <div class="navbar-header">
-        <ul class="nav navbar-nav flex-row">
-            <li class="nav-item me-auto">
-                <a class="navbar-brand" href="#">
-                    <img src="{{ storage_asset('NewTheme/images/favicon1.png') }}" class="logo-sm">
-                    <img src="{{ storage_asset('NewTheme/images/finvert.png') }}" class="logo-big">
-                </a>
-            </li>
-            <li class="nav-item nav-toggle mr-10">
-                <a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse">
-                    <svg width="16" height="5" viewBox="0 0 16 5" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M4 2.84354C4 3.94811 3.10457 4.84354 2 4.84354C0.895431 4.84354 0 3.94811 0 2.84354C0 1.73897 0.895431 0.843536 2 0.843536C3.10457 0.843536 4 1.73897 4 2.84354Z"
-                            fill="#7D7D7D" />
-                        <path
-                            d="M10 2.84354C10 3.94811 9.10457 4.84354 8 4.84354C6.89543 4.84354 6 3.94811 6 2.84354C6 1.73897 6.89543 0.843536 8 0.843536C9.10457 0.843536 10 1.73897 10 2.84354Z"
-                            fill="#7D7D7D" />
-                        <path
-                            d="M14 4.84354C15.1046 4.84354 16 3.94811 16 2.84354C16 1.73897 15.1046 0.843536 14 0.843536C12.8954 0.843536 12 1.73897 12 2.84354C12 3.94811 12.8954 4.84354 14 4.84354Z"
-                            fill="#7D7D7D" />
-                    </svg>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="main-menu-content">
-        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+<div class="horizontal-menu-wrapper">
+<div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper" data-menu-type="floating-nav">
+    <div class="navbar-container main-menu-content" data-menu="menu-container">
+        <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
             @if (RpApplicationStatus(auth()->guard('agentUser')->user()->id) == '1')
                 <li class="{{ $pageActive == 'dashboard' ? 'active' : '' }} nav-item">
-                    <a href="{{ route('rp.dashboard') }}" class="d-flex align-items-center">
+                    <a href="{{ route('rp.dashboard') }}" class="nav-link dropdown-item d-flex align-items-center">
                         <div class="svg-icon">
                             <svg width="20" height="20" viewBox="0 0 17 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -40,11 +15,10 @@
                             </svg>
                         </div>
                         <span class="menu-title text-truncate ps-1" data-i18n="Overview">Overview</span>
-
                     </a>
                 </li>
                 <li class="{{ $pageActive == 'my-application' ? 'active' : '' }} nav-item">
-                    <a href="{{ route('rp.my-application.detail') }}" class="d-flex align-items-center">
+                    <a href="{{ route('rp.my-application.detail') }}" class="nav-link dropdown-item d-flex align-items-center">
                         <div class="svg-icon">
                             <svg width="20" height="21" viewBox="0 0 20 21" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -58,7 +32,7 @@
                     </a>
                 </li>
                 <li class="{{ $pageActive == 'bank-details' ? 'active' : '' }} nav-item">
-                    <a href="{{ route('agent.bank.details') }}" class="d-flex align-items-center">
+                    <a href="{{ route('agent.bank.details') }}" class="nav-link dropdown-item d-flex align-items-center">
                         <div class="svg-icon">
                             <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -73,7 +47,7 @@
                 </li>
                 <li
                     class="{{ $pageActive == 'user-management' || $pageActive == 'user-management-application-show' || $pageActive == 'user-management-application-edit' || $pageActive == 'rp-merchant-payout-report' ? 'active' : '' }} nav-item">
-                    <a href="{{ route('rp.user-management') }}" class="d-flex align-items-center">
+                    <a href="{{ route('rp.user-management') }}" class="nav-link dropdown-item d-flex align-items-center">
                         <div class="svg-icon">
                             <svg width="18" height="15" viewBox="0 0 18 15" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -98,7 +72,7 @@
                 </li>
                 @if (Auth::guard('agentUser')->user()->main_agent_id == 0)
                     <li class="{{ $pageActive == 'sub-rp' ? 'active' : '' }} nav-item">
-                        <a href="{{ route('sub-rp.index') }}" class="d-flex align-items-center">
+                        <a href="{{ route('sub-rp.index') }}" class="nav-link dropdown-item d-flex align-items-center">
                             <div class="svg-icon">
                                 <svg width="18" height="15" viewBox="0 0 18 15" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -123,15 +97,15 @@
                     </li>
                 @endif
                 <li
-                    class="nav-item has-sub {{ $pageActive == 'merchant-transactions' ||
+                    class="dropdown nav-item {{ $pageActive == 'merchant-transactions' ||
                     $pageActive == 'merchant-chargebacks-transactions' ||
                     $pageActive == 'merchant-refund-transactions' ||
                     $pageActive == 'merchant-marked-transactions' ||
                     $pageActive == 'merchant-retrieval-transactions' ||
                     $pageActive == 'rp-merchant-transactions-show'
                         ? 'active'
-                        : '' }}">
-                    <a href="#Transaction" class="d-flex align-items-center collapsed">
+                        : '' }}" data-menu="dropdown">
+                    <a href="#" class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" data-bs-toggle="dropdown">
                         <div class="svg-icon">
                             <svg width="20" height="17" viewBox="0 0 20 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -144,69 +118,39 @@
                         </div>
                         <span class="menu-title text-truncate ps-1">Transactions</span>
                     </a>
-                    <ul class="menu-content">
+                    <ul class="dropdown-menu" data-bs-popper="none">
                         <li class="{{ $pageActive == 'merchant-transactions' ? 'active' : '' }}">
-                            <a href="{{ route('rp-merchant-transactions') }}" class="d-flex align-items-center">
-                                <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                        fill="#B3ADAD" />
-                                </svg>
+                            <a href="{{ route('rp-merchant-transactions') }}" class="dropdown-item dropdown-item d-flex align-items-center">
                                 <span class="menu-item text-truncate ps-1">All Transactions</span>
                             </a>
                         </li>
                         <li class="{{ $pageActive == 'merchant-refund-transactions' ? 'active' : '' }}">
                             <a href="{{ route('rp-merchant-refund-transactions') }}"
-                                class="d-flex align-items-center">
-                                <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                        fill="#B3ADAD" />
-                                </svg>
+                                class="dropdown-item dropdown-item d-flex align-items-center">
                                 <span class="menu-item text-truncate ps-1">Refunds</span>
                             </a>
                         </li>
                         <li class="{{ $pageActive == 'merchant-chargebacks-transactions' ? 'active' : '' }}"><a
-                                class="d-flex align-items-center"
+                                class="dropdown-item dropdown-item d-flex align-items-center"
                                 href="{{ route('rp-merchant-chargebacks-transactions') }}">
-                                <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                        fill="#B3ADAD" />
-                                </svg>
                                 <span class="menu-item text-truncate ps-1">Chargebacks</span>
                             </a></li>
                         <li class="{{ $pageActive == 'merchant-retrieval-transactions' ? 'active' : '' }}"><a
-                                class="d-flex align-items-center"
+                                class="dropdown-item dropdown-item d-flex align-items-center"
                                 href="{{ route('rp-merchant-retrieval-transactions') }}">
-                                <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                        fill="#B3ADAD" />
-                                </svg>
                                 <span class="menu-item text-truncate ps-1">Retrieval</span>
                             </a></li>
                         <li class="{{ $pageActive == 'merchant-marked-transactions' ? 'active' : '' }}"><a
-                                class="d-flex align-items-center"
+                                class="dropdown-item dropdown-item d-flex align-items-center"
                                 href="{{ route('rp-merchant-suspicious-transactions') }}">
-                                <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                        fill="#B3ADAD" />
-                                </svg>
                                 <span class="menu-item text-truncate ps-1">Marked Transactions</span>
                             </a></li>
                     </ul>
                 </li>
                 <!-- Reports Side menu -->
                 <li
-                    class="nav-item has-sub {{ $pageActive == 'payout-report' || $pageActive == 'rp-merchant-transaction-report' || $pageActive == 'rp-commision-report' || $pageActive == 'risk-report' ? 'active' : '' }}">
-                    <a href="#" class="d-flex align-items-center">
+                    class="dropdown nav-item {{ $pageActive == 'payout-report' || $pageActive == 'rp-merchant-transaction-report' || $pageActive == 'rp-commision-report' || $pageActive == 'risk-report' ? 'active' : '' }}" data-menu="dropdown">
+                    <a href="#" class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" data-bs-toggle="dropdown">
                         <div class="svg-icon">
                             <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -219,48 +163,24 @@
                         </div>
                         <span class="menu-title text-truncate ps-1" data-i18n="reports">Reports</span>
                     </a>
-                    <ul class="menu-content">
+                    <ul class="dropdown-menu" data-bs-popper="none">
                         <li class="{{ $pageActive == 'rp-merchant-transaction-report' ? 'active' : '' }}"><a
-                                class="d-flex align-items-center"
+                                class="dropdown-item dropdown-item d-flex align-items-center"
                                 href="{{ route('rp.merchant-transaction-report') }}">
-                                <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                        fill="#B3ADAD" />
-                                </svg>
                                 <span class="menu-title text-truncate ps-1">Transaction Summary</span>
                             </a></li>
                         <li class="{{ $pageActive == 'risk-report' ? 'active' : '' }}"><a
-                                class="d-flex align-items-center" href="{{ route('rp.risk-report') }}">
-                                <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                        fill="#B3ADAD" />
-                                </svg>
+                                class="dropdown-item dropdown-item d-flex align-items-center" href="{{ route('rp.risk-report') }}">
                                 <span class="menu-title text-truncate ps-1"> Risk
                                     Report</span>
                             </a></li>
                         <li class="{{ $pageActive == 'rp-commision-report' ? 'active' : '' }}"><a
-                                class="d-flex align-items-center" href="{{ route('rp.commision-report') }}">
-                                <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                        fill="#B3ADAD" />
-                                </svg>
+                                class="dropdown-item dropdown-item d-flex align-items-center" href="{{ route('rp.commision-report') }}">
                                 <span class="menu-title text-truncate ps-1">
                                     Commision Report</span>
                             </a></li>
                         <li class="{{ $pageActive == 'payout-report' ? 'active' : '' }}"><a
-                                class="d-flex align-items-center" href="{{ route('rp.merchant.payout.report') }}">
-                                <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                        d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                        fill="#B3ADAD" />
-                                </svg>
+                                class="dropdown-item dropdown-item d-flex align-items-center" href="{{ route('rp.merchant.payout.report') }}">
                                 <span class="menu-title text-truncate ps-1">
                                     Payout Reports</span>
                             </a></li>
@@ -269,4 +189,5 @@
             @endif
         </ul>
     </div>
+</div>
 </div>

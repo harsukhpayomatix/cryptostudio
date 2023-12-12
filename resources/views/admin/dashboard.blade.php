@@ -10,21 +10,24 @@
 
 @section('customeStyle')
     <style>
-        .dark-layout .select2-container .select2-selection,
-        .dark-layout .select2-container .select2-selection__placeholder {
-            min-width: 250px !important;
-            max-width: 300px !important;
+        .dark-layout .select2-container .select2-selection__rendered{
+            color: var(--main-primary) !important;
+        }
+        .dark-layout .select2-container .select2-selection{
+            border-color: #F5F6FA !important;
         }
     </style>
 @endsection
 
 @section('content')
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-9">
             @if (auth()->guard('admin')->user()->can(['overview-transaction-statistics']))
-                <div class="card">
-                    <div class="card-header form-dark">
-                        <h4>Merchant Transactions Breakdown</h4>
+                <div class="row">
+                    <div class="col-lg-9">
+                        <h4 class="mt-1">Merchant Transactions Breakdown</h4>
+                    </div>
+                    <div class="col-lg-3">
                         <select class="form-control select2 merchantSelectBox">
                             <option value="">-- Select Merchant --</option>
                             @foreach ($companyList as $company)
@@ -32,57 +35,9 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="card-body">
-                        <div id="merchantTxnPercentages">
-                            @include('partials.adminDashboard.dashboardTxnPercentages', [$transaction])
-                        </div>
-                    </div>
                 </div>
-            @endif
-
-            @if (auth()->guard('admin')->user()->can(['overview-view']))
-                <div class="card">
-                    <div class="card-header form-dark">
-                        <h4>Merchant's Status Overview</h4>
-                        <select class="form-control select2 agentSelectBox">
-                            <option value="">-- Select Agent --</option>
-                            @foreach ($agents as $agent)
-                                <option value="{{ $agent->id }}">{{ $agent->name }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="card-body">
-                        <div id="agentMerchantsOverview">
-                            @include('partials.adminDashboard.dashboardMerchantStatusOverview', [
-                                $merchants,
-                            ])
-                        </div>
-
-                    </div>
-                </div>
-            @endif
-
-            @if (auth()->guard('admin')->user()->can(['overview-transaction-statistics']))
-                <div class="row" id="dashboardTransactionSummary">
-                    <div class="col-md-12 transaction-summary-tbl">
-                        <div class="card">
-                            <div class="card-body bg-secondary p-0">
-                                <div class="row">
-                                    <div class="col-md-12" style="padding: 30px 30px 30px 45px;">
-                                        <div class="header-title">
-                                            <h5 class="card-title">Transactions Volume Report</h5>
-                                        </div>
-                                        <div class="d-flex justify-content-center align-items-center">
-                                            <div class="spinner-grow text-secondary" role="status">
-                                                <span class="visually-hidden">Loading...</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {{-- @include('partials.adminDashboard.dashboardTransactionSummary', $TransactionSummary) --}}
+                <div id="merchantTxnPercentages" class="mt-2">
+                    @include('partials.adminDashboard.dashboardTxnPercentages', [$transaction])
                 </div>
             @endif
 
@@ -145,181 +100,25 @@
                 </div>
             @endif
         </div>
-        <div class="col-lg-4">
-            @if (auth()->guard('admin')->user()->can(['overview-highest-processing-merchants']))
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between">
-                        <div class="header-title">
-                            <h5 class="card-title">Highest Processing Merchants</h5>
-                        </div>
-                        <div class="card-header-toolbar d-flex align-items-center">
-                            <a href="{{ route('merchant-transaction-report') }}" class="btn btn-sm btn-primary">View
-                                All</a>
-                        </div>
+        <div class="col-lg-3">
+            @if (auth()->guard('admin')->user()->can(['overview-view']))
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h4 class="mt-1">Merchant's Status Overview</h4>
                     </div>
-                    <div class="card-body p-0 p-0">
-                        <div class="table-responsive custom-table">
-                            @if (!empty($dashboardSuccessRecord) && $dashboardSuccessRecord->count())
-                                <table class="table table-borderless table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Business Name</th>
-                                            <th class="text-right">Amount(USD)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($dashboardSuccessRecord as $key => $value)
-                                            <tr>
-                                                <td>{{ $value->business_name }}</td>
-                                                <td class="text-right">{{ $value->successfullV }}</td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            @else
-                                <p class="p30 mb-0">No Records</p>
-                            @endif
-                        </div>
+                    <div class="col-lg-4">
+                        <select class="form-control select2 agentSelectBox">
+                            <option value="">-- Select Agent --</option>
+                            @foreach ($agents as $agent)
+                                <option value="{{ $agent->id }}">{{ $agent->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
-            @endif
-
-            @if (auth()->guard('admin')->user()->can(['overview-highest-processing-mid']))
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between">
-                        <div class="header-title">
-                            <h5 class="card-title">Highest Processing MIDs</h5>
-                        </div>
-                        <div class="card-header-toolbar d-flex align-items-center">
-                            <a href="{{ route('mid-summary-report') }}" class="btn btn-sm btn-primary">View All</a>
-                        </div>
-                    </div>
-                    <div class="card-body p-0 p-0">
-                        <div class="table-responsive custom-table">
-                            @if (!empty($dashboardMIDRecord) && $dashboardMIDRecord->count())
-                                <table class="table table-borderless table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>MID</th>
-                                            <th class="text-right">Amount(USD)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($dashboardMIDRecord as $key => $value)
-                                            <tr>
-                                                <td>{{ $value->bank_name }}</td>
-                                                <td class="text-right">{{ $value->successfullV }}</td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            @else
-                                <p class="p30 mb-0">No Records</p>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            @endif
-
-            @if (auth()->guard('admin')->user()->can(['overview-merchant-chargeback-frequency']))
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between">
-                        <div class="header-title">
-                            <h5 class="card-title">Merchant Chargeback Frequency</h5>
-                        </div>
-                    </div>
-                    <div class="card-body p-0 p-0">
-                        <div class="table-responsive custom-table">
-                            @if (!empty($dashboardChargeback) && $dashboardChargeback->count())
-                                <table class="table table-borderless table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Business Name</th>
-                                            <th class="text-right">Count</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($dashboardChargeback as $key => $value)
-                                            <tr>
-                                                <td>{{ $value->business_name }}</td>
-                                                <td class="text-right">{{ $value->totalCount }}</td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            @else
-                                <p class="p30 mb-0">No Records</p>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            @endif
-
-            @if (auth()->guard('admin')->user()->can(['overview-merchant-refund-frequency']))
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between">
-                        <div class="header-title">
-                            <h5 class="card-title">Merchant Refund Frequency</h5>
-                        </div>
-                    </div>
-                    <div class="card-body p-0 p-0">
-                        <div class="table-responsive custom-table">
-                            @if (!empty($dashboardRefund) && $dashboardRefund->count())
-                                <table class="table table-borderless table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Business Name</th>
-                                            <th class="text-right">Count</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($dashboardRefund as $key => $value)
-                                            <tr>
-                                                <td>{{ $value->business_name }}</td>
-                                                <td class="text-right">{{ $value->totalCount }}</td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            @else
-                                <p class="p30 mb-0">No Records</p>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            @endif
-
-            @if (auth()->guard('admin')->user()->can(['overview-merchant-suspicious-frequency']))
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between">
-                        <div class="header-title">
-                            <h5 class="card-title">Merchant Suspicious Frequency</h5>
-                        </div>
-                    </div>
-                    <div class="card-body p-0 p-0">
-                        <div class="table-responsive custom-table">
-                            @if (!empty($dashboardFlagged) && $dashboardFlagged->count())
-                                <table class="table table-borderless table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Business Name</th>
-                                            <th class="text-right">Count</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($dashboardFlagged as $key => $value)
-                                            <tr>
-                                                <td>{{ $value->business_name }}</td>
-                                                <td class="text-right">{{ $value->totalCount }}</td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            @else
-                                <p class="p30 mb-0">No Records</p>
-                            @endif
-                        </div>
-                    </div>
+                <div id="agentMerchantsOverview" class="mt-2 mb-1">
+                    @include('partials.adminDashboard.dashboardMerchantStatusOverview', [
+                        $merchants,
+                    ])
                 </div>
             @endif
         </div>

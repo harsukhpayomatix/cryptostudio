@@ -42,10 +42,10 @@ class PreArbitrationNoticeMail extends Mailable
                 	'currency' => $this->details['currency'],
                     'amount' => $this->details['amount']
                 ]
-            )->cc(['sales@finvert.io']);
+            )->cc(['sales@crypto-studio.co']);
 
             if(!empty($this->details['file'])){
-                $data = $data->attach(asset($this->details['file']),['as'=>'DISPUTED_TRANSACTION_FINVERT.pdf']);
+                $data = $data->attach(asset($this->details['file']),['as'=>'DISPUTED_TRANSACTION_CRYPTOSTUDIO.pdf']);
             };
 
         return $data;

@@ -12,12 +12,10 @@
     <link rel="stylesheet" href="{{ storage_asset('/theme/vendor/select2/css/select2.min.css') }}">
     <link href="{{ storage_asset('theme/css/style.css') }}" rel="stylesheet">
     <link href="{{ storage_asset('theme/css/custom.css') }}" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ storage_asset('/theme/vendor/toastr/css/toastr.min.css') }}">
-    <link href="{{ storage_asset('newIpay/assets/alertifyjs/css/alertify.min.css') }}" rel="stylesheet">
+    <link href="{{ storage_asset('ThemeCryptoStudio/assets/alertifyjs/css/alertify.min.css') }}" rel="stylesheet">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css"
         rel="stylesheet">
@@ -119,15 +117,15 @@
     <script src="{{ storage_asset('theme/js/custom.min.js') }}"></script>
     <script src="{{ storage_asset('theme/js/deznav-init.js') }}"></script>
     <script src="{{ storage_asset('theme/vendor/select2/js/select2.full.min.js') }}"></script>
-    <script src="{{ storage_asset('newIpay/assets/custom_js/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/assets/custom_js/bootstrap-datepicker.js') }}"></script>
     <?php /* <script src="{{ storage_asset('js/moment.min.js') }}"></script>*/ ?>
     <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/moment.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
-    <script src="{{ storage_asset('newIpay/assets/custom_js/custom.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/assets/custom_js/custom.js') }}"></script>
 
     <script src="{{ storage_asset('theme/vendor/toastr/js/toastr.min.js') }}"></script>
-    <script src="{{ storage_asset('newIpay/assets/alertifyjs/alertify.min.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/assets/alertifyjs/alertify.min.js') }}"></script>
 
     @yield('customScript')
 </body>

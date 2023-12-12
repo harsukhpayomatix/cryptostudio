@@ -300,11 +300,11 @@
         <div class="row">
             <div class="col-md-6">
                 <button type="button" id="submit-button"
-                    class="btn btn-danger w-100">{{ __('messages.payNow') }}</button>
+                    class="btn btn-primary w-100">{{ __('messages.payNow') }}</button>
             </div>
             <div class="col-md-6">
                 <button type="button" id="cancel-button"
-                    class="cancel-btn btn btn-primary w-100">{{ __('messages.cancel') }}</button>
+                    class="cancel-btn btn btn-danger w-100">{{ __('messages.cancel') }}</button>
             </div>
         </div>
     </div>

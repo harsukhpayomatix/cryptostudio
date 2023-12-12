@@ -156,7 +156,7 @@ class PayoutReportController extends AdminController
                     $data = [];
                     $data['user_id'] = $user_id;
                     $data['date'] = date('d/m/Y', time());
-                    $data['processor_name'] = 'Finvert';
+                    $data['processor_name'] = 'CryptoStudio';
                     $data['company_name'] = $userData->business_name;
                     $data['address'] = '';
                     $data['phone_no'] = $userData->phone_no;
@@ -975,7 +975,7 @@ class PayoutReportController extends AdminController
                     $data = [];
                     $data['user_id'] = $user_id;
                     $data['date'] = date('d/m/Y', time());
-                    $data['processor_name'] = 'Finvert';
+                    $data['processor_name'] = 'CryptoStudio';
                     $data['company_name'] = $userData->business_name;
                     $data['address'] = '';
                     $data['phone_no'] = $userData->phone_no;
@@ -1134,7 +1134,7 @@ class PayoutReportController extends AdminController
             $data = [];
             $data['user_id'] = $user_id;
             $data['date'] = date('d/m/Y', time());
-            $data['processor_name'] = 'Finvert';
+            $data['processor_name'] = 'CryptoStudio';
             $data['company_name'] = $userData->business_name;
             $data['address'] = '';
             $data['phone_no'] = $userData->phone_no;

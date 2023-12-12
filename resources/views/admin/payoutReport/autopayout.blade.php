@@ -277,7 +277,7 @@
                                                 </div>
                                             </td>
                                             <td class="text-center">
-                                                <div class="custom-control custom-checkbox custom-control-inline mr-0">
+                                                <div class="custom-control custom-checkbox custom-control-inline mr-0 pull-left">
                                                     <input type="checkbox" name=""
                                                         id="showClientSide_{{ $value->id }}"
                                                         class="custom-control-input showClientSide"
@@ -427,7 +427,7 @@
     </div>
 @endsection
 @section('customScript')
-    <script src="{{ storage_asset('newIpay/assets/custom_js/common.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/assets/custom_js/common.js') }}"></script>
     <script type="text/javascript">
         $("#resetForm").click(function() {
             $('#search-form').find("input[type=text], input[type=email], input[type=number], select").val("");

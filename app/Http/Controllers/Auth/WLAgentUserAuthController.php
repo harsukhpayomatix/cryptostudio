@@ -111,7 +111,7 @@ class WLAgentUserAuthController extends WLAgentUserBaseController
                     \Session::put('email', $request->input('email'));
                     \Session::put('password', $request->input('password'));
                     Session::put('success', "Thank you for requesting a One-Time Password (OTP) to access your account. Please be patient as the OTP may take a few minutes to  arrive in your inbox. If you don't see it in your main inbox, kindly check your spam or junk folder as well.");
-                    return redirect()->route('wl.rp.finvert-otp');
+                    return redirect()->route('wl.rp.cryptostudio-otp');
                 }
             }
         } else {
@@ -287,7 +287,7 @@ class WLAgentUserAuthController extends WLAgentUserBaseController
 
         if (empty($user)) {
             \Session::put('error', 'OTP send fail, Please try again.');
-            return redirect()->route('wl.rp.finvert-otp');
+            return redirect()->route('wl.rp.cryptostudio-otp');
         }
 
         $OTP = rand(111111, 999999);
@@ -298,10 +298,10 @@ class WLAgentUserAuthController extends WLAgentUserBaseController
         // if($response->type == 'success') {
         if ($response == true) {
             \Session::put('success', 'OTP has been successfully sent. Please check your registered mail.');
-            return redirect()->route('wl.rp.finvert-otp');
+            return redirect()->route('wl.rp.cryptostudio-otp');
         } else {
             \Session::put('error', 'OTP send fail, Please try again.');
-            return redirect()->route('wl.rp.finvert-otp');
+            return redirect()->route('wl.rp.cryptostudio-otp');
         }
     }
 

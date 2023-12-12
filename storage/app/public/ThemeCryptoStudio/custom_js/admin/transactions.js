@@ -267,8 +267,8 @@ $("body").on("click", ".clRetrievalChecked", function (e) {
 $(document).on("click", ".clFlagged", function () {
     var id = $(this).data("id");
     var flaggedBy = $(this).data("type");
-    if (flaggedBy == "finvert") {
-        $(".finvertOpt").remove();
+    if (flaggedBy == "cryptostudio") {
+        $(".cryptostudioOpt").remove();
     } else if (flaggedBy == "bank") {
         $(".bankOpt").remove();
     }

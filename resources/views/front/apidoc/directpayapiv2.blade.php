@@ -9,9 +9,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ storage_asset('ThemeCryptoStudio/images/favicon.png') }}">
     <link rel="shortcut icon" href="{{ storage_asset('ThemeCryptoStudio/images/favicon.png') }}" />
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
         crossorigin="anonymous"
@@ -27,7 +25,7 @@
     <link id="theme-style" rel="stylesheet" href="{{ storage_asset('NewTheme/API-Doc/css/custom.css') }}">
     <style type="text/css">
         body {
-            background: #262626;
+            background: #F5F6FA;
         }
     </style>
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('theme/API-assets/css/stylesheet.css') }}" />
@@ -42,7 +40,7 @@
                 <div class="docs-logo-wrapper">
                     <div class="site-logo">
                         <a class="navbar-brand" href="{{ url('dashboard') }}">
-                            <img class="logo-icon me-2" src="{{ storage_asset('ThemeCryptoStudio/images/finvert.png') }}"
+                            <img class="logo-icon me-2" src="{{ storage_asset('ThemeCryptoStudio/images/logo.png') }}"
                                 alt="logo" width="150px">
                         </a>
                     </div>
@@ -114,7 +112,6 @@
             <div class="container">
                 <article class="docs-article" id="APIRequestIn1">
                     <header class="docs-header">
-                        @include('front.apidoc.postmanButton')
 
                         <h1 class="docs-heading">Hosted Payment API V2</h1>
                         <h4>Prerequisite</h4>
@@ -425,7 +422,7 @@ if(isset($responseData['responseCode']) && $respsonseData['responseCode'] == '7'
                         <pre><code class="language-json">{
     "responseCode": "7",
     "responseMessage": "Please redirect to 3dsUrl.",
-    "3dsUrl": "https://portal.finvert.io/api/v2/test-checkout/ODRCT981687163034UWNHU11",
+    "3dsUrl": "https://dashboard.crypto-studio.co/api/v2/test-checkout/ODRCT981687163034UWNHU11",
     "data": {
         "transaction": {
             "order_id": "ODRCT981687163034UWNHU1",
@@ -434,7 +431,7 @@ if(isset($responseData['responseCode']) && $respsonseData['responseCode'] == '7'
             "currency": "USD"
         },
         "client": {
-            "first_name": "Finvert",
+            "first_name": "CryptoStudio",
             "last_name": "Test",
             "email": "test@gmail.com",
             "phone_no": null,
@@ -459,7 +456,7 @@ if(isset($responseData['responseCode']) && $respsonseData['responseCode'] == '7'
 8.) "7" :"Redirected" => It means redirect user to 3ds link to complete the transaction.
 </code> </pre>
                         </section>
-                        <section class="docs-section" id="APIRedirection2">
+                        <section class="docs-section" id="APIRedirection2" style="border-bottom: unset;">
                             <header class="docs-header">
                                 <h4>Redirection</h4>
                                 <section class="docs-intro">
@@ -770,7 +767,7 @@ if(isset($responseData['responseCode']) && $respsonseData['responseCode'] == '7'
                         <pre><code class="language-json">{
     "responseCode": "7",
     "responseMessage": "Please redirect to 3dsUrl.",
-    "3dsUrl": "https://portal.finvert.io/api/v2/test-checkout/ODRCT981687163034UWNHUB",
+    "3dsUrl": "https://dashboard.crypto-studio.co/api/v2/test-checkout/ODRCT981687163034UWNHUB",
     "data": {
         "transaction": {
             "order_id": "ODRCT981687163034UWNH1",
@@ -779,7 +776,7 @@ if(isset($responseData['responseCode']) && $respsonseData['responseCode'] == '7'
             "currency": "USD"
         },
         "client": {
-            "first_name": "Finvert",
+            "first_name": "CryptoStudio",
             "last_name": "Test",
             "email": "test@gmail.com",
             "phone_no": null,
@@ -821,8 +818,8 @@ if(isset($responseData['responseCode']) && $respsonseData['responseCode'] == '7'
     },
     "client": {
       "first_name": "Test",
-      "last_name": "Finvert",
-      "email": "tech@finvert.io",
+      "last_name": "CryptoStudio",
+      "email": "tech@cryptostudio.co",
       "phone_no": "787878778",
       "address": "Testing address",
       "zip": "676776",

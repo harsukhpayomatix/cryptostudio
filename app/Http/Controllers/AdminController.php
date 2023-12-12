@@ -109,68 +109,6 @@ class AdminController extends Controller
         $data['valuetSummary'] = '0';
         $data['merchants'] = $this->user->merchantCountData();
 
-        $data['dashboardSuccessRecord'] = DB::table("transactions as t")->select("applications.business_name", "middetails.bank_name")
-            ->selectRaw("sum(if(t.status = '1', amount_in_usd, 0.00)) as successfullV")
-            ->join('middetails', 'middetails.id', 't.payment_gateway_id')
-            ->join('users', 'users.id', 't.user_id')
-            ->join('applications', 'applications.user_id', 't.user_id')
-            ->whereNotIn('t.payment_gateway_id', ['1', '2'])
-            ->where(DB::raw('DATE(t.created_at)'), '<=', $date)
-            ->where(DB::raw('DATE(t.created_at)'), '>=', $lastdate)
-            ->groupBy("t.user_id")
-            ->orderBy('successfullV', 'desc')
-            ->take(5)
-            ->get();
-        $data['dashboardMIDRecord'] = DB::table("transactions as t")
-            ->select("middetails.bank_name")
-            ->selectRaw("sum(if(t.status = '1', amount_in_usd, 0.00)) as successfullV")
-            ->join('middetails', 'middetails.id', 't.payment_gateway_id')
-            ->whereNotIn('t.payment_gateway_id', ['1', '2'])
-            ->where(DB::raw('DATE(t.created_at)'), '<=', $date)
-            ->where(DB::raw('DATE(t.created_at)'), '>=', $lastdate)
-            ->groupBy("t.payment_gateway_id")->orderBy('successfullV', 'desc')
-            ->take(5)
-            ->get();
-        $data['dashboardChargeback'] = DB::table("transactions as t")
-            ->select("applications.business_name")
-            ->selectRaw("count(*) as totalCount")
-            ->join('users', 'users.id', 't.user_id')
-            ->join('applications', 'applications.user_id', 't.user_id')
-            ->whereNotIn('t.payment_gateway_id', ['1', '2'])
-            ->where(DB::raw('DATE(t.chargebacks_date)'), '<=', $date)
-            ->where(DB::raw('DATE(t.chargebacks_date)'), '>=', $lastdate)
-            ->where('t.chargebacks', '1')
-            ->groupBy("t.user_id")
-            ->orderBy("totalCount", "DESC")
-            ->take(5)
-            ->get();
-        $data['dashboardRefund'] = DB::table("transactions as t")
-            ->select("applications.business_name")
-            ->selectRaw("count(*) as totalCount")
-            ->join('users', 'users.id', 't.user_id')
-            ->join('applications', 'applications.user_id', 't.user_id')
-            ->whereNotIn('t.payment_gateway_id', ['1', '2'])
-            ->where(DB::raw('DATE(t.refund_date)'), '<=', $date)
-            ->where(DB::raw('DATE(t.refund_date)'), '>=', $lastdate)
-            ->where('t.refund', '1')
-            ->groupBy("t.user_id")
-            ->orderBy("totalCount", "DESC")
-            ->take(5)
-            ->get();
-        $data['dashboardFlagged'] = DB::table("transactions as t")
-            ->select("applications.business_name")
-            ->selectRaw("count(*) as totalCount")
-            ->join('users', 'users.id', 't.user_id')
-            ->join('applications', 'applications.user_id', 't.user_id')
-            ->whereNotIn('t.payment_gateway_id', ['1', '2'])
-            ->where(DB::raw('DATE(t.flagged_date)'), '<=', $date)
-            ->where(DB::raw('DATE(t.flagged_date)'), '>=', $lastdate)
-            ->where('t.is_flagged', '1')
-            ->groupBy("t.user_id")
-            ->orderBy("totalCount", "DESC")
-            ->take(5)
-            ->get();
-
         return view('admin.dashboard')->with($data);
     }
 

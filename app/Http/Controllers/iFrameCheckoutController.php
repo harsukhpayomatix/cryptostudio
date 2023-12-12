@@ -284,7 +284,7 @@ class iFrameCheckoutController extends Controller
     */ // ===============================================
     public function testRequest(Request $request)
     {
-        $url = 'https://portal.finvert.io/api/hosted/transaction';
+        $url = 'https://dashboard.crypto-studio.co/api/hosted/transaction';
 
         $api_key = '44|uyoUyNaEOgUdz8XoYxDGx8Ws8FScUBCkQCZ6Ee8K';
 

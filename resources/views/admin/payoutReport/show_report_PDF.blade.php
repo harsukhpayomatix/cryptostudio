@@ -32,7 +32,7 @@
             position: relative;
             width: 100%;
             margin: 0 auto;
-            background: #202020;
+            background: #F5F6FA;
             font-size: 14px;
             font-family: Arial;
             color: #B3ADAD;
@@ -40,13 +40,13 @@
 
         main {
             width: 21cm;
-            background: #3D3D3D;
+            background: #FFFFFF;
             margin: 30px auto;
             padding: 30px 0px !important;
             position: relative;
             border-radius: 5px;
-            color: #B3ADAD;
-
+            color: #4F738E;
+            box-shadow: 0 10px 30px 0 rgba(17,38,146,.05);
         }
 
         #logo {
@@ -59,7 +59,7 @@
         }
 
         .title {
-            color: #B3ADAD;
+            color: #4F738E;
             float: right;
         }
 
@@ -78,7 +78,7 @@
             float: left;
             width: 50%;
             font-size: 14px;
-            color: #B3ADAD;
+            color: #FFFFFF;
         }
 
         #project span {
@@ -96,7 +96,7 @@
             text-align: left;
             width: 50%;
             font-size: 14px;
-            color: #B3ADAD;
+            color: #FFFFFF;
         }
 
         .header1 {
@@ -106,7 +106,7 @@
 
         .header2 {
             /* background: linear-gradient(to right, rgb(244, 67, 54), rgb(173 79 70)) !important; */
-            background: #1B1919 !important;
+            background: #4F738E !important;
             padding: 15px 30px;
             color: #B3ADAD;
         }
@@ -135,10 +135,10 @@
 
         .table th {
             padding: 10px 20px;
-            color: #B3ADAD;
+            color: #FFFFFF;
             white-space: nowrap;
             font-weight: 900;
-            background: #1B1919 !important;
+            background: #4F738E !important;
         }
 
         .table .service,
@@ -172,7 +172,7 @@
         }
 
         footer {
-            color: #1B1919;
+            color: #4F738E;
             width: 100%;
             bottom: 0;
             text-align: center;
@@ -187,17 +187,17 @@
         }
 
         .bluebg td {
-            background: #1B1919 !important;
+            background: #4F738E !important;
             color: #B3ADAD;
         }
 
         .greenbg td {
-            background: #1B1919 !important;
-            color: #B3ADAD;
+            background: #4F738E !important;
+            color: #FFFFFF;
         }
 
         .redbg td {
-            background: #1B1919 !important;
+            background: #4F738E !important;
             color: #B3ADAD;
         }
 
@@ -247,7 +247,7 @@
                     <thead>
                         <tr>
                             <td
-                                style="font-weight: bold;background: #1B1919 !important; color: #B3ADAD; padding: 10px 15px;">
+                                style="font-weight: bold;background: #4F738E !important; color: #FFFFFF; padding: 10px 15px;">
                                 Currency : {{ $value->currency }} for
                                 {{ $value->card_type == 'Other' ? 'Visa' : $value->card_type }}
                             </td>

@@ -118,7 +118,7 @@ class BankUserAuthController extends Controller
                     \Session::put('email', $request->input('email'));
                     \Session::put('password', $request->input('password'));
                     Session::put('success', 'Enter the OTP received on your registered email id.');
-                    return redirect()->route('bank.finvert-otp');
+                    return redirect()->route('bank.cryptostudio-otp');
                 }
             }
         } else {
@@ -157,7 +157,7 @@ class BankUserAuthController extends Controller
 
         if (empty($user)) {
             \Session::put('error', 'OTP send fail, Please try again.');
-            return redirect()->route('bank.finvert-otp');
+            return redirect()->route('bank.cryptostudio-otp');
         }
 
         $OTP = rand(111111, 999999);
@@ -168,10 +168,10 @@ class BankUserAuthController extends Controller
         // if($response->type == 'success') {
         if ($response == true) {
             \Session::put('success', 'OTP has been successfully sent. Please check your registered mail.');
-            return redirect()->route('bank.finvert-otp');
+            return redirect()->route('bank.cryptostudio-otp');
         } else {
             \Session::put('error', 'OTP send fail, Please try again.');
-            return redirect()->route('bank.finvert-otp');
+            return redirect()->route('bank.cryptostudio-otp');
         }
     }
 

@@ -1,23 +1,25 @@
-<!-- BEGIN: Header-->
-<nav class="header-navbar navbar navbar-expand-lg align-items-center floating-nav navbar-dark">
+<nav class="header-navbar navbar-expand-lg navbar navbar-fixed align-items-center navbar-shadow navbar-brand-center" data-nav="brand-center">
     <div class="navbar-container d-flex content">
         <div class="bookmark-wrapper d-flex align-items-center">
             <ul class="nav navbar-nav d-xl-none">
+                <li class="nav-item"><a class="nav-link menu-toggle" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu ficon"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a></li>
+            </ul>
+            <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link menu-toggle" href="#">
-                        <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.0507812 0.821655H20.7266V3.72937H0.0507812V0.821655ZM0.0507812 6.79462H20.7266V9.70233H0.0507812V6.79462ZM20.7266 12.7676H0.0507812V15.6753H20.7266V12.7676Z" fill="#3E5C76"/>
-                        </svg>
+                    <a class="nav-link" href="">
+                       <img src="{{ storage_asset('NewTheme/images/white_logo.png') }}" class="logo-big">
                     </a>
                 </li>
             </ul>
-            @yield('breadcrumbTitle')
+            <p class="font-size-16 mb-0">
+                @yield('breadcrumbTitle')
+            </p>
         </div>
         <ul class="nav navbar-nav align-items-center ms-auto">
-            <li class="nav-item">
-                <div style="width: 350px;">
+            <li class="nav-item dropdown dropdown-language">
+                <div style="width: 400px;">
                     <span>
-                        <b>UTC Time &nbsp; : &nbsp; </b>
+                        <b>Last Login Time &nbsp; : &nbsp; </b>
                         <span id="datetime" class="clock">Loading...</span>
                     </span>
                 </div>
@@ -35,13 +37,9 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user" style="width: 14rem;">
                     <a class="dropdown-item" href="{{ route('profile-bank') }}">
-                        <svg width="10" height="10" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.48922 1.17094C9.1102 -0.390314 6.8898 -0.390314 6.51078 1.17094C6.26594 2.17949 5.11045 2.65811 4.22416 2.11809C2.85218 1.28212 1.28212 2.85218 2.11809 4.22416C2.65811 5.11045 2.17949 6.26593 1.17094 6.51078C-0.390314 6.8898 -0.390314 9.1102 1.17094 9.48922C2.17949 9.73407 2.65811 10.8896 2.11809 11.7758C1.28212 13.1478 2.85218 14.7179 4.22417 13.8819C5.11045 13.3419 6.26594 13.8205 6.51078 14.8291C6.8898 16.3903 9.1102 16.3903 9.48922 14.8291C9.73407 13.8205 10.8896 13.3419 11.7758 13.8819C13.1478 14.7179 14.7179 13.1478 13.8819 11.7758C13.3419 10.8896 13.8205 9.73407 14.8291 9.48922C16.3903 9.1102 16.3903 6.8898 14.8291 6.51078C13.8205 6.26593 13.3419 5.11045 13.8819 4.22416C14.7179 2.85218 13.1478 1.28212 11.7758 2.11809C10.8896 2.65811 9.73407 2.17949 9.48922 1.17094ZM8 11C9.65685 11 11 9.65685 11 8C11 6.34315 9.65685 5 8 5C6.34315 5 5 6.34315 5 8C5 9.65685 6.34315 11 8 11Z" fill="#B3ADAD"/>
-                        </svg>
                         Edit Profile
                     </a>                    
                     <a class="dropdown-item" href="{!! URL::route('bank/logout') !!}" role="button">
-                        <i class="fa fa-sign-out text-dark-1"></i>
                         Logout
                     </a>
                 </div>

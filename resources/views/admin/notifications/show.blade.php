@@ -19,7 +19,7 @@
                     </div>
                     <a href="{{ route('admin-notifications') }}" class="btn btn-primary btn-sm"> Back</a>
                 </div>
-                <div class="card-body p-0">
+                <div class="card-body">
                     <div class="row">
                         <div class="col-md-9">
                             <h5>Title : {{ $notifications->title }}</h5>

@@ -1,18 +1,18 @@
 @extends('layouts.user.default')
 
 @section('title')
-    IP Whitelist
+    IP Whitelist Request
 @endsection
 
 @section('breadcrumbTitle')
-    <a href="{{ route('dashboardPage') }}">Dashboard</a> / IP Whitelist
+    <a href="{{ route('dashboardPage') }}">Dashboard</a> / IP Whitelist Request
 @endsection
 
 @section('content')
     @if (!empty($data->api_key))
         <div class="row">
             <div class="col-md-6">
-                <h4 class="mt-50">IP Whitelist</h4>
+                <h4 class="mt-50">IP Whitelist Request</h4>
             </div>
             <div class="col-xl-12">
                 <div class="card mt-2">

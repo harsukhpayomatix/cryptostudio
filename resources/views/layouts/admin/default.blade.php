@@ -10,9 +10,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ storage_asset('NewTheme/images/favicon.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
@@ -22,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/vendors.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/bootstrap-extended.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/vertical-menu.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/horizontal-menu.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/vendors/css/extensions/toastr.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/select2.min.css') }}">
 
@@ -49,7 +47,7 @@
         }
 
         .main-menu.menu-dark .navigation>li>ul li:not(.has-sub) {
-            margin: 0px 15px 0px 5px;
+            margin: 0px 10px 0px 5px;
         }
 
         .main-menu.menu-dark .navigation>li ul li ul a {
@@ -66,18 +64,18 @@
         }
 
         #searchModal .modal-body::-webkit-scrollbar-track {
-            background: #494949;
+            background: #F4F5F9;
         }
 
         #searchModal .modal-body::-webkit-scrollbar-thumb {
-            background: #F44336;
+            background: #4F738E;
         }
     </style>
 </head>
 
 <body
-    class="vertical-layout vertical-menu-modern navbar-floating footer-static menu-collapsed {{ Auth::guard('admin')->user()->theme == 0 ? 'dark-layout' : 'light-layout' }}"
-    data-open="click" data-menu="vertical-menu-modern" data-col="">
+    class="horizontal-layout horizontal-menu navbar-floating footer-static menu-expanded {{ Auth::guard('admin')->user()->theme == 0 ? 'dark-layout' : 'light-layout' }}"
+    data-open="hover" data-menu="horizontal-menu" data-col="">
     <div id="loading">
         <p>Loading..</p>
     </div>

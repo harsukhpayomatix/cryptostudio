@@ -9,22 +9,21 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ storage_asset('NewTheme/images/favicon.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- BEGIN: Theme CSS-->
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/bootstrap.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/bootstrap-extended.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/select2.min.css') }}">
+
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('NewTheme/css/auth.css') }}">
 
     <style type="text/css">
         .card {
-            background: var(--secondary-1);
-            border-radius: 0px 0px 3px 3px;
-            border-bottom: 1px solid #4D4D4D;
+            border-radius: 0.5rem;
         }
 
         .btn-danger {
@@ -35,9 +34,9 @@
         }
 
         .btn-primary {
-            background: var(--primary-3) !important;
-            border-color: var(--primary-3) !important;
-            color: var(--primary-4) !important;
+            background: var(--primary-1) !important;
+            border-color: var(--primary-1) !important;
+            color: var(--white) !important;
             border-radius: 3px;
         }
 
@@ -60,7 +59,7 @@
         }
 
         [type=radio]+img {
-            border: 3px solid #1B1919;
+            border: 2px solid var(--main-primary);
             cursor: pointer;
             width: 80px;
             border-radius: 3px;
@@ -70,27 +69,24 @@
         }
 
         [type=radio]:checked+img {
-            border: 3px solid #1B1919;
+            border: 2px solid var(--main-primary);
             box-shadow: 0px 0px 5px 0px #FFF;
             -webkit-filter: grayscale(0);
             filter: none;
+        }
+        .gateway-card .select2-container--default .select2-selection--single .select2-selection__rendered{
+            line-height: 30px;
+        }
+        .select2-container--default .select2-selection--single{
+            border: 1px solid var(--main-primary) !important;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow{
+            height: 42px !important;
         }
     </style>
 </head>
 
 <body>
-    <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
     <div id="loading">
         <p class="mt-1">{{ __('messages.loading') }}...</p>
     </div>
@@ -171,6 +167,8 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
     <script src="{{ storage_asset('NewTheme/js/jquery.validity.js') }}"></script>
     <script src="{{ storage_asset('NewTheme/js/creditly.js') }}"></script>
+
+    <script src="{{ storage_asset('NewTheme/vendors/js/forms/select/select2.full.min.js') }}"></script>
     <script>
         jQuery(document).ready(function() {
             jQuery("#load").fadeOut();

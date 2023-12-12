@@ -31,7 +31,7 @@ class AutoMidVolumeMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Finvert Volume')
+        return $this->subject('CryptoStudio Volume')
             ->markdown('emails.notifications.auto_mid_volume_mail')->with(["data" => $this->data, 'date' => $this->date]);
     }
 }

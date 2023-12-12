@@ -6,7 +6,6 @@
   <!--favicon-->
   <link rel="icon" href="{{ storage_asset('newTheme/assets/images/logo.png') }}" type="image/x-icon">
   <!-- Bootstrap core CSS-->
-  <link href="{{ storage_asset('newTheme/assets/plugins/select2/css/select2.min.css') }}" rel="stylesheet"/>
   <link href="{{ storage_asset('newTheme/assets/css/bootstrap.min.css') }}" rel="stylesheet"/>
   <!-- animate CSS-->
   <link href="{{ storage_asset('newTheme/assets/css/animate.css') }}" rel="stylesheet" type="text/css"/>

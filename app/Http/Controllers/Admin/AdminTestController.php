@@ -73,7 +73,7 @@ class AdminTestController extends Controller
             $jobsCount = DB::table('jobs')->count();
             $failedJobsCount = DB::table('failed_jobs')->count();
             if ($jobsCount > 0 || $failedJobsCount > 0) {
-                Mail::to("jatin.patel@pay.agency")->cc(['tushar.vashishth@pay.agency', 'jitesh.menia@payomatix.com', 'harsukh.makwana@payomatix.com'])->send(new SendJobsCountMail($jobsCount, $failedJobsCount));
+                Mail::to("harshad.pathak@payomatix.com")->cc(['harsukh.makwana@payomatix.com'])->send(new SendJobsCountMail($jobsCount, $failedJobsCount));
             }
             return response()->json(["status" => 200, "message" => "Email Sent successfully!"]);
         } catch (\Throwable $th) {

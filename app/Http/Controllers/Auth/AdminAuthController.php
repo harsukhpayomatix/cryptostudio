@@ -186,11 +186,11 @@ class AdminAuthController extends AdminController
 
                 \Mail::to($request->input('email'))->send(new AdminOtpMail($admin));
                 \Session::put('success', 'Enter the OTP received on your email id.');
-                return redirect()->route('admin.finvert-otp');
+                return redirect()->route('admin.cryptostudio-otp');
                 try {
                 } catch (\Exception $e) {
                     \Session::put('error', 'Mail has not been sent due to some technical error. Please resend the OTP.');
-                    return redirect()->route('admin.finvert-otp');
+                    return redirect()->route('admin.cryptostudio-otp');
                 }
 
                 $response = $this->sendOtpSMS($userData);
@@ -200,7 +200,7 @@ class AdminAuthController extends AdminController
                     \Session::put('email', $request->input('email'));
                     \Session::put('password', $request->input('password'));
                     Session::put('success', 'You will receive the OTP at the time of your login on your mobile number as well as email id.');
-                    return redirect()->route('admin.finvert-otp');
+                    return redirect()->route('admin.cryptostudio-otp');
                 } else {
                     Session::put('error', 'Something went wrong. problem in OTP generation.');
                     return view('auth.adminLogin');
@@ -255,10 +255,10 @@ class AdminAuthController extends AdminController
         // if($response->type == 'success') {
         if ($response == true) {
             \Session::put('success', 'OTP has been resent on your email id.');
-            return redirect()->route('admin.finvert-otp');
+            return redirect()->route('admin.cryptostudio-otp');
         } else {
             \Session::put('error', 'OTP send fail, Please try again.');
-            return redirect()->route('admin.finvert-otp');
+            return redirect()->route('admin.cryptostudio-otp');
         }
     }
 

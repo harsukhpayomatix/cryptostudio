@@ -1,12 +1,12 @@
 @extends('layouts.user.default')
 
 @section('title')
-My Application Create
+Profile Details Add
 @endsection
 
 @section('breadcrumbTitle')
-<a href="{{ route('dashboardPage') }}">Dashboard</a> / <a href="{{ route('my-application') }}">My Application</a> /
-Create
+<a href="{{ route('dashboardPage') }}">Dashboard</a> / <a href="{{ route('my-application') }}">Profile Details</a> /
+Add
 @endsection
 
 @section('customeStyle')
@@ -37,7 +37,7 @@ Create
         <div class="card">
             <div class="card-header d-flex justify-content-between">
                 <div class="header-title">
-                    <h4 class="card-title">My Application</h4>
+                    <h4 class="card-title">Profile Details</h4>
                 </div>
             </div>
             <div class="card-body">

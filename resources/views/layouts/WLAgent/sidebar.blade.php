@@ -1,35 +1,10 @@
 <!-- BEGIN: Main Menu-->
-<div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
-    <div class="navbar-header">
-        <ul class="nav navbar-nav flex-row">
-            <li class="nav-item me-auto">
-                <a class="navbar-brand" href="#">
-                    <img src="{{ storage_asset('NewTheme/images/favicon1.png') }}" class="logo-sm">
-                    <img src="{{ storage_asset('NewTheme/images/finvert.png') }}" class="logo-big">
-                </a>
-            </li>
-            <li class="nav-item nav-toggle mr-10">
-                <a class="nav-link modern-nav-toggle pe-0" data-bs-toggle="collapse">
-                    <svg width="16" height="5" viewBox="0 0 16 5" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M4 2.84354C4 3.94811 3.10457 4.84354 2 4.84354C0.895431 4.84354 0 3.94811 0 2.84354C0 1.73897 0.895431 0.843536 2 0.843536C3.10457 0.843536 4 1.73897 4 2.84354Z"
-                            fill="#7D7D7D" />
-                        <path
-                            d="M10 2.84354C10 3.94811 9.10457 4.84354 8 4.84354C6.89543 4.84354 6 3.94811 6 2.84354C6 1.73897 6.89543 0.843536 8 0.843536C9.10457 0.843536 10 1.73897 10 2.84354Z"
-                            fill="#7D7D7D" />
-                        <path
-                            d="M14 4.84354C15.1046 4.84354 16 3.94811 16 2.84354C16 1.73897 15.1046 0.843536 14 0.843536C12.8954 0.843536 12 1.73897 12 2.84354C12 3.94811 12.8954 4.84354 14 4.84354Z"
-                            fill="#7D7D7D" />
-                    </svg>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <div class="main-menu-content">
-        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+<div class="horizontal-menu-wrapper">
+<div class="header-navbar navbar-expand-sm navbar navbar-horizontal floating-nav navbar-light navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper" data-menu-type="floating-nav">
+    <div class="navbar-container main-menu-content" data-menu="menu-container">
+        <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
             <li class="{{ $pageActive == 'dashboard' ? 'active' : '' }} nav-item">
-                <a href="{{ route('wl-dashboard') }}" class="d-flex align-items-center">
+                <a href="{{ route('wl-dashboard') }}" class="nav-link dropdown-item d-flex align-items-center">
                     <div class="svg-icon">
                         <svg width="20" height="20" viewBox="0 0 17 17" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -39,13 +14,12 @@
                         </svg>
                     </div>
                     <span class="menu-title text-truncate ps-1" data-i18n="Overview">Overview</span>
-
                 </a>
             </li>
 
             <li
-                class="{{ $pageActive == 'merchant-management' || $pageActive == 'merchant-create' || $pageActive == 'merchant-edit' || $pageActive == 'merchant-show' ? 'active' : '' }}">
-                <a href="{{ route('wl-merchant-management') }}" class="d-flex align-items-center">
+                class="{{ $pageActive == 'merchant-management' || $pageActive == 'merchant-create' || $pageActive == 'merchant-edit' || $pageActive == 'merchant-show' ? 'active' : '' }} nav-item">
+                <a href="{{ route('wl-merchant-management') }}" class="nav-link dropdown-item d-flex align-items-center">
                     <div class="svg-icon">
                         <svg width="18" height="15" viewBox="0 0 18 15" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +44,7 @@
             </li>
 
             <li
-                class="nav-item has-sub {{ $pageActive == 'merchant-transaction' ||
+                class="dropdown nav-item {{ $pageActive == 'merchant-transaction' ||
                 $pageActive == 'merchant-chargebacks-transaction' ||
                 $pageActive == 'merchant-refund-transaction' ||
                 $pageActive == 'merchant-marked-transaction' ||
@@ -80,8 +54,8 @@
                 $pageActive == 'merchant-declined-transaction' ||
                 $pageActive == 'merchant-test-transaction'
                     ? 'active'
-                    : '' }}">
-                <a href="#Transaction" class="d-flex align-items-center collapsed">
+                    : '' }}" data-menu="dropdown">
+                <a href="#" class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" data-bs-toggle="dropdown">
                     <div class="svg-icon">
                         <svg width="20" height="17" viewBox="0 0 20 17" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -94,93 +68,47 @@
                     </div>
                     <span class="menu-title text-truncate ps-1">Transactions</span>
                 </a>
-                <ul id="Transaction" class="menu-content">
+                <ul class="dropdown-menu" data-bs-popper="none">
                     <li class="{{ $pageActive == 'merchant-transaction' ? 'active' : '' }}"><a
-                            href="{{ route('wl-merchant-transaction') }}" class="d-flex align-items-center">
-                            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                    fill="#B3ADAD" />
-                            </svg>
+                            href="{{ route('wl-merchant-transaction') }}" class="dropdown-item dropdown-item d-flex align-items-center">
                             <span class="menu-item text-truncate ps-1">All Transactions</span>
                         </a>
                     </li>
                     <li class="{{ $pageActive == 'merchant-crypto-transaction' ? 'active' : '' }}"><a
-                            href="{{ route('wl-merchant-transaction-crypto') }}" class="d-flex align-items-center">
-                            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                    fill="#B3ADAD" />
-                            </svg>
+                            href="{{ route('wl-merchant-transaction-crypto') }}" class="dropdown-item dropdown-item d-flex align-items-center">
                             <span class="menu-item text-truncate ps-1">Crypto Transactions</span>
                         </a>
                     </li>
                     <li class="{{ $pageActive == 'merchant-refund-transaction' ? 'active' : '' }}"><a
-                            href="{{ route('wl-merchant-transaction-refund') }}" class="d-flex align-items-center">
-                            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                    fill="#B3ADAD" />
-                            </svg>
+                            href="{{ route('wl-merchant-transaction-refund') }}" class="dropdown-item dropdown-item d-flex align-items-center">
                             <span class="menu-item text-truncate ps-1">Refunds</span>
                         </a>
                     </li>
                     <li class="{{ $pageActive == 'merchant-chargebacks-transaction' ? 'active' : '' }}"><a
                             href="{{ route('wl-merchant-transaction-chargebacks') }}"
-                            class="d-flex align-items-center">
-                            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                    fill="#B3ADAD" />
-                            </svg>
+                            class="dropdown-item dropdown-item d-flex align-items-center">
                             <span class="menu-item text-truncate ps-1">Chargebacks</span>
                         </a>
                     </li>
                     <li class="{{ $pageActive == 'merchant-retrieval-transaction' ? 'active' : '' }}"><a
                             href="{{ route('wl-merchant-transaction-retrieval') }}"
-                            class="d-flex align-items-center"><svg width="7" height="11" viewBox="0 0 7 11"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                    fill="#B3ADAD" />
-                            </svg>
+                            class="dropdown-item dropdown-item d-flex align-items-center">
                             <span class="menu-item text-truncate ps-1">Retrieval</span>
                         </a>
                     </li>
                     <li class="{{ $pageActive == 'merchant-marked-transaction' ? 'active' : '' }}"><a
                             href="{{ route('wl-merchant-transaction-suspicious') }}"
-                            class="d-flex align-items-center"><svg width="7" height="11" viewBox="0 0 7 11"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                    fill="#B3ADAD" />
-                            </svg>
+                            class="dropdown-item dropdown-item d-flex align-items-center">
                             <span class="menu-item text-truncate ps-1">Marked Transaction</span>
                         </a>
                     </li>
                     <li class="{{ $pageActive == 'merchant-declined-transaction' ? 'active' : '' }}"><a
-                            href="{{ route('wl-merchant-transaction-declined') }}" class="d-flex align-items-center">
-                            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                    fill="#B3ADAD" />
-                            </svg>
+                            href="{{ route('wl-merchant-transaction-declined') }}" class="dropdown-item dropdown-item d-flex align-items-center">
                             <span class="menu-item text-truncate ps-1">Declined</span>
                         </a>
                     </li>
                     <li class="{{ $pageActive == 'merchant-test-transaction' ? 'active' : '' }}"><a
-                            href="{{ route('wl-merchant-transaction-test') }}" class="d-flex align-items-center">
-                            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                    fill="#B3ADAD" />
-                            </svg>
+                            href="{{ route('wl-merchant-transaction-test') }}" class="dropdown-item dropdown-item d-flex align-items-center">
                             <span class="menu-item text-truncate ps-1"> Test transactions</span>
                         </a>
                     </li>
@@ -188,14 +116,14 @@
             </li>
 
             <li
-                class="nav-item has-sub {{ $pageActive == 'wl-payout-report' ||
+                class="dropdown nav-item {{ $pageActive == 'wl-payout-report' ||
                 $pageActive == 'transaction-summary-reports' ||
                 $pageActive == 'summary-reports' ||
                 $pageActive == 'user-card-summary-report' ||
                 $pageActive == 'user-payment-status-summary-report'
                     ? 'active'
-                    : '' }}">
-                <a href="#Reports" class="d-flex align-items-center">
+                    : '' }}" data-menu="dropdown">
+                <a href="#" class="dropdown-toggle nav-link dropdown-item d-flex align-items-center" data-bs-toggle="dropdown">
                     <div class="svg-icon">
                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -208,39 +136,21 @@
                     </div>
                     <span class="menu-title text-truncate ps-1" data-i18n="reports">Reports</span>
                 </a>
-                <ul class="menu-content">
+                <ul class="dropdown-menu" data-bs-popper="none">
                     <li class="{{ $pageActive == 'wl-payout-report' ? 'active' : '' }}"><a
-                            href="{{ route('wl-payout-report') }}" class="d-flex align-items-center">
-                            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                    fill="#B3ADAD" />
-                            </svg>
+                            href="{{ route('wl-payout-report') }}" class="dropdown-item dropdown-item d-flex align-items-center">
                             <span class="menu-title text-truncate ps-1"> Payout Report</span>
                         </a>
                     </li>
                     <li class="{{ $pageActive == 'transaction-summary-reports' ? 'active' : '' }}"><a
-                            href="{{ route('wl-transaction-summary-reports') }}" class="d-flex align-items-center">
+                            href="{{ route('wl-transaction-summary-reports') }}" class="dropdown-item dropdown-item d-flex align-items-center">
 
-                            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                    fill="#B3ADAD" />
-                            </svg>
                             <span class="menu-title text-truncate ps-1"> Transaction Summary Report</span>
                         </a>
                     </li>
                     <li
                         class="{{ $pageActive == 'summary-reports' || $pageActive == 'user-card-summary-report' || $pageActive == 'user-payment-status-summary-report' ? 'active' : '' }}">
-                        <a href="{{ route('wl-summary-reports') }}" class="d-flex align-items-center">
-                            <svg width="7" height="11" viewBox="0 0 7 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M0.378831 10.5282C-0.0116932 10.1376 -0.0116932 9.50446 0.378831 9.11394L3.67172 5.82104L0.378831 2.52815C-0.0116936 2.13763 -0.0116936 1.50446 0.378831 1.11394C0.769355 0.723414 1.40252 0.723414 1.79304 1.11394L5.79304 5.11394C6.18357 5.50446 6.18357 6.13763 5.79304 6.52815L1.79304 10.5282C1.40252 10.9187 0.769355 10.9187 0.378831 10.5282Z"
-                                    fill="#B3ADAD" />
-                            </svg>
+                        <a href="{{ route('wl-summary-reports') }}" class="dropdown-item dropdown-item d-flex align-items-center">
                             <span class="menu-title text-truncate ps-1"> Summary Report</span>
                         </a>
                     </li>
@@ -248,4 +158,5 @@
             </li>
         </ul>
     </div>
+</div>
 </div>

@@ -17,12 +17,12 @@
                     <a href="{{ route('admin.applications.list') }}" class="btn btn-primary btn-sm"> <i
                             class="fa fa-arrow-left" aria-hidden="true"></i></a>
                 </div>
-                <div class="card-body p-0">
+                <div class="card-body">
                     {{ Form::model($data, ['route' => ['admin.applications.update', $data->id], 'method' => 'PUT', 'class' => 'form-dark w-100', 'enctype' => 'multipart/form-data']) }}
                     @csrf
                     <input type=hidden name="id" value="{{ $data->id }}">
                     <input type="hidden" name="user_id" value="{{ $data->user_id }}">
-                    <div class="row mt-1">
+                    <div class="row">
                         @include('partials.application.applicationFrom', ['isEdit' => true])
                     </div>
                     <div class="row">

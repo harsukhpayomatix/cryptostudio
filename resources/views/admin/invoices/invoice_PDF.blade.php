@@ -217,10 +217,10 @@
         <header class="clearfix">
             <div class="header1">
                 <div id="logo">
-                    <img src="https://portal.finvert.io/storage/ThemeCryptoStudio/images/finvert_logo.png">
+                    <img src="https://dashboard.crypto-studio.co/storage/ThemeCryptoStudio/images/logo.png">
                 </div>
                 <div class="title">
-                    <h1>Finvert</h1>
+                    <h1>CryptoStudio</h1>
                     <br><span>{{ date('F d, Y') }}</span>
                 </div>
                 <div style="clear: both;"></div>
@@ -309,7 +309,7 @@
         </div>
     </main>
     <footer>
-        <u>suit 1 ,a.l.evelyn ltd building, charlestown , nevis </u> <br> <u>compliance@finvert.io</u>
+        <u>suit 1 ,a.l.evelyn ltd building, charlestown , nevis </u> <br> <u>compliance@cryptostudio.co</u>
     </footer>
 </body>
 

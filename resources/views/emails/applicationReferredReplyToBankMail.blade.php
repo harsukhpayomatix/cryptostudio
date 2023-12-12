@@ -9,6 +9,6 @@
 </p>
 <p>
 	Thanks,<br>
-	Team Finvert
+	Team CryptoStudio
 </p>
 @endcomponent

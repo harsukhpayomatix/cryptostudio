@@ -59,7 +59,7 @@ class TestController extends Controller
             'testing' => 'hello'
         ];
 
-        $url = 'https://egpay.btloginc.com/interface/paymentresponse/notify/Finvert_H5/merchant372';
+        $url = 'https://egpay.btloginc.com/interface/paymentresponse/notify/CryptoStudio_H5/merchant372';
 
         $output = postCurlRequestBackUpTwo($url, $data);
 

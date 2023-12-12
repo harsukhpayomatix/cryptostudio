@@ -9,9 +9,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ storage_asset('ThemeCryptoStudio/images/favicon.png') }}">
     <link rel="shortcut icon" href="{{ storage_asset('ThemeCryptoStudio/images/favicon.png') }}" />
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
         integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -26,7 +24,7 @@
     <link id="theme-style" rel="stylesheet" href="{{ storage_asset('NewTheme/API-Doc/css/custom.css') }}">
     <style type="text/css">
         body {
-            background: #262626;
+            background: #F5F6FA;
         }
     </style>
     <link rel="stylesheet" type="text/css" href="{{ storage_asset('theme/API-assets/css/stylesheet.css') }}" />
@@ -41,7 +39,7 @@
                 <div class="docs-logo-wrapper">
                     <div class="site-logo">
                         <a class="navbar-brand" href="{{ url('dashboard') }}">
-                            <img class="logo-icon me-2" src="{{ storage_asset('ThemeCryptoStudio/images/finvert.png') }}"
+                            <img class="logo-icon me-2" src="{{ storage_asset('ThemeCryptoStudio/images/logo.png') }}"
                                 alt="logo" width="150px">
                         </a>
                     </div>
@@ -331,8 +329,8 @@
     },
     "client": {
       "first_name": "Test",
-      "last_name": "Finvert",
-      "email": "tech@finvert.io",
+      "last_name": "CryptoStudio",
+      "email": "tech@cryptostudio.co",
       "phone_no": "8676767676",
       "address": "Testing address",
       "zip": "676776",

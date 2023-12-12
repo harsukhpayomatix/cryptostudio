@@ -867,7 +867,6 @@ class TestApiController extends Controller
 
         $domain = parse_url($input['response_url'], PHP_URL_HOST);
 
-        // return to oportal.finvert.io with session instead of query string
         $order_id = $input['order_id'] ?? null;
         $customer_order_id = $input['customer_order_id'] ?? null;
 

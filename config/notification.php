@@ -1,7 +1,7 @@
 <?php
 return [
 
-	'default_email' => 'sales@finvert.io',
+	'default_email' => 'sales@crypto-studio.co',
 
 	'default_admin_id' => 27,
 

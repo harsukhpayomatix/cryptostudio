@@ -57,7 +57,7 @@
                 <div class="col-md-8">
                     <div class="text-center mb-3">
                         <a href="{{ route('login') }}">
-                            <img src="{{ storage_asset('ThemeCryptoStudio/images/finvert.png') }}" alt="" width="300px">
+                            <img src="{{ storage_asset('ThemeCryptoStudio/images/logo.png') }}" alt="" width="300px">
                         </a>
                     </div>
                     <div class="authincation-content">
@@ -159,7 +159,7 @@
     <script src="{{ storage_asset('theme/js/deznav-init.js') }}"></script>
 
     <script src="{{ storage_asset('ThemeCryptoStudio/js/jquery-latest.min.js') }}"></script>
-    <script src="{{ storage_asset('newIpay/assets/custom_js/front/transactionDocumentsUpload.js') }}"></script>
+    <script src="{{ storage_asset('ThemeCryptoStudio/assets/custom_js/front/transactionDocumentsUpload.js') }}"></script>
 </body>
 
 </html>

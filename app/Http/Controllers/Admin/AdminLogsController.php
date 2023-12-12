@@ -65,7 +65,7 @@ class AdminLogsController extends AdminController
                 'Content-Type' => 'application/text',
             ];
             
-            return response()->download($file, 'finvert.log', $headers);
+            return response()->download($file, 'cryptostudio.log', $headers);
         } else {
             return response()->json(['error' => 'File not found.']);
         }

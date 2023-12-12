@@ -1,5 +1,7 @@
 :root {  
-  --primary-1: #B3ADAD;  
+  --main-primary: #4F738E;
+
+  --primary-1: var(--main-primary);  
   --primary-2: #F44336;  
   --primary-3: #3D3D3D;  
   --primary-4: #D9D9D9;  
@@ -9,15 +11,15 @@
   --secondary-3: #232323;    
   --yellow: #ffcc5c;
   
-  --body: #262626;  
+  --body: #f8f8f8;  
   --white: #FFFFFF;  
   --red: #FF3C14;  
 
-  --primary-text: #B3ADAD;    
+  --primary-text: var(--main-primary);    
   --success: #4A6B2F;  
   --warning: #9C7942;  
 
-  --font-family: 'Poppins', sans-serif;
+  --font-family: 'Ubuntu', sans-serif;
 
   --font-width-5: 500;
   --font-width-6: 600;

@@ -14,16 +14,12 @@
          border-radius: 0px 3px 3px 0px;
      }
 
-     .select2-dropdown {
-         background-color: #494949 !important;
-     }
-
      .select2-container--default .select2-selection--single .select2-selection__rendered {
          color: #B9B9C3 !important;
      }
 
      .select2-container--default .select2-results__option--highlighted[aria-selected] {
-         background-color: #F44336 !important;
+         background-color: var(--main-primary) !important;
      }
  </style>
 
@@ -328,8 +324,7 @@
                      class="cancel-btn btn btn-danger w-100 mt-1 mt-md-0">{{ __('messages.cancel') }}</button>
              </div>
              <div class="col-md-6 order-1 order-md-2  ">
-                 <button type="button" id="submit-button" class="btn btn-info w-100"
-                     style="background-color:#5BB318; border-color: #5BB318; border-radius: 3px;">{{ __('messages.payNow') }}</button>
+                 <button type="button" id="submit-button" class="btn btn-primary w-100">{{ __('messages.payNow') }}</button>
              </div>
 
          </div>

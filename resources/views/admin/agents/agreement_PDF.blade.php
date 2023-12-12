@@ -11,7 +11,7 @@
             background-color: #FFF;
             text-align: justify;
             font-family: system-ui, system-ui, sans-serif;
-            background-image: url('https://portal.finvert.io/storage/ThemeCryptoStudio/images/rp_agreement_footer.png');
+            background-image: url('https://dashboard.crypto-studio.co/storage/ThemeCryptoStudio/images/rp_agreement_footer.png');
             background-size: 100% 100%;
         }
 
@@ -50,14 +50,14 @@
 
 <body>
     <main>
-        <img src="https://portal.finvert.io/storage/ThemeCryptoStudio/images/rp_agreement.png"
+        <img src="https://dashboard.crypto-studio.co/storage/ThemeCryptoStudio/images/rp_agreement.png"
             style="width: 100%; height: 1067px;" />
         <div style="page-break-before:always">&nbsp;</div>
         <div class="content">
             <p>This Referral Partnership Agreement (the "Agreement") is entered into on this ......................day
                 of...............
-                23 by and between Finvert IO LLC , a Payment processing company registered in
-                suit 1,a.l.evelyn ltd building, Charlestown Nevis (hereinafter referred to as "Finvert IO"), and
+                23 by and between CryptoStudio , a Payment processing company registered in
+                suit 1,a.l.evelyn ltd building, Charlestown Nevis (hereinafter referred to as "CryptoStudio"), and
                 ...............................................................................................</p>
             <p>(Referral Partner Name),
                 ..............................................................................................................................................
@@ -116,7 +116,7 @@
                 the previous month. The commission would be the difference between the buy rate and the sell rate
                 decided by the referral partner. The partner would receive 100% of the markup added to the buy rate.The
                 commissions to the referral partner are to be paid through crypto and the partner will continue to
-                receive the commissions as long as the merchant referred is actively processing with Finvert.
+                receive the commissions as long as the merchant referred is actively processing with CryptoStudio.
             </p>
             <h4>Relationship of the Parties</h4>
             <p>The parties agree that the Referral Partner is an independent contractor and is not an employee or agent
@@ -181,7 +181,7 @@
         <div class="content">
             <div style="width: 100%;">
                 <div style="width: 50%; float: left;">
-                    <h3>FINVERT IO'S LLC</h3>
+                    <h3>CRYPTOSTUDIO</h3>
                 </div>
                 <div style="width: 50%; float: left; text-align: right;">
                     <p>_____________________________________(Company)</p>
@@ -219,7 +219,7 @@
                 <div style="width: 50%; float: left;">
                     <div style="position: relative;">
                         <h3>Signature</h3>
-                        <img src="https://portal.finvert.io/storage/ThemeCryptoStudio/images/Signature.png"
+                        <img src="https://dashboard.crypto-studio.co/storage/ThemeCryptoStudio/images/Signature.png"
                             style="width: 150px; position: absolute;left: 0px;" />
                     </div>
                 </div>

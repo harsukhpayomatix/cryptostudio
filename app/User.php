@@ -853,7 +853,7 @@ class User extends Authenticatable
             if (!$getIPData) {
                 return response()->json([
                     'status' => 'fail',
-                    'message' => 'This API key is not permitted for transactions from this IP address (' . request()->ip() . '). Please add your IP by clicking on this link : https://portal.finvert.io',
+                    'message' => 'This API key is not permitted for transactions from this IP address (' . request()->ip() . '). Please add your IP by clicking on this link : https://dashboard.crypto-studio.co',
                     'customer_order_id' => request()->customer_order_id,
                 ]);
             }

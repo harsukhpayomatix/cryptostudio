@@ -40,8 +40,8 @@ User Management
                                     <div class="dropdown ml-auto">
                                         <a href="#" class="btn btn-primary sharp rounded-pill" data-bs-toggle="dropdown" aria-expanded="true"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"></rect><circle fill="#FFF" cx="5" cy="12" r="2"></circle><circle fill="#FFF" cx="12" cy="12" r="2"></circle><circle fill="#FFF" cx="19" cy="12" r="2"></circle></g></svg></a>
                                         <ul class="dropdown-menu dropdown-menu-right">
-                                            <li class="dropdown-item"><a href="{!! URL::route('user-management.edit', $value->id) !!}" class="dropdown-a"><i class="fa fa-edit text-primary mr-2"></i> Edit</a></li>
-                                            <li class="dropdown-item"><a href="#" class="dropdown-a text-danger delete_modal" id="" data-target="#delete_modal" data-bs-toggle="modal"  data-url="{!! URL::route('user-management.delete', $value->id) !!}" data-id="{{ $value->id }}"><i class="fa fa-trash text-danger mr-2"></i> Delete</a></li>
+                                            <li class="dropdown-item"><a href="{!! URL::route('user-management.edit', $value->id) !!}" class="dropdown-a">Edit</a></li>
+                                            <li class="dropdown-item"><a href="#" class="dropdown-a text-danger delete_modal" id="" data-target="#delete_modal" data-bs-toggle="modal"  data-url="{!! URL::route('user-management.delete', $value->id) !!}" data-id="{{ $value->id }}">Delete</a></li>
                                         </ul>
                                     </div>
                                 </td>

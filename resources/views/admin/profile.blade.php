@@ -17,7 +17,7 @@
                         <h4 class="card-title">Personal Info</h4>
                     </div>
                 </div>
-                <div class="card-body p-0">
+                <div class="card-body">
                     {{ Form::model($data, ['route' => ['update-profile', $data->id], 'method' => 'patch', 'class' => 'form-dark']) }}
                     <div class="form-group">
                         <label>Name</label>
@@ -62,7 +62,7 @@
                         <h4 class="card-title">Change Password</h4>
                     </div>
                 </div>
-                <div class="card-body p-0">
+                <div class="card-body">
                     <form action="{{ route('user-change-pass') }}" method="post" class="form-dark">
                         {{ csrf_field() }}
                         <div class="form-group">

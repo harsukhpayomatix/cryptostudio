@@ -44,7 +44,7 @@
         <div class="text-center">
             <h5 class="text-info"><i style="font-weight: 900;">We wish you continued success for 2021 and wish to express our gratitude in choosing {{ config('app.name') }} as your continued support payment solutions company.</i></h5>
             <p><strong><u>Contact us:</u></strong></p>
-            <p>Email <a href="mailto:sales@finvert.io">sales@finvert.io</a></p>
+            <p>Email <a href="mailto:sales@crypto-studio.co">sales@crypto-studio.co</a></p>
         </div>
       </div>
       <div class="modal-footer">

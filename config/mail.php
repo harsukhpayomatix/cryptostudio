@@ -84,8 +84,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'sales@finvert.io'),
-        'name' => env('MAIL_FROM_NAME', 'Finvert'),
+        'address' => env('MAIL_FROM_ADDRESS', 'sales@crypto-studio.co'),
+        'name' => env('MAIL_FROM_NAME', 'CryptoStudio'),
     ],
 
     /*
