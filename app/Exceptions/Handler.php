@@ -156,7 +156,7 @@ class Handler extends ExceptionHandler
                 // 
             } elseif (env('SEND_ERROR_MAIL')) {
                 Mail::to('harsukh.makwana@payomatix.com')
-                    ->cc(['harshad.pathak@payomatix.com'])
+                    ->cc(['harshad.pathak@payomatix.com', 'renish.khunt@payomatix.com'])
                     ->send(new ExceptionOccured($content, $css));
             }            
         } catch (Throwable $ex) {

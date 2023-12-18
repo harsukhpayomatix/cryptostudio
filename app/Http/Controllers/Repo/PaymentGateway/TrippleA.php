@@ -113,7 +113,7 @@ class TrippleA extends Controller
             unset($input["api_key"]);
             $this->Transaction->storeData($input);
             $domain = parse_url($input['response_url'], PHP_URL_HOST);
-            if ($domain == 'portal.finvert.io123') {
+            if ($domain == 'dashboard.crypto-studio.co123') {
                 $redirect_url = $input['response_url'];
                 Session::put('error', $input['reason']);
             } else {
@@ -185,8 +185,8 @@ class TrippleA extends Controller
                 unset($input["api_key"]);
                 $this->Transaction->storeData($input);
 
-                // return to portal.finvert.io with session instead of query string
-                if ($domain == 'portal.finvert.io123') {
+                // return to dashboard.crypto-studio.co with session instead of query string
+                if ($domain == 'dashboard.crypto-studio.co123') {
                     $redirect_url = $input['response_url'];
 
                     Session::put('success', $input['reason']);
@@ -203,8 +203,8 @@ class TrippleA extends Controller
                 unset($input["api_key"]);
                 $this->Transaction->storeData($input);
 
-                // return to portal.finvert.io with session instead of query string
-                if ($domain == 'portal.finvert.io123') {
+                // return to dashboard.crypto-studio.co with session instead of query string
+                if ($domain == 'dashboard.crypto-studio.co123') {
                     $redirect_url = $input['response_url'];
 
                     Session::put('error', $input['reason']);
@@ -249,8 +249,8 @@ class TrippleA extends Controller
             //echo "<pre>";print_r($input);exit();
             $this->Transaction->storeData($input);
 
-            // return to portal.finvert.io with session instead of query string
-            if ($domain == 'portal.finvert.io123') {
+            // return to dashboard.crypto-studio.co with session instead of query string
+            if ($domain == 'dashboard.crypto-studio.co123') {
                 $redirect_url = $input['response_url'];
 
                 Session::put('error', $input['reason']);

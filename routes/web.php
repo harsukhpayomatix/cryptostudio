@@ -817,9 +817,9 @@ Route::post("ems/callback/{id}", "Repo\PaymentGateway\EmsCardStream@callback")->
 Route::get("/ems/form/{id}", "Repo\PaymentGateway\EmsCardStream@form")->name("ems.form");
 
 // Coinspaid
-Route::get('coinspaid/success/{id}', 'Repo\PaymentGateway\CoinsPaid@success')->name("coinspaid-success");
-Route::get('coinspaid/failed/{id}', 'Repo\PaymentGateway\CoinsPaid@fail')->name("coinspaid-failed");
-Route::any('coinspaid/webhook/KTOIJcrRPKVhtVTYKMWaTWYxuk7wmB', 'Repo\PaymentGateway\CoinsPaid@webhook');
+Route::get('coinspaid/success/{id}', 'Repo\PaymentGateway\Coinspaid@success')->name("coinspaid-success");
+Route::get('coinspaid/failed/{id}', 'Repo\PaymentGateway\Coinspaid@fail')->name("coinspaid-failed");
+Route::any('coinspaid/webhook/KTOIJcrRPKVhtVTYKMWaTWYxuk7wmB', 'Repo\PaymentGateway\Coinspaid@webhook');
 
 // * 3xGate urls
 Route::get("3xgate/success/{id}", "Repo\PaymentGateway\Gate3x@success")->name('gate3x.success');
