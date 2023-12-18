@@ -38,21 +38,21 @@ class TrippleA extends Controller
                 $country_code = '';
             }
 
-            if(substr($input['phone_no'], 0, 1) == '+') 
+            if(substr($input['phone_no'], 0, 1) == '+'){
                 $payer_phone = $country_code.$input['phone_no'];
-            else
+            }else{
                 $payer_phone = '+'.$country_code.$input['phone_no'];
-            
+            }
 
             $data = [
                 'type' => 'triplea',
-                'api_id' => $check_assign_mid->btc_api,
-                //'crypto_currency' => 'testBTC',
-                'crypto_currency' => 'BTC',
-                //"sandbox"=> true,
+                'api_id' => "HA1699594810qMMPjLQ64i_t",
+                'crypto_currency' => 'testBTC',
+                // 'crypto_currency' => 'BTC',
+                "sandbox"=> true,
                 'order_currency' => $input["converted_currency"],
                 'order_amount' => (float)$input["converted_amount"],
-                'payer_id' => 'sfasfasf',
+                'payer_id' => 'cryptostudio',
                 'payer_name' => $input['first_name'].' '.$input['last_name'],
                 'payer_email' => $input['email'],
                 'payer_phone' => $payer_phone,

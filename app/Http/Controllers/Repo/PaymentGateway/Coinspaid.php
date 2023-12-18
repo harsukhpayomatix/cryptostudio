@@ -13,8 +13,8 @@ class Coinspaid extends Controller
 {
     use StoreTransaction;
     
-    const BASE_URL = 'https://app.cryptoprocessing.com/api/v2'; // live
-    //const BASE_URL = 'https://app.sandbox.cryptoprocessing.com/api/v2'; // test
+    // const BASE_URL = 'https://app.cryptoprocessing.com/api/v2'; // live
+    const BASE_URL = 'https://app.sandbox.cryptoprocessing.com/api/v2'; // test
     
     public function checkout($input, $check_assign_mid)
     {

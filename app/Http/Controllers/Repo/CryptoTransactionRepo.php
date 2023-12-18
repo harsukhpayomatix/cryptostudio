@@ -12,6 +12,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Helpers\PaymentResponse;
 use App\PaymentGateways\PaymentGatewayContract;
+use Carbon\Carbon;
 
 class CryptoTransactionRepo extends Controller
 {
@@ -131,25 +132,97 @@ class CryptoTransactionRepo extends Controller
             return $mid_daily_limit;
         }
 
+        $transactions_check = \DB::table('transactions')
+            ->whereNull('deleted_at')
+            ->where('status', '<>', '5')
+            ->where('user_id', $input['user_id'])
+            ->where('payment_gateway_id', $input['payment_gateway_id']);
+
+        // if there is card_no
+        if (isset($input['card_no']) && $input['card_no'] != null) {
+
+            $card_transactions_check = clone $transactions_check;
+            $card_transactions_check = $card_transactions_check->where('card_no', substr($input['card_no'], 0, 6) . 'XXXXXX' . substr($input['card_no'], -4));
+
+            // daily card limit check
+            $card_daily_transactions = clone $card_transactions_check;
+            $card_daily_transactions = $card_daily_transactions->whereBetween('created_at', [Carbon::now()->subDays(1)->toDateTimeString(), Carbon::now()->toDateTimeString()])
+                ->count();
+            if ($card_daily_transactions >= $check_assign_mid->per_day_card && $card_daily_transactions >= $user->one_day_card_limit) {
+                return [
+                    'status' => '5',
+                    'reason' => 'Per day transactions by card limit exceeded.'
+                ];
+            }
+
+            // card per-week limit
+            $card_weekly_transactions = clone $card_transactions_check;
+            $card_weekly_transactions = $card_weekly_transactions->whereBetween('created_at', [Carbon::now()->subDays(7)->toDateTimeString(), Carbon::now()->toDateTimeString()])
+                ->count();
+            if ($card_weekly_transactions >= $check_assign_mid->per_week_card && $card_weekly_transactions >= $user->one_week_card_limit) {
+                return [
+                    'status' => '5',
+                    'reason' => 'Per week transactions by card limit exceeded.'
+                ];
+            }
+
+            // card per-month limit
+            $card_monthly_transactions = clone $card_transactions_check;
+            $card_monthly_transactions = $card_monthly_transactions->whereBetween('created_at', [Carbon::now()->subDays(30)->toDateTimeString(), Carbon::now()->toDateTimeString()])
+                ->count();
+            if ($card_monthly_transactions >= $check_assign_mid->per_month_card && $card_monthly_transactions >= $user->one_month_card_limit) {
+                return [
+                    'status' => '5',
+                    'reason' => 'Per month transactions by card limit exceeded.'
+                ];
+            }
+        }
+
         // if there is email
-        if(isset($input['email']) && $input['email'] != null) {
+        if (isset($input['email']) && $input['email'] != null) {
+
+            $email_transactions_check = clone $transactions_check;
+            $email_transactions_check = $email_transactions_check->where('email', $input['email']);
 
             // email per-day limit
-            $email_per_day_limit = $this->dailyEMailLimitCheck($input, $check_assign_mid, $payment_gateway_id);
-            if ($email_per_day_limit != false) {
-                return $email_per_day_limit;
+            $email_daily_transactions = clone $email_transactions_check;
+            $email_daily_transactions = $email_daily_transactions->whereBetween('created_at', [Carbon::now()->subDays(1)->toDateTimeString(), Carbon::now()->toDateTimeString()])
+                ->count();
+            if ($email_daily_transactions >= $check_assign_mid->per_day_email && $email_daily_transactions >= $user->one_day_email_limit) {
+                return [
+                    'status' => '5',
+                    'reason' => 'Per day transactions by email limit exceeded.'
+                ];
             }
 
             // email per-week limit
-            $email_per_week_limit = $this->weeklyEMailLimitCheck($input, $check_assign_mid, $payment_gateway_id);
-            if ($email_per_week_limit != false) {
-                return $email_per_week_limit;
+            $email_weekly_transactions = clone $email_transactions_check;
+            $email_weekly_transactions = $email_weekly_transactions->whereBetween('created_at', [Carbon::now()->subDays(7)->toDateTimeString(), Carbon::now()->toDateTimeString()])
+                ->count();
+            if ($email_weekly_transactions >= $check_assign_mid->per_week_email && $email_weekly_transactions >= $user->one_week_email_limit) {
+                return [
+                    'status' => '5',
+                    'reason' => 'Per week transactions by email limit exceeded.'
+                ];
             }
 
             // email per-month limit
-            $email_per_month_limit = $this->monthlyEMailLimitCheck($input, $check_assign_mid, $payment_gateway_id);
-            if ($email_per_month_limit != false) {
-                return $email_per_month_limit;
+            $email_monthly_transactions = clone $email_transactions_check;
+            $email_monthly_transactions = $email_monthly_transactions->whereBetween('created_at', [Carbon::now()->subDays(30)->toDateTimeString(), Carbon::now()->toDateTimeString()])
+                ->count();
+            if ($email_monthly_transactions >= $check_assign_mid->per_month_card && $email_monthly_transactions >= $user->one_month_email_limit) {
+                return [
+                    'status' => '5',
+                    'reason' => 'Per month transactions by email limit exceeded.'
+                ];
+            }
+        }
+
+        // blocked country validation
+        if (isset($input['country']) && $input['country'] != null) {
+            $blocked_country_response = $this->validateBlockedCountry($input, $check_assign_mid);
+            if ($blocked_country_response != false) {
+                return $blocked_country_response;
             }
         }
 

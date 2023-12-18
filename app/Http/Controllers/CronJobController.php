@@ -30,7 +30,6 @@ class CronJobController extends Controller
         } catch (\Exception $e) {
             return false;
         }
-
         if ($data) {
             //\DB::table('currency_rate')->delete();
 

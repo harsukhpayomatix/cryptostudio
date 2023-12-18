@@ -44,25 +44,18 @@ class CryptoApiController extends Controller
         $input = $request->only($request_only);
         $customer_order_id = $input['customer_order_id'] ?? null;
 
+        $api_key = $request->bearerToken();
         // if api_key is not included in request
-        if(empty($input['api_key'])) {
-            return response()->json([
-                'status' => 'fail',
-                'message' => 'api_key parameter is required.',
-                'data' => [
-                    'order_id' => null,
-                    'amount' => $input['amount'] ?? null,
-                    'currency' => $input['currency'] ?? null,
-                    'email' => $input['email'] ?? null,
-                    'customer_order_id' => $customer_order_id,
-                ]
-            ]);
+        if (empty($api_key)) {
+            $input['status'] = '6';
+            $input['reason'] = 'Unauthorised request, please pass API Key in Header';
+            return ApiResponse::unauthorised($input);
         }
         // validate API key
         $payment_gateway_id = DB::table('users')
             ->select('middetails.id as midid', 'middetails.gateway_table', 'users.*')
             ->leftJoin('middetails', 'middetails.id','users.mid')
-            ->where('users.api_key', $input['api_key'])
+            ->where('users.api_key', $api_key)
             ->where('users.is_active', '1')
             ->where('users.deleted_at', null)
             ->first();
@@ -83,19 +76,19 @@ class CryptoApiController extends Controller
         }
 
         // if merchant on test mode
-        if(in_array($payment_gateway_id->mid, [1, 2])) {
-            return response()->json([
-                'status' => 'fail',
-                'message' => 'You are on test mode, please use url '.route('test.transaction').' for testing.',
-                'data' => [
-                    'order_id' => null,
-                    'amount' => $input['amount'] ?? null,
-                    'currency' => $input['currency'] ?? null,
-                    'email' => $input['email'] ?? null,
-                    'customer_order_id' => $customer_order_id,
-                ]
-            ]);
-        }
+        // if(in_array($payment_gateway_id->mid, [1, 2])) {
+        //     return response()->json([
+        //         'status' => 'fail',
+        //         'message' => 'You are on test mode, please use url '.route('test.transaction').' for testing.',
+        //         'data' => [
+        //             'order_id' => null,
+        //             'amount' => $input['amount'] ?? null,
+        //             'currency' => $input['currency'] ?? null,
+        //             'email' => $input['email'] ?? null,
+        //             'customer_order_id' => $customer_order_id,
+        //         ]
+        //     ]);
+        // }
 
         // get if the request from iframe
         if(isset($input['request_from_type']) && isset($input['token'])) {
@@ -212,21 +205,28 @@ class CryptoApiController extends Controller
         $input['user_id'] = $payment_gateway_id->id;
         $input['is_disable_rule'] = $payment_gateway_id->is_disable_rule;
 
-        // remove api_key
-        $api_key = $input['api_key'];
-
         $validations = json_decode($check_assign_mid->required_fields, 1);
 
         // create validations array
-        foreach ($validations as $value) {
-            $new_validations[$value] = config('required_field.total_fields.'.$value.'.validate');
-        }
+        $validator = Validator::make($input, [
+            'first_name' => 'required|min:3|max:100|regex:/^[a-zA-Z\s]+$/',
+            'last_name' => 'required|min:2|max:100|regex:/^[a-zA-Z\s]+$/',
+            'address' => 'required|min:2|max:250',
+            'country' => 'required|max:2|min:2|regex:(\b[A-Z]+\b)',
+            'state' => 'required|min:2|max:250',
+            'city' => 'required|min:2|max:250',
+            'zip' => 'required|min:2|max:250',
+            'ip_address' => 'required|ip',
+            'email' => 'required|email',
+            'phone_no' => 'required|min:5|max:20',
+            'amount' => 'required|regex:/^\d+(\.\d{1,9})?$/',
+            'currency' => 'required|max:3|min:3|regex:(\b[A-Z]+\b)',
+            'response_url' => 'required|url',
+            'webhook_url' => 'nullable|url',
+        ]);
 
-        //dd($new_validations);
-        $validator = Validator::make($input, $new_validations);
         if ($validator->fails()) {
             $errors = $validator->errors()->messages();
-
             return response()->json([
                 'status' => 'fail',
                 'message' => 'Some parameters are missing or invalid request data, please check \'errors\' parameter for more details.',
@@ -239,11 +239,11 @@ class CryptoApiController extends Controller
                     'customer_order_id' => $customer_order_id,
                 ]
             ]);
-        }        
+        }
 
         // send request to transaction repo class
         $return_data = $this->CryptoTransactionRepo->store($input, $payment_gateway_id);
-        
+
         // if return_data is null
         if(!$return_data || $return_data == null) {
             return response()->json([
