@@ -851,3 +851,11 @@ Route::get("/xamax/select/method/{id}", "Repo\PaymentGateway\CryptoXamax@selectP
 // * Startbutton MID url
 Route::get("startbutton/callback", "Repo\PaymentGateway\StartButton@callback");
 Route::any("startbutton/webhook", "Repo\PaymentGateway\StartButton@webhook");
+
+// * Bitpace MID urls
+Route::get("bitpace/callback/{id}", "Repo\PaymentGateway\Bitpace@callback")->name("bitpace.callback");
+Route::get("bitpace/error/callback/{id}", "Repo\PaymentGateway\Bitpace@errorCallback")->name("bitpace.error.callback");
+Route::post("bitpace/webhook", "Repo\PaymentGateway\Bitpace@webhook")->name("bitpace.webhook");
+
+
+

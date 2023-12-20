@@ -143,6 +143,13 @@
                             <a class="btn btn-primary btn-sm pull-right" href="{{ route('aws-s3-test.index') }}">Go
                                 <i class="fa fa-angle-right ml-1"></i></a>
                         </div>
+                        @if (auth()->guard('admin')->user()->can(['view-mass-mid-switching']))
+                            <div class="col-md-12 mb-2">
+                                <strong class="mt-2">System Logs</strong>
+                                <a class="btn btn-primary btn-sm pull-right" href="{{ route('system.logs') }}">Go
+                                    <i class="fa fa-angle-right ml-1"></i></a>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>

@@ -2,26 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Events\UserNotification;
+
 use Illuminate\Http\Request;
 use App\Http\Controllers\AdminController;
-use Illuminate\Support\Str;
-use App\Http\Requests;
-use Hash;
-use Validator;
 use App\AdminLog;
 use App\AdminAction;
 use App\Admin;
-use Mail;
-use URL;
-use Auth;
-use Storage;
-use DB;
-use Exception;
+use File;
+use Log;
 
 class AdminLogsController extends AdminController
 {
 
+    protected $AdminLog, $AdminAction, $Admin, $moduleTitleS, $moduleTitleP;
     public function __construct()
     {
         parent::__construct();
@@ -44,30 +37,65 @@ class AdminLogsController extends AdminController
         } else {
             $noList = 15;
         }
-        $data = $this->AdminLog->getData($input, $noList);        
+        $data = $this->AdminLog->getData($input, $noList);
         $actionList = $this->AdminAction->getData();
         $adminList = $this->Admin->getData();
         return view($this->moduleTitleP . '.index', compact('data', 'noList', 'actionList', 'adminList'));
     }
 
-    public function show($id){
-        $data = $this->AdminLog::where('id',$id)->first();
+    public function show($id)
+    {
+        $data = $this->AdminLog::where('id', $id)->first();
         $json = json_decode($data->request);
-        return view($this->moduleTitleP.'.show', compact('data','json'));
+        return view($this->moduleTitleP . '.show', compact('data', 'json'));
     }
 
     public function downloadLog()
     {
-        $file = storage_path(). "/logs/laravel.log";
+        $file = storage_path() . "/logs/laravel.log";
 
         if (file_exists($file)) {
             $headers = [
                 'Content-Type' => 'application/text',
             ];
-            
+
             return response()->download($file, 'cryptostudio.log', $headers);
         } else {
             return response()->json(['error' => 'File not found.']);
         }
+    }
+
+    public function viewLogs(Request $request)
+    {
+        // // Read the Laravel log file
+        $logFile = storage_path('logs/laravel.log');
+        $logContent = file_get_contents($logFile);
+        // Split the log content into separate log entries
+        $logEntries = preg_split('/\n(?=\[[\d: -]+\] local\.\w+:)/', $logContent, -1, PREG_SPLIT_NO_EMPTY);
+        // * Reverse the logs file
+        $logEntries = array_reverse($logEntries);
+
+        // Get the size of the log file
+        $logFileSize = filesize($logFile);
+
+        // Format the file size for human-readable display
+        $logFileSizeFormatted = formatBytes($logFileSize);
+
+        return view('admin.logs.systemLogs', ['logs' => $logEntries, "fileSize" => $logFileSizeFormatted]);
+
+    }
+
+    // * CLearlogs
+    public function clearLogs(Request $request)
+    {
+        // Clear the log file
+        $logPath = storage_path('logs/laravel.log');
+        File::put($logPath, '');
+
+        // Optionally, you can write a message to the log indicating when the logs were cleared
+        Log::info('Logs cleared by ' . auth()->guard("admin")->user()->name);
+
+        // Redirect back to your view with a success message
+        return redirect()->back()->with('success', 'Logs cleared successfully.');
     }
 }

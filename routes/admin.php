@@ -214,6 +214,8 @@ Route::group(['middleware' => 'notification_read'], function () {
   /************* Admin log start ******************************/
   Route::resource('admin-logs', 'Admin\AdminLogsController');
   Route::get('log/download', 'Admin\AdminLogsController@downloadLog');
+  Route::get("/system-logs", "Admin\AdminLogsController@viewLogs")->name("system.logs");
+  Route::post("/clear-system-logs", "Admin\AdminLogsController@clearLogs")->name("clear.system.logs");
   /************* Admin log end ******************************/
 
   /**************** User Management Resources start ******************/

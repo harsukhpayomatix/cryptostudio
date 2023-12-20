@@ -18,6 +18,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Log;
 
 class ApiController extends Controller
 {
@@ -2011,6 +2012,7 @@ class ApiController extends Controller
     {
         try {
             $class_name = 'App\\Http\\Controllers\\Repo\\PaymentGateway\\' . $check_assign_mid->title;
+            Log::info("class name =>" . $class_name);
             if (class_exists($class_name)) {
                 $gateway_class = new $class_name;
                 $gateway_return_data = $gateway_class->checkout($input, $check_assign_mid);
