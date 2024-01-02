@@ -107,4 +107,28 @@ Route::get("milkypay/status/{id}", function ($id) {
 	return $response;
 });
 
+Route::get("check/sign", function () {
+	$secret = "3018150610";
+	$payload = '{
+		"order_id": 105521,
+		"status": "COMPLETED",
+		"type": "PAYMENT",
+		"customer_reference_id": "SDYPXO1703066473",
+		"order_amount": "15.00",
+		"fee_amount": "0.15",
+		"currency": "USD",
+		"cryptocurrency_amount": "24.760000",
+		"cryptocurrency": "XRP",
+		"blockchain_tx_id": "62A13560CB001ED8F4FCBCE3EC4C825BE7CB5DEF7179755B9783A06F3BC0BBAC",
+		"network": "XRP",
+		"address": "rLmZW2iFwuaSYvbNKpbhrZzJGSFa16cc9C?dt=1268796527",
+		"additional_map": {
+		  "settlement-currency": "USD"
+		}
+	  }';
+
+	$hash = hash("sha256", json_encode($payload) . $secret);
+	return $hash;
+
+});
 

@@ -15,8 +15,8 @@ class Bitpace extends Controller
 
     use StoreTransaction;
 
-    const BASE_URL = "https://api-sandbox.bitpace.com/api/v1/";
-    // const BASE_URL = "https://api.bitpace.com/api/v1/"; // Production URL
+    // const BASE_URL = "https://api-sandbox.bitpace.com/api/v1/";
+    const BASE_URL = "https://api.bitpace.com/api/v1/"; // Production URL
 
 
 
