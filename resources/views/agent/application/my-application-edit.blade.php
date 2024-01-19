@@ -554,7 +554,7 @@
         });
 
         $(document).on('click', '.btnMinus', function() {
-            $(this).parents('.row').remove();
+            $(this).closest('.row').remove();
         })
 
         $('.select2').select2();
