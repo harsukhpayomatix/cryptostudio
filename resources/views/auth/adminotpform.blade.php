@@ -124,6 +124,10 @@
         }
     </script>
     <script>
+        jQuery(document).ready(function() {
+            jQuery("#load").fadeOut();
+            jQuery("#loading").delay().fadeOut("");
+        });
         function onSubmit(token) {
             document.getElementById("form").submit();
         }
