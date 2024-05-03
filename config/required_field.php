@@ -55,5 +55,6 @@ return [
         'response_url',
         'webhook_url',
         'token',
+        'pay_currency',
     ],
 ];

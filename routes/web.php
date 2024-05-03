@@ -214,7 +214,7 @@ Route::get('opay/get-status', 'Repo\PaymentGateway\OpayGateway@getOpayStatus')->
 Route::post('nowpayments-callback/{session}', 'Repo\PaymentGateway\NowPaymentsCard@callback')->name('nowpayments-callback');
 Route::post('nowpayments-success-callback/{session}', 'Repo\PaymentGateway\NowPaymentsCard@successCallback')->name('nowpayments-success-callback');
 Route::post('nowpayments-cancel-callback/{session}', 'Repo\PaymentGateway\NowPaymentsCard@cancelCallback')->name('nowpayments-cancel-callback');
-Route::post('nowpayments-crypto-callback/{session}', 'Repo\PaymentGateway\NowPayments@callback')->name('nowpayments-crypto-callback');
+// Route::post('nowpayments-crypto-callback/{session}', 'Repo\PaymentGateway\NowPayments@callback')->name('nowpayments-crypto-callback');
 Route::post('nowpayments-cryptosuccess-callback/{session}', 'Repo\PaymentGateway\NowPayments@successCallback')->name('nowpayments-cryptosuccess-callback');
 Route::post('nowpayments-cryptocancel-callback/{session}', 'Repo\PaymentGateway\NowPayments@cancelCallback')->name('nowpayments-cryptocancel-callback');
 
