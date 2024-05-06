@@ -69,4 +69,6 @@ Route::group(['middleware' => ['api', 'cors']], function () {
 	// * demo API
 	Route::post("/demo/tool", "API\TestDirectApiController@demoApi");
 
+
+
 });
