@@ -140,7 +140,10 @@ class VerifyCsrfToken extends Middleware
         "epsi/webhook/*",
         "xamax/callback",
         "startbutton/webhook",
-        "bitpace/webhook"
+        "bitpace/webhook",
+        "wert/webhook",
+        "wert/callback/*",
+        'mid/callback/*',
     ];
 
     /**
