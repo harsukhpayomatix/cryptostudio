@@ -858,13 +858,10 @@ Route::get("bitpace/error/callback/{id}", "Repo\PaymentGateway\Bitpace@errorCall
 Route::post("bitpace/webhook", "Repo\PaymentGateway\Bitpace@webhook")->name("bitpace.webhook");
 
 // * wert MID urls
-Route::get('payment/WertPay/orders', 'Repo\PaymentGateway\Wert@orders')->name('Wert.orders');
-Route::get('payment/WertPay/users', 'Repo\PaymentGateway\Wert@users')->name('Wert.users');
-Route::get('payment/WertPay/index', 'Repo\PaymentGateway\Wert@index')->name('Wert.index');
 Route::post('wert/webhook', 'Repo\PaymentGateway\Wert@handleWebhook')->name('Wert.webhook');
 Route::get('wert/showWallet/{id}', 'Repo\PaymentGateway\Wert@showWallet')->name('Wert.showWallet');
 Route::any('wert/callback/{id}', 'Repo\PaymentGateway\Wert@callback')->name('Wert-callback');
-Route::post('payment/WertPay/converter', 'Repo\PaymentGateway\Wert@converter')->name('Wert.converter');
+
 
 // MidsPay
 Route::get("mid/return/{id}", "Repo\PaymentGateway\MidsPay@return")->name("midsPay.return");
