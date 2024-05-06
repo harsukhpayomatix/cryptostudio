@@ -309,11 +309,10 @@ class ApiResponse
         ];
 
         PaymentAPI::create($api_log);
-
-        if (parse_url($input['response_url'], PHP_URL_QUERY)) {
-            return $input['response_url'].'&'.$output;
+        if (isset($input['response_url']) && parse_url($input['response_url'] ?? null, PHP_URL_QUERY)) {
+            return $input['response_url'] ?? null .'&'.$output;
         } else {
-            return $input['response_url'].'?'.$output;
+            return $input['response_url'] ?? null.'?'.$output;
         }
     }
 
