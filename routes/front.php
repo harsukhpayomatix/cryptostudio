@@ -89,6 +89,19 @@ Route::group(['middleware' => 'notification_read_user'], function () {
     Route::get('downloadAgreement', 'ApplicationController@downloadDocumentsUploade')->name('downloadUserAgreement');
     Route::get('viewAppImage', 'ApplicationController@viewAppImage')->name('viewAppImage');
 
+    //****************** Merchant trade modules Start *************************//
+    Route::get('trade', 'TradeController@index')->name('trade.index');
+
+    Route::get('trade/fiat', 'TradeController@indexFiat')->name('trade.fiat.index');
+    Route::get('trade/crypto', 'TradeController@indexCrypto')->name('trade.crypto.index');
+
+    Route::get('trade/show/{id}', 'TradeController@show')->name('trade.show');
+    Route::get('trade/deposit/fiat', 'TradeController@depositFiat')->name('trade.deposit.fiat');
+    Route::post('trade/deposit/fiat', 'TradeController@depositFiatStore')->name('trade.deposit.fiat.store');
+    Route::get('trade/deposit/crypto', 'TradeController@depositCrypto')->name('trade.deposit.crypto');
+    Route::post('trade/deposit/crypto', 'TradeController@depositCryptoStore')->name('trade.deposit.crypto.store');
+    //****************** Merchant trade modules End *************************//
+
     // Access routes without login
     Route::group(['excluded_middleware' => ['auth']], function () {
         // Articles route

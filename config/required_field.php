@@ -57,5 +57,6 @@ return [
         'token',
         'currency_code',
         'invoice_type'
+        'pay_currency',
     ],
 ];
