@@ -56,6 +56,7 @@ return [
         'webhook_url',
         'token',
         'currency_code',
-        'invoice_type'
+        'invoice_type',
+        'pay_currency',
     ],
 ];
