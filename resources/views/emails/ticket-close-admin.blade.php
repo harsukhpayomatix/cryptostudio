@@ -21,13 +21,13 @@
                             <a class="mcnButton " title="Verify email address" href="{{ $url }}" style="font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
                                   box-sizing: border-box;
                                   text-decoration: none;
-                                  background-color: #d4e4e4;
+                                  background-color: #4F738E;
                                   padding: 15px 30px;
                                   border-radius: 30px;
                                   line-height: 60px;
-                                  color: #000;
+                                  color: #FFFFFF;
                                   font-weight: bold;
-                                  border: 3px solid #fff;">Ticket</a>
+                                  border: 3px solid #4F738E;">Ticket</a>
                         </td>
                     </tr>
                 </tbody>
