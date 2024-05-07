@@ -55,7 +55,7 @@
         <input type="hidden" name="browser_info" id="browserInfo" />
     </form>
 
-    <script type="text/javascript" src="{{ storage_asset('themeAdmin/js/jquery-latest.min.js') }}"></script>
+    <script type="text/javascript" src="{{ storage_asset('ThemeCryptoStudio/js/jquery-latest.min.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             var userAgent = navigator.userAgent;
