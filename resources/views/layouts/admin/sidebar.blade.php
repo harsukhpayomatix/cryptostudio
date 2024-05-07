@@ -842,7 +842,7 @@
                 </ul>
             </li>
 
-            <li class="{{ $pageActive == 'trade' ? 'active' : '' }} nav-item">
+            {{-- <li class="{{ $pageActive == 'trade' ? 'active' : '' }} nav-item">
                 <a class="nav-link dropdown-item d-flex align-items-center" href="{{ route('admin.trade.index') }}">
                      <div class="svg-icon">
                         <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -851,7 +851,7 @@
                     </div>
                     <span class="menu-title text-truncate" data-i18n="Trade">Trade</span>
                 </a>
-            </li>
+            </li> --}}
         </ul>
     </div>
 </div>
