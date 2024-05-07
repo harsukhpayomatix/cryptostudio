@@ -38,11 +38,11 @@ class Wert extends Controller
         $origin = self::origin;
         $clickId = Str::uuid()->toString();
         $currency = $input["currency"] ?: '';
-        //$currency_amount = '';    //input from user currency_amount $1.50 on sandbox and $5 on prod
+        $currency_amount = $input["amount"] ?: '';   //input from user currency_amount $1.50 on sandbox and $5 on prod
         $full_name = $input["first_name"] . " " . $input["last_name"] ?: '';
         $email = $input["email"] ?: '';
         $country_of_residence = $input["country"] ?: '';
-        // $phone = "+919319710012";
+        $phone = "+".$input["country_code"].$input["phone_no"] ?: '';
         $payload = [
             "partnerId" => $partnerId,
             "origin" => $origin,
@@ -51,10 +51,14 @@ class Wert extends Controller
             "full_name" => $full_name,
             "email" => $email,
             "country_of_residence" => $country_of_residence,
-            // "phone" => $phone,
+            "currency_amount"=>$currency_amount,
+            "phone" => $phone,
             "webhook_url" => route('Wert.webhook'),
         ];
+
         $this->storeMidPayload($input["session_id"], json_encode($payload));
+
+
         return [
             'status' => '7',
             'reason' => '3DS link generated successful, please redirect.',

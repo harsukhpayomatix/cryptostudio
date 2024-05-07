@@ -27,7 +27,8 @@
             full_name: walletInput.full_name || '',
             email: walletInput.email || '',
             country_of_residence: walletInput.country_of_residence || '',
-            // phone: walletInput.phone || '',
+            currency_amount:walletInput.currency_amount || '',
+            phone: walletInput.phone || '',
             // webhook_url: walletInput.webhook_url || '',
             // redirect_url: 'https://origin.us/item_id',
 
