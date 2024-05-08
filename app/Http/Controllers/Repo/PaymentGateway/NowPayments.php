@@ -33,7 +33,6 @@ class NowPayments extends Controller
 	*/// ===============================================
 	public function checkout($input, $check_assign_mid)
 	{
-        // dd($check_assign_mid);
         // create payment method
         $payment_url = self::BASE_URL.'/v1/payment';
         $secret_key = $check_assign_mid->access_key;
