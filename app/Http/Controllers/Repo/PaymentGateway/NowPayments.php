@@ -14,6 +14,7 @@ class NowPayments extends Controller
 	use StoreTransaction;
 
 	const BASE_URL = 'https://api-sandbox.nowpayments.io';
+    const PAY_CURRENCY = 'btc';
 	// const IPN_SECRET = 'FJ0h+K6alI/zWXa3ElVb6QcU0fNeMwxe';
 
 	// ================================================
@@ -40,13 +41,13 @@ class NowPayments extends Controller
         $payment_data = [
             'price_amount' => $input['amount'],
             'price_currency' => $input['currency'],
-            'pay_currency' => $input['pay_currency'],
+            'pay_currency' => self::PAY_CURRENCY,
             'case' => 'success',
-            // 'ipn_callback_url' => "https://a6a1-103-149-154-170.ngrok-free.app/api/nowpayments-crypto-callback/".base64_encode($check_assign_mid->ipn_secret),
-            'ipn_callback_url' => route('nowpayments-crypto-callback', base64_encode($check_assign_mid->ipn_secret)),
+            'ipn_callback_url' => "https://a6a1-103-149-154-170.ngrok-free.app/api/nowpayments-crypto-callback/".$input['session_id'] . '/' . base64_encode($check_assign_mid->ipn_secret),
+            // 'ipn_callback_url' => route('nowpayments-crypto-callback', $input['session_id'], base64_encode($check_assign_mid->ipn_secret)),
             // "success_url" => route('nowpayments-cryptosuccess-callback', $input['session_id']),
             // "cancel_url" => route('nowpayments-cryptocancel-callback', $input['session_id'])
-            'order_description' => 'test',
+            // 'order_description' => 'test',
             // 'order_id' => $input['session_id'],
         ];
         
@@ -170,7 +171,7 @@ class NowPayments extends Controller
         return $response;
     }
 
-    public function callback(Request $request, $session_id)
+    public function callback(Request $request, $session_id, $ipn)
     {
 
         // \Log::info([
@@ -178,7 +179,7 @@ class NowPayments extends Controller
         //     'session_id' => base64_decode($session_id),
         // ]);
         
-        if(!$this->checkIpnRequestIsValid(base64_decode($session_id))) {
+        if(!$this->checkIpnRequestIsValid(base64_decode($ipn))) {
             return false;
         }
         
