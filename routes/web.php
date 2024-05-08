@@ -214,7 +214,7 @@ Route::get('opay/get-status', 'Repo\PaymentGateway\OpayGateway@getOpayStatus')->
 Route::post('nowpayments-callback/{session}', 'Repo\PaymentGateway\NowPaymentsCard@callback')->name('nowpayments-callback');
 Route::post('nowpayments-success-callback/{session}', 'Repo\PaymentGateway\NowPaymentsCard@successCallback')->name('nowpayments-success-callback');
 Route::post('nowpayments-cancel-callback/{session}', 'Repo\PaymentGateway\NowPaymentsCard@cancelCallback')->name('nowpayments-cancel-callback');
-Route::post('nowpayments-crypto-callback/{session}', 'Repo\PaymentGateway\NowPayments@callback')->name('nowpayments-crypto-callback');
+// Route::post('nowpayments-crypto-callback/{session}', 'Repo\PaymentGateway\NowPayments@callback')->name('nowpayments-crypto-callback');
 Route::post('nowpayments-cryptosuccess-callback/{session}', 'Repo\PaymentGateway\NowPayments@successCallback')->name('nowpayments-cryptosuccess-callback');
 Route::post('nowpayments-cryptocancel-callback/{session}', 'Repo\PaymentGateway\NowPayments@cancelCallback')->name('nowpayments-cryptocancel-callback');
 
@@ -827,7 +827,7 @@ Route::get("3xgate/fail/{id}", "Repo\PaymentGateway\Gate3x@fail")->name('gate3x.
 Route::get("3xgate/pending/{id}", "Repo\PaymentGateway\Gate3x@pending")->name('gate3x.pending');
 Route::get("3xgate/cancel/{id}", "Repo\PaymentGateway\Gate3x@cancel")->name('gate3x.cancel');
 
-// * Payment page local changes 
+// * Payment page local changes
 Route::get("change-lang", "API\LanaguageController@changeLang")->name("change.lang");
 
 // itexpay
@@ -841,7 +841,7 @@ Route::post('itexpay/callback/receive', 'Repo\PaymentGateway\Itexpay@callback')-
 Route::get("/epsi/redirect/{id}", "Repo\PaymentGateway\Epsilon@redirect")->name("epsilon.redirect");
 Route::post("/epsi/webhook/{id}", "Repo\PaymentGateway\Epsilon@webhook")->name("epsilon.webhook");
 
-// * Arca Payments 
+// * Arca Payments
 Route::get("/arca/redirect/{id}", "Repo\PaymentGateway\Arca@redirect")->name("arca.redirect");
 
 // *Xamax MID urls
@@ -861,6 +861,20 @@ Route::any("startbutton/webhook", "Repo\PaymentGateway\StartButton@webhook");
 Route::get("bitpace/callback/{id}", "Repo\PaymentGateway\Bitpace@callback")->name("bitpace.callback");
 Route::get("bitpace/error/callback/{id}", "Repo\PaymentGateway\Bitpace@errorCallback")->name("bitpace.error.callback");
 Route::post("bitpace/webhook", "Repo\PaymentGateway\Bitpace@webhook")->name("bitpace.webhook");
+
+// * wert MID urls
+Route::post('wert/webhook', 'Repo\PaymentGateway\Wert@handleWebhook')->name('Wert.webhook');
+Route::get('wert/showWallet/{id}', 'Repo\PaymentGateway\Wert@showWallet')->name('Wert.showWallet');
+Route::any('wert/callback/{id}', 'Repo\PaymentGateway\Wert@callback')->name('Wert-callback');
+
+
+// MidsPay
+Route::get("mid/return/{id}", "Repo\PaymentGateway\MidsPay@return")->name("midsPay.return");
+Route::get("mid/form/{id}", "Repo\PaymentGateway\MidsPay@form")->name("midsPay.form");
+Route::post("mid/callback/{id}", "Repo\PaymentGateway\MidsPay@callback")->name("midsPay.callback");
+Route::get("/mid/browser/{id}", "Repo\PaymentGateway\MidsPay@getBrowserInfo")->name('midsPay.getBrowser.info');
+Route::post("/mid/store/browser/info", "Repo\PaymentGateway\MidsPay@storeBrowserInfo")->name('midsPay.storeBrowser.info');
+Route::get("/mid/pending-txn-job", "Repo\PaymentGateway\MidsPay@pendingTxn");
 
 
 

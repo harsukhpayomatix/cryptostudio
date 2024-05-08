@@ -93,7 +93,7 @@ class DirectApiController extends Controller
             'email' => 'nullable|email',
             'phone_no' => 'nullable|min:5|max:20',
             'amount' => 'nullable|regex:/^\d+(\.\d{1,9})?$/',
-            'currency' => 'nullable|max:4|min:3|regex:(\b[A-Z]+\b)',
+            'currency' => 'nullable|max:3|min:3|regex:(\b[A-Z]+\b)',
             'card_no' => 'nullable|min:12|max:24',
             'ccExpiryMonth' => 'nullable|numeric|min:1|max:12',
             'ccExpiryYear' => 'nullable|numeric|min:2023|max:2045',

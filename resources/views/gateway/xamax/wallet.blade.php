@@ -14,7 +14,7 @@
 
     <style>
         body {
-            background-color: #262626 !important;
+            background-color: #f8f8f8 !important;
             color: #B3ADAD !important;
         }
 
@@ -30,7 +30,7 @@
             width: 60px;
             height: 60px;
             border: 5px solid #B3ADAD;
-            border-bottom-color: #FF3D00;
+            border-bottom-color: #4F738E;
             border-radius: 50%;
             display: inline-block;
             box-sizing: border-box;
@@ -55,10 +55,11 @@
         }
 
         .formDiv {
-            border-radius: 20px;
-            background: #2B2B2B;
+            border-radius: 0.5rem;
+            background: #FFF;
             min-width: 500px;
             padding: 10px;
+            box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1);
         }
     </style>
 </head>
@@ -71,11 +72,11 @@
     </div>
     <div class="mainDiv">
         <div class="formDiv  p-2 form-dark">
-            <h5 class="text-danger ">Please perform crypto transaction on below wallet address.from your wallet.</h5>
+            <h5 class="text-primary ">Please perform crypto transaction on below wallet address.from your wallet.</h5>
             <div class="d-flex justify-content-center flex-column align-items-center   my-2">
                 <div id="qrcode"></div>
-                <h6 class="text-danger mt-2">Wallet Address - {{ $response['walletAddress'] }} </h6>
-                <h3 class="text-danger mt-2">Amount - {{ $response['amountRequiredUnit'] }} </h3>
+                <h6 class="text-primary mt-2">Wallet Address - {{ $response['walletAddress'] }} </h6>
+                <h3 class="text-primary mt-2">Amount - {{ $response['amountRequiredUnit'] }} </h3>
             </div>
 
             {{-- <div class="mb-2 ">

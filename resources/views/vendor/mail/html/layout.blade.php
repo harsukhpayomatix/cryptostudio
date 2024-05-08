@@ -6,13 +6,13 @@
 
     <style>
         .custom-btn {
-            background-color: #F44332;
+            background-color: #4F738E;
             padding: 15px 30px;
             border-radius: 30px;
             line-height: 60px;
-            color: #B3ADAD;
+            color: #FFFFFF;
             font-weight: bold;
-            border: 3px solid #34383e;
+            border: 3px solid #4F738E;
             font-family: 'Ubuntu', sans-serif;
             box-sizing: border-box;
             text-decoration: none;
@@ -32,7 +32,7 @@
 </head>
 
 <body
-    style="height: 100%; background-color: #202020;font-family: 'Ubuntu', sans-serif;width: 100%;margin: auto; border-radius: 15px;">
+    style="height: 100%; background-color: #f8f8f8;font-family: 'Ubuntu', sans-serif;width: 100%;margin: auto; border-radius: 15px;">
     <main>
         <table style="padding: 30px 60px 0px 60px; width: 100%; margin-bottom: 30px;">
             <tr>
@@ -42,7 +42,7 @@
             </tr>
 
             <tr>
-                <td style="background: #1B1919; border-radius: 5px; padding: 30px;color:#B3ADAD; border-bottom: 1px solid #4D4D4D;">
+                <td style="background: #FFFFFF; border-radius: 5px; padding: 30px;color:#B3ADAD; border-bottom: 1px solid #4F738E;">
                     <div style="padding-bottom: 30px;color: #B3ADAD;">
                         {{ Illuminate\Mail\Markdown::parse($slot) }}
 
@@ -50,9 +50,9 @@
 
                     </div>
 
-                    <p style="margin-bottom: 0px; border-top: 2px solid #4D4D4D; padding-top: 30px;">
+                    <p style="margin-bottom: 0px; border-top: 2px solid #4F738E; padding-top: 30px;">
                         Best Regards,<br>
-                        <span style="color: #F44332;">The {{ config('app.name') }}</span> Team
+                        <span style="color: #4F738E;">The {{ config('app.name') }}</span> Team
                     </p>
                 </td>
             </tr>
