@@ -55,7 +55,6 @@ return [
         'response_url',
         'webhook_url',
         'token',
-        'country_code',
-
+        'country_code'
     ],
 ];

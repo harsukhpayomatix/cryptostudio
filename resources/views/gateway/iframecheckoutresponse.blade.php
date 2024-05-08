@@ -14,21 +14,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300|Montserrat' rel='stylesheet' type='text/css'>
     <style type="text/css">
-        p {
-            color: #fff !important;
+        body{
+            background-color: #F8F8F8 !important;
+            font-family: 'Poppins', sans-serif !important;
+            color: #000;
         }
-
+        h1{
+            color: #000 !important;
+        }
         .btn-primary:hover,
         .btn-primary:focus,
         .btn-primary {
-            background-color: #34383E;
-            border-color: #34383E;
-            color: #fff;
+            background-color: #4F738E !important;
+            border-color: #4F738E !important;
+            color: #fff !important;
         }
 
         .modalbox.success,
         .modalbox.error {
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            box-shadow:0px 2px 5px 0px #05309533;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             -webkit-border-radius: 2px;
             -moz-border-radius: 2px;
@@ -44,17 +48,17 @@
             -moz-animation: fall-in 0.75s;
             -o-animation: fall-in 0.75s;
             animation: fall-in 0.75s;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            box-shadow:0px 2px 5px 0px #05309533;
         }
 
         .modalbox.success h1,
         .modalbox.error h1 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         .modalbox.success p,
         .modalbox.error p {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         .modalbox.success button,
@@ -410,14 +414,10 @@
             }
         }
 
-        body {
-            background-color: #34383E;
-        }
-
         .modalbox {
-            background: #2B2B2B !important;
-            box-shadow: rgb(0 0 0 / 70%) 10px 10px 15px -5px, rgb(0 0 0 / 60%) 5px 5px 5px -10px !important;
-            border-radius: 25px !important;
+            background: #FFFFFF !important;
+            box-shadow:0px 2px 5px 0px #05309533 !important;
+            border-radius: 5px !important;
         }
     </style>
 </head>

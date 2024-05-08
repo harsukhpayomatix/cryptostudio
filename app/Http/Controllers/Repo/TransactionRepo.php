@@ -48,10 +48,14 @@ class TransactionRepo extends Controller
         $input['order_id'] = $input['order_id'] ?? 'ODR' . strtoupper(\Str::random(4)) . time() . strtoupper(\Str::random(6));
         $input['state'] = $input['state'] ?? 'NA';
         $input['amount_in_usd'] = $this->amountInUSD($input);
-        $input['phone_no'] = preg_replace('/[^0-9.]+/', '', $input['phone_no']);
-        if (strlen($input['phone_no']) > 10) {
-            $input['phone_no'] = substr($input['phone_no'], -10);
+
+        if(isset($input['phone_no'])){
+            $input['phone_no'] = preg_replace('/[^0-9.]+/', '', $input['phone_no']);
+            if (strlen($input['phone_no']) > 10) {
+                $input['phone_no'] = substr($input['phone_no'], -10);
+            }
         }
+     
 
         $block_data = BlockData::pluck('field_value')->toArray();
         if (!empty($block_data)) {
@@ -64,7 +68,6 @@ class TransactionRepo extends Controller
                 return $input;
             }
         }
-
         $input = $this->secureCardInputs($input);
         $input['payment_type'] = 'card';
 
@@ -291,7 +294,6 @@ class TransactionRepo extends Controller
             $this->storeTransaction($input);
             return $input;
         }
-
         // gateway curl response
         $gateway_curl_response = $this->gatewayCurlResponse($input, $check_assign_mid);
 
@@ -312,6 +314,7 @@ class TransactionRepo extends Controller
     public function gatewayCurlResponse($input, $check_assign_mid)
     {
         try {
+            // $check_assign_mid->title = 'CryptoXamax';
             $class_name = 'App\\Http\\Controllers\\Repo\\PaymentGateway\\' . $check_assign_mid->title;
             if (class_exists($class_name)) {
                 $gateway_class = new $class_name;

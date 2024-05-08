@@ -214,7 +214,7 @@ Route::get('opay/get-status', 'Repo\PaymentGateway\OpayGateway@getOpayStatus')->
 Route::post('nowpayments-callback/{session}', 'Repo\PaymentGateway\NowPaymentsCard@callback')->name('nowpayments-callback');
 Route::post('nowpayments-success-callback/{session}', 'Repo\PaymentGateway\NowPaymentsCard@successCallback')->name('nowpayments-success-callback');
 Route::post('nowpayments-cancel-callback/{session}', 'Repo\PaymentGateway\NowPaymentsCard@cancelCallback')->name('nowpayments-cancel-callback');
-Route::post('nowpayments-crypto-callback/{session}', 'Repo\PaymentGateway\NowPayments@callback')->name('nowpayments-crypto-callback');
+// Route::post('nowpayments-crypto-callback/{session}', 'Repo\PaymentGateway\NowPayments@callback')->name('nowpayments-crypto-callback');
 Route::post('nowpayments-cryptosuccess-callback/{session}', 'Repo\PaymentGateway\NowPayments@successCallback')->name('nowpayments-cryptosuccess-callback');
 Route::post('nowpayments-cryptocancel-callback/{session}', 'Repo\PaymentGateway\NowPayments@cancelCallback')->name('nowpayments-cryptocancel-callback');
 
@@ -845,8 +845,10 @@ Route::post("/epsi/webhook/{id}", "Repo\PaymentGateway\Epsilon@webhook")->name("
 Route::get("/arca/redirect/{id}", "Repo\PaymentGateway\Arca@redirect")->name("arca.redirect");
 
 // *Xamax MID urls
-Route::any("xamax/callback", "Repo\PaymentGateway\CryptoXamax@callback")->name("xamax.callback");
-Route::get("/xamax/select/method/{id}", "Repo\PaymentGateway\CryptoXamax@selectPaymentMethod")->name("xamax.select.payment.method");
+// Route::post("cryptoxamax/callback", "Repo\PaymentGateway\CryptoXamax@webhook")->name("xamax.callback");
+Route::get("cryptoxamax/wallet/{id}", "Repo\PaymentGateway\CryptoXamax@showWallet")->name("xamax.show.wallet");
+Route::get("/cryptoxamax/user/redirect/{id}", "Repo\PaymentGateway\CryptoXamax@userRedirect")->name("xamax.user.redirect");
+Route::any("xamax/callback","Repo\PaymentGateway\CryptoXamax@callback")->name("xamax.callback");
 
 // * Startbutton MID url
 Route::get("startbutton/callback", "Repo\PaymentGateway\StartButton@callback");

@@ -31,6 +31,9 @@
         "phpseclib/phpseclib": "^3.0",
         "predis/predis": "^1.1",
         "spatie/laravel-permission": "^3.13",
+        "web-token/jwt-checker": "*",
+        "web-token/jwt-core": "^2.2",
+        "web-token/jwt-framework": "^2.2",
         "yajra/laravel-datatables": "^1.5",
         "yajra/laravel-datatables-oracle": "^9.10"
     },
