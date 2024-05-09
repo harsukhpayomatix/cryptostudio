@@ -848,7 +848,8 @@ Route::get("/arca/redirect/{id}", "Repo\PaymentGateway\Arca@redirect")->name("ar
 // Route::post("cryptoxamax/callback", "Repo\PaymentGateway\CryptoXamax@webhook")->name("xamax.callback");
 Route::get("cryptoxamax/wallet/{id}", "Repo\PaymentGateway\CryptoXamax@showWallet")->name("xamax.show.wallet");
 Route::get("/cryptoxamax/user/redirect/{id}", "Repo\PaymentGateway\CryptoXamax@userRedirect")->name("xamax.user.redirect");
-Route::any("xamax/callback", "Repo\PaymentGateway\CryptoXamax@callback")->name("xamax.callback");
+Route::any("xamax/callback","Repo\PaymentGateway\CryptoXamax@callback")->name("xamax.callback");
+Route::any("xamax/check-response","Repo\PaymentGateway\CryptoXamax@checkResponse")->name("xamax.checkresponse");
 
 // * Startbutton MID url
 Route::get("startbutton/callback", "Repo\PaymentGateway\StartButton@callback");

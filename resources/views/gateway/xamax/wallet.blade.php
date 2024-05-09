@@ -91,7 +91,7 @@
             <p class="text-danger "><strong>Note:-</strong> When transaction process done.please click on below button.
             </p>
 
-            <a href="{{ route('xamax.user.redirect', [$id]) }}"><button class="btn btn-danger w-100 ">Back to Merchant
+            <a href="{{ route('xamax.user.redirect', [$id]) }}"><button class="btn btn-danger w-100 redirect">Back to Merchant
                     side</button></a>
 
         </div>
@@ -108,8 +108,41 @@
             new QRCode(document.getElementById("qrcode"),
                 hash
             )
+            function callApiEveryTwoSeconds() {
+                generateAccessToken();
+            }
+            
 
-        });
+            function generateAccessToken() {
+                $.ajax({
+                    url: "{{route('xamax.checkresponse')}}",
+                    type: 'GET',
+                    data: {
+                        transaction_id: "{{$id}}",
+                    },
+                    success: function(response) {
+                        if(response?.status){
+                            $('.redirect').click();
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                    }
+                });
+    }
+
+   
+
+    // Call the function initially and then every 4 seconds
+    callApiEveryTwoSeconds(); 
+    setInterval(callApiEveryTwoSeconds, 4000);
+
+  
+    // redirect user after 5 minutes
+    setTimeout(()=>{
+            $('.redirect').click();
+        }, 300000);
+
+    });
     </script>
 </body>
 

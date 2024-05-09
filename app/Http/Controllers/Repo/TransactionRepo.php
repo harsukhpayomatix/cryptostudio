@@ -296,7 +296,7 @@ class TransactionRepo extends Controller
         }
         // gateway curl response
         $gateway_curl_response = $this->gatewayCurlResponse($input, $check_assign_mid);
-
+       
         $input = array_merge($input, $gateway_curl_response);
 
         // store transaction
@@ -316,7 +316,9 @@ class TransactionRepo extends Controller
         try {
             // $check_assign_mid->title = 'CryptoXamax';
             $class_name = 'App\\Http\\Controllers\\Repo\\PaymentGateway\\' . $check_assign_mid->title;
+           
             if (class_exists($class_name)) {
+              
                 $gateway_class = new $class_name;
                 $gateway_return_data = $gateway_class->checkout($input, $check_assign_mid);
             } else {
