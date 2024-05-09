@@ -16,13 +16,8 @@ class MidsPay extends Controller
 
 	const BASE_URL = 'https://api.mids.com';
 	const CARD_URL = "https://checkout.mids.com/payment/sale";
-	const WL_URL = 'https://secure.mids.com/api/v1/wl/item?token=iauPLuigfQ2kH059CufFxCtImbYlb7CiCLUQQlWEVMvkp9wZlb0uJX251sqGoAlA';
+	// const WL_URL = 'https://secure.mids.com/api/v1/wl/item?token=iauPLuigfQ2kH059CufFxCtImbYlb7CiCLUQQlWEVMvkp9wZlb0uJX251sqGoAlA';
 
-
-    //pk_test_WIEtwWDY5_Qpg0g4-0AAE2xN-syHxTG0lmfn4N63iYU
-    //sk_test_FJn4moFHIhhslOqp9Q-w9Jr1x21LLj1NMkfpOTtf474
-    //coma_WbyZpgkzjNDZWPNN
-    //eWH5SLKNuwuCUuXIl4vF64Keg6k1yRk3w1KyYRXMKek
 	public function checkout($input, $check_assign_mid)
 	{
         // dd("success");
@@ -49,10 +44,14 @@ class MidsPay extends Controller
 					// "test_mode" => false,
                     "test_mode" => true,
 					'service' => 'payment_card_eur_hpp',
+                    // 'return_url' => "https://4824-122-160-255-233.ngrok-free.app/mid/return/".$input['session_id'],
+					// 'callback_url' => "https://4824-122-160-255-233.ngrok-free.app/mid/callback/".$input['session_id'],
 					'return_url' => route('midsPay.return', $input['session_id']),
 					'callback_url' => route('midsPay.callback', $input['session_id']),
 					// 'return_url' => "https://webhook.site/157e06c7-afb4-4094-8874-b78607450a77?type=return",
 					// 'callback_url' => "https://webhook.site/157e06c7-afb4-4094-8874-b78607450a77?type=call",
+                    //   'return_url' => "https://1ba4-122-160-255-233.ngrok-free.app/mid/return/".$input['session_id'],
+					// 'callback_url' => "https://1ba4-122-160-255-233.ngrok-free.app/mid/callback/".$input['session_id'],
 					"customer" => [
 						"reference_id" => $input["session_id"],
 						"name" => $input["first_name"] . " " . $input["last_name"],
@@ -71,8 +70,8 @@ class MidsPay extends Controller
 			]
 		];
 
-		// $response = Http::withBasicAuth($check_assign_mid->account_id, $check_assign_mid->password)->post($payment_url, $payment_data)->json();
-        $response = Http::withBasicAuth('coma_WbyZpgkzjNDZWPNN', 'eWH5SLKNuwuCUuXIl4vF64Keg6k1yRk3w1KyYRXMKek')->post($payment_url, $payment_data)->json();
+		$response = Http::withBasicAuth($check_assign_mid->account_id, $check_assign_mid->password)->post($payment_url, $payment_data)->json();
+        // $response = Http::withBasicAuth('coma_WbyZpgkzjNDZWPNN', 'eWH5SLKNuwuCUuXIl4vF64Keg6k1yRk3w1KyYRXMKek')->post($payment_url, $payment_data)->json();
 
 		$cardpayload = [
 			"card_no" => $input["card_no"],
@@ -153,32 +152,32 @@ class MidsPay extends Controller
 			$this->updateGatewayResponseData($input, $card_array);
 
 			// card whitelist api
-			try {
-				if (isset($input['is_white_label']) && $input['is_white_label'] == 0) {
-					$wl_array = [
-						'item' => cardMasking($card_data["data"]["attributes"]["card_number"])
-					];
-					$ch = curl_init();
-			        curl_setopt($ch, CURLOPT_POST, 1);
-			        curl_setopt($ch, CURLOPT_URL, self::WL_URL);
-			        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($wl_array));
-			        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-			        	'Content-Type: application/json',
-			        	'Accept: application/json'
-			        ));
-			        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			        $wl_body = curl_exec($ch);
-			        curl_close ($ch);
+			// try {
+			// 	if (isset($input['is_white_label']) && $input['is_white_label'] == 0) {
+			// 		$wl_array = [
+			// 			'item' => cardMasking($card_data["data"]["attributes"]["card_number"])
+			// 		];
+			// 		$ch = curl_init();
+			//         curl_setopt($ch, CURLOPT_POST, 1);
+			//         curl_setopt($ch, CURLOPT_URL, self::WL_URL);
+			//         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($wl_array));
+			//         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+			//         	'Content-Type: application/json',
+			//         	'Accept: application/json'
+			//         ));
+			//         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			//         $wl_body = curl_exec($ch);
+			//         curl_close ($ch);
 
-			        $wl_data = json_decode($wl_body, 1);
+			//         $wl_data = json_decode($wl_body, 1);
 
-			        if (isset($wl_data['data']['status']) && $wl_data['data']['status'] != 'ok') {
-			        	\Log::info(['message' => 'mids.com card wl api error', 'data' => json_encode($wl_array), 'response' => $wl_body]);
-			        }
-				}
-			} catch (\Exception $e) {
-	        	\Log::info(['message' => 'mids.com card wl api catch', 'e' => $e->getMessage()]);
-			}
+			//         if (isset($wl_data['data']['status']) && $wl_data['data']['status'] != 'ok') {
+			//         	\Log::info(['message' => 'mids.com card wl api error', 'data' => json_encode($wl_array), 'response' => $wl_body]);
+			//         }
+			// 	}
+			// } catch (\Exception $e) {
+	        // 	\Log::info(['message' => 'mids.com card wl api catch', 'e' => $e->getMessage()]);
+			// }
 
 			if (isset ($card_array['status']) && $card_array['status'] == 'processed') {
 				$input['status'] = '1';

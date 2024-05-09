@@ -65,6 +65,8 @@ Route::group(['middleware' => ['api', 'cors']], function () {
 	Route::post('bank/store', 'API\BankController@store')->name('api.bank.store');
 	Route::post('agent/store', 'API\AgentController@store')->name('api.agent.store');
 
+	// NowPayment gateway
+	Route::post('nowpayments-crypto-callback/{session}', 'Repo\PaymentGateway\NowPayments@callback')->name('nowpayments-crypto-callback');
 
 	// * demo API
 	Route::post("/demo/tool", "API\TestDirectApiController@demoApi");

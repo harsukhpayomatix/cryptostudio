@@ -391,6 +391,10 @@ Route::group(['middleware' => 'notification_read'], function () {
   Route::post('getsubgateway', 'Admin\SubgatewayController@getSubgateway')->name('admin.getsubgateway');
   /*********************sub-gateway module End*************************************/
 
+  /****************Admin Trade module Start ***********************************/
+  Route::get('trade', 'Admin\TradeController@index')->name('admin.trade.index');
+  /****************Admin Trade module End ***********************************/
+
   /****************Admin Ticket module Start ***********************************/
   Route::get('ticket', 'Admin\TicketController@index')->name('admin.ticket');
   Route::get('ticket/{id}', 'Admin\TicketController@show')->name('admin.ticket.show');

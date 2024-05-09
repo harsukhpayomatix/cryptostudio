@@ -58,10 +58,9 @@ class CryptoXamax extends Controller
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $accessToken
         ])->post($url,$payload)->json();
-
+        // dd($response);
         $this->storeMidPayload($input["session_id"], json_encode($payload));
         $this->updateGatewayResponseData($input, $response);
-
 
         if ($response == null || empty($response)) {
             return [
@@ -78,7 +77,7 @@ class CryptoXamax extends Controller
             return [
                 'status' => '7',
                 'reason' => '3DS link generated successful, please redirect.',
-                'redirect_3ds_url' => route('xamax.show.wallet', [$input["session_id"]])
+                'redirect_3ds_url' => $response["link"]['related'][1]['href'],//route('xamax.show.wallet', [$input["session_id"]])
 
             ];
         } else {
@@ -122,7 +121,7 @@ class CryptoXamax extends Controller
         $input["status"] = "2";
         $input["reason"] = "Transaction is under process.please wait for sometime.";
         $store_transaction_link = $this->getRedirectLink($input);
-       
+        \Log::info(['trnasaction_link' =>   $store_transaction_link]);
         return redirect($store_transaction_link);
     }
 
@@ -222,6 +221,17 @@ class CryptoXamax extends Controller
 
         exit();
        }
+    }
+
+    public function checkResponse(Request $request)
+    {
+        if($request->transaction_id){
+            $data = DB::table("transaction_session")->select('id')->where("transaction_id", $request->transaction_id)->whereNotNull('webhook_response')->first();
+            if($data){
+                return response()->json(['status' => true,'message' => 'payment initiated'] ,200);
+            }
+        }
+        return response()->json(['status' => false,'message' => 'waiting for payment response'] ,200); 
     }
 
     public function getUSDToBTC($amount)
