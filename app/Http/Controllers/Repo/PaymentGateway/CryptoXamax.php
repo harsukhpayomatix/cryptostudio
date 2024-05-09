@@ -58,7 +58,7 @@ class CryptoXamax extends Controller
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $accessToken
         ])->post($url,$payload)->json();
-
+        // dd($response);
         $this->storeMidPayload($input["session_id"], json_encode($payload));
         $this->updateGatewayResponseData($input, $response);
 
@@ -77,7 +77,7 @@ class CryptoXamax extends Controller
             return [
                 'status' => '7',
                 'reason' => '3DS link generated successful, please redirect.',
-                'redirect_3ds_url' => route('xamax.show.wallet', [$input["session_id"]])
+                'redirect_3ds_url' => $response["link"]['related'][1]['href'],//route('xamax.show.wallet', [$input["session_id"]])
 
             ];
         } else {
