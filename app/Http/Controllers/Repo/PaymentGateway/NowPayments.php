@@ -14,7 +14,8 @@ class NowPayments extends Controller
 	use StoreTransaction;
 
 	const BASE_URL = 'https://api-sandbox.nowpayments.io';
-	const IPN_SECRET = 'FJ0h+K6alI/zWXa3ElVb6QcU0fNeMwxe';
+    const PAY_CURRENCY = 'btc';
+	// const IPN_SECRET = 'FJ0h+K6alI/zWXa3ElVb6QcU0fNeMwxe';
 
 	// ================================================
 	/* method : __construct
@@ -40,14 +41,13 @@ class NowPayments extends Controller
         $payment_data = [
             'price_amount' => $input['amount'],
             'price_currency' => $input['currency'],
-            'pay_currency' => $input['pay_currency'],
+            'pay_currency' => self::PAY_CURRENCY,
             'case' => 'success',
-            // 'ipn_callback_url' => "https://webhook.site/9f1d9e3f-9f8a-4ce0-9d76-29e556f516bb",
-            // 'ipn_callback_url' => "https://c3ec-122-160-255-233.ngrok-free.app/api/nowpayments-crypto-callback/".$input['session_id'],
-            'ipn_callback_url' => route('nowpayments-crypto-callback', $input['session_id']),
+            // 'ipn_callback_url' => "https://a10e-2405-201-5023-4810-9241-5584-4113-fb19.ngrok-free.app/api/nowpayments-crypto-callback/".$input['session_id'] . '/' . base64_encode($check_assign_mid->ipn_secret),
+            'ipn_callback_url' => route('nowpayments-crypto-callback', $input['session_id'], base64_encode($check_assign_mid->ipn_secret)),
             // "success_url" => route('nowpayments-cryptosuccess-callback', $input['session_id']),
             // "cancel_url" => route('nowpayments-cryptocancel-callback', $input['session_id'])
-            'order_description' => 'test',
+            // 'order_description' => 'test',
             // 'order_id' => $input['session_id'],
         ];
         
@@ -63,7 +63,9 @@ class NowPayments extends Controller
         
         $payment_response = json_decode($payment_body, true);
 
-        // dd($payment_response);
+        $this->storeMidPayload($input['session_id'], $payment_payload);
+        
+        // dd($payment_payload);
 
         if ($payment_response == null || empty($payment_response) || !$payment_response['payment_status']) {
             return [
@@ -171,15 +173,15 @@ class NowPayments extends Controller
         return $response;
     }
 
-    public function callback(Request $request, $session_id)
+    public function callback(Request $request, $session_id, $ipn)
     {
 
         // \Log::info([
         //     'NowPaymentsCrypto_CallBack' => $request->all(),
-        //     'session_id' => $session_id,
+        //     'session_id' => base64_decode($session_id),
         // ]);
         
-        if(!$this->checkIpnRequestIsValid()) {
+        if(!$this->checkIpnRequestIsValid(base64_decode($ipn))) {
             return false;
         }
         
@@ -218,7 +220,7 @@ class NowPayments extends Controller
         }
     }
 
-    function checkIpnRequestIsValid() {
+    function checkIpnRequestIsValid($ipn_secret) {
         $error_msg = "Unknown error";
         $auth_ok = false;
         $request_data = null;
@@ -229,7 +231,7 @@ class NowPayments extends Controller
             ksort($request_data);
             $sorted_request_json = json_encode($request_data);
             if ($request_json !== false && !empty($request_json)) {
-                $hmac = hash_hmac("sha512", $sorted_request_json, trim(self::IPN_SECRET));
+                $hmac = hash_hmac("sha512", $sorted_request_json, trim($ipn_secret));
                 if ($hmac == $recived_hmac) {
                     $auth_ok = true;
                 } else {
