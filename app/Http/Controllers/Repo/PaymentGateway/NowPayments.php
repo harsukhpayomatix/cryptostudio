@@ -38,13 +38,15 @@ class NowPayments extends Controller
         $payment_url = self::BASE_URL.'/v1/payment';
         $secret_key = $check_assign_mid->access_key;
 
+        \Log::info([$input['session_id'], base64_encode($check_assign_mid->ipn_secret)]);
+        
         $payment_data = [
             'price_amount' => $input['amount'],
             'price_currency' => $input['currency'],
             'pay_currency' => self::PAY_CURRENCY,
             'case' => 'success',
-            // 'ipn_callback_url' => "https://a10e-2405-201-5023-4810-9241-5584-4113-fb19.ngrok-free.app/api/nowpayments-crypto-callback/".$input['session_id'] . '/' . base64_encode($check_assign_mid->ipn_secret),
-            'ipn_callback_url' => route('nowpayments-crypto-callback', $input['session_id'], base64_encode($check_assign_mid->ipn_secret)),
+            // 'ipn_callback_url' => "https://3924-2405-201-5023-4810-22a8-db7e-c244-60c2.ngrok-free.app/api/nowpayments-crypto-callback/".$input['session_id'] . '/' . base64_encode($check_assign_mid->ipn_secret),
+            'ipn_callback_url' => route('nowpayments-crypto-callback', [$input['session_id'], base64_encode($check_assign_mid->ipn_secret)]),
             // "success_url" => route('nowpayments-cryptosuccess-callback', $input['session_id']),
             // "cancel_url" => route('nowpayments-cryptocancel-callback', $input['session_id'])
             // 'order_description' => 'test',
@@ -64,8 +66,6 @@ class NowPayments extends Controller
         $payment_response = json_decode($payment_body, true);
 
         $this->storeMidPayload($input['session_id'], $payment_payload);
-        
-        // dd($payment_payload);
 
         if ($payment_response == null || empty($payment_response) || !$payment_response['payment_status']) {
             return [
