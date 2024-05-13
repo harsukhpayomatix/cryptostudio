@@ -75,6 +75,9 @@ class NowPayments extends Controller
             ];
         }
 
+        $input['gateway_id'] = $payment_response['payment_id'] ?? 1;
+        $this->updateGatewayResponseData($input, $payment_response);
+
         return [
             'status' => '1',
             'reason' => 'Your transaction has been processed successfully.',
