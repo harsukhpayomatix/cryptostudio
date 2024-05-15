@@ -438,7 +438,7 @@
                             Your transaction was declined.
                         @endif
                     </p>
-                    <a href="{{ route('iframe.checkout', @$token) }}" class="btn btn-primary btn-block">Create New
+                    <a href="{{ route('iframe.checkout', $token) }}" class="btn btn-primary btn-block">Create New
                         Transaction</a>
                 </div>
             </div>
@@ -456,7 +456,7 @@
                             Transaction processed successfully.
                         @endif
                     </p>
-                    <a href="{{ route('iframe.checkout', @$token) }}" class="btn btn-primary btn-block">Create New
+                    <a href="{{ route('iframe.checkout', $token) }}" class="btn btn-primary btn-block">Create New
                         Transaction</a>
                 </div>
             </div>
@@ -474,7 +474,7 @@
                             Transaction pending.
                         @endif
                     </p>
-                    <a href="{{ route('iframe.checkout', @$token) }}" class="btn btn-primary btn-block">Create New
+                    <a href="{{ route('iframe.checkout', $token) }}" class="btn btn-primary btn-block">Create New
                         Transaction</a>
                 </div>
             </div>
@@ -492,7 +492,7 @@
                             Your transaction was blocked.
                         @endif
                     </p>
-                    <a href="{{ route('iframe.checkout', @$token) }}" class="btn btn-primary btn-block">Create New
+                    <a href="{{ route('iframe.checkout', $token) }}" class="btn btn-primary btn-block">Create New
                         Transaction</a>
                 </div>
             </div>
