@@ -859,9 +859,6 @@ Route::any("sasapay/success/{id}","Repo\PaymentGateway\SasaPay@success")->name("
 Route::any("sasapay/failure/{id}","Repo\PaymentGateway\SasaPay@failure")->name("sasapay.failure");
 
 
-
-
-
 // * Startbutton MID url
 Route::get("startbutton/callback", "Repo\PaymentGateway\StartButton@callback");
 Route::any("startbutton/webhook", "Repo\PaymentGateway\StartButton@webhook");
@@ -884,6 +881,5 @@ Route::post("mid/callback/{id}", "Repo\PaymentGateway\MidsPay@callback")->name("
 Route::get("/mid/browser/{id}", "Repo\PaymentGateway\MidsPay@getBrowserInfo")->name('midsPay.getBrowser.info');
 Route::post("/mid/store/browser/info", "Repo\PaymentGateway\MidsPay@storeBrowserInfo")->name('midsPay.storeBrowser.info');
 Route::get("/mid/pending-txn-job", "Repo\PaymentGateway\MidsPay@pendingTxn");
-
 
 

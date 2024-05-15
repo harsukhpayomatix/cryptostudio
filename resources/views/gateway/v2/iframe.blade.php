@@ -179,7 +179,7 @@
                                             </div>
 
                                             <div class="col-md-6 form-group mb-1">
-                                                <label class="mb-25">{{ __('messages.country') }} <span
+                                                <label class="mb-25">{{ __('messages.currency') }} <span
                                                         class="text-danger">*</span></label>
                                                 <div>
                                                     <select class="form-control select2" name="currency"

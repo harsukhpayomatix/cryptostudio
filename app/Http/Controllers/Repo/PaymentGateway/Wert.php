@@ -42,7 +42,7 @@ class Wert extends Controller
         $full_name = $input["first_name"] . " " . $input["last_name"] ?: '';
         $email = $input["email"] ?: '';
         $country_of_residence = $input["country"] ?: '';
-        $phone = "+".$input["country_code"].$input["phone_no"] ?: '';
+        $phone = "+" . $input["country_code"] . $input["phone_no"] ?: '';
         $payload = [
             "partnerId" => $partnerId,
             "origin" => $origin,
@@ -51,7 +51,7 @@ class Wert extends Controller
             "full_name" => $full_name,
             "email" => $email,
             "country_of_residence" => $country_of_residence,
-            "currency_amount"=>$currency_amount,
+            "currency_amount" => $currency_amount,
             "phone" => $phone,
             "webhook_url" => route('Wert.webhook'),
         ];
@@ -86,7 +86,7 @@ class Wert extends Controller
         return redirect($store_transaction_link);
     }
 
-     public function handleWebhook(Request $request)
+    public function handleWebhook(Request $request)
     {
         $response = $request->all();
         Log::info(["wert-webhook" => $response]);
@@ -116,9 +116,7 @@ class Wert extends Controller
                 } else if (isset($type) && $type === "order_canceled") {
                     $input["status"] = "3";
                     $input["reason"] = "Your Transaction has cancelled!";
-                }
-                else
-                {
+                } else {
                     $input["status"] = "2";
                     $input["reason"] = "Your Transaction could be in pending state!";
                 }
