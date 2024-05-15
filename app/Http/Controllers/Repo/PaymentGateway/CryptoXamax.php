@@ -31,10 +31,21 @@ class CryptoXamax extends Controller
 
     public function checkout($input, $midDetails)
     {
+        if(!isset($input['currency_type'])){
+            return [
+                'status' => '7',
+                'reason' => '3DS link generated successful, please redirect.',
+                'redirect_3ds_url' => route('api.v2.cryptoCurrency', [$input["order_id"]])
+
+            ];
+        }
+        
         $BtcToSatoshi = 100000000;
         $input['converted_amount'] = number_format((float) $input['converted_amount'], 2, '.', '');
+        $converted_currency = $input['converted_currency'];
+        $selected_crypto_currency = $input['currency_type'];
 
-        $btcAmount = $this->getUSDToBTC($input['converted_amount']);
+        $btcAmount = $this->getUSDToBTC($input['converted_amount'], $converted_currency, $selected_crypto_currency);
 
         $input["gateway_id"] = $this->generateRandomNumber();
         $accessToken = $this->generateAccessToken($midDetails->api_key);        
@@ -238,7 +249,8 @@ class CryptoXamax extends Controller
     {
         $key = config("custom.currency_converter_access_key");
         $response = Http::get('https://apilayer.net/api/live?access_key=' . $key . "&currencies=BTC&source=USD")->json();
-
+        print_r($response);
+        exit;
         if (isset($response["quotes"]) && isset($response["quotes"]["USDBTC"])) {
             return $response["quotes"]["USDBTC"] * $amount;
         }

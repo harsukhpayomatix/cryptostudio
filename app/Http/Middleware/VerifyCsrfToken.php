@@ -144,6 +144,7 @@ class VerifyCsrfToken extends Middleware
         "wert/webhook",
         "wert/callback/*",
         'mid/callback/*',
+        'sasapay/callback/*'
     ];
 
     /**
