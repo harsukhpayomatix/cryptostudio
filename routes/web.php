@@ -510,6 +510,8 @@ Route::get('api/v2/checkout/{id}', 'API\ApiController@checkout')->name('api.v2.c
 Route::get('api/v2/select/card/{id}', 'API\ApiController@card')->name('api.v2.card');
 Route::get('api/v2/select/bank/{id}', 'API\ApiController@bank')->name('api.v2.bank');
 Route::get('api/v2/select/crypto/{id}', 'API\ApiController@crypto')->name('api.v2.crypto');
+Route::get('api/v2/select/crypto/currency/{id}', 'API\ApiController@selectCryptoCurrency')->name('api.v2.cryptoCurrency');
+
 Route::get('api/v2/select/upi/{id}', 'API\ApiController@upi')->name('api.v2.upi');
 
 // card process page
@@ -851,6 +853,10 @@ Route::get("/cryptoxamax/user/redirect/{id}", "Repo\PaymentGateway\CryptoXamax@u
 Route::any("xamax/callback","Repo\PaymentGateway\CryptoXamax@callback")->name("xamax.callback");
 Route::any("xamax/check-response","Repo\PaymentGateway\CryptoXamax@checkResponse")->name("xamax.checkresponse");
 
+// SASA PAY URLs
+Route::any("sasapay/callback/{id}","Repo\PaymentGateway\SasaPay@callback")->name("sasapay.callback");
+Route::any("sasapay/success/{id}","Repo\PaymentGateway\SasaPay@success")->name("sasapay.success");
+Route::any("sasapay/failure/{id}","Repo\PaymentGateway\SasaPay@failure")->name("sasapay.failure");
 
 
 // * Startbutton MID url
@@ -875,6 +881,5 @@ Route::post("mid/callback/{id}", "Repo\PaymentGateway\MidsPay@callback")->name("
 Route::get("/mid/browser/{id}", "Repo\PaymentGateway\MidsPay@getBrowserInfo")->name('midsPay.getBrowser.info');
 Route::post("/mid/store/browser/info", "Repo\PaymentGateway\MidsPay@storeBrowserInfo")->name('midsPay.storeBrowser.info');
 Route::get("/mid/pending-txn-job", "Repo\PaymentGateway\MidsPay@pendingTxn");
-
 
 

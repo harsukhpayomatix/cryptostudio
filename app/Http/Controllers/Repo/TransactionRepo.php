@@ -314,7 +314,7 @@ class TransactionRepo extends Controller
     public function gatewayCurlResponse($input, $check_assign_mid)
     {
         try {
-            // $check_assign_mid->title = 'CryptoXamax';
+            // $check_assign_mid->title = 'SasaPay';
             $class_name = 'App\\Http\\Controllers\\Repo\\PaymentGateway\\' . $check_assign_mid->title;
            
             if (class_exists($class_name)) {
