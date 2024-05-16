@@ -1531,9 +1531,10 @@ class ApiController extends Controller
             'city',
             'state',
             'zip',
-            'phone_no'
+            'phone_no',
+            'currency_type'
         ]);
-
+       
         $transaction_session = TransactionSession::where('order_id', $order_id)
             ->where('created_at', '>', Carbon::now()->subHour(2)->toDateTimeString())
             ->whereNotIn('payment_gateway_id', [0, 1, 2])
@@ -1630,7 +1631,6 @@ class ApiController extends Controller
                 'request_data' => json_encode($input),
                 'payment_gateway_id' => $input['payment_gateway_id']
             ]);
-
         // gateway curl response
         $gateway_curl_response = $this->gatewayCurlResponse($input, $check_assign_mid);
 
