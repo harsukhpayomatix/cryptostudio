@@ -16,17 +16,7 @@ class SasaPay extends Controller
 
     // const BASE_URL = "https://sandbox.sasapay.app/api/v1/"; // SANDBOX
     const BASE_URL = "https://api.sasapay.app/api/v1/"; // Production
-    // const MERCHANT_CODE = 244708;
-    //--------LIVE KEYS -------------
-    // const CLIENT_ID = 'Ov7Y3u1GT3OQgVT7zs0LhKQmQqKnPnsVaKE79fBA';
-    // const CLIENT_SECRET = 'oPGzL3y8oin1m9HRnayXxjgNuK7A6ilPVKWigXM4nwVT0m3Oua0cJoDbNnIm7UJl5nn2AnHwi4odTDog7B1NxPAQQMLM5qJXrEVEcjCH6isU9bNGk8nlV6KxEC2RLIgQ';
-
-    //---------- TEST KEYS----------
-    // const CLIENT_ID = 'MuyklyADq4TCgPCfNL5wVloTBDOy7twza9LBt64K';
-    // const CLIENT_SECRET = '6zhF8ZavjYeaDjlIvnLi9jC5NglFbye6o3xu9s3tg301Y42hhVR0LwzE9lIynMiGOj84Z1AalyoiUSJt4XdbrolUNbi1QYNRodW803qDwGe4xDSbraleejolINU0RVtg';
-
-
-
+   
     public function checkout($input, $midDetails)
     {
         $input['amount'] = number_format((float) $input['amount'], 2, '.', '');

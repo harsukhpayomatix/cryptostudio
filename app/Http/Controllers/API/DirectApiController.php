@@ -100,7 +100,6 @@ class DirectApiController extends Controller
             'cvvNumber' => 'nullable|numeric|min:0|max:9999',
             'response_url' => 'nullable|url',
             'webhook_url' => 'nullable|url',
-            'payer_email' => 'nullable'
         ]);
 
         if ($validator->fails()) {
