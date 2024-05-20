@@ -535,6 +535,7 @@ Route::get('api/v2/response/success/{id}', 'API\ApiController@success')->name('a
 
 // decline response page
 Route::get('api/v2/response/decline/{id}', 'API\ApiController@decline')->name('api.v2.decline');
+Route::get('api/v2/response/pending/{id}', 'API\ApiController@pending')->name('api.v2.pending');
 Route::get('api/v2/response/redirect-merchant/{id}', 'API\ApiController@redirect')->name('api.v2.redirect');
 
 /********************* test apiv2 **************************/
