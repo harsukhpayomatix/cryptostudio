@@ -44,7 +44,7 @@ class NowPayments extends Controller
             'price_currency' => $input['currency'],
             'pay_currency' => self::PAY_CURRENCY,
             'case' => 'success',
-            // 'ipn_callback_url' => "https://40fc-2405-201-5023-4810-b335-5675-98d2-41ad.ngrok-free.app/api/nowpayments-crypto-callback/".$input['session_id'] . '/' . base64_encode($check_assign_mid->ipn_secret),
+            // 'ipn_callback_url' => "https://99d0-2405-201-5023-4810-5119-9b99-a377-798e.ngrok-free.app/api/nowpayments-crypto-callback/".$input['session_id'] . '/' . base64_encode($check_assign_mid->ipn_secret),
             'ipn_callback_url' => route('nowpayments-crypto-callback', [$input['session_id'], base64_encode($check_assign_mid->ipn_secret)]),
         ];
         
@@ -59,7 +59,7 @@ class NowPayments extends Controller
         $payment_body = $this->curlPost($payment_url, $payment_payload, $payment_headers);
         
         $payment_response = json_decode($payment_body, true);
-        \Log::info($payment_response);
+        // \Log::info($payment_response);
 
         $this->storeMidPayload($input['session_id'], $payment_payload);
 
@@ -247,8 +247,9 @@ class NowPayments extends Controller
 
             // storing webhook response
             unset($input["api_key"]);
-            $this->transaction->storeData($input);
+            // $this->transaction->storeData($input);
             $this->storeMidWebhook($session_id, json_encode($body));
+            $this->storeTransaction($input);
             
         } else {
             \Log::info(['type' => 'webhook', 'body' => $session_id.' still not confirm.']);

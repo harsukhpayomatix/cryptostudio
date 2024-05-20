@@ -1657,6 +1657,16 @@ class ApiController extends Controller
             ]);
         }
 
+        if ($gateway_curl_response['status'] == '2') {
+            $store_transaction_link = $this->storeTransactionAPIVTwo($input);
+
+            return response()->json([
+                'status' => 'success',
+                'message' => $input['reason'],
+                'url' => route('api.v2.pending', $order_id)
+            ]);
+        }
+
         $store_tx_try = $this->tx_try->storeData($input);
 
         return response()->json([
@@ -1963,6 +1973,43 @@ class ApiController extends Controller
         // send declined message
         return view('gateway.apiv2.decline', compact('input'));
     }
+
+    // ================================================
+    /* method : decline
+     * @param  : 
+     * @description : decline page after transaction decline
+     */// ===============================================
+     public function pending($order_id)
+     {
+         $tx = TxTry::where('order_id', $order_id)
+             ->where('created_at', '>', Carbon::now()->subHour(2)->toDateTimeString())
+             ->whereNotIn('payment_gateway_id', [0, 1, 2])
+             ->whereNotNull('payment_gateway_id')
+             ->orderBy('id', 'desc')
+             ->first();
+ 
+         if (empty($tx)) {
+             $tx = TransactionSession::where('order_id', $order_id)
+                 ->where('created_at', '>', Carbon::now()->subHour(2)->toDateTimeString())
+                 ->whereNotIn('payment_gateway_id', [0, 1, 2])
+                 ->whereNotNull('payment_gateway_id')
+                 ->where('is_completed', 0)
+                 ->orderBy('id', 'desc')
+                 ->first();
+         }
+ 
+         if (empty($tx)) {
+             return abort(404);
+         }
+ 
+         $input = json_decode($tx['request_data'], true);
+ 
+         $input['status'] = $input['status'] ?? '2';
+         $input['reason'] = $input['reason'] ?? 'Transaction Waiting for Webhook';
+ 
+         // send declined message
+         return view('gateway.apiv2.pending', compact('input'));
+     }
 
     // ================================================
     /* method : redirect
