@@ -93,7 +93,7 @@ class NowPayments extends Controller
         }
         else if (in_array($payment_response['payment_status'], self::PROCESSING_STATUSES)) {
             return [
-                'status' => '4',
+                'status' => '2',
                 'reason' => 'Your transaction is waiting be processed.',
                 'order_id' => $input['order_id'],
             ];
@@ -230,7 +230,7 @@ class NowPayments extends Controller
                 \Log::info(['type' => 'webhook', 'body' => $session_id.' confirm.']);
             }
             else if (in_array($body['payment_status'], self::PROCESSING_STATUSES)) {
-                $input['status'] = '4';
+                $input['status'] = '2';
                 $input['reason'] = 'Your transaction is pending.';
 
                 \Log::info(['type' => 'webhook', 'body' => $session_id.' processing.']); 
