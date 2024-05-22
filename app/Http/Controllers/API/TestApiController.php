@@ -958,6 +958,7 @@ class TestApiController extends Controller
     public function gatewayCurlResponse($input, $check_assign_mid, $title)
     {
         try {
+
             $class_name = 'App\\Http\\Controllers\\Repo\\PaymentGateway\\' . $title;
             $gateway_class = new $class_name;
             $gateway_return_data = $gateway_class->checkout($input, $check_assign_mid);
