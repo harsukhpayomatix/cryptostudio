@@ -108,6 +108,7 @@
                                     <option value="GHS">GHS</option>
                                     <option value="UGX">UGX</option>
                                     <option value="TND">TND</option>
+                                    <option value="KES">KES</option>
                                     <option value="">Remove Currency</option>
                                 </select>
                                 @if ($errors->has('currency'))
