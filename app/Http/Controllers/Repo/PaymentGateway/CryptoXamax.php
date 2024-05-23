@@ -63,20 +63,22 @@ class CryptoXamax extends Controller
        
         $payload = [
             "txId" => $input["gateway_id"],
-            "code" => ["usdt"],// need to chnage in live mode
+            "code" => ["btc"],//["usdt"],// need to change in live mode
             "amount" => strval($amount),
             "urlRedirectSuccess" => route('xamax.success', $input["session_id"]),//'http://localhost:8000/xamax/success/'.$input["session_id"],
-            "urlRedirectFail" => route('xamax.failure', $input["session_id"]), // 'http://localhost:8000/xamax/failure/'.$input["session_id"]
+            "urlRedirectFail" =>    route('xamax.failure', $input["session_id"]), //'http://localhost:8000/xamax/failure/'.$input["session_id"],
         ];
-       
+       \Log::info(['payload'=> $payload]);
         // $url = self::BASE_URL . 'transaction/invoice';
         $url = self::BASE_URL . 'payment-link';
         // Create invoice
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $accessToken
         ])->post($url,$payload)->json();
+        \Log::info(["data" => $response]);
         $this->storeMidPayload($input["session_id"], json_encode($payload));
         $this->updateGatewayResponseData($input, $response);
+
         if ($response == null || empty($response)) {
             return [
                 "status" => "0",
@@ -84,6 +86,7 @@ class CryptoXamax extends Controller
                 'order_id' => $input['order_id'],
             ];
         } else if (!isset($response["href"])) {
+
             return [
                 "status" => "0",
                 'reason' => $response["message"] ?? "Transaction could not processed.",
