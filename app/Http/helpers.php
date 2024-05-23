@@ -2090,6 +2090,7 @@ function getCurrency()
         "NOK" => "NOK",
         "AED" => "AED",
         "BRL" => "BRL",
+        "KES" => "KES",
     );
     return $getCurrency;
 }
