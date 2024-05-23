@@ -62,11 +62,11 @@ class CryptoXamax extends Controller
         $amount = (int) ceil($btcAmount * $BtcToSatoshi);// need to chnage in live mode
        
         $payload = [
-            "txId" => $input["gateway_id"],
-            "code" => ["btc"],//["usdt"],// need to change in live mode
-            "amount" => strval($amount),
-            "urlRedirectSuccess" => route('xamax.success', $input["session_id"]),//'http://localhost:8000/xamax/success/'.$input["session_id"],
-            "urlRedirectFail" =>    route('xamax.failure', $input["session_id"]), //'http://localhost:8000/xamax/failure/'.$input["session_id"],
+            "txId"                       =>  $input["gateway_id"],
+            "code"                       =>  ["btc"],//["usdt"],// need to change in live mode
+            "amount"                     =>  strval($amount),
+            "urlRedirectSuccess"         =>  route('xamax.success', $input["session_id"]),//'http://localhost:8000/xamax/success/'.$input["session_id"],//
+            "urlRedirectFail"            =>  route('xamax.failure', $input["session_id"]), //'http://localhost:8000/xamax/failure/'.$input["session_id"],
         ];
        \Log::info(['payload'=> $payload]);
         // $url = self::BASE_URL . 'transaction/invoice';
