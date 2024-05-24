@@ -253,10 +253,10 @@ class CryptoXamax extends Controller
         $input = json_decode($transaction->request_data, true);
         $input['status'] = '1';
         $input['reason'] = 'Your transaction was proccessed successfully.';
-        \Log::info('success_input', $input);
+        \Log::info(['success_input'=> $input]);
         // redirect back to $response_url
         $transaction_response = $this->storeTransaction($input);
-        \Log::info('suceess_transaction_response', $transaction_response);
+        \Log::info(['suceess_transaction_response' => $transaction_response]);
         $store_transaction_link = $this->getRedirectLink($input);
         
         return redirect($store_transaction_link);
