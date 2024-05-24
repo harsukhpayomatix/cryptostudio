@@ -145,6 +145,7 @@ class CryptoXamax extends Controller
 
     public function callback(Request $request)
     {
+        Log::info(['xamax_callback_data' => $request->all()]);
         $header = $request->header('Authorization');
         $bearerToken = null;
      
@@ -243,7 +244,8 @@ class CryptoXamax extends Controller
 
     public function success(Request $request, $session_id)
     {
-        \Log::info(['success_response' => $request->all()]);
+        
+        \Log::info(['success_session_id' => $session_id]);
         $transaction = DB::table("transaction_session")->select("id", "request_data", "webhook_response", "gateway_id", "transaction_id")->where("transaction_id", $session_id)->first();
         if ($transaction == null) {
             abort(404);
@@ -251,11 +253,12 @@ class CryptoXamax extends Controller
         $input = json_decode($transaction->request_data, true);
         $input['status'] = '1';
         $input['reason'] = 'Your transaction was proccessed successfully.';
-
+        \Log::info('success_input', $input);
         // redirect back to $response_url
         $transaction_response = $this->storeTransaction($input);
-
+        \Log::info('suceess_transaction_response', $transaction_response);
         $store_transaction_link = $this->getRedirectLink($input);
+        
         return redirect($store_transaction_link);
 
 

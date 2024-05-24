@@ -230,7 +230,7 @@ class iFrameTwoController extends Controller
     public function response($token, Request $request)
     {
         $response = $request->all();
-        
+        \Log::info(['response_data', $response]);
         return view('gateway.v2.response', compact('response', 'token'));
     }
 
