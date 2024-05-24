@@ -242,6 +242,7 @@ $currency = ['USD', 'HKD', 'GBP', 'JPY', 'EUR', 'AUD', 'CAD', 'SGD', 'NZD', 'TWD
                                                             <option value="AED">AED</option>
                                                             <option value="BRL">BRL</option>
                                                             <option value="TND">TND</option>
+                                                            <option value="KES">KES</option>
                                                             @endif
                                                         </select></div>
                                                 </div>

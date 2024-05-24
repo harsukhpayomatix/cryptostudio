@@ -1519,89 +1519,6 @@ class ApiController extends Controller
     }
 
     // ================================================
-    /* method : select Crypto currently
-     * @param  : 
-     * @description : 
-     */// ===============================================
-
-    public function selectCryptoCurrency($order_id)
-    {
-        $transaction_session = TransactionSession::where('order_id', $order_id)
-        ->where('created_at', '>', Carbon::now()->subHour(2)->toDateTimeString())
-        ->whereNotIn('payment_gateway_id', [0, 1, 2])
-        ->whereNotNull('payment_gateway_id')
-        ->where('is_completed', 0)
-        ->orderBy('id', 'desc')
-        ->first();
-
-    if (empty($transaction_session)) {
-        return abort(404);
-    }
-
-    $input = json_decode($transaction_session['input_details'], true);
-
-    // validate user
-    $user = DB::table('users')
-        ->where('id', $transaction_session->user_id)
-        ->where('is_active', 1)
-        ->whereNull('deleted_at')
-        ->whereNotNull('mid')
-        ->whereNotIn('mid', [0, 1, 2])
-        ->whereNotNull('crypto_mid')
-        ->whereNotIn('crypto_mid', [0, 1, 2])
-        ->first();
-
-    if (empty($user)) {
-        return abort(404);
-    }
-
-    if (
-        isset($input['is_request_from_vt']) && $input['is_request_from_vt'] == 'IFRAMEAV2' &&
-        isset($input['payment_type']) && $input['payment_type'] == 'Crypto'
-    ) {
-        $input['payment_gateway_id'] = $input['payment_gateway_id'] ?? $user->crypto_mid;
-    } else {
-        $input['payment_gateway_id'] = $user->crypto_mid;
-
-        // apply rules and get payment_gateway_id
-        if ($user->is_disable_rule == '0') {
-            $user_rule_gateway_id = $this->userCryptoRulesCheck($input, $user);
-            if ($user_rule_gateway_id != false) {
-                $input['payment_gateway_id'] = $user_rule_gateway_id;
-            } else {
-                $rule_gateway_id = $this->cryptoRulesCheck($input, $user);
-                if ($rule_gateway_id != false) {
-                    $input['payment_gateway_id'] = $rule_gateway_id;
-                }
-            }
-        }
-    }
-
-    // payment gateway object
-    $check_assign_mid = checkAssignMID($input['payment_gateway_id']);
-
-    if ($check_assign_mid == false) {
-        return abort(404);
-    }
-
-    $required_fields = json_decode($check_assign_mid->required_fields, true);
-
-    $data = [];
-    foreach ($required_fields as $field) {
-        if (empty($input[$field]) || $input[$field] == null) {
-            $data[] = $field;
-        }
-    }
-
-    // update request_data field
-    TransactionSession::where('order_id', $order_id)
-        ->where('is_completed', 0)
-        ->update(['request_data' => json_encode($input)]);
-    // send request to paymentgateway
-    return view('gateway.apiv2.select_crypto_currency', compact('order_id', 'data', 'input'));
-    }
-
-    // ================================================
     /* method : cryptoSubmit
      * @param  : 
      * @description : bank submit page
@@ -1737,6 +1654,16 @@ class ApiController extends Controller
                 'status' => 'success',
                 'message' => $input['reason'],
                 'url' => $store_transaction_link
+            ]);
+        }
+
+        if ($gateway_curl_response['status'] == '2') {
+            $store_transaction_link = $this->storeTransactionAPIVTwo($input);
+
+            return response()->json([
+                'status' => 'success',
+                'message' => $input['reason'],
+                'url' => route('api.v2.pending', $order_id)
             ]);
         }
 
@@ -2046,6 +1973,43 @@ class ApiController extends Controller
         // send declined message
         return view('gateway.apiv2.decline', compact('input'));
     }
+
+    // ================================================
+    /* method : decline
+     * @param  : 
+     * @description : decline page after transaction decline
+     */// ===============================================
+     public function pending($order_id)
+     {
+         $tx = TxTry::where('order_id', $order_id)
+             ->where('created_at', '>', Carbon::now()->subHour(2)->toDateTimeString())
+             ->whereNotIn('payment_gateway_id', [0, 1, 2])
+             ->whereNotNull('payment_gateway_id')
+             ->orderBy('id', 'desc')
+             ->first();
+ 
+         if (empty($tx)) {
+             $tx = TransactionSession::where('order_id', $order_id)
+                 ->where('created_at', '>', Carbon::now()->subHour(2)->toDateTimeString())
+                 ->whereNotIn('payment_gateway_id', [0, 1, 2])
+                 ->whereNotNull('payment_gateway_id')
+                 ->where('is_completed', 0)
+                 ->orderBy('id', 'desc')
+                 ->first();
+         }
+ 
+         if (empty($tx)) {
+             return abort(404);
+         }
+ 
+         $input = json_decode($tx['request_data'], true);
+ 
+         $input['status'] = $input['status'] ?? '2';
+         $input['reason'] = $input['reason'] ?? 'Transaction Waiting for Webhook';
+ 
+         // send declined message
+         return view('gateway.apiv2.pending', compact('input'));
+     }
 
     // ================================================
     /* method : redirect

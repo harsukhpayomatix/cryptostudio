@@ -168,6 +168,8 @@
                                 </option>
                                 <option value="AZN" {{ $data->converted_currency == 'AZN' ? 'selected' : '' }}>AZN
                                 </option>
+                                <option value="KES" {{ $data->converted_currency == 'KES' ? 'selected' : '' }}>KES
+                                </option>
                             </select>
                             @if ($errors->has('converted_currency'))
                                 <span class="help-block">

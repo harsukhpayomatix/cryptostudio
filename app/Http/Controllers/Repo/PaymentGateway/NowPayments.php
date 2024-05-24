@@ -15,7 +15,8 @@ class NowPayments extends Controller
 
 	const BASE_URL = 'https://api-sandbox.nowpayments.io';
     const PAY_CURRENCY = 'btc';
-	// const IPN_SECRET = 'FJ0h+K6alI/zWXa3ElVb6QcU0fNeMwxe';
+    const PROCESSING_STATUSES = ['waiting', 'confirming', 'confirmed', 'sending', 'partially_paid'];
+    const ERROR_STATUSES = ['failed', 'expired', 'refunded'];
 
 	// ================================================
 	/* method : __construct
@@ -43,12 +44,8 @@ class NowPayments extends Controller
             'price_currency' => $input['currency'],
             'pay_currency' => self::PAY_CURRENCY,
             'case' => 'success',
-            // 'ipn_callback_url' => "https://a10e-2405-201-5023-4810-9241-5584-4113-fb19.ngrok-free.app/api/nowpayments-crypto-callback/".$input['session_id'] . '/' . base64_encode($check_assign_mid->ipn_secret),
-            'ipn_callback_url' => route('nowpayments-crypto-callback', $input['session_id'], base64_encode($check_assign_mid->ipn_secret)),
-            // "success_url" => route('nowpayments-cryptosuccess-callback', $input['session_id']),
-            // "cancel_url" => route('nowpayments-cryptocancel-callback', $input['session_id'])
-            // 'order_description' => 'test',
-            // 'order_id' => $input['session_id'],
+            // 'ipn_callback_url' => "https://99d0-2405-201-5023-4810-5119-9b99-a377-798e.ngrok-free.app/api/nowpayments-crypto-callback/".$input['session_id'] . '/' . base64_encode($check_assign_mid->ipn_secret),
+            'ipn_callback_url' => route('nowpayments-crypto-callback', [$input['session_id'], base64_encode($check_assign_mid->ipn_secret)]),
         ];
         
 
@@ -62,11 +59,22 @@ class NowPayments extends Controller
         $payment_body = $this->curlPost($payment_url, $payment_payload, $payment_headers);
         
         $payment_response = json_decode($payment_body, true);
+        // \Log::info($payment_response);
 
         $this->storeMidPayload($input['session_id'], $payment_payload);
-        
-        // dd($payment_payload);
 
+        // updating API response
+        $input['gateway_id'] = $payment_response['payment_id'] ?? 1;
+        $this->updateGatewayResponseData($input, $payment_response);
+
+        if (isset($payment_response['status']) && $payment_response['status'] == false) {
+            return [
+                'status' => '0',
+                'reason' => $payment_response['message'],
+                'order_id' => $input['order_id'],
+            ];
+        }
+        
         if ($payment_response == null || empty($payment_response) || !$payment_response['payment_status']) {
             return [
                 'status' => '0',
@@ -75,11 +83,35 @@ class NowPayments extends Controller
             ];
         }
 
-        return [
-            'status' => '1',
-            'reason' => 'Your transaction has been processed successfully.',
-            'order_id' => $input['order_id'],
-        ];
+        // sending response
+        if($payment_response['payment_status'] == 'finished') {
+            return [
+                'status' => '1',
+                'reason' => 'Your transaction has been processed successfully.',
+                'order_id' => $input['order_id'],
+            ];
+        }
+        else if (in_array($payment_response['payment_status'], self::PROCESSING_STATUSES)) {
+            return [
+                'status' => '2',
+                'reason' => 'Your transaction is waiting be processed.',
+                'order_id' => $input['order_id'],
+            ];
+        }
+        else if (in_array($payment_response['payment_status'], self::ERROR_STATUSES)) {
+            return [
+                'status' => '0',
+                'reason' => 'We are facing temporary issue from the bank side. Please contact us for more detail.',
+                'order_id' => $input['order_id'],
+            ];
+        }
+        else {
+            return [
+                'status' => '0',
+                'reason' => 'We are facing temporary issue from the bank side. Please contact us for more detail.',
+                'order_id' => $input['order_id'],
+            ];
+        }
 
     }
 
@@ -186,34 +218,39 @@ class NowPayments extends Controller
         }
         
         $body = $request->all();
-        $data = \DB::table('transaction_session')
-            ->where('transaction_id', $session_id)
-            ->first();
+        $data = \DB::table('transaction_session')->where('transaction_id', $session_id)->first();
+
         if($data) {
+            
             if ($body['payment_status'] == 'finished') {
                 $input = json_decode($data->request_data, 1);
                 $input['status'] = '1';
                 $input['reason'] = 'Your transaction was proccess successfully.';
-                unset($input["api_key"]);
-                $this->transaction->storeData($input);
-                $this->storeMidWebhook($session_id, json_encode($body));
+                
                 \Log::info(['type' => 'webhook', 'body' => $session_id.' confirm.']);
-                exit();
             }
-            else if ($body['payment_status'] == 'sending' || $body['payment_status'] == 'confirming') {
-                $input['status'] = '0';
+            else if (in_array($body['payment_status'], self::PROCESSING_STATUSES)) {
+                $input['status'] = '2';
                 $input['reason'] = 'Your transaction is pending.';
-                unset($input["api_key"]);
-                $this->transaction->storeData($input);
-                $this->storeMidWebhook($session_id, json_encode($body));
-                \Log::info(['type' => 'webhook', 'body' => $session_id.' invalid.']);
-                exit(); 
+
+                \Log::info(['type' => 'webhook', 'body' => $session_id.' processing.']); 
+            }
+            else if (in_array($body['payment_status'], self::ERROR_STATUSES)) {
+                $input['status'] = '0';
+                $input['reason'] = 'Your transaction is failed.';
+
+                \Log::info(['type' => 'webhook', 'body' => $session_id.' invalid.']); 
             }
             else {
-                # transaction not confirm
                 \Log::info(['type' => 'webhook', 'body' => $session_id.' still not confirm.']);
-                exit();
             }
+
+            // storing webhook response
+            unset($input["api_key"]);
+            // $this->transaction->storeData($input);
+            $this->storeMidWebhook($session_id, json_encode($body));
+            $this->storeTransaction($input);
+            
         } else {
             \Log::info(['type' => 'webhook', 'body' => $session_id.' still not confirm.']);
             exit();

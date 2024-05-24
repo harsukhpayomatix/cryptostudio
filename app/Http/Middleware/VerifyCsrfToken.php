@@ -138,7 +138,7 @@ class VerifyCsrfToken extends Middleware
         "coinspaid/webhook",
         "dasshpeupi/return/*",
         "epsi/webhook/*",
-        "xamax/callback",
+        "cryptoxamax/callback",
         "startbutton/webhook",
         "bitpace/webhook",
         "wert/webhook",

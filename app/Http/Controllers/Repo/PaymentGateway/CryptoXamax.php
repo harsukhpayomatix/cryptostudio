@@ -25,31 +25,33 @@ class CryptoXamax extends Controller
     // const BASE_URL = "https://api.xamax.io/v1/"; // Production
     const TOKEN_URL = "https://api.sandbox.xamax.io/.well-known/jwks.json";
     const XAMAX_EMAIL = "techadmin@finvert.io";
-    // const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJlOTFjYzJiNC00MTdlLTQ0ZjktOTU1Ny0xZGFkMDNjMjY4YTgifQ.eyJpYXQiOjE3MTI3NDI3ODMsImp0aSI6ImVkYWMyNWMzLWM4MTItNGQwZC1hOGM3LWQwMTA0NjIwMzExOSIsImlzcyI6Imh0dHBzOi8vYXV0aC54YW1heC5pby9hdXRoL3JlYWxtcy94YW1heCIsImF1ZCI6Imh0dHBzOi8vYXV0aC54YW1heC5pby9hdXRoL3JlYWxtcy94YW1heCIsInN1YiI6IjdlM2IyNDI3LTkwNDEtNGU1NC05YTg5LTkyYjBkY2MxYjdhNCIsInR5cCI6Ik9mZmxpbmUiLCJhenAiOiJzYW5kYm94LXByb2Nlc3NpbmciLCJzZXNzaW9uX3N0YXRlIjoiMGRiNzNkMDQtYjAwMC00YWVkLTkzZTAtNzE1Yjk4YWE3ODE2IiwiYXV0aG9yaXphdGlvbiI6eyJwZXJtaXNzaW9ucyI6W3sic2NvcGVzIjpbImNyZWF0ZSJdLCJyc2lkIjoiZjg1MzE2YzgtYzkyZC00NjViLWFjNDktYTY5MmY2Y2JjNTY1IiwicnNuYW1lIjoiaW52b2ljZSJ9XX0sInNjb3BlIjoib2ZmbGluZV9hY2Nlc3MgZW1haWwgcHJvZmlsZSIsInNpZCI6IjBkYjczZDA0LWIwMDAtNGFlZC05M2UwLTcxNWI5OGFhNzgxNiJ9.cyLJJUcLX2Vu4uQbHM6QTfFMsDyyeoEKVQD5nT-xdJk';
 
 
 
     public function checkout($input, $midDetails)
     {
-        if(!isset($input['currency_type'])){
-            return [
-                'status' => '7',
-                'reason' => '3DS link generated successful, please redirect.',
-                'redirect_3ds_url' => route('api.v2.cryptoCurrency', [$input["order_id"]])
+        // uncommnet when currency convert api add
+        // if(!isset($input['currency_type'])){
+        //     return [
+        //         'status' => '7',
+        //         'reason' => '3DS link generated successful, please redirect.',
+        //         'redirect_3ds_url' => route('api.v2.cryptoCurrency', [$input["order_id"]])
 
-            ];
-        }
+        //     ];
+        // }
         
         $BtcToSatoshi = 100000000;
         $input['converted_amount'] = number_format((float) $input['converted_amount'], 2, '.', '');
-        $converted_currency = $input['converted_currency'];
-        $selected_crypto_currency = $input['currency_type'];
+         
 
-        $btcAmount = $this->getUSDToBTC($input['converted_amount'], $converted_currency, $selected_crypto_currency);
-
+        // $converted_currency = @$input['converted_currency'];
+        // $selected_crypto_currency = $input['currency_type'];
+        $btcAmount = $this->getUSDToBTC($input['converted_amount']);
         $input["gateway_id"] = $this->generateRandomNumber();
-        $accessToken = $this->generateAccessToken($midDetails->api_key);        
-     
+         
+        $accessToken = $this->generateAccessToken($midDetails->api_key);   
+       
+        
         if ($btcAmount == null || $accessToken == null) {
             return [
                 "status" => "0",
@@ -57,19 +59,23 @@ class CryptoXamax extends Controller
             ];
         }
 
-        $amount = (int) ceil($btcAmount * $BtcToSatoshi);
-
+        $amount = (int) ceil($btcAmount * $BtcToSatoshi);// need to chnage in live mode
+       
         $payload = [
-            "txId" => $input["gateway_id"],
-            "code" => "btc",
-            "amount" => strval($amount),
+            "txId"                       =>  $input["gateway_id"],
+            "code"                       =>  ["btc"],//["usdt"],// need to change in live mode
+            "amount"                     =>  strval($amount),
+            "urlRedirectSuccess"         =>  route('xamax.success', $input["session_id"]),//'http://localhost:8000/xamax/success/'.$input["session_id"],//
+            "urlRedirectFail"            =>  route('xamax.failure', $input["session_id"]), //'http://localhost:8000/xamax/failure/'.$input["session_id"],
         ];
-        $url = self::BASE_URL . 'transaction/invoice';
+       \Log::info(['payload'=> $payload]);
+        // $url = self::BASE_URL . 'transaction/invoice';
+        $url = self::BASE_URL . 'payment-link';
         // Create invoice
         $response = Http::withHeaders([
             'Authorization' => 'Bearer ' . $accessToken
         ])->post($url,$payload)->json();
-        // dd($response);
+        \Log::info(["data" => $response]);
         $this->storeMidPayload($input["session_id"], json_encode($payload));
         $this->updateGatewayResponseData($input, $response);
 
@@ -79,16 +85,17 @@ class CryptoXamax extends Controller
                 'reason' => "We are facing temporary issue from the bank side. Please contact us for more detail.",
                 'order_id' => $input['order_id'],
             ];
-        } else if (isset($response["code"]) && $response["code"] == 3) {
+        } else if (!isset($response["href"])) {
+
             return [
                 "status" => "0",
                 'reason' => $response["message"] ?? "Transaction could not processed.",
             ];
-        } else if (isset($response["walletAddress"]) && isset($response["amountRequiredUnit"])) {
+        } else if (isset($response["href"]) && isset($response["title"])) {
             return [
                 'status' => '7',
                 'reason' => '3DS link generated successful, please redirect.',
-                'redirect_3ds_url' => $response["link"]['related'][1]['href'],//route('xamax.show.wallet', [$input["session_id"]])
+                'redirect_3ds_url' => $response['href'],//route('xamax.show.wallet', [$input["session_id"]])
 
             ];
         } else {
@@ -138,6 +145,7 @@ class CryptoXamax extends Controller
 
     public function callback(Request $request)
     {
+        Log::info(['xamax_callback_data' => $request->all()]);
         $header = $request->header('Authorization');
         $bearerToken = null;
      
@@ -234,6 +242,45 @@ class CryptoXamax extends Controller
        }
     }
 
+    public function success(Request $request, $session_id)
+    {
+        
+        \Log::info(['success_session_id' => $session_id]);
+        $transaction = DB::table("transaction_session")->select("id", "request_data", "webhook_response", "gateway_id", "transaction_id")->where("transaction_id", $session_id)->first();
+        if ($transaction == null) {
+            abort(404);
+        }
+        $input = json_decode($transaction->request_data, true);
+        $input['status'] = '1';
+        $input['reason'] = 'Your transaction was proccessed successfully.';
+        \Log::info(['success_input'=> $input]);
+        // redirect back to $response_url
+        $transaction_response = $this->storeTransaction($input);
+        \Log::info(['suceess_transaction_response' => $transaction_response]);
+        $store_transaction_link = $this->getRedirectLink($input);
+        
+        return redirect($store_transaction_link);
+
+
+    }
+
+    public function failure(Request $request, $session_id)
+    {
+        \Log::info(['failed_response' => $request->all()]);
+        $transaction = DB::table("transaction_session")->select("id", "request_data", "webhook_response", "gateway_id", "transaction_id")->where("transaction_id", $session_id)->first();
+        if ($transaction == null) {
+            abort(404);
+        }
+        $input = json_decode($transaction->request_data, true);
+        $input['status'] = '0';
+        $input['reason'] = 'Your transaction could not processed.';
+
+        // redirect back to $response_url
+        $transaction_response = $this->storeTransaction($input);
+
+        $store_transaction_link = $this->getRedirectLink($input);
+        return redirect($store_transaction_link);
+    }
     public function checkResponse(Request $request)
     {
         if($request->transaction_id){
@@ -249,8 +296,6 @@ class CryptoXamax extends Controller
     {
         $key = config("custom.currency_converter_access_key");
         $response = Http::get('https://apilayer.net/api/live?access_key=' . $key . "&currencies=BTC&source=USD")->json();
-        print_r($response);
-        exit;
         if (isset($response["quotes"]) && isset($response["quotes"]["USDBTC"])) {
             return $response["quotes"]["USDBTC"] * $amount;
         }

@@ -132,6 +132,7 @@
                                 <option value="PEN">PEN</option>
                                 <option value="MXN">MXN</option>
                                 <option value="AZN">AZN</option>
+                                <option value="KES">KES</option>
                             </select>
                             @if ($errors->has('converted_currency'))
                                 <span class="help-block">

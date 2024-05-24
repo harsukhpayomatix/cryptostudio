@@ -36,11 +36,11 @@ class SasaPay extends Controller
             'Amount' => $input['amount'],
             'Reference' => $input["session_id"],//@$input['reference'],
             'Description' => 'Payment',//@$input['description'],
-            'Currency' => 'KES',//$input['currency']??'KES',
-            'PayerEmail' => $input['payer_email'],
+            'Currency' => $input['converted_currency'],//??'KES',
+            'PayerEmail' => $input['email'],
             'CallbackUrl' => route('sasapay.callback', $input["session_id"]),
-            'SuccessUrl' => route('sasapay.success', $input["session_id"]),// session_id
-            'FailureUrl' => route('sasapay.failure', $input["session_id"]), // session_id
+            'SuccessUrl' => route('sasapay.success', $input["session_id"]),
+            'FailureUrl' => route('sasapay.failure', $input["session_id"]),
             'SasaPayWalletEnabled' => false,
             'MpesaEnabled' => false,
             'CardEnabled' => true,
