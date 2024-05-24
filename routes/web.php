@@ -849,10 +849,10 @@ Route::get("/arca/redirect/{id}", "Repo\PaymentGateway\Arca@redirect")->name("ar
 // *Xamax MID urls
 Route::get("cryptoxamax/wallet/{id}", "Repo\PaymentGateway\CryptoXamax@showWallet")->name("xamax.show.wallet");
 Route::get("cryptoxamax/user/redirect/{id}", "Repo\PaymentGateway\CryptoXamax@userRedirect")->name("xamax.user.redirect");
-Route::any("xamax/callback","Repo\PaymentGateway\CryptoXamax@callback")->name("xamax.callback");
-Route::any("xamax/check-response","Repo\PaymentGateway\CryptoXamax@checkResponse")->name("xamax.checkresponse");
-Route::any("xamax/success/{id}","Repo\PaymentGateway\CryptoXamax@success")->name("xamax.success");
-Route::any("xamax/failure/{id}","Repo\PaymentGateway\CryptoXamax@failure")->name("xamax.failure");
+Route::any("cryptoxamax/callback","Repo\PaymentGateway\CryptoXamax@callback")->name("xamax.callback");
+Route::any("cryptoxamax/check-response","Repo\PaymentGateway\CryptoXamax@checkResponse")->name("xamax.checkresponse");
+Route::any("cryptoxamax/success/{id}","Repo\PaymentGateway\CryptoXamax@success")->name("xamax.success");
+Route::any("cryptoxamax/failure/{id}","Repo\PaymentGateway\CryptoXamax@failure")->name("xamax.failure");
 
 // SASA PAY URLs
 Route::any("sasapay/callback/{id}","Repo\PaymentGateway\SasaPay@callback")->name("sasapay.callback");
