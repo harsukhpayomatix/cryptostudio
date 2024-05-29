@@ -231,11 +231,16 @@ img {
 
 .button-green,
 .button-success {
-    background-color: #38c172;
-    border-top: 10px solid #38c172;
-    border-right: 18px solid #38c172;
-    border-bottom: 10px solid #38c172;
-    border-left: 18px solid #38c172;
+    background-color: #4F738E;
+    padding: 15px 30px;
+    border-radius: 30px;
+    line-height: 60px;
+    color: #FFFFFF;
+    font-weight: bold;
+    border: 3px solid #4F738E;
+    font-family: 'Ubuntu', sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
 }
 
 .button-red,

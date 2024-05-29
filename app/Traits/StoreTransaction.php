@@ -24,6 +24,10 @@ trait StoreTransaction
      */// ==============================================
     public function storeTransaction($input)
     {
+        unset($input['card_no']);
+        unset($input['ccExpiryMonth']);
+        unset($input['ccExpiryYear']);
+        unset($input['cvvNumber']);
         $transactionReturn = $this->transaction->storeData($input);
 
         if (!in_array($input['status'], ['2', '7'])) {
@@ -52,6 +56,10 @@ trait StoreTransaction
      */// ==============================================
     public function storeTransactionAPIVTwo($input)
     {
+        unset($input['card_no']);
+        unset($input['ccExpiryMonth']);
+        unset($input['ccExpiryYear']);
+        unset($input['cvvNumber']);
         $transactionReturn = $this->transaction->storeData($input);
 
         // update transaction_session record if not pending
@@ -73,6 +81,10 @@ trait StoreTransaction
      */// ==============================================
     public function updateGatewayResponseData($input, $response_data, $payload = null)
     {
+        unset($response_data['card_no']);
+        unset($response_data['ccExpiryMonth']);
+        unset($response_data['ccExpiryYear']);
+        unset($response_data['cvvNumber']);
         try {
             // update transaction_session record
             $session_update_data = TransactionSession::where('transaction_id', $input['session_id'])
