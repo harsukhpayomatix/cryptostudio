@@ -67,7 +67,7 @@ class TransactionSession extends Model
         // $data = static::select('transaction_session.id', 'middetails.bank_name', 'applications.business_name')
         //     ->join('applications', 'applications.user_id', 'transaction_session.user_id')
         //     ->join('middetails', 'middetails.id', 'transaction_session.payment_gateway_id');
-
+        
         $data = static::select('id', "request_data", "order_id", "is_completed", "payment_gateway_id", "created_at", "email", "user_id", "transaction_id");
 
         if (isset($input['first_name']) && $input['first_name'] != '') {
