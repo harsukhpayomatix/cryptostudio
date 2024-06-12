@@ -146,7 +146,8 @@ class VerifyCsrfToken extends Middleware
         'mid/callback/*',
         'sasapay/callback/*',
         'sasapay/success/*',
-        'sasapay/failure/*'
+        'sasapay/failure/*',
+        '/pay-agency/webhook/*'
     ];
 
     /**

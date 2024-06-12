@@ -885,3 +885,8 @@ Route::post("/mid/store/browser/info", "Repo\PaymentGateway\MidsPay@storeBrowser
 Route::get("/mid/pending-txn-job", "Repo\PaymentGateway\MidsPay@pendingTxn");
 
 
+// * PayGency
+Route::get("/pay-agency/redirect/{id}", "Repo\PaymentGateway\PayAgency@redirect")->name('payagency.return');
+Route::post("/pay-agency/webhook/{id}", "Repo\PaymentGateway\PayAgency@webhook")->name('payagency.webhook');
+
+
