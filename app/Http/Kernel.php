@@ -130,6 +130,7 @@ class Kernel extends HttpKernel
         'checkUserProfile' => \App\Http\Middleware\CheckProfileApproved::class,
         'bank_application_approved' => \App\Http\Middleware\BankApplicationApproved::class,
         'query_response_time' => \App\Http\Middleware\QueryResponseTime::class,
+        'XSS' => \App\Http\Middleware\XSS::class,
         //'throttle' => \App\Http\Middleware\ThrottleRequests::class
     ];
 }
