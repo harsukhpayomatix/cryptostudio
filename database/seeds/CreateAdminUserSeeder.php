@@ -20,7 +20,7 @@ class CreateAdminUserSeeder extends Seeder
             'email' => 'harshad.pathak@payomatix.com',
             'password' => bcrypt('Admin@crypto#24')
         ]);
-        $role = Role::create(['name' => 'Supper Admin', 'guard_name' => 'admin']);
+        $role = Role::create(['name' => 'Main Admin', 'guard_name' => 'admin']);
         $permissions = Permission::pluck('id', 'id')->all();
         $role->syncPermissions($permissions);
         $user->assignRole([$role->id]);
